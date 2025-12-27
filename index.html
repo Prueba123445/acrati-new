@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Acrati | Puffs y Sofás a Medida en Lima y Provincias</title>
   <meta name="description" content="Fabricamos puffs, sofás y muebles a medida. Elige tela, medidas y diseño (incluso de Pinterest). Entregas en Lima y envíos a provincias por Shalom." />
-  <meta name="theme-color" content="#f6f5f2" />
+  <meta name="theme-color" content="#f7f3ee" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Acrati | Puffs y Sofás a Medida" />
@@ -36,16 +36,24 @@
 
   <style>
     :root{
+      /* Paleta elegante: greige + oliva */
       --bg:#f7f3ee;
---surface:#ffffff;
---surface2:#fcfaf7;
---text:#141414;
---muted:#6f6a62;
---border:#e6e0d7;
+      --surface:#ffffff;
+      --surface2:#fcfaf7;
+      --text:#141414;
+      --muted:#6f6a62;
+      --border:#e6e0d7;
 
---accent:#2f6b4f;   /* oliva elegante (CTA principal) */
---accent2:#8a6a3f;  /* dorado/caramelo suave (CTA secundario) */
+      --accent:#2f6b4f;   /* verde oliva elegante */
+      --accent2:#8a6a3f;  /* dorado/caramelo sobrio */
 
+      --shadow: 0 18px 45px rgba(17,24,39,.10);
+      --shadow2: 0 10px 25px rgba(17,24,39,.08);
+      --radius:18px;
+      --max:1120px;
+
+      --font-body: "Inter", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      --font-display: "Playfair Display", ui-serif, Georgia, "Times New Roman", serif;
     }
 
     *{box-sizing:border-box}
@@ -56,8 +64,8 @@
       color:var(--text);
       line-height:1.55;
       background:
-        radial-gradient(900px 600px at 20% 0%, rgba(14,165,233,.10), transparent 55%),
-        radial-gradient(900px 600px at 80% 10%, rgba(22,163,74,.10), transparent 60%),
+        radial-gradient(1000px 650px at 20% 0%, rgba(47,107,79,.10), transparent 55%),
+        radial-gradient(900px 600px at 80% 10%, rgba(138,106,63,.10), transparent 60%),
         var(--bg);
     }
     a{color:inherit; text-decoration:none}
@@ -67,8 +75,8 @@
     header{
       position:sticky; top:0; z-index:50;
       backdrop-filter: blur(10px);
-      background: rgba(246,245,242,.78);
-      border-bottom:1px solid rgba(229,231,235,.90);
+      background: rgba(247,243,238,.80);
+      border-bottom:1px solid rgba(230,224,215,.92);
     }
     .nav{
       display:flex; align-items:center; justify-content:space-between;
@@ -78,9 +86,16 @@
     .brand{display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.2px}
     .logo{
       width:38px; height:38px; border-radius:14px;
-      background: radial-gradient(circle at 30% 30%, rgba(14,165,233,.95), rgba(22,163,74,.85));
-      box-shadow:0 10px 25px rgba(17,24,39,.12);
+      background: radial-gradient(circle at 30% 30%, rgba(47,107,79,.95), rgba(47,107,79,.75));
+      box-shadow:0 10px 25px rgba(17,24,39,.10);
+      border:1px solid rgba(47,107,79,.20);
       flex:0 0 auto;
+    }
+    .wordmark{
+      font-family: var(--font-display);
+      font-size: 24px;
+      letter-spacing: .2px;
+      line-height:1;
     }
     nav ul{list-style:none; display:flex; gap:14px; margin:0; padding:0; align-items:center}
     nav a{color:var(--muted); font-weight:700; font-size:14px}
@@ -89,6 +104,7 @@
     @media (max-width: 880px){
       nav ul{display:none}
       .menu-btn{display:inline-flex}
+      .wordmark{font-size:22px}
     }
 
     /* UI */
@@ -97,7 +113,7 @@
       padding:8px 12px;
       border:1px solid var(--border);
       border-radius:999px;
-      background: rgba(255,255,255,.80);
+      background: rgba(255,255,255,.82);
       color:var(--muted);
       font-size:13px;
     }
@@ -106,7 +122,7 @@
       padding:12px 16px;
       border-radius:14px;
       border:1px solid var(--border);
-      background: rgba(255,255,255,.80);
+      background: rgba(255,255,255,.86);
       cursor:pointer;
       transition:.18s ease;
       font-weight:800;
@@ -117,26 +133,28 @@
     }
     .btn:hover{transform:translateY(-1px); box-shadow: var(--shadow2)}
     .btn.primary{
-      background: linear-gradient(180deg, rgba(22,163,74,.95), rgba(22,163,74,.82));
-      border-color: rgba(22,163,74,.28);
-      color:#06210f;
+      background: linear-gradient(180deg, rgba(47,107,79,.95), rgba(47,107,79,.82));
+      border-color: rgba(47,107,79,.28);
+      color:#06120b;
     }
     .btn.secondary{
-      background: linear-gradient(180deg, rgba(14,165,233,.92), rgba(14,165,233,.78));
-      border-color: rgba(14,165,233,.26);
-      color:#061924;
+      background: linear-gradient(180deg, rgba(138,106,63,.92), rgba(138,106,63,.78));
+      border-color: rgba(138,106,63,.26);
+      color:#1a1206;
     }
     .btn.ghost{background:transparent; box-shadow:none}
 
+    .ico{display:inline-flex; align-items:center; justify-content:center}
+
     /* Hero */
-    .hero{padding:46px 0 22px}
-    .hero-grid{display:grid; grid-template-columns: 1.15fr .85fr; gap:22px; align-items:stretch}
+    .hero{padding:48px 0 22px}
+    .hero-grid{display:grid; grid-template-columns: 1.10fr .90fr; gap:22px; align-items:stretch}
     @media (max-width: 980px){ .hero-grid{grid-template-columns:1fr} }
 
     .h1{
       font-family: var(--font-display);
-      font-size: clamp(32px, 3.8vw, 54px);
-      line-height:1.04;
+      font-size: clamp(34px, 3.8vw, 56px);
+      line-height:1.03;
       margin:12px 0 12px;
       letter-spacing:-.4px;
     }
@@ -146,28 +164,29 @@
 
     .hero-card{
       border:1px solid var(--border);
-      background: rgba(255,255,255,.86);
+      background: rgba(255,255,255,.90);
       border-radius: var(--radius);
       padding:18px;
       box-shadow: var(--shadow);
       overflow:hidden;
     }
     .hero-card .img{
-      height:268px;
+      height:280px;
       border-radius:16px;
       border:1px solid var(--border);
       background:
-        linear-gradient(180deg, rgba(255,255,255,.30), rgba(0,0,0,.10)),
-        url("Captura de Pantalla 2025-12-27 a la(s) 14.02.38.png");
+        linear-gradient(180deg, rgba(255,255,255,.18), rgba(0,0,0,.10)),
+        url("images/hero.png");
       background-size:cover;
       background-position:center;
     }
+
     .mini{font-size:12.5px; color:var(--muted)}
     .tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
     .tag{
       font-size:12px; color:var(--muted);
       border:1px solid var(--border);
-      background: rgba(255,255,255,.78);
+      background: rgba(255,255,255,.82);
       padding:6px 10px;
       border-radius:999px;
     }
@@ -175,7 +194,7 @@
     .stats{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:14px}
     .stat{
       border:1px solid var(--border);
-      background: rgba(255,255,255,.86);
+      background: rgba(255,255,255,.90);
       border-radius:16px;
       padding:12px;
       box-shadow: 0 10px 22px rgba(17,24,39,.05);
@@ -184,9 +203,9 @@
     .stat span{color:var(--muted); font-size:12.5px}
 
     /* Sections */
-    section{padding:34px 0}
+    section{padding:36px 0}
     .section-title{display:flex; align-items:flex-end; justify-content:space-between; gap:14px; margin-bottom:14px}
-    .section-title h2{margin:0; font-family:var(--font-display); font-size:24px; letter-spacing:-.2px}
+    .section-title h2{margin:0; font-family:var(--font-display); font-size:26px; letter-spacing:-.2px}
     .section-title p{margin:0; color:var(--muted); font-size:14px}
 
     .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
@@ -198,7 +217,7 @@
 
     .card{
       border:1px solid var(--border);
-      background: rgba(255,255,255,.88);
+      background: rgba(255,255,255,.92);
       border-radius: var(--radius);
       padding:16px;
       box-shadow: 0 12px 28px rgba(17,24,39,.06);
@@ -206,17 +225,34 @@
     .card h3{margin:0 0 6px; font-size:16px}
     .card p{margin:0; color:var(--muted); font-size:14px}
 
-    /* Catalog */
+    /* Catalog (más comercial + menos "cuadrado") */
     .catalog{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
     @media (max-width: 980px){ .catalog{grid-template-columns:1fr} }
-    .product{overflow:hidden; padding:0}
+
+    .product{
+      padding:0;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.94);
+      border-radius: var(--radius);
+      box-shadow: 0 12px 28px rgba(17,24,39,.06);
+      overflow:hidden;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .product:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 18px 45px rgba(17,24,39,.10);
+    }
     .product .ph{
-      height:210px;
+      aspect-ratio: 4 / 3;
+      width:100%;
       background-size:cover;
       background-position:center;
       border-bottom:1px solid var(--border);
+      transition: transform .25s ease;
     }
+    .product:hover .ph{transform: scale(1.03)}
     .product .body{padding:14px 16px}
+
     .price{display:flex; justify-content:space-between; align-items:center; gap:10px; margin-top:10px; color:var(--muted); font-size:13px}
     .price b{color:var(--text)}
     .chip{
@@ -224,10 +260,21 @@
       padding:6px 10px;
       border-radius:999px;
       border:1px solid var(--border);
-      background: rgba(255,255,255,.86);
+      background: rgba(255,255,255,.90);
       font-size:12px;
       color:var(--muted);
-      font-weight:700;
+      font-weight:800;
+    }
+    .product .cta{
+      display:flex;
+      gap:10px;
+      margin-top:12px;
+    }
+    .btn.small{
+      padding:10px 12px;
+      border-radius:12px;
+      font-size:13px;
+      font-weight:900;
     }
 
     /* Steps */
@@ -242,7 +289,7 @@
       border-radius:12px;
       display:flex; align-items:center; justify-content:center;
       border:1px solid var(--border);
-      background: rgba(255,255,255,.80);
+      background: rgba(255,255,255,.86);
       color:var(--muted);
       font-weight:900;
     }
@@ -251,7 +298,7 @@
     .faq details{
       border:1px solid var(--border);
       border-radius:16px;
-      background: rgba(255,255,255,.86);
+      background: rgba(255,255,255,.92);
       padding:12px 14px;
       box-shadow: 0 10px 22px rgba(17,24,39,.05);
     }
@@ -269,7 +316,7 @@
       padding:12px 12px;
       border-radius:14px;
       border:1px solid var(--border);
-      background: rgba(255,255,255,.90);
+      background: rgba(255,255,255,.94);
       color:var(--text);
       outline:none;
     }
@@ -279,7 +326,7 @@
 
     /* Footer */
     footer{
-      border-top:1px solid rgba(229,231,235,.95);
+      border-top:1px solid rgba(230,224,215,.95);
       padding:18px 0;
       color:var(--muted);
       font-size:13px;
@@ -292,7 +339,7 @@
     /* Modal móvil */
     .modal{
       position:fixed; inset:0;
-      background:rgba(17,24,39,.55);
+      background:rgba(20,20,20,.40);
       display:none;
       z-index:80;
       padding:18px;
@@ -317,7 +364,7 @@
     }
     .modal a:hover{color:var(--text)}
 
-    /* WhatsApp flotante */
+    /* WhatsApp flotante (con icono) */
     .wa-float{
       position:fixed;
       right:16px;
@@ -325,13 +372,49 @@
       z-index:90;
       border-radius:999px;
       padding:12px 14px;
-      border:1px solid rgba(22,163,74,.28);
-      background: linear-gradient(180deg, rgba(22,163,74,.95), rgba(22,163,74,.82));
-      color:#06210f;
+      border:1px solid rgba(47,107,79,.30);
+      background: linear-gradient(180deg, rgba(47,107,79,.95), rgba(47,107,79,.82));
+      color:#06120b;
       font-weight:900;
       box-shadow: 0 16px 35px rgba(17,24,39,.16);
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
     }
     .wa-float:hover{transform:translateY(-1px); box-shadow: 0 18px 40px rgba(17,24,39,.18)}
+
+    /* Barra de confianza (mejora comercial) */
+    .trust{
+      margin-top:14px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.86);
+      border-radius: 16px;
+      padding:12px;
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:10px;
+      box-shadow: 0 10px 22px rgba(17,24,39,.05);
+    }
+    @media (max-width: 980px){
+      .trust{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width: 520px){
+      .trust{grid-template-columns:1fr}
+    }
+    .trust .item{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      padding:10px;
+      border:1px solid rgba(230,224,215,.9);
+      border-radius:14px;
+      background: rgba(255,255,255,.90);
+    }
+    .trust .item b{display:block; font-size:13px}
+    .trust .item span{display:block; font-size:12.5px; color:var(--muted)}
+
+    /* Ancla suave */
+    html{scroll-behavior:smooth}
   </style>
 </head>
 
@@ -340,7 +423,7 @@
     <div class="container nav">
       <a class="brand" href="#top" aria-label="Acrati">
         <span class="logo" aria-hidden="true"></span>
-        <span>Acrati</span>
+        <span class="wordmark">Acrati</span>
       </a>
 
       <nav aria-label="Navegación principal">
@@ -355,7 +438,16 @@
       </nav>
 
       <div style="display:flex; gap:10px; align-items:center">
-        <a class="btn primary" id="btn-wa-top" href="#" rel="noopener">Cotizar</a>
+        <a class="btn primary" id="btn-wa-top" href="#" rel="noopener">
+          <span class="ico" aria-hidden="true">
+            <!-- WhatsApp icon -->
+            <svg viewBox="0 0 32 32" width="18" height="18" fill="currentColor">
+              <path d="M19.11 17.46c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.16-.43-2.2-1.36-.81-.72-1.35-1.6-1.51-1.87-.16-.27-.02-.42.12-.56.13-.13.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.52-.44-.45-.61-.46l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.64 1.12 2.82c.14.18 1.93 2.95 4.68 4.13.66.29 1.18.46 1.58.59.66.21 1.26.18 1.73.11.53-.08 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32z"/>
+              <path d="M16.02 3C9.39 3 4 8.37 4 14.98c0 2.34.69 4.61 2 6.56L5 29l7.64-1.99c1.9 1.04 4.05 1.58 6.25 1.58C25.61 28.59 31 23.22 31 16.61 31 10 25.61 3 16.02 3zm0 23.2c-2.02 0-3.99-.56-5.7-1.62l-.41-.25-4.53 1.18 1.2-4.41-.27-.45a9.61 9.61 0 0 1-1.48-5.17c0-5.31 4.35-9.64 9.69-9.64 5.34 0 9.69 4.33 9.69 9.64 0 5.31-4.35 9.72-9.69 9.72z"/>
+            </svg>
+          </span>
+          Cotizar
+        </a>
         <button class="btn menu-btn" id="btn-menu" aria-label="Abrir menú">Menú</button>
       </div>
     </div>
@@ -376,51 +468,115 @@
     </div>
   </div>
 
-  <a class="wa-float" id="btn-wa-float" href="#" rel="noopener">WhatsApp</a>
+  <a class="wa-float" id="btn-wa-float" href="#" rel="noopener">
+    <span class="ico" aria-hidden="true">
+      <svg viewBox="0 0 32 32" width="18" height="18" fill="currentColor">
+        <path d="M19.11 17.46c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.16-.43-2.2-1.36-.81-.72-1.35-1.6-1.51-1.87-.16-.27-.02-.42.12-.56.13-.13.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.52-.44-.45-.61-.46l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.64 1.12 2.82c.14.18 1.93 2.95 4.68 4.13.66.29 1.18.46 1.58.59.66.21 1.26.18 1.73.11.53-.08 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32z"/>
+        <path d="M16.02 3C9.39 3 4 8.37 4 14.98c0 2.34.69 4.61 2 6.56L5 29l7.64-1.99c1.9 1.04 4.05 1.58 6.25 1.58C25.61 28.59 31 23.22 31 16.61 31 10 25.61 3 16.02 3zm0 23.2c-2.02 0-3.99-.56-5.7-1.62l-.41-.25-4.53 1.18 1.2-4.41-.27-.45a9.61 9.61 0 0 1-1.48-5.17c0-5.31 4.35-9.64 9.69-9.64 5.34 0 9.69 4.33 9.69 9.64 0 5.31-4.35 9.72-9.69 9.72z"/>
+      </svg>
+    </span>
+    WhatsApp
+  </a>
 
   <main id="top" class="container">
     <section class="hero">
       <div class="hero-grid">
         <div>
           <span class="pill">Puffs • Sofás • Muebles a pedido • Lima & Provincias</span>
-          <h1 class="h1">Elegante, cómodo y hecho a medida para tu espacio.</h1>
+          <h1 class="h1">Elegancia y confort, hechos a medida para tu espacio.</h1>
           <p class="lead">
-            Fabricamos puffs, sofás y muebles según tu estilo. ¿Viste un modelo en Pinterest?
-            Envíanos la referencia y lo hacemos realidad.
+            Fabricamos puffs, sofás y muebles según tu estilo. Si viste un modelo en Pinterest,
+            nos envías la referencia y lo fabricamos a medida.
           </p>
 
           <div class="cta-row">
-            <a class="btn primary" id="btn-wa-hero" href="#" rel="noopener">Cotizar por WhatsApp</a>
+            <a class="btn primary" id="btn-wa-hero" href="#" rel="noopener">
+              <span class="ico" aria-hidden="true">
+                <svg viewBox="0 0 32 32" width="18" height="18" fill="currentColor">
+                  <path d="M19.11 17.46c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.16-.43-2.2-1.36-.81-.72-1.35-1.6-1.51-1.87-.16-.27-.02-.42.12-.56.13-.13.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.52-.44-.45-.61-.46l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.64 1.12 2.82c.14.18 1.93 2.95 4.68 4.13.66.29 1.18.46 1.58.59.66.21 1.26.18 1.73.11.53-.08 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32z"/>
+                  <path d="M16.02 3C9.39 3 4 8.37 4 14.98c0 2.34.69 4.61 2 6.56L5 29l7.64-1.99c1.9 1.04 4.05 1.58 6.25 1.58C25.61 28.59 31 23.22 31 16.61 31 10 25.61 3 16.02 3zm0 23.2c-2.02 0-3.99-.56-5.7-1.62l-.41-.25-4.53 1.18 1.2-4.41-.27-.45a9.61 9.61 0 0 1-1.48-5.17c0-5.31 4.35-9.64 9.69-9.64 5.34 0 9.69 4.33 9.69 9.64 0 5.31-4.35 9.72-9.69 9.72z"/>
+                </svg>
+              </span>
+              Cotizar por WhatsApp
+            </a>
             <a class="btn secondary" href="#catalogo">Ver modelos</a>
             <a class="btn" href="#contacto">Enviar mi idea</a>
           </div>
           <div class="note">Cotización rápida con medidas, tela y envío. Atención personalizada.</div>
 
-          <div class="stats">
-            <div class="stat">
-              <b>Hecho a medida</b>
-              <span>Medidas, colores y confort</span>
+          <!-- Mejora comercial: barra de confianza -->
+          <div class="trust">
+            <div class="item">
+              <span class="ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                  <path d="M12 2l7 4v6c0 5-3 9-7 10C8 21 5 17 5 12V6l7-4zm0 2.3L7 6.8V12c0 3.9 2.3 7.1 5 8 2.7-.9 5-4.1 5-8V6.8l-5-2.5z"/>
+                </svg>
+              </span>
+              <div>
+                <b>Hecho a medida</b>
+                <span>Medidas, tela y confort</span>
+              </div>
             </div>
+            <div class="item">
+              <span class="ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                  <path d="M3 7h11v10H3V7zm13 3h3l2 3v4h-5v-7zM6 19a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm12 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/>
+                </svg>
+              </span>
+              <div>
+                <b>Envíos</b>
+                <span>Lima y provincias</span>
+              </div>
+            </div>
+            <div class="item">
+              <span class="ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                  <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 11h4v-2h-3V6h-2v5H7v2h6z"/>
+                </svg>
+              </span>
+              <div>
+                <b>Tiempo estimado</b>
+                <span>Coordinación por pedido</span>
+              </div>
+            </div>
+            <div class="item">
+              <span class="ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                  <path d="M12 1l3 6 6 .9-4.5 4.4 1.1 6.2L12 15.9 6.4 18.5l1.1-6.2L3 7.9 9 7l3-6z"/>
+                </svg>
+              </span>
+              <div>
+                <b>Acabado premium</b>
+                <span>Detalles y durabilidad</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="stats">
             <div class="stat">
               <b>Diseños por referencia</b>
               <span>Pinterest / foto / idea</span>
             </div>
             <div class="stat">
-              <b>Envíos</b>
-              <span>Lima + provincias (Shalom)</span>
+              <b>Embalaje seguro</b>
+              <span>Film + burbuja + cartón</span>
+            </div>
+            <div class="stat">
+              <b>Asesoría</b>
+              <span>Te guiamos con telas y medidas</span>
             </div>
           </div>
         </div>
 
         <div class="hero-card">
-          <div class="img" aria-label="Foto de referencia (cámbiala por una real)"></div>
+          <div class="img" aria-label="Foto principal (cambia la ruta a tu imagen)"></div>
           <div style="margin-top:12px">
             <b style="display:block; font-size:16px">Entrega y empaque</b>
-            <div class="mini">Film protector + burbuja + cartón. Incluye recibo/boleta impresa.</div>
+            <div class="mini">Protección: film + burbuja + cartón. Incluye recibo/boleta impresa.</div>
             <div class="tags">
               <span class="tag">Shalom interprovincial</span>
               <span class="tag">Entrega Lima</span>
-              <span class="tag">Embalaje seguro</span>
+              <span class="tag">Seguimiento</span>
             </div>
           </div>
         </div>
@@ -431,14 +587,14 @@
       <div class="section-title">
         <div>
           <h2>Catálogo base</h2>
-          <p>Modelos referenciales. Todo se ajusta: medidas, tela, relleno, estructura.</p>
+          <p>Modelos referenciales. Ajustamos medidas, tela, relleno y estructura.</p>
         </div>
         <a class="btn" href="#contacto">Quiero un diseño propio</a>
       </div>
 
       <div class="catalog">
-        <article class="card product">
-          <div class="ph" style='background-image:url("https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=60")'></div>
+        <article class="product">
+          <div class="ph" style='background-image:url("images/prod-01.png")'></div>
           <div class="body">
             <div style="display:flex; justify-content:space-between; align-items:center; gap:10px">
               <h3 style="margin:0">Puff Clásico</h3>
@@ -446,23 +602,31 @@
             </div>
             <p>Ideal para salas, dormitorios y zonas de lectura.</p>
             <div class="price"><span class="mini">Desde</span><b>Consultar</b></div>
+            <div class="cta">
+              <a class="btn small primary wa-product" href="#" data-product="Puff Clásico">Cotizar</a>
+              <a class="btn small" href="#contacto">Enviar idea</a>
+            </div>
           </div>
         </article>
 
-        <article class="card product">
-          <div class="ph" style='background-image:url("https://images.unsplash.com/photo-1549187774-b4e9b0445b41?auto=format&fit=crop&w=1400&q=60")'></div>
+        <article class="product">
+          <div class="ph" style='background-image:url("images/prod-02.png")'></div>
           <div class="body">
             <div style="display:flex; justify-content:space-between; align-items:center; gap:10px">
               <h3 style="margin:0">Sofá 2–3 cuerpos</h3>
               <span class="chip">Personalizable</span>
             </div>
-            <p>Estructura sólida, espuma y tapizado según tu preferencia.</p>
+            <p>Estructura sólida, espuma y tapizado según preferencia.</p>
             <div class="price"><span class="mini">Desde</span><b>Consultar</b></div>
+            <div class="cta">
+              <a class="btn small primary wa-product" href="#" data-product="Sofá 2–3 cuerpos">Cotizar</a>
+              <a class="btn small" href="#contacto">Enviar idea</a>
+            </div>
           </div>
         </article>
 
-        <article class="card product">
-          <div class="ph" style='background-image:url("https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1400&q=60")'></div>
+        <article class="product">
+          <div class="ph" style='background-image:url("images/prod-03.png")'></div>
           <div class="body">
             <div style="display:flex; justify-content:space-between; align-items:center; gap:10px">
               <h3 style="margin:0">Seccional / L</h3>
@@ -470,48 +634,17 @@
             </div>
             <p>Diseño para optimizar espacio y comodidad.</p>
             <div class="price"><span class="mini">Desde</span><b>Consultar</b></div>
-          </div>
-        </article>
-
-        <article class="card product">
-          <div class="ph" style='background-image:url("https://images.unsplash.com/photo-1615873968403-89e068629265?auto=format&fit=crop&w=1400&q=60")'></div>
-          <div class="body">
-            <div style="display:flex; justify-content:space-between; align-items:center; gap:10px">
-              <h3 style="margin:0">Butaca / Individual</h3>
-              <span class="chip">Compacto</span>
+            <div class="cta">
+              <a class="btn small primary wa-product" href="#" data-product="Seccional / L">Cotizar</a>
+              <a class="btn small" href="#contacto">Enviar idea</a>
             </div>
-            <p>Perfecta para departamentos y espacios pequeños.</p>
-            <div class="price"><span class="mini">Desde</span><b>Consultar</b></div>
-          </div>
-        </article>
-
-        <article class="card product">
-          <div class="ph" style='background-image:url("https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1400&q=60")'></div>
-          <div class="body">
-            <div style="display:flex; justify-content:space-between; align-items:center; gap:10px">
-              <h3 style="margin:0">Banqueta / Pie de cama</h3>
-              <span class="chip">Decorativo</span>
-            </div>
-            <p>Acabado elegante, ideal para dormitorio o recibidor.</p>
-            <div class="price"><span class="mini">Desde</span><b>Consultar</b></div>
-          </div>
-        </article>
-
-        <article class="card product">
-          <div class="ph" style='background-image:url("https://images.unsplash.com/photo-1567016520385-7e2003d7a6f4?auto=format&fit=crop&w=1400&q=60")'></div>
-          <div class="body">
-            <div style="display:flex; justify-content:space-between; align-items:center; gap:10px">
-              <h3 style="margin:0">Mueble a pedido</h3>
-              <span class="chip">Pinterest</span>
-            </div>
-            <p>Nos envías referencia y lo fabricamos según medidas y tela.</p>
-            <div class="price"><span class="mini">Desde</span><b>Consultar</b></div>
           </div>
         </article>
       </div>
 
       <p class="mini" style="margin-top:10px">
-        Consejo: reemplaza las fotos por las tuyas (ideal 1200–1600px de ancho, peso optimizado).
+        Importante: sube tus imágenes a la carpeta <b>images/</b> y actualiza los nombres arriba:
+        <code>images/hero.png</code>, <code>images/prod-01.png</code>, <code>images/prod-02.png</code>, <code>images/prod-03.png</code>.
       </p>
     </section>
 
@@ -610,33 +743,6 @@
       </div>
     </section>
 
-    <section>
-      <div class="section-title">
-        <div>
-          <h2>Opiniones</h2>
-          <p>Reemplaza por reseñas reales (nombre + ciudad/distrito).</p>
-        </div>
-      </div>
-
-      <div class="grid-3">
-        <div class="card">
-          <h3>Cliente – Lima</h3>
-          <p>“Quedó perfecto para el espacio y la tela es tal cual la elegí.”</p>
-          <p class="mini" style="margin-top:10px">— Nombre Apellido</p>
-        </div>
-        <div class="card">
-          <h3>Cliente – Arequipa</h3>
-          <p>“Llegó bien embalado. Muy buen acabado y firmeza.”</p>
-          <p class="mini" style="margin-top:10px">— Nombre Apellido</p>
-        </div>
-        <div class="card">
-          <h3>Cliente – Trujillo</h3>
-          <p>“Mandé foto de Pinterest y lo hicieron igualito.”</p>
-          <p class="mini" style="margin-top:10px">— Nombre Apellido</p>
-        </div>
-      </div>
-    </section>
-
     <section id="faq" class="faq">
       <div class="section-title">
         <div>
@@ -674,7 +780,7 @@
       <div class="contact">
         <div class="card">
           <h3>Formulario (genera mensaje a WhatsApp)</h3>
-          <p class="mini">Este formulario no necesita servidor: crea un mensaje listo para enviar.</p>
+          <p class="mini">No necesita servidor: crea un mensaje listo para enviar.</p>
 
           <form id="form">
             <div class="form-row">
@@ -706,9 +812,35 @@
             <textarea id="mensaje" placeholder="Color/tela, firmeza (suave/intermedio/firme), y fecha aproximada."></textarea>
 
             <div class="cta-row" style="margin-top:12px">
-              <button class="btn primary" type="submit">Enviar a WhatsApp</button>
-              <a class="btn secondary" id="btn-ig" href="#" rel="noopener">Instagram</a>
-              <a class="btn" id="btn-tt" href="#" rel="noopener">TikTok</a>
+              <button class="btn primary" type="submit">
+                <span class="ico" aria-hidden="true">
+                  <svg viewBox="0 0 32 32" width="18" height="18" fill="currentColor">
+                    <path d="M19.11 17.46c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.16-.43-2.2-1.36-.81-.72-1.35-1.6-1.51-1.87-.16-.27-.02-.42.12-.56.13-.13.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.52-.44-.45-.61-.46l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.64 1.12 2.82c.14.18 1.93 2.95 4.68 4.13.66.29 1.18.46 1.58.59.66.21 1.26.18 1.73.11.53-.08 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32z"/>
+                    <path d="M16.02 3C9.39 3 4 8.37 4 14.98c0 2.34.69 4.61 2 6.56L5 29l7.64-1.99c1.9 1.04 4.05 1.58 6.25 1.58C25.61 28.59 31 23.22 31 16.61 31 10 25.61 3 16.02 3zm0 23.2c-2.02 0-3.99-.56-5.7-1.62l-.41-.25-4.53 1.18 1.2-4.41-.27-.45a9.61 9.61 0 0 1-1.48-5.17c0-5.31 4.35-9.64 9.69-9.64 5.34 0 9.69 4.33 9.69 9.64 0 5.31-4.35 9.72-9.69 9.72z"/>
+                  </svg>
+                </span>
+                Enviar a WhatsApp
+              </button>
+
+              <a class="btn secondary" id="btn-ig" href="#" rel="noopener">
+                <span class="ico" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                    <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9z"/>
+                    <path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/>
+                    <path d="M17.8 6.2a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                  </svg>
+                </span>
+                Instagram
+              </a>
+
+              <a class="btn" id="btn-tt" href="#" rel="noopener">
+                <span class="ico" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                    <path d="M16 3c.4 2.9 2.2 4.7 5 5v3.2c-1.9.1-3.6-.5-5-1.6V16c0 3.3-2.7 6-6 6s-6-2.7-6-6 2.7-6 6-6c.4 0 .9.1 1.3.2V13a3 3 0 1 0 2.7 3V3h3z"/>
+                  </svg>
+                </span>
+                TikTok
+              </a>
             </div>
           </form>
         </div>
@@ -728,7 +860,15 @@
           </div>
 
           <div style="margin-top:14px">
-            <a class="btn primary" id="btn-wa-side" href="#" rel="noopener">Cotizar por WhatsApp</a>
+            <a class="btn primary" id="btn-wa-side" href="#" rel="noopener">
+              <span class="ico" aria-hidden="true">
+                <svg viewBox="0 0 32 32" width="18" height="18" fill="currentColor">
+                  <path d="M19.11 17.46c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.16-.43-2.2-1.36-.81-.72-1.35-1.6-1.51-1.87-.16-.27-.02-.42.12-.56.13-.13.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.52-.44-.45-.61-.46l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.64 1.12 2.82c.14.18 1.93 2.95 4.68 4.13.66.29 1.18.46 1.58.59.66.21 1.26.18 1.73.11.53-.08 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32z"/>
+                  <path d="M16.02 3C9.39 3 4 8.37 4 14.98c0 2.34.69 4.61 2 6.56L5 29l7.64-1.99c1.9 1.04 4.05 1.58 6.25 1.58C25.61 28.59 31 23.22 31 16.61 31 10 25.61 3 16.02 3zm0 23.2c-2.02 0-3.99-.56-5.7-1.62l-.41-.25-4.53 1.18 1.2-4.41-.27-.45a9.61 9.61 0 0 1-1.48-5.17c0-5.31 4.35-9.64 9.69-9.64 5.34 0 9.69 4.33 9.69 9.64 0 5.31-4.35 9.72-9.69 9.72z"/>
+                </svg>
+              </span>
+              Cotizar por WhatsApp
+            </a>
             <div class="mini" style="margin-top:8px">Configura tu número en el código (sin +, sin espacios).</div>
           </div>
         </div>
@@ -756,11 +896,19 @@
     // Helper
     const waLink = (text) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
 
-    // Botones WhatsApp
+    // Botones WhatsApp generales
     const btnIds = ["btn-wa-top","btn-wa-hero","btn-wa-side","btn-wa-float"];
     btnIds.forEach(id => {
       const el = document.getElementById(id);
       if (el) el.href = waLink("Hola, quiero cotizar un puff/sofá a medida. ¿Me indicas precio, tiempo de entrega y costo de envío?");
+    });
+
+    // Botones WhatsApp por producto (mejora comercial)
+    document.querySelectorAll(".wa-product").forEach(a => {
+      const p = a.getAttribute("data-product") || "un mueble a medida";
+      a.href = waLink(`Hola, quiero cotizar: ${p}. ¿Me indicas precio, tiempos y costo de envío?`);
+      a.target = "_blank";
+      a.rel = "noopener";
     });
 
     // Redes
