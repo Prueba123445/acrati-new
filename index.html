@@ -4,326 +4,21 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Acrati | Puffs y Sofás a Medida en Lima y Provincias</title>
-  
   <meta name="description" content="Fabricamos puffs, sofás y muebles a medida. Elige tela, medidas y diseño (incluso de Pinterest). Entregas en Lima y envíos a provincias por Shalom." />
-  <meta name="theme-color" content="#111827" />
+  <meta name="theme-color" content="#f6f5f2" />
 
-  <!-- Open Graph (para que se vea bien al compartir) -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Acrati | Puffs y Sofás a Medida" />
   <meta property="og:description" content="Muebles a medida: puffs, sofás y lo que pida el cliente. Envíos Lima y provincias." />
   <meta property="og:type" content="website" />
-  <!-- Cambia esta imagen cuando tengas una real -->
   <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Acrati+Puffs+y+Sofas" />
-<!-- Tipografías elegantes y legibles -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
-  <style>
-  :root{
-    --bg:#f6f5f2;              /* fondo cálido claro */
-    --bg2:#ffffff;
-    --text:#111827;
-    --muted:#6b7280;
-    --border:#e5e7eb;
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
-    --accent:#16a34a;          /* WhatsApp / CTA */
-    --accent2:#0ea5e9;         /* secundario */
-    --danger:#ef4444;
-
-    --shadow: 0 18px 45px rgba(17,24,39,.10);
-    --shadow2: 0 10px 25px rgba(17,24,39,.08);
-    --radius:18px;
-    --max:1120px;
-
-    --font-body: "Inter", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-    --font-display: "Playfair Display", ui-serif, Georgia, "Times New Roman", serif;
-  }
-
-  *{box-sizing:border-box}
-  html,body{height:100%}
-  body{
-    margin:0;
-    font-family:var(--font-body);
-    background:
-      radial-gradient(900px 600px at 20% 0%, rgba(14,165,233,.10), transparent 55%),
-      radial-gradient(900px 600px at 80% 10%, rgba(22,163,74,.10), transparent 60%),
-      var(--bg);
-    color:var(--text);
-    line-height:1.55;
-  }
-
-  a{color:inherit; text-decoration:none}
-  .container{max-width:var(--max); margin:0 auto; padding:0 18px}
-
-  /* Header */
-  header{
-    position:sticky; top:0; z-index:50;
-    backdrop-filter: blur(10px);
-    background: rgba(246,245,242,.75);
-    border-bottom:1px solid rgba(229,231,235,.85);
-  }
-  .nav{
-    display:flex; align-items:center; justify-content:space-between;
-    padding:12px 0;
-    gap:12px;
-  }
-  .brand{
-    display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.2px;
-  }
-  .logo{
-    width:38px; height:38px; border-radius:14px;
-    background: radial-gradient(circle at 30% 30%, rgba(14,165,233,.95), rgba(22,163,74,.85));
-    box-shadow:0 10px 25px rgba(17,24,39,.12);
-  }
-  nav ul{list-style:none; display:flex; gap:14px; margin:0; padding:0; align-items:center}
-  nav a{color:var(--muted); font-weight:600; font-size:14px}
-  nav a:hover{color:var(--text)}
-  .menu-btn{display:none}
-  @media (max-width: 880px){
-    nav ul{display:none}
-    .menu-btn{display:inline-flex}
-  }
-
-  /* UI */
-  .pill{
-    display:inline-flex; gap:10px; align-items:center;
-    padding:8px 12px;
-    border:1px solid var(--border);
-    border-radius:999px;
-    background: rgba(255,255,255,.75);
-    color:var(--muted);
-    font-size:13px;
-  }
-
-  .btn{
-    display:inline-flex; align-items:center; justify-content:center; gap:10px;
-    padding:12px 16px;
-    border-radius:14px;
-    border:1px solid var(--border);
-    background: rgba(255,255,255,.78);
-    cursor:pointer;
-    transition:.18s ease;
-    font-weight:700;
-    user-select:none;
-    color:var(--text);
-    box-shadow: 0 8px 18px rgba(17,24,39,.06);
-  }
-  .btn:hover{transform:translateY(-1px); box-shadow: var(--shadow2)}
-  .btn.primary{
-    background: linear-gradient(180deg, rgba(22,163,74,.95), rgba(22,163,74,.82));
-    border-color: rgba(22,163,74,.30);
-    color:#06210f;
-  }
-  .btn.secondary{
-    background: linear-gradient(180deg, rgba(14,165,233,.92), rgba(14,165,233,.78));
-    border-color: rgba(14,165,233,.28);
-    color:#061924;
-  }
-  .btn.ghost{background:transparent; box-shadow:none}
-
-  /* Hero */
-  .hero{padding:44px 0 22px}
-  .hero-grid{
-    display:grid; grid-template-columns: 1.2fr .8fr;
-    gap:22px; align-items:stretch;
-  }
-  @media (max-width: 980px){ .hero-grid{grid-template-columns:1fr} }
-
-  .h1{
-    font-family: var(--font-display);
-    font-size: clamp(32px, 3.8vw, 54px);
-    line-height:1.04;
-    margin:12px 0 12px;
-    letter-spacing:-.4px;
-  }
-  .lead{color:var(--muted); font-size:16px; max-width:62ch}
-  .cta-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:16px}
-  .note{color:var(--muted); font-size:13px; margin-top:10px}
-
-  .hero-card{
-    border:1px solid var(--border);
-    background: rgba(255,255,255,.82);
-    border-radius: var(--radius);
-    padding:18px;
-    box-shadow: var(--shadow);
-    overflow:hidden;
-    position:relative;
-  }
-  .hero-card .img{
-    height:260px;
-    border-radius:16px;
-    border:1px solid var(--border);
-    background:
-      linear-gradient(180deg, rgba(255,255,255,.35), rgba(0,0,0,.10)),
-      url("https://images.unsplash.com/photo-1540574163026-643ea20ade25?auto=format&fit=crop&w=1200&q=60");
-    background-size:cover;
-    background-position:center;
-  }
-
-  .stats{
-    display:grid; grid-template-columns:repeat(3,1fr); gap:10px;
-    margin-top:14px;
-  }
-  .stat{
-    border:1px solid var(--border);
-    background: rgba(255,255,255,.80);
-    border-radius:16px;
-    padding:12px;
-    box-shadow: 0 10px 22px rgba(17,24,39,.05);
-  }
-  .stat b{display:block; font-size:14px}
-  .stat span{color:var(--muted); font-size:12.5px}
-
-  /* Sections */
-  section{padding:34px 0}
-  .section-title{
-    display:flex; align-items:flex-end; justify-content:space-between; gap:14px;
-    margin-bottom:14px;
-  }
-  .section-title h2{
-    margin:0;
-    font-family: var(--font-display);
-    font-size:24px;
-    letter-spacing:-.2px
-  }
-  .section-title p{margin:0; color:var(--muted); font-size:14px}
-
-  .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
-  .grid-2{display:grid; grid-template-columns:repeat(2,1fr); gap:14px}
-  @media (max-width: 900px){
-    .grid-3{grid-template-columns:1fr}
-    .grid-2{grid-template-columns:1fr}
-  }
-
-  .card{
-    border:1px solid var(--border);
-    background: rgba(255,255,255,.86);
-    border-radius: var(--radius);
-    padding:16px;
-    box-shadow: 0 12px 28px rgba(17,24,39,.06);
-  }
-  .card h3{margin:0 0 6px; font-size:16px}
-  .card p{margin:0; color:var(--muted); font-size:14px}
-  .tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
-  .tag{
-    font-size:12px; color:var(--muted);
-    border:1px solid var(--border);
-    background: rgba(255,255,255,.75);
-    padding:6px 10px;
-    border-radius:999px;
-  }
-
-  /* Catalog */
-  .catalog{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
-  @media (max-width: 980px){ .catalog{grid-template-columns:1fr} }
-
-  .product{overflow:hidden; padding:0}
-  .product .ph{
-    height:210px;
-    background-size:cover;
-    background-position:center;
-    border-bottom:1px solid var(--border);
-  }
-  .product .body{padding:14px 16px}
-  .price{
-    display:flex; justify-content:space-between; align-items:center; gap:10px;
-    margin-top:10px;
-    color:var(--muted); font-size:13px;
-  }
-  .price b{color:var(--text)}
-  .mini{font-size:12.5px; color:var(--muted)}
-
-  /* Steps */
-  .steps{counter-reset: step; display:grid; grid-template-columns:repeat(4,1fr); gap:14px}
-  @media (max-width: 980px){ .steps{grid-template-columns:1fr} }
-  .step{position:relative; padding:16px}
-  .step:before{
-    counter-increment: step;
-    content: counter(step);
-    position:absolute; top:14px; right:14px;
-    width:34px; height:34px;
-    border-radius:12px;
-    display:flex; align-items:center; justify-content:center;
-    border:1px solid var(--border);
-    background: rgba(255,255,255,.75);
-    color:var(--muted);
-    font-weight:800;
-  }
-
-  /* FAQ */
-  .faq details{
-    border:1px solid var(--border);
-    border-radius:16px;
-    background: rgba(255,255,255,.82);
-    padding:12px 14px;
-    box-shadow: 0 10px 22px rgba(17,24,39,.05);
-  }
-  .faq details + details{margin-top:10px}
-  .faq summary{cursor:pointer; font-weight:800; color:var(--text); outline:none}
-  .faq p{margin:10px 0 0; color:var(--muted); font-size:14px}
-
-  /* Contact */
-  .contact{display:grid; grid-template-columns:1.1fr .9fr; gap:14px; align-items:stretch}
-  @media (max-width: 980px){ .contact{grid-template-columns:1fr} }
-
-  label{display:block; font-size:13px; color:var(--muted); margin:10px 0 6px}
-  input, textarea{
-    width:100%;
-    padding:12px 12px;
-    border-radius:14px;
-    border:1px solid var(--border);
-    background: rgba(255,255,255,.85);
-    color:var(--text);
-    outline:none;
-  }
-  textarea{min-height:110px; resize:vertical}
-  .form-row{display:grid; grid-template-columns:1fr 1fr; gap:10px}
-  @media (max-width: 600px){ .form-row{grid-template-columns:1fr} }
-
-  /* Footer */
-  footer{
-    border-top:1px solid rgba(229,231,235,.85);
-    padding:18px 0;
-    color:var(--muted);
-    font-size:13px;
-  }
-  .footer-row{display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap}
-  .links{display:flex; gap:12px; flex-wrap:wrap}
-  .links a{color:var(--muted)}
-  .links a:hover{color:var(--text)}
-
-  /* Modal móvil */
-  .modal{
-    position:fixed; inset:0;
-    background:rgba(17,24,39,.55);
-    display:none;
-    z-index:80;
-    padding:18px;
-  }
-  .modal.open{display:block}
-  .modal .panel{
-    max-width:520px; margin:0 auto;
-    border:1px solid var(--border);
-    background: rgba(255,255,255,.95);
-    border-radius:18px;
-    padding:14px;
-    box-shadow: var(--shadow);
-  }
-  .modal a{
-    display:block;
-    padding:12px;
-    border-radius:14px;
-    border:1px solid var(--border);
-    margin-top:10px;
-    color:var(--muted);
-    font-weight:800
-  }
-  .modal a:hover{color:var(--text)}
-</style>
-
-
-  <!-- Schema.org (SEO local) -->
+  <!-- SEO local (simple) -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -338,403 +33,763 @@
     ]
   }
   </script>
+
+  <style>
+    :root{
+      --bg:#f6f5f2;
+      --surface:#ffffff;
+      --surface2:#fbfbfa;
+      --text:#111827;
+      --muted:#6b7280;
+      --border:#e5e7eb;
+
+      --accent:#16a34a;   /* WhatsApp / CTA principal */
+      --accent2:#0ea5e9;  /* CTA secundario */
+
+      --shadow: 0 18px 45px rgba(17,24,39,.10);
+      --shadow2: 0 10px 25px rgba(17,24,39,.08);
+      --radius:18px;
+      --max:1120px;
+
+      --font-body: "Inter", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      --font-display: "Playfair Display", ui-serif, Georgia, "Times New Roman", serif;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--font-body);
+      color:var(--text);
+      line-height:1.55;
+      background:
+        radial-gradient(900px 600px at 20% 0%, rgba(14,165,233,.10), transparent 55%),
+        radial-gradient(900px 600px at 80% 10%, rgba(22,163,74,.10), transparent 60%),
+        var(--bg);
+    }
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--max); margin:0 auto; padding:0 18px}
+
+    /* Header */
+    header{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(246,245,242,.78);
+      border-bottom:1px solid rgba(229,231,235,.90);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:12px 0;
+      gap:12px;
+    }
+    .brand{display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.2px}
+    .logo{
+      width:38px; height:38px; border-radius:14px;
+      background: radial-gradient(circle at 30% 30%, rgba(14,165,233,.95), rgba(22,163,74,.85));
+      box-shadow:0 10px 25px rgba(17,24,39,.12);
+      flex:0 0 auto;
+    }
+    nav ul{list-style:none; display:flex; gap:14px; margin:0; padding:0; align-items:center}
+    nav a{color:var(--muted); font-weight:700; font-size:14px}
+    nav a:hover{color:var(--text)}
+    .menu-btn{display:none}
+    @media (max-width: 880px){
+      nav ul{display:none}
+      .menu-btn{display:inline-flex}
+    }
+
+    /* UI */
+    .pill{
+      display:inline-flex; gap:10px; align-items:center;
+      padding:8px 12px;
+      border:1px solid var(--border);
+      border-radius:999px;
+      background: rgba(255,255,255,.80);
+      color:var(--muted);
+      font-size:13px;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 16px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.80);
+      cursor:pointer;
+      transition:.18s ease;
+      font-weight:800;
+      user-select:none;
+      color:var(--text);
+      box-shadow: 0 8px 18px rgba(17,24,39,.06);
+      white-space:nowrap;
+    }
+    .btn:hover{transform:translateY(-1px); box-shadow: var(--shadow2)}
+    .btn.primary{
+      background: linear-gradient(180deg, rgba(22,163,74,.95), rgba(22,163,74,.82));
+      border-color: rgba(22,163,74,.28);
+      color:#06210f;
+    }
+    .btn.secondary{
+      background: linear-gradient(180deg, rgba(14,165,233,.92), rgba(14,165,233,.78));
+      border-color: rgba(14,165,233,.26);
+      color:#061924;
+    }
+    .btn.ghost{background:transparent; box-shadow:none}
+
+    /* Hero */
+    .hero{padding:46px 0 22px}
+    .hero-grid{display:grid; grid-template-columns: 1.15fr .85fr; gap:22px; align-items:stretch}
+    @media (max-width: 980px){ .hero-grid{grid-template-columns:1fr} }
+
+    .h1{
+      font-family: var(--font-display);
+      font-size: clamp(32px, 3.8vw, 54px);
+      line-height:1.04;
+      margin:12px 0 12px;
+      letter-spacing:-.4px;
+    }
+    .lead{color:var(--muted); font-size:16px; max-width:62ch}
+    .cta-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:16px}
+    .note{color:var(--muted); font-size:13px; margin-top:10px}
+
+    .hero-card{
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.86);
+      border-radius: var(--radius);
+      padding:18px;
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .hero-card .img{
+      height:268px;
+      border-radius:16px;
+      border:1px solid var(--border);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.30), rgba(0,0,0,.10)),
+        url("https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1400&q=60");
+      background-size:cover;
+      background-position:center;
+    }
+    .mini{font-size:12.5px; color:var(--muted)}
+    .tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
+    .tag{
+      font-size:12px; color:var(--muted);
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.78);
+      padding:6px 10px;
+      border-radius:999px;
+    }
+
+    .stats{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:14px}
+    .stat{
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.86);
+      border-radius:16px;
+      padding:12px;
+      box-shadow: 0 10px 22px rgba(17,24,39,.05);
+    }
+    .stat b{display:block; font-size:14px}
+    .stat span{color:var(--muted); font-size:12.5px}
+
+    /* Sections */
+    section{padding:34px 0}
+    .section-title{display:flex; align-items:flex-end; justify-content:space-between; gap:14px; margin-bottom:14px}
+    .section-title h2{margin:0; font-family:var(--font-display); font-size:24px; letter-spacing:-.2px}
+    .section-title p{margin:0; color:var(--muted); font-size:14px}
+
+    .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
+    .grid-2{display:grid; grid-template-columns:repeat(2,1fr); gap:14px}
+    @media (max-width: 900px){
+      .grid-3{grid-template-columns:1fr}
+      .grid-2{grid-template-columns:1fr}
+    }
+
+    .card{
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.88);
+      border-radius: var(--radius);
+      padding:16px;
+      box-shadow: 0 12px 28px rgba(17,24,39,.06);
+    }
+    .card h3{margin:0 0 6px; font-size:16px}
+    .card p{margin:0; color:var(--muted); font-size:14px}
+
+    /* Catalog */
+    .catalog{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
+    @media (max-width: 980px){ .catalog{grid-template-columns:1fr} }
+    .product{overflow:hidden; padding:0}
+    .product .ph{
+      height:210px;
+      background-size:cover;
+      background-position:center;
+      border-bottom:1px solid var(--border);
+    }
+    .product .body{padding:14px 16px}
+    .price{display:flex; justify-content:space-between; align-items:center; gap:10px; margin-top:10px; color:var(--muted); font-size:13px}
+    .price b{color:var(--text)}
+    .chip{
+      display:inline-flex;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.86);
+      font-size:12px;
+      color:var(--muted);
+      font-weight:700;
+    }
+
+    /* Steps */
+    .steps{counter-reset: step; display:grid; grid-template-columns:repeat(4,1fr); gap:14px}
+    @media (max-width: 980px){ .steps{grid-template-columns:1fr} }
+    .step{position:relative; padding:16px}
+    .step:before{
+      counter-increment: step;
+      content: counter(step);
+      position:absolute; top:14px; right:14px;
+      width:34px; height:34px;
+      border-radius:12px;
+      display:flex; align-items:center; justify-content:center;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.80);
+      color:var(--muted);
+      font-weight:900;
+    }
+
+    /* FAQ */
+    .faq details{
+      border:1px solid var(--border);
+      border-radius:16px;
+      background: rgba(255,255,255,.86);
+      padding:12px 14px;
+      box-shadow: 0 10px 22px rgba(17,24,39,.05);
+    }
+    .faq details + details{margin-top:10px}
+    .faq summary{cursor:pointer; font-weight:900; color:var(--text); outline:none}
+    .faq p{margin:10px 0 0; color:var(--muted); font-size:14px}
+
+    /* Contact */
+    .contact{display:grid; grid-template-columns:1.1fr .9fr; gap:14px; align-items:stretch}
+    @media (max-width: 980px){ .contact{grid-template-columns:1fr} }
+
+    label{display:block; font-size:13px; color:var(--muted); margin:10px 0 6px}
+    input, textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.90);
+      color:var(--text);
+      outline:none;
+    }
+    textarea{min-height:110px; resize:vertical}
+    .form-row{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+    @media (max-width: 600px){ .form-row{grid-template-columns:1fr} }
+
+    /* Footer */
+    footer{
+      border-top:1px solid rgba(229,231,235,.95);
+      padding:18px 0;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .footer-row{display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap}
+    .links{display:flex; gap:12px; flex-wrap:wrap}
+    .links a{color:var(--muted)}
+    .links a:hover{color:var(--text)}
+
+    /* Modal móvil */
+    .modal{
+      position:fixed; inset:0;
+      background:rgba(17,24,39,.55);
+      display:none;
+      z-index:80;
+      padding:18px;
+    }
+    .modal.open{display:block}
+    .modal .panel{
+      max-width:520px; margin:0 auto;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.96);
+      border-radius:18px;
+      padding:14px;
+      box-shadow: var(--shadow);
+    }
+    .modal a{
+      display:block;
+      padding:12px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      margin-top:10px;
+      color:var(--muted);
+      font-weight:900
+    }
+    .modal a:hover{color:var(--text)}
+
+    /* WhatsApp flotante */
+    .wa-float{
+      position:fixed;
+      right:16px;
+      bottom:16px;
+      z-index:90;
+      border-radius:999px;
+      padding:12px 14px;
+      border:1px solid rgba(22,163,74,.28);
+      background: linear-gradient(180deg, rgba(22,163,74,.95), rgba(22,163,74,.82));
+      color:#06210f;
+      font-weight:900;
+      box-shadow: 0 16px 35px rgba(17,24,39,.16);
+    }
+    .wa-float:hover{transform:translateY(-1px); box-shadow: 0 18px 40px rgba(17,24,39,.18)}
+  </style>
 </head>
 
 <body>
-<header>
-  <div class="container nav">
-    <a class="brand" href="#top" aria-label="Acrati">
-      <span class="logo" aria-hidden="true"></span>
-      <span>Acrati</span>
-    </a>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Acrati">
+        <span class="logo" aria-hidden="true"></span>
+        <span>Acrati</span>
+      </a>
 
-    <nav aria-label="Navegación principal">
-      <ul>
-        <li><a href="#catalogo">Catálogo</a></li>
-        <li><a href="#amedida">A medida</a></li>
-        <li><a href="#telas">Telas</a></li>
-        <li><a href="#envios">Envíos</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-    </nav>
+      <nav aria-label="Navegación principal">
+        <ul>
+          <li><a href="#catalogo">Catálogo</a></li>
+          <li><a href="#amedida">A medida</a></li>
+          <li><a href="#telas">Telas</a></li>
+          <li><a href="#envios">Envíos</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
 
-    <div style="display:flex; gap:10px; align-items:center">
-      <a class="btn primary" id="btn-wa-top" href="#" rel="noopener">WhatsApp</a>
-      <button class="btn menu-btn" id="btn-menu" aria-label="Abrir menú">Menú</button>
+      <div style="display:flex; gap:10px; align-items:center">
+        <a class="btn primary" id="btn-wa-top" href="#" rel="noopener">Cotizar</a>
+        <button class="btn menu-btn" id="btn-menu" aria-label="Abrir menú">Menú</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="modal" id="modal">
+    <div class="panel">
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:10px">
+        <b>Menú</b>
+        <button class="btn ghost" id="btn-close">Cerrar</button>
+      </div>
+      <a href="#catalogo" class="m">Catálogo</a>
+      <a href="#amedida" class="m">A medida</a>
+      <a href="#telas" class="m">Telas</a>
+      <a href="#envios" class="m">Envíos</a>
+      <a href="#faq" class="m">FAQ</a>
+      <a href="#contacto" class="m">Contacto</a>
     </div>
   </div>
-</header>
 
-<div class="modal" id="modal">
-  <div class="panel">
-    <div style="display:flex; justify-content:space-between; align-items:center; gap:10px">
-      <b>Menú</b>
-      <button class="btn ghost" id="btn-close">Cerrar</button>
-    </div>
-    <a href="#catalogo" class="m">Catálogo</a>
-    <a href="#amedida" class="m">A medida</a>
-    <a href="#telas" class="m">Telas</a>
-    <a href="#envios" class="m">Envíos</a>
-    <a href="#faq" class="m">FAQ</a>
-    <a href="#contacto" class="m">Contacto</a>
-  </div>
-</div>
+  <a class="wa-float" id="btn-wa-float" href="#" rel="noopener">WhatsApp</a>
 
-<main id="top" class="container">
-  <section class="hero">
-    <div class="hero-grid">
-      <div>
-        <span class="pill">Puffs • Sofás • Muebles a pedido • Lima & Provincias</span>
-        <h1 class="h1">Diseños modernos, fabricación a medida y entrega segura.</h1>
-        <p class="lead">
-          Fabricamos puffs y sofás según tu espacio, tu tela y tu estilo. ¿Viste un modelo en Pinterest?
-          Nos envías referencia y lo hacemos realidad.
-        </p>
+  <main id="top" class="container">
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <span class="pill">Puffs • Sofás • Muebles a pedido • Lima & Provincias</span>
+          <h1 class="h1">Elegante, cómodo y hecho a medida para tu espacio.</h1>
+          <p class="lead">
+            Fabricamos puffs, sofás y muebles según tu estilo. ¿Viste un modelo en Pinterest?
+            Envíanos la referencia y lo hacemos realidad.
+          </p>
 
-        <div class="cta-row">
-          <a class="btn primary" id="btn-wa-hero" href="#" rel="noopener">Cotizar por WhatsApp</a>
-          <a class="btn secondary" href="#catalogo">Ver modelos</a>
-          <a class="btn" href="#amedida">Cómo trabajamos</a>
+          <div class="cta-row">
+            <a class="btn primary" id="btn-wa-hero" href="#" rel="noopener">Cotizar por WhatsApp</a>
+            <a class="btn secondary" href="#catalogo">Ver modelos</a>
+            <a class="btn" href="#contacto">Enviar mi idea</a>
+          </div>
+          <div class="note">Cotización rápida con medidas, tela y envío. Atención personalizada.</div>
+
+          <div class="stats">
+            <div class="stat">
+              <b>Hecho a medida</b>
+              <span>Medidas, colores y confort</span>
+            </div>
+            <div class="stat">
+              <b>Diseños por referencia</b>
+              <span>Pinterest / foto / idea</span>
+            </div>
+            <div class="stat">
+              <b>Envíos</b>
+              <span>Lima + provincias (Shalom)</span>
+            </div>
+          </div>
         </div>
-        <div class="note">Respuesta rápida. Cotización con medidas, tela y envío.</div>
 
-        <div class="stats">
-          <div class="stat">
-            <b>Hecho a medida</b>
-            <span>Medidas, colores y confort</span>
-          </div>
-          <div class="stat">
-            <b>Diseños por referencia</b>
-            <span>Pinterest / foto / idea</span>
-          </div>
-          <div class="stat">
-            <b>Envíos</b>
-            <span>Lima + provincias (Shalom)</span>
+        <div class="hero-card">
+          <div class="img" aria-label="Foto de referencia (cámbiala por una real)"></div>
+          <div style="margin-top:12px">
+            <b style="display:block; font-size:16px">Entrega y empaque</b>
+            <div class="mini">Film protector + burbuja + cartón. Incluye recibo/boleta impresa.</div>
+            <div class="tags">
+              <span class="tag">Shalom interprovincial</span>
+              <span class="tag">Entrega Lima</span>
+              <span class="tag">Embalaje seguro</span>
+            </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="hero-card">
-        <div class="img" aria-label="Foto de muebles (cambia esta imagen por una real)"></div>
-        <div style="margin-top:12px">
-          <b style="display:block; font-size:16px">Entrega y empaque</b>
-          <div class="mini">Protección con film + burbuja + cartón. Boleta/recibo impreso.</div>
+    <section id="catalogo">
+      <div class="section-title">
+        <div>
+          <h2>Catálogo base</h2>
+          <p>Modelos referenciales. Todo se ajusta: medidas, tela, relleno, estructura.</p>
+        </div>
+        <a class="btn" href="#contacto">Quiero un diseño propio</a>
+      </div>
+
+      <div class="catalog">
+        <article class="card product">
+          <div class="ph" style='background-image:url("https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=60")'></div>
+          <div class="body">
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:10px">
+              <h3 style="margin:0">Puff Clásico</h3>
+              <span class="chip">A medida</span>
+            </div>
+            <p>Ideal para salas, dormitorios y zonas de lectura.</p>
+            <div class="price"><span class="mini">Desde</span><b>Consultar</b></div>
+          </div>
+        </article>
+
+        <article class="card product">
+          <div class="ph" style='background-image:url("https://images.unsplash.com/photo-1549187774-b4e9b0445b41?auto=format&fit=crop&w=1400&q=60")'></div>
+          <div class="body">
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:10px">
+              <h3 style="margin:0">Sofá 2–3 cuerpos</h3>
+              <span class="chip">Personalizable</span>
+            </div>
+            <p>Estructura sólida, espuma y tapizado según tu preferencia.</p>
+            <div class="price"><span class="mini">Desde</span><b>Consultar</b></div>
+          </div>
+        </article>
+
+        <article class="card product">
+          <div class="ph" style='background-image:url("https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1400&q=60")'></div>
+          <div class="body">
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:10px">
+              <h3 style="margin:0">Seccional / L</h3>
+              <span class="chip">Por módulos</span>
+            </div>
+            <p>Diseño para optimizar espacio y comodidad.</p>
+            <div class="price"><span class="mini">Desde</span><b>Consultar</b></div>
+          </div>
+        </article>
+
+        <article class="card product">
+          <div class="ph" style='background-image:url("https://images.unsplash.com/photo-1615873968403-89e068629265?auto=format&fit=crop&w=1400&q=60")'></div>
+          <div class="body">
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:10px">
+              <h3 style="margin:0">Butaca / Individual</h3>
+              <span class="chip">Compacto</span>
+            </div>
+            <p>Perfecta para departamentos y espacios pequeños.</p>
+            <div class="price"><span class="mini">Desde</span><b>Consultar</b></div>
+          </div>
+        </article>
+
+        <article class="card product">
+          <div class="ph" style='background-image:url("https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1400&q=60")'></div>
+          <div class="body">
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:10px">
+              <h3 style="margin:0">Banqueta / Pie de cama</h3>
+              <span class="chip">Decorativo</span>
+            </div>
+            <p>Acabado elegante, ideal para dormitorio o recibidor.</p>
+            <div class="price"><span class="mini">Desde</span><b>Consultar</b></div>
+          </div>
+        </article>
+
+        <article class="card product">
+          <div class="ph" style='background-image:url("https://images.unsplash.com/photo-1567016520385-7e2003d7a6f4?auto=format&fit=crop&w=1400&q=60")'></div>
+          <div class="body">
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:10px">
+              <h3 style="margin:0">Mueble a pedido</h3>
+              <span class="chip">Pinterest</span>
+            </div>
+            <p>Nos envías referencia y lo fabricamos según medidas y tela.</p>
+            <div class="price"><span class="mini">Desde</span><b>Consultar</b></div>
+          </div>
+        </article>
+      </div>
+
+      <p class="mini" style="margin-top:10px">
+        Consejo: reemplaza las fotos por las tuyas (ideal 1200–1600px de ancho, peso optimizado).
+      </p>
+    </section>
+
+    <section id="amedida">
+      <div class="section-title">
+        <div>
+          <h2>Trabajo a medida</h2>
+          <p>Proceso claro para asegurar calidad y evitar reprocesos.</p>
+        </div>
+      </div>
+
+      <div class="steps">
+        <div class="card step">
+          <h3>Referencia</h3>
+          <p>Envíanos foto, link o idea (Pinterest/IG/TikTok) + medidas aproximadas.</p>
+        </div>
+        <div class="card step">
+          <h3>Tela y acabado</h3>
+          <p>Te mostramos opciones de telas y colores. Definimos detalles (costuras/patas).</p>
+        </div>
+        <div class="card step">
+          <h3>Producción</h3>
+          <p>Se manda a hacer casco de madera y se fabrica con espuma y tapizado según diseño.</p>
+        </div>
+        <div class="card step">
+          <h3>Entrega</h3>
+          <p>Empaque protector y envío: Lima (coordinado) o provincias por Shalom.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="telas">
+      <div class="section-title">
+        <div>
+          <h2>Telas y confort</h2>
+          <p>Elegancia + durabilidad: te ayudamos a elegir según uso y limpieza.</p>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>Recomendación por uso</h3>
+          <p>Niños/mascotas: telas resistentes y fáciles de limpiar. Decorativo: texturas premium.</p>
           <div class="tags">
-            <span class="tag">Shalom interprovincial</span>
-            <span class="tag">Entrega Lima en auto</span>
-            <span class="tag">Embalaje seguro</span>
+            <span class="tag">Fácil limpieza</span>
+            <span class="tag">Resistencia</span>
+            <span class="tag">Textura</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Espuma y soporte</h3>
+          <p>Definimos firmeza (suave/intermedio/firme) y soporte según preferencia.</p>
+          <div class="tags">
+            <span class="tag">Firme</span>
+            <span class="tag">Intermedio</span>
+            <span class="tag">Suave</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Acabados</h3>
+          <p>Costuras, respaldos, brazos, módulos y detalles. Todo se define antes de producir.</p>
+          <div class="tags">
+            <span class="tag">Personalización</span>
+            <span class="tag">Acabado premium</span>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="catalogo">
-    <div class="section-title">
-      <div>
-        <h2>Catálogo base</h2>
-        <p>Modelos referenciales. Todo se puede ajustar (medidas, tela, relleno, estructura).</p>
-      </div>
-      <a class="btn" href="#contacto">Quiero un diseño propio</a>
-    </div>
-
-    <div class="catalog">
-      <article class="card product">
-        <div class="ph" style='background-image:url("https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=60")'></div>
-        <div class="body">
-          <h3>Puff Clásico</h3>
-          <p>Ideal para salas, dormitorios y áreas de lectura.</p>
-          <div class="price"><span class="mini">Desde</span><b>Consultar</b></div>
-        </div>
-      </article>
-
-      <article class="card product">
-        <div class="ph" style='background-image:url("https://images.unsplash.com/photo-1549187774-b4e9b0445b41?auto=format&fit=crop&w=1200&q=60")'></div>
-        <div class="body">
-          <h3>Sofá 2–3 cuerpos</h3>
-          <p>Estructura sólida, espuma y tapizado según tu preferencia.</p>
-          <div class="price"><span class="mini">Desde</span><b>Consultar</b></div>
-        </div>
-      </article>
-
-      <article class="card product">
-        <div class="ph" style='background-image:url("https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1200&q=60")'></div>
-        <div class="body">
-          <h3>Seccional / L</h3>
-          <p>Diseño para optimizar espacio y comodidad.</p>
-          <div class="price"><span class="mini">Desde</span><b>Consultar</b></div>
-        </div>
-      </article>
-    </div>
-    <p class="mini" style="margin-top:10px">
-      Nota: reemplaza estas fotos por las tuyas (ideal: 1200px de ancho, peso optimizado).
-    </p>
-  </section>
-
-  <section id="amedida">
-    <div class="section-title">
-      <div>
-        <h2>Trabajo a medida</h2>
-        <p>Proceso claro para evitar reprocesos y asegurar calidad.</p>
-      </div>
-    </div>
-
-    <div class="steps">
-      <div class="card step">
-        <h3>1) Referencia</h3>
-        <p>Envíanos foto, link o idea (Pinterest/TikTok/IG) + medidas aproximadas.</p>
-      </div>
-      <div class="card step">
-        <h3>2) Tela y acabado</h3>
-        <p>Te mostramos opciones de telas y colores. Definimos costuras y detalles.</p>
-      </div>
-      <div class="card step">
-        <h3>3) Producción</h3>
-        <p>Mandamos cascos de madera y fabricamos con espuma y tapizado según el diseño.</p>
-      </div>
-      <div class="card step">
-        <h3>4) Entrega</h3>
-        <p>Empaque protector y envío: Lima (coordinado) o provincias por Shalom.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="telas">
-    <div class="section-title">
-      <div>
-        <h2>Telas y confort</h2>
-        <p>Te ayudamos a elegir según uso, limpieza y durabilidad.</p>
-      </div>
-    </div>
-
-    <div class="grid-3">
-      <div class="card">
-        <h3>Recomendación por uso</h3>
-        <p>Casa con niños/mascotas: telas resistentes y fáciles de limpiar. Decorativo: texturas premium.</p>
-        <div class="tags">
-          <span class="tag">Fácil limpieza</span>
-          <span class="tag">Resistencia</span>
-          <span class="tag">Textura</span>
+    <section id="envios">
+      <div class="section-title">
+        <div>
+          <h2>Envíos y empaque</h2>
+          <p>Protección pensada para transporte urbano e interprovincial.</p>
         </div>
       </div>
-      <div class="card">
-        <h3>Espuma y estructura</h3>
-        <p>Comodidad y firmeza según preferencia. Ajustamos densidad y soporte.</p>
-        <div class="tags">
-          <span class="tag">Firme</span>
-          <span class="tag">Intermedio</span>
-          <span class="tag">Suave</span>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>Lima</h3>
+          <p>Coordinamos entrega dentro de Lima. Se agenda en ventana de horario.</p>
+          <div class="tags">
+            <span class="tag">Coordinación previa</span>
+            <span class="tag">Entrega segura</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Provincias</h3>
+          <p>Envíos interprovinciales por Shalom. Compartimos guía y seguimiento.</p>
+          <div class="tags">
+            <span class="tag">Shalom</span>
+            <span class="tag">Guía de envío</span>
+            <span class="tag">Embalaje reforzado</span>
+          </div>
         </div>
       </div>
-      <div class="card">
-        <h3>Detalles de acabado</h3>
-        <p>Costuras, patas, respaldos, brazos, cierres, módulos. Todo se define antes de producir.</p>
-        <div class="tags">
-          <span class="tag">Personalización</span>
-          <span class="tag">Garantía de diseño</span>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <div>
+          <h2>Opiniones</h2>
+          <p>Reemplaza por reseñas reales (nombre + ciudad/distrito).</p>
         </div>
       </div>
-    </div>
-  </section>
 
-  <section id="envios">
-    <div class="section-title">
-      <div>
-        <h2>Envíos y empaque</h2>
-        <p>Protección pensada para transporte urbano e interprovincial.</p>
-      </div>
-    </div>
-
-    <div class="grid-2">
-      <div class="card">
-        <h3>Lima</h3>
-        <p>Coordinamos entrega dentro de Lima (auto). Se agenda en ventana de horario.</p>
-        <div class="tags">
-          <span class="tag">Coordinación previa</span>
-          <span class="tag">Entrega segura</span>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Cliente – Lima</h3>
+          <p>“Quedó perfecto para el espacio y la tela es tal cual la elegí.”</p>
+          <p class="mini" style="margin-top:10px">— Nombre Apellido</p>
+        </div>
+        <div class="card">
+          <h3>Cliente – Arequipa</h3>
+          <p>“Llegó bien embalado. Muy buen acabado y firmeza.”</p>
+          <p class="mini" style="margin-top:10px">— Nombre Apellido</p>
+        </div>
+        <div class="card">
+          <h3>Cliente – Trujillo</h3>
+          <p>“Mandé foto de Pinterest y lo hicieron igualito.”</p>
+          <p class="mini" style="margin-top:10px">— Nombre Apellido</p>
         </div>
       </div>
-      <div class="card">
-        <h3>Provincias</h3>
-        <p>Envíos interprovinciales por Shalom. Te compartimos guía y seguimiento.</p>
-        <div class="tags">
-          <span class="tag">Shalom</span>
-          <span class="tag">Guía de envío</span>
-          <span class="tag">Embalaje reforzado</span>
+    </section>
+
+    <section id="faq" class="faq">
+      <div class="section-title">
+        <div>
+          <h2>Preguntas frecuentes</h2>
+          <p>Resuelve dudas antes de cotizar.</p>
         </div>
       </div>
-    </div>
-  </section>
 
-  <section>
-    <div class="section-title">
-      <div>
-        <h2>Opiniones</h2>
-        <p>Agrega reseñas reales (capturas, nombres, distrito/ciudad).</p>
+      <details>
+        <summary>¿Puedo pedir un modelo que vi en Pinterest?</summary>
+        <p>Sí. Envíanos la referencia (foto/link), medidas aproximadas y tipo de uso. Te proponemos ajustes si hace falta.</p>
+      </details>
+      <details>
+        <summary>¿Qué necesito para una cotización exacta?</summary>
+        <p>Referencia + medidas (ancho, alto, profundidad) + ciudad de entrega + tela (si ya la elegiste) o preferencia.</p>
+      </details>
+      <details>
+        <summary>¿Cómo es el empaque?</summary>
+        <p>Film protector ajustado a la forma + burbuja + cartón. Incluimos recibo/boleta impresa.</p>
+      </details>
+      <details>
+        <summary>¿Hacen envíos a provincias?</summary>
+        <p>Sí, por Shalom. Compartimos guía de envío y coordinamos el embalaje para transporte interprovincial.</p>
+      </details>
+    </section>
+
+    <section id="contacto">
+      <div class="section-title">
+        <div>
+          <h2>Contacto</h2>
+          <p>Envíanos tu idea y te respondemos con opciones y cotización.</p>
+        </div>
       </div>
-    </div>
 
-    <div class="grid-3">
-      <div class="card">
-        <h3>Cliente – Lima</h3>
-        <p>“Quedó perfecto para el espacio, y la tela es tal cual la elegí.”</p>
-        <p class="mini" style="margin-top:10px">— Nombre Apellido</p>
-      </div>
-      <div class="card">
-        <h3>Cliente – Arequipa</h3>
-        <p>“Llegó bien embalado. Muy buen acabado y firmeza.”</p>
-        <p class="mini" style="margin-top:10px">— Nombre Apellido</p>
-      </div>
-      <div class="card">
-        <h3>Cliente – Trujillo</h3>
-        <p>“Mandé foto de Pinterest y lo hicieron igualito.”</p>
-        <p class="mini" style="margin-top:10px">— Nombre Apellido</p>
-      </div>
-    </div>
-  </section>
+      <div class="contact">
+        <div class="card">
+          <h3>Formulario (genera mensaje a WhatsApp)</h3>
+          <p class="mini">Este formulario no necesita servidor: crea un mensaje listo para enviar.</p>
 
-  <section id="faq" class="faq">
-    <div class="section-title">
-      <div>
-        <h2>Preguntas frecuentes</h2>
-        <p>Resuelve dudas antes de cotizar para acelerar el proceso.</p>
-      </div>
-    </div>
-
-    <details>
-      <summary>¿Puedo pedir un modelo que vi en Pinterest?</summary>
-      <p>Sí. Envíanos la referencia (foto/link), medidas aproximadas y el tipo de uso. Te proponemos ajustes si hace falta.</p>
-    </details>
-    <details>
-      <summary>¿Qué necesito para una cotización exacta?</summary>
-      <p>Referencia + medidas (ancho, alto, profundidad) + ciudad de entrega + tela (si ya la tienes elegida) o preferencia.</p>
-    </details>
-    <details>
-      <summary>¿Cómo es el empaque?</summary>
-      <p>Film protector ajustado a la forma + burbuja + cartón. Incluimos recibo impreso.</p>
-    </details>
-    <details>
-      <summary>¿Hacen envíos a provincias?</summary>
-      <p>Sí, por Shalom. Compartimos guía de envío y coordinamos el embalaje para transporte interprovincial.</p>
-    </details>
-  </section>
-
-  <section id="contacto">
-    <div class="section-title">
-      <div>
-        <h2>Contacto</h2>
-        <p>Envíanos tu idea y te respondemos con opciones y cotización.</p>
-      </div>
-    </div>
-
-    <div class="contact">
-      <div class="card">
-        <h3>Formulario (genera tu mensaje a WhatsApp)</h3>
-        <p class="mini">Este formulario no “envía” a un servidor; crea un mensaje listo para WhatsApp.</p>
-
-        <form id="form">
-          <div class="form-row">
-            <div>
-              <label>Nombre</label>
-              <input id="nombre" placeholder="Tu nombre" />
+          <form id="form">
+            <div class="form-row">
+              <div>
+                <label>Nombre</label>
+                <input id="nombre" placeholder="Tu nombre" />
+              </div>
+              <div>
+                <label>Ciudad</label>
+                <input id="ciudad" placeholder="Lima / Arequipa / etc." />
+              </div>
             </div>
-            <div>
-              <label>Ciudad</label>
-              <input id="ciudad" placeholder="Lima / Arequipa / etc." />
+
+            <div class="form-row">
+              <div>
+                <label>Producto</label>
+                <input id="producto" placeholder="Puff / Sofá / Seccional / Otro" />
+              </div>
+              <div>
+                <label>Medidas</label>
+                <input id="medidas" placeholder="Ej: 180x80x90 cm" />
+              </div>
             </div>
+
+            <label>Referencia (link o descripción)</label>
+            <input id="referencia" placeholder="Link de Pinterest o descripción breve" />
+
+            <label>Mensaje</label>
+            <textarea id="mensaje" placeholder="Color/tela, firmeza (suave/intermedio/firme), y fecha aproximada."></textarea>
+
+            <div class="cta-row" style="margin-top:12px">
+              <button class="btn primary" type="submit">Enviar a WhatsApp</button>
+              <a class="btn secondary" id="btn-ig" href="#" rel="noopener">Instagram</a>
+              <a class="btn" id="btn-tt" href="#" rel="noopener">TikTok</a>
+            </div>
+          </form>
+        </div>
+
+        <div class="card">
+          <h3>Datos</h3>
+          <p><b>Horario:</b> Lunes a Sábado (ajústalo)</p>
+          <p><b>Zona:</b> Lima, Perú</p>
+          <p class="mini" style="margin-top:10px">
+            Consejo: agrega tu distrito/taller si deseas, o mantenlo general por seguridad.
+          </p>
+
+          <div class="tags" style="margin-top:12px">
+            <span class="tag">Hecho a medida</span>
+            <span class="tag">Telas a elección</span>
+            <span class="tag">Lima + provincias</span>
           </div>
 
-          <div class="form-row">
-            <div>
-              <label>Producto</label>
-              <input id="producto" placeholder="Puff / Sofá / Seccional / Otro" />
-            </div>
-            <div>
-              <label>Medidas</label>
-              <input id="medidas" placeholder="Ej: 180x80x90 cm" />
-            </div>
+          <div style="margin-top:14px">
+            <a class="btn primary" id="btn-wa-side" href="#" rel="noopener">Cotizar por WhatsApp</a>
+            <div class="mini" style="margin-top:8px">Configura tu número en el código (sin +, sin espacios).</div>
           </div>
-
-          <label>Referencia (link o descripción)</label>
-          <input id="referencia" placeholder="Link de Pinterest o descripción breve" />
-
-          <label>Mensaje</label>
-          <textarea id="mensaje" placeholder="Cuéntanos el color/tela, firmeza (suave/intermedio/firme), y fecha aproximada."></textarea>
-
-          <div class="cta-row" style="margin-top:12px">
-            <button class="btn primary" type="submit">Enviar a WhatsApp</button>
-            <a class="btn" id="btn-ig" href="#" rel="noopener">Instagram</a>
-            <a class="btn" id="btn-tt" href="#" rel="noopener">TikTok</a>
-          </div>
-        </form>
-      </div>
-
-      <div class="card">
-        <h3>Datos</h3>
-        <p><b>Horario:</b> Lunes a Sábado (ajústalo)</p>
-        <p><b>Zona:</b> Lima, Perú</p>
-        <p class="mini" style="margin-top:10px">
-          Consejo: agrega aquí tu distrito/taller si deseas, o mantenlo general por seguridad.
-        </p>
-        <div class="tags" style="margin-top:12px">
-          <span class="tag">Hecho a medida</span>
-          <span class="tag">Telas a elección</span>
-          <span class="tag">Lima + provincias</span>
-        </div>
-
-        <div style="margin-top:14px">
-          <a class="btn secondary" id="btn-wa-side" href="#" rel="noopener">Cotizar por WhatsApp</a>
-          <div class="mini" style="margin-top:8px">Reemplaza el número en el código (sin +, sin espacios).</div>
         </div>
       </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div>© <span id="year"></span> Acrati. Todos los derechos reservados.</div>
+      <div class="links">
+        <a href="#catalogo">Catálogo</a>
+        <a href="#amedida">A medida</a>
+        <a href="#contacto">Contacto</a>
+      </div>
     </div>
-  </section>
-</main>
+  </footer>
 
-<footer>
-  <div class="container footer-row">
-    <div>© <span id="year"></span> Acrati. Todos los derechos reservados.</div>
-    <div class="links">
-      <a href="#catalogo">Catálogo</a>
-      <a href="#amedida">A medida</a>
-      <a href="#contacto">Contacto</a>
-    </div>
-  </div>
-</footer>
+  <script>
+    // === CONFIGURA TUS DATOS AQUÍ ===
+    const WHATSAPP_NUMBER = "51999999999"; // Ej: 51987654321 (51 + número, sin +)
+    const INSTAGRAM_URL = "https://instagram.com/TU_USUARIO";
+    const TIKTOK_URL = "https://tiktok.com/@TU_USUARIO";
 
-<script>
-  // === CONFIGURA TUS DATOS AQUÍ ===
-  const WHATSAPP_NUMBER = "51999999999"; // EJ: 51987654321 (51 + número, sin +)
-  const INSTAGRAM_URL = "https://instagram.com/TU_USUARIO";
-  const TIKTOK_URL = "https://tiktok.com/@TU_USUARIO";
+    // Helper
+    const waLink = (text) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
 
-  // Helpers
-  const waLink = (text) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+    // Botones WhatsApp
+    const btnIds = ["btn-wa-top","btn-wa-hero","btn-wa-side","btn-wa-float"];
+    btnIds.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.href = waLink("Hola, quiero cotizar un puff/sofá a medida. ¿Me indicas precio, tiempo de entrega y costo de envío?");
+    });
 
-  // Botones principales
-  const btnsWA = ["btn-wa-top","btn-wa-hero","btn-wa-side"].map(id => document.getElementById(id));
-  btnsWA.forEach(b => b.href = waLink("Hola, quiero cotizar un puff/sofá a medida."));
+    // Redes
+    const ig = document.getElementById("btn-ig");
+    const tt = document.getElementById("btn-tt");
+    if (ig) ig.href = INSTAGRAM_URL;
+    if (tt) tt.href = TIKTOK_URL;
 
-  const ig = document.getElementById("btn-ig");
-  const tt = document.getElementById("btn-tt");
-  ig.href = INSTAGRAM_URL;
-  tt.href = TIKTOK_URL;
+    // Año
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-  // Año
-  document.getElementById("year").textContent = new Date().getFullYear();
+    // Formulario => abre WhatsApp con mensaje armado
+    document.getElementById("form").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const nombre = document.getElementById("nombre").value.trim();
+      const ciudad = document.getElementById("ciudad").value.trim();
+      const producto = document.getElementById("producto").value.trim();
+      const medidas = document.getElementById("medidas").value.trim();
+      const referencia = document.getElementById("referencia").value.trim();
+      const mensaje = document.getElementById("mensaje").value.trim();
 
-  // Formulario => genera mensaje y abre WhatsApp
-  document.getElementById("form").addEventListener("submit", (e) => {
-    e.preventDefault();
-    const nombre = document.getElementById("nombre").value.trim();
-    const ciudad = document.getElementById("ciudad").value.trim();
-    const producto = document.getElementById("producto").value.trim();
-    const medidas = document.getElementById("medidas").value.trim();
-    const referencia = document.getElementById("referencia").value.trim();
-    const mensaje = document.getElementById("mensaje").value.trim();
-
-    const text =
+      const text =
 `Hola, soy ${nombre || "___"}.
 Ciudad: ${ciudad || "___"}
 Producto: ${producto || "___"}
@@ -746,15 +801,18 @@ ${mensaje || "___"}
 
 ¿Me puedes indicar precio, tiempo de entrega y costo de envío?`;
 
-    window.open(waLink(text), "_blank", "noopener,noreferrer");
-  });
+      window.open(waLink(text), "_blank", "noopener,noreferrer");
+    });
 
-  // Menú móvil
-  const modal = document.getElementById("modal");
-  document.getElementById("btn-menu").addEventListener("click", () => modal.classList.add("open"));
-  document.getElementById("btn-close").addEventListener("click", () => modal.classList.remove("open"));
-  modal.addEventListener("click", (e) => { if(e.target === modal) modal.classList.remove("open"); });
-  document.querySelectorAll(".modal a.m").forEach(a => a.addEventListener("click", () => modal.classList.remove("open")));
-</script>
+    // Menú móvil
+    const modal = document.getElementById("modal");
+    const openBtn = document.getElementById("btn-menu");
+    const closeBtn = document.getElementById("btn-close");
+
+    if (openBtn) openBtn.addEventListener("click", () => modal.classList.add("open"));
+    if (closeBtn) closeBtn.addEventListener("click", () => modal.classList.remove("open"));
+    modal.addEventListener("click", (e) => { if (e.target === modal) modal.classList.remove("open"); });
+    document.querySelectorAll(".modal a.m").forEach(a => a.addEventListener("click", () => modal.classList.remove("open")));
+  </script>
 </body>
 </html>
