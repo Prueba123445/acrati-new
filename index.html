@@ -7,32 +7,17 @@
   <meta name="description" content="Fabricamos puffs, sofás y muebles a medida. Elige tela, medidas y diseño (incluso de Pinterest). Entregas en Lima y envíos a provincias por Shalom." />
   <meta name="theme-color" content="#f7f3ee" />
 
-  <!-- Open Graph -->
+  <!-- Open Graph (ajusta el og:image si deseas) -->
   <meta property="og:title" content="Acrati | Puffs y Sofás a Medida" />
   <meta property="og:description" content="Muebles a medida: puffs, sofás y lo que pida el cliente. Envíos Lima y provincias." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Acrati+Puffs+y+Sofas" />
+  <!-- Si quieres que al compartir salga tu imagen real, pon la URL absoluta de tu hero.png -->
+  <meta property="og:image" content="https://prueba123445.github.io/acrati-new/hero.png" />
 
   <!-- Tipografías -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-
-  <!-- SEO local (simple) -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"LocalBusiness",
-    "name":"Acrati",
-    "description":"Fabricación de puffs y sofás a medida.",
-    "areaServed":"PE",
-    "address":{"@type":"PostalAddress","addressLocality":"Lima","addressCountry":"PE"},
-    "sameAs":[
-      "https://instagram.com/TU_USUARIO",
-      "https://tiktok.com/@TU_USUARIO"
-    ]
-  }
-  </script>
 
   <style>
     :root{
@@ -44,8 +29,8 @@
       --muted:#6f6a62;
       --border:#e6e0d7;
 
-      --accent:#2f6b4f;   /* verde oliva elegante */
-      --accent2:#8a6a3f;  /* dorado/caramelo sobrio */
+      --accent:#2f6b4f;   /* verde oliva elegante (CTA principal) */
+      --accent2:#8a6a3f;  /* dorado/caramelo sobrio (CTA secundario) */
 
       --shadow: 0 18px 45px rgba(17,24,39,.10);
       --shadow2: 0 10px 25px rgba(17,24,39,.08);
@@ -58,6 +43,7 @@
 
     *{box-sizing:border-box}
     html,body{height:100%}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
       font-family:var(--font-body);
@@ -75,7 +61,7 @@
     header{
       position:sticky; top:0; z-index:50;
       backdrop-filter: blur(10px);
-      background: rgba(247,243,238,.80);
+      background: rgba(247,243,238,.82);
       border-bottom:1px solid rgba(230,224,215,.92);
     }
     .nav{
@@ -83,28 +69,28 @@
       padding:12px 0;
       gap:12px;
     }
-    .brand{display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.2px}
+    .brand{display:flex; align-items:center; gap:12px}
     .logo{
-      width:38px; height:38px; border-radius:14px;
-      background: radial-gradient(circle at 30% 30%, rgba(47,107,79,.95), rgba(47,107,79,.75));
+      width:40px; height:40px; border-radius:14px;
+      background: radial-gradient(circle at 30% 30%, rgba(47,107,79,.95), rgba(47,107,79,.70));
       box-shadow:0 10px 25px rgba(17,24,39,.10);
       border:1px solid rgba(47,107,79,.20);
       flex:0 0 auto;
     }
     .wordmark{
       font-family: var(--font-display);
-      font-size: 24px;
+      font-size: 26px;
       letter-spacing: .2px;
       line-height:1;
     }
     nav ul{list-style:none; display:flex; gap:14px; margin:0; padding:0; align-items:center}
-    nav a{color:var(--muted); font-weight:700; font-size:14px}
+    nav a{color:var(--muted); font-weight:800; font-size:14px}
     nav a:hover{color:var(--text)}
     .menu-btn{display:none}
-    @media (max-width: 880px){
+    @media (max-width: 920px){
       nav ul{display:none}
       .menu-btn{display:inline-flex}
-      .wordmark{font-size:22px}
+      .wordmark{font-size:24px}
     }
 
     /* UI */
@@ -113,7 +99,7 @@
       padding:8px 12px;
       border:1px solid var(--border);
       border-radius:999px;
-      background: rgba(255,255,255,.82);
+      background: rgba(255,255,255,.84);
       color:var(--muted);
       font-size:13px;
     }
@@ -122,10 +108,10 @@
       padding:12px 16px;
       border-radius:14px;
       border:1px solid var(--border);
-      background: rgba(255,255,255,.86);
+      background: rgba(255,255,255,.90);
       cursor:pointer;
       transition:.18s ease;
-      font-weight:800;
+      font-weight:900;
       user-select:none;
       color:var(--text);
       box-shadow: 0 8px 18px rgba(17,24,39,.06);
@@ -143,12 +129,17 @@
       color:#1a1206;
     }
     .btn.ghost{background:transparent; box-shadow:none}
-
+    .btn.small{padding:10px 12px; border-radius:12px; font-size:13px}
     .ico{display:inline-flex; align-items:center; justify-content:center}
 
     /* Hero */
     .hero{padding:48px 0 22px}
-    .hero-grid{display:grid; grid-template-columns: 1.10fr .90fr; gap:22px; align-items:stretch}
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.10fr .90fr;
+      gap:22px;
+      align-items:stretch
+    }
     @media (max-width: 980px){ .hero-grid{grid-template-columns:1fr} }
 
     .h1{
@@ -164,21 +155,24 @@
 
     .hero-card{
       border:1px solid var(--border);
-      background: rgba(255,255,255,.90);
+      background: rgba(255,255,255,.92);
       border-radius: var(--radius);
       padding:18px;
       box-shadow: var(--shadow);
       overflow:hidden;
     }
-    .hero-card .img{
-      height:280px;
-      border-radius:16px;
+    .hero-media{
       border:1px solid var(--border);
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.18), rgba(0,0,0,.10)),
-        url("hero.png");
-      background-size:cover;
-      background-position:center;
+      border-radius:16px;
+      overflow:hidden;
+      background: rgba(255,255,255,.75);
+    }
+    .hero-img{
+      width:100%;
+      height: 290px;
+      display:block;
+      object-fit:cover;
+      object-position:center;
     }
 
     .mini{font-size:12.5px; color:var(--muted)}
@@ -186,15 +180,41 @@
     .tag{
       font-size:12px; color:var(--muted);
       border:1px solid var(--border);
-      background: rgba(255,255,255,.82);
+      background: rgba(255,255,255,.84);
       padding:6px 10px;
       border-radius:999px;
+      font-weight:800;
     }
 
+    /* Trust bar (comercial, rápido de leer) */
+    .trust{
+      margin-top:14px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.86);
+      border-radius: 16px;
+      padding:12px;
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:10px;
+      box-shadow: 0 10px 22px rgba(17,24,39,.05);
+    }
+    @media (max-width: 980px){ .trust{grid-template-columns:1fr 1fr} }
+    @media (max-width: 520px){ .trust{grid-template-columns:1fr} }
+    .trust .item{
+      display:flex; gap:10px; align-items:flex-start;
+      padding:10px;
+      border:1px solid rgba(230,224,215,.9);
+      border-radius:14px;
+      background: rgba(255,255,255,.92);
+    }
+    .trust .item b{display:block; font-size:13px}
+    .trust .item span{display:block; font-size:12.5px; color:var(--muted)}
+
     .stats{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:14px}
+    @media (max-width: 900px){ .stats{grid-template-columns:1fr} }
     .stat{
       border:1px solid var(--border);
-      background: rgba(255,255,255,.90);
+      background: rgba(255,255,255,.92);
       border-radius:16px;
       padding:12px;
       box-shadow: 0 10px 22px rgba(17,24,39,.05);
@@ -217,7 +237,7 @@
 
     .card{
       border:1px solid var(--border);
-      background: rgba(255,255,255,.92);
+      background: rgba(255,255,255,.94);
       border-radius: var(--radius);
       padding:16px;
       box-shadow: 0 12px 28px rgba(17,24,39,.06);
@@ -225,32 +245,36 @@
     .card h3{margin:0 0 6px; font-size:16px}
     .card p{margin:0; color:var(--muted); font-size:14px}
 
-    /* Catalog (más comercial + menos "cuadrado") */
+    /* Catalog (menos “cuadrado” y más premium) */
     .catalog{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
     @media (max-width: 980px){ .catalog{grid-template-columns:1fr} }
 
     .product{
       padding:0;
       border:1px solid var(--border);
-      background: rgba(255,255,255,.94);
+      background: rgba(255,255,255,.96);
       border-radius: var(--radius);
       box-shadow: 0 12px 28px rgba(17,24,39,.06);
       overflow:hidden;
       transition: transform .18s ease, box-shadow .18s ease;
     }
-    .product:hover{
-      transform: translateY(-2px);
-      box-shadow: 0 18px 45px rgba(17,24,39,.10);
-    }
-    .product .ph{
-      aspect-ratio: 4 / 3;
+    .product:hover{transform: translateY(-2px); box-shadow: 0 18px 45px rgba(17,24,39,.10)}
+    .product-media{
       width:100%;
-      background-size:cover;
-      background-position:center;
+      aspect-ratio: 4 / 3;
+      background: rgba(255,255,255,.75);
       border-bottom:1px solid var(--border);
+      overflow:hidden;
+    }
+    .product-img{
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit:cover;
+      object-position:center;
       transition: transform .25s ease;
     }
-    .product:hover .ph{transform: scale(1.03)}
+    .product:hover .product-img{transform: scale(1.03)}
     .product .body{padding:14px 16px}
 
     .price{display:flex; justify-content:space-between; align-items:center; gap:10px; margin-top:10px; color:var(--muted); font-size:13px}
@@ -260,22 +284,12 @@
       padding:6px 10px;
       border-radius:999px;
       border:1px solid var(--border);
-      background: rgba(255,255,255,.90);
+      background: rgba(255,255,255,.92);
       font-size:12px;
       color:var(--muted);
-      font-weight:800;
-    }
-    .product .cta{
-      display:flex;
-      gap:10px;
-      margin-top:12px;
-    }
-    .btn.small{
-      padding:10px 12px;
-      border-radius:12px;
-      font-size:13px;
       font-weight:900;
     }
+    .product .cta{display:flex; gap:10px; margin-top:12px; flex-wrap:wrap}
 
     /* Steps */
     .steps{counter-reset: step; display:grid; grid-template-columns:repeat(4,1fr); gap:14px}
@@ -289,7 +303,7 @@
       border-radius:12px;
       display:flex; align-items:center; justify-content:center;
       border:1px solid var(--border);
-      background: rgba(255,255,255,.86);
+      background: rgba(255,255,255,.90);
       color:var(--muted);
       font-weight:900;
     }
@@ -298,7 +312,7 @@
     .faq details{
       border:1px solid var(--border);
       border-radius:16px;
-      background: rgba(255,255,255,.92);
+      background: rgba(255,255,255,.94);
       padding:12px 14px;
       box-shadow: 0 10px 22px rgba(17,24,39,.05);
     }
@@ -310,13 +324,13 @@
     .contact{display:grid; grid-template-columns:1.1fr .9fr; gap:14px; align-items:stretch}
     @media (max-width: 980px){ .contact{grid-template-columns:1fr} }
 
-    label{display:block; font-size:13px; color:var(--muted); margin:10px 0 6px}
+    label{display:block; font-size:13px; color:var(--muted); margin:10px 0 6px; font-weight:800}
     input, textarea{
       width:100%;
       padding:12px 12px;
       border-radius:14px;
       border:1px solid var(--border);
-      background: rgba(255,255,255,.94);
+      background: rgba(255,255,255,.96);
       color:var(--text);
       outline:none;
     }
@@ -333,7 +347,7 @@
     }
     .footer-row{display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap}
     .links{display:flex; gap:12px; flex-wrap:wrap}
-    .links a{color:var(--muted)}
+    .links a{color:var(--muted); font-weight:800}
     .links a:hover{color:var(--text)}
 
     /* Modal móvil */
@@ -382,39 +396,6 @@
       gap:10px;
     }
     .wa-float:hover{transform:translateY(-1px); box-shadow: 0 18px 40px rgba(17,24,39,.18)}
-
-    /* Barra de confianza (mejora comercial) */
-    .trust{
-      margin-top:14px;
-      border:1px solid var(--border);
-      background: rgba(255,255,255,.86);
-      border-radius: 16px;
-      padding:12px;
-      display:grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap:10px;
-      box-shadow: 0 10px 22px rgba(17,24,39,.05);
-    }
-    @media (max-width: 980px){
-      .trust{grid-template-columns:1fr 1fr}
-    }
-    @media (max-width: 520px){
-      .trust{grid-template-columns:1fr}
-    }
-    .trust .item{
-      display:flex;
-      gap:10px;
-      align-items:flex-start;
-      padding:10px;
-      border:1px solid rgba(230,224,215,.9);
-      border-radius:14px;
-      background: rgba(255,255,255,.90);
-    }
-    .trust .item b{display:block; font-size:13px}
-    .trust .item span{display:block; font-size:12.5px; color:var(--muted)}
-
-    /* Ancla suave */
-    html{scroll-behavior:smooth}
   </style>
 </head>
 
@@ -429,8 +410,9 @@
       <nav aria-label="Navegación principal">
         <ul>
           <li><a href="#catalogo">Catálogo</a></li>
+          <li><a href="#packs">Packs</a></li>
+          <li><a href="#retapizado">Retapizado</a></li>
           <li><a href="#amedida">A medida</a></li>
-          <li><a href="#telas">Telas</a></li>
           <li><a href="#envios">Envíos</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#contacto">Contacto</a></li>
@@ -440,7 +422,6 @@
       <div style="display:flex; gap:10px; align-items:center">
         <a class="btn primary" id="btn-wa-top" href="#" rel="noopener">
           <span class="ico" aria-hidden="true">
-            <!-- WhatsApp icon -->
             <svg viewBox="0 0 32 32" width="18" height="18" fill="currentColor">
               <path d="M19.11 17.46c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.16-.43-2.2-1.36-.81-.72-1.35-1.6-1.51-1.87-.16-.27-.02-.42.12-.56.13-.13.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.52-.44-.45-.61-.46l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.64 1.12 2.82c.14.18 1.93 2.95 4.68 4.13.66.29 1.18.46 1.58.59.66.21 1.26.18 1.73.11.53-.08 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32z"/>
               <path d="M16.02 3C9.39 3 4 8.37 4 14.98c0 2.34.69 4.61 2 6.56L5 29l7.64-1.99c1.9 1.04 4.05 1.58 6.25 1.58C25.61 28.59 31 23.22 31 16.61 31 10 25.61 3 16.02 3zm0 23.2c-2.02 0-3.99-.56-5.7-1.62l-.41-.25-4.53 1.18 1.2-4.41-.27-.45a9.61 9.61 0 0 1-1.48-5.17c0-5.31 4.35-9.64 9.69-9.64 5.34 0 9.69 4.33 9.69 9.64 0 5.31-4.35 9.72-9.69 9.72z"/>
@@ -460,8 +441,9 @@
         <button class="btn ghost" id="btn-close">Cerrar</button>
       </div>
       <a href="#catalogo" class="m">Catálogo</a>
+      <a href="#packs" class="m">Packs</a>
+      <a href="#retapizado" class="m">Retapizado</a>
       <a href="#amedida" class="m">A medida</a>
-      <a href="#telas" class="m">Telas</a>
       <a href="#envios" class="m">Envíos</a>
       <a href="#faq" class="m">FAQ</a>
       <a href="#contacto" class="m">Contacto</a>
@@ -500,11 +482,10 @@
               Cotizar por WhatsApp
             </a>
             <a class="btn secondary" href="#catalogo">Ver modelos</a>
-            <a class="btn" href="#contacto">Enviar mi idea</a>
+            <a class="btn" href="#packs">Ver packs</a>
           </div>
           <div class="note">Cotización rápida con medidas, tela y envío. Atención personalizada.</div>
 
-          <!-- Mejora comercial: barra de confianza -->
           <div class="trust">
             <div class="item">
               <span class="ico" aria-hidden="true">
@@ -512,10 +493,7 @@
                   <path d="M12 2l7 4v6c0 5-3 9-7 10C8 21 5 17 5 12V6l7-4zm0 2.3L7 6.8V12c0 3.9 2.3 7.1 5 8 2.7-.9 5-4.1 5-8V6.8l-5-2.5z"/>
                 </svg>
               </span>
-              <div>
-                <b>Hecho a medida</b>
-                <span>Medidas, tela y confort</span>
-              </div>
+              <div><b>Hecho a medida</b><span>Medidas, tela y confort</span></div>
             </div>
             <div class="item">
               <span class="ico" aria-hidden="true">
@@ -523,10 +501,7 @@
                   <path d="M3 7h11v10H3V7zm13 3h3l2 3v4h-5v-7zM6 19a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm12 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/>
                 </svg>
               </span>
-              <div>
-                <b>Envíos</b>
-                <span>Lima y provincias</span>
-              </div>
+              <div><b>Envíos</b><span>Lima y provincias</span></div>
             </div>
             <div class="item">
               <span class="ico" aria-hidden="true">
@@ -534,10 +509,7 @@
                   <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 11h4v-2h-3V6h-2v5H7v2h6z"/>
                 </svg>
               </span>
-              <div>
-                <b>Tiempo estimado</b>
-                <span>Coordinación por pedido</span>
-              </div>
+              <div><b>Coordinación clara</b><span>Proceso y tiempos por pedido</span></div>
             </div>
             <div class="item">
               <span class="ico" aria-hidden="true">
@@ -545,31 +517,22 @@
                   <path d="M12 1l3 6 6 .9-4.5 4.4 1.1 6.2L12 15.9 6.4 18.5l1.1-6.2L3 7.9 9 7l3-6z"/>
                 </svg>
               </span>
-              <div>
-                <b>Acabado premium</b>
-                <span>Detalles y durabilidad</span>
-              </div>
+              <div><b>Soporte post-venta</b><span>Mantenimiento y retapizado</span></div>
             </div>
           </div>
 
           <div class="stats">
-            <div class="stat">
-              <b>Diseños por referencia</b>
-              <span>Pinterest / foto / idea</span>
-            </div>
-            <div class="stat">
-              <b>Embalaje seguro</b>
-              <span>Film + burbuja + cartón</span>
-            </div>
-            <div class="stat">
-              <b>Asesoría</b>
-              <span>Te guiamos con telas y medidas</span>
-            </div>
+            <div class="stat"><b>Diseños por referencia</b><span>Pinterest / foto / idea</span></div>
+            <div class="stat"><b>Embalaje seguro</b><span>Film + burbuja + cartón</span></div>
+            <div class="stat"><b>Asesoría</b><span>Te guiamos con telas y medidas</span></div>
           </div>
         </div>
 
         <div class="hero-card">
-          <div class="img" aria-label="Foto principal (cambia la ruta a tu imagen)"></div>
+          <div class="hero-media">
+            <!-- IMPORTANTE: estas imágenes deben estar en la MISMA carpeta que index.html -->
+            <img class="hero-img" src="hero.png" alt="Acrati - Foto principal de producto" onerror="this.style.display='none'; this.parentElement.style.padding='18px'; this.parentElement.innerHTML='<b>Imagen no encontrada</b><div class=&quot;mini&quot; style=&quot;margin-top:6px&quot;>Verifica que <code>hero.png</code> esté en el repo junto a <code>index.html</code>.</div>';">
+          </div>
           <div style="margin-top:12px">
             <b style="display:block; font-size:16px">Entrega y empaque</b>
             <div class="mini">Protección: film + burbuja + cartón. Incluye recibo/boleta impresa.</div>
@@ -580,6 +543,7 @@
             </div>
           </div>
         </div>
+
       </div>
     </section>
 
@@ -594,7 +558,9 @@
 
       <div class="catalog">
         <article class="product">
-          <div class="ph" style='background-image:url("prod-01.png")'></div>
+          <div class="product-media">
+            <img class="product-img" src="prod-01.png" alt="Puff - modelo referencial" onerror="this.style.display='none'; this.parentElement.style.padding='16px'; this.parentElement.innerHTML='<b>Imagen no encontrada</b><div class=&quot;mini&quot; style=&quot;margin-top:6px&quot;>Verifica <code>prod-01.png</code> en el repo.</div>';">
+          </div>
           <div class="body">
             <div style="display:flex; justify-content:space-between; align-items:center; gap:10px">
               <h3 style="margin:0">Puff Clásico</h3>
@@ -610,7 +576,9 @@
         </article>
 
         <article class="product">
-          <div class="ph" style='background-image:url("prod-02.png")'></div>
+          <div class="product-media">
+            <img class="product-img" src="prod-02.png" alt="Sofá - modelo referencial" onerror="this.style.display='none'; this.parentElement.style.padding='16px'; this.parentElement.innerHTML='<b>Imagen no encontrada</b><div class=&quot;mini&quot; style=&quot;margin-top:6px&quot;>Verifica <code>prod-02.png</code> en el repo.</div>';">
+          </div>
           <div class="body">
             <div style="display:flex; justify-content:space-between; align-items:center; gap:10px">
               <h3 style="margin:0">Sofá 2–3 cuerpos</h3>
@@ -624,12 +592,136 @@
             </div>
           </div>
         </article>
+
+        <article class="product">
+          <div class="product-media" style="display:flex; align-items:center; justify-content:center; padding:16px">
+            <div>
+              <b>Mueble a pedido</b>
+              <div class="mini" style="margin-top:6px">Envíanos foto o link (Pinterest) y lo hacemos a medida.</div>
+            </div>
+          </div>
+          <div class="body">
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:10px">
+              <h3 style="margin:0">Modelo por referencia</h3>
+              <span class="chip">Pinterest</span>
+            </div>
+            <p>Adaptamos medidas, tela y comodidad según tu espacio.</p>
+            <div class="price"><span class="mini">Desde</span><b>Consultar</b></div>
+            <div class="cta">
+              <a class="btn small primary" id="btn-wa-pinterest" href="#">Cotizar</a>
+              <a class="btn small" href="#contacto">Enviar idea</a>
+            </div>
+          </div>
+        </article>
       </div>
 
       <p class="mini" style="margin-top:10px">
-        Importante: sube tus imágenes a la carpeta <b>images/</b> y actualiza los nombres arriba:
-        <code>images/hero.png</code>, <code>images/prod-01.png</code>, <code>images/prod-02.png</code>, <code>images/prod-03.png</code>.
+        Si tus archivos están como en tu repo: <b>hero.png</b>, <b>prod-01.png</b>, <b>prod-02.png</b> (junto a <b>index.html</b>), deberían mostrarse.
       </p>
+    </section>
+
+    <section id="packs">
+      <div class="section-title">
+        <div>
+          <h2>Packs para negocios</h2>
+          <p>Venta por conjunto para cafeterías, lobbies, Airbnbs y oficinas.</p>
+        </div>
+        <a class="btn secondary" id="btn-wa-packs" href="#">Cotizar un pack</a>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>Pack Cafetería</h3>
+          <p>Asientos resistentes, fácil limpieza y look uniforme.</p>
+          <div class="tags">
+            <span class="tag">Alta rotación</span>
+            <span class="tag">Fácil mantenimiento</span>
+            <span class="tag">Entrega coordinada</span>
+          </div>
+          <div style="margin-top:12px">
+            <a class="btn small primary wa-pack" href="#" data-pack="Pack Cafetería">Cotizar Pack</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Pack Lobby / Recepción</h3>
+          <p>Conjunto elegante: sofá + butacas + puffs auxiliares.</p>
+          <div class="tags">
+            <span class="tag">Imagen premium</span>
+            <span class="tag">Confort</span>
+            <span class="tag">Diseño a medida</span>
+          </div>
+          <div style="margin-top:12px">
+            <a class="btn small primary wa-pack" href="#" data-pack="Pack Lobby / Recepción">Cotizar Pack</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Pack Airbnb / Depa</h3>
+          <p>Optimizado para espacio: seccional/sofá + puff + banqueta.</p>
+          <div class="tags">
+            <span class="tag">Compacto</span>
+            <span class="tag">Durable</span>
+            <span class="tag">Fácil limpieza</span>
+          </div>
+          <div style="margin-top:12px">
+            <a class="btn small primary wa-pack" href="#" data-pack="Pack Airbnb / Depa">Cotizar Pack</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="mini" style="margin-top:10px">
+        Recomendación comercial: en packs, ustedes cotizan por WhatsApp y proponen 2–3 niveles (Básico / Estándar / Premium).
+      </p>
+    </section>
+
+    <section id="retapizado">
+      <div class="section-title">
+        <div>
+          <h2>Retapizado y mantenimiento</h2>
+          <p>Servicio post-venta y renovación de muebles (taller aliado).</p>
+        </div>
+        <a class="btn" id="btn-wa-retapizado" href="#">Solicitar retapizado</a>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>¿Qué incluye?</h3>
+          <p>
+            Renovación de tapiz, ajustes menores, refuerzo de costuras y revisión general según evaluación.
+            Ideal para clientes que quieren prolongar la vida útil de su sofá o renovar el estilo.
+          </p>
+          <div class="tags">
+            <span class="tag">Retapizado</span>
+            <span class="tag">Ajustes</span>
+            <span class="tag">Refuerzo</span>
+          </div>
+          <p class="mini" style="margin-top:10px">
+            Recomendación operativa: para cuidar a tu papá, lo mejor es que el cliente escriba a Acrati y ustedes coordinen con el taller.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Garantía / soporte</h3>
+          <p>
+            Puedes ofrecer una garantía simple (ajústala a tu realidad):
+            <b>“Garantía por ajustes menores y costuras por X días”</b> y opción de mantenimiento programado.
+          </p>
+          <div class="tags">
+            <span class="tag">Post-venta</span>
+            <span class="tag">Confianza</span>
+            <span class="tag">Mantenimiento</span>
+          </div>
+
+          <details style="margin-top:12px" class="faq">
+            <summary>¿Poner el número del taller?</summary>
+            <p>
+              Comercialmente conviene que el contacto sea uno solo (Acrati) para que ustedes controlen agenda,
+              precios y seguimiento. Si quieres, puedes mostrar el taller como “aliado”, pero mantener la coordinación en ustedes.
+            </p>
+          </details>
+        </div>
+      </div>
     </section>
 
     <section id="amedida">
@@ -656,44 +748,6 @@
         <div class="card step">
           <h3>Entrega</h3>
           <p>Empaque protector y envío: Lima (coordinado) o provincias por Shalom.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="telas">
-      <div class="section-title">
-        <div>
-          <h2>Telas y confort</h2>
-          <p>Elegancia + durabilidad: te ayudamos a elegir según uso y limpieza.</p>
-        </div>
-      </div>
-
-      <div class="grid-3">
-        <div class="card">
-          <h3>Recomendación por uso</h3>
-          <p>Niños/mascotas: telas resistentes y fáciles de limpiar. Decorativo: texturas premium.</p>
-          <div class="tags">
-            <span class="tag">Fácil limpieza</span>
-            <span class="tag">Resistencia</span>
-            <span class="tag">Textura</span>
-          </div>
-        </div>
-        <div class="card">
-          <h3>Espuma y soporte</h3>
-          <p>Definimos firmeza (suave/intermedio/firme) y soporte según preferencia.</p>
-          <div class="tags">
-            <span class="tag">Firme</span>
-            <span class="tag">Intermedio</span>
-            <span class="tag">Suave</span>
-          </div>
-        </div>
-        <div class="card">
-          <h3>Acabados</h3>
-          <p>Costuras, respaldos, brazos, módulos y detalles. Todo se define antes de producir.</p>
-          <div class="tags">
-            <span class="tag">Personalización</span>
-            <span class="tag">Acabado premium</span>
-          </div>
         </div>
       </div>
     </section>
@@ -744,12 +798,8 @@
         <p>Referencia + medidas (ancho, alto, profundidad) + ciudad de entrega + tela (si ya la elegiste) o preferencia.</p>
       </details>
       <details>
-        <summary>¿Cómo es el empaque?</summary>
-        <p>Film protector ajustado a la forma + burbuja + cartón. Incluimos recibo/boleta impresa.</p>
-      </details>
-      <details>
-        <summary>¿Hacen envíos a provincias?</summary>
-        <p>Sí, por Shalom. Compartimos guía de envío y coordinamos el embalaje para transporte interprovincial.</p>
+        <summary>¿Hacen retapizado?</summary>
+        <p>Sí. Lo coordinamos con nuestro taller aliado. Envíanos fotos del mueble, medidas y ciudad.</p>
       </details>
     </section>
 
@@ -781,7 +831,7 @@
             <div class="form-row">
               <div>
                 <label>Producto</label>
-                <input id="producto" placeholder="Puff / Sofá / Seccional / Otro" />
+                <input id="producto" placeholder="Puff / Sofá / Seccional / Retapizado / Pack" />
               </div>
               <div>
                 <label>Medidas</label>
@@ -834,13 +884,13 @@
           <p><b>Horario:</b> Lunes a Sábado (ajústalo)</p>
           <p><b>Zona:</b> Lima, Perú</p>
           <p class="mini" style="margin-top:10px">
-            Consejo: agrega tu distrito/taller si deseas, o mantenlo general por seguridad.
+            Sugerencia: manejen un solo WhatsApp (Acrati) y desde ahí coordinan con el taller de tapicería.
           </p>
 
           <div class="tags" style="margin-top:12px">
             <span class="tag">Hecho a medida</span>
-            <span class="tag">Telas a elección</span>
-            <span class="tag">Lima + provincias</span>
+            <span class="tag">Post-venta</span>
+            <span class="tag">Packs</span>
           </div>
 
           <div style="margin-top:14px">
@@ -865,35 +915,56 @@
       <div>© <span id="year"></span> Acrati. Todos los derechos reservados.</div>
       <div class="links">
         <a href="#catalogo">Catálogo</a>
-        <a href="#amedida">A medida</a>
+        <a href="#packs">Packs</a>
+        <a href="#retapizado">Retapizado</a>
         <a href="#contacto">Contacto</a>
       </div>
     </div>
   </footer>
 
   <script>
-    // === CONFIGURA TUS DATOS AQUÍ ===
+    // =========================
+    // CONFIGURA TUS DATOS AQUÍ
+    // =========================
     const WHATSAPP_NUMBER = "51999999999"; // Ej: 51987654321 (51 + número, sin +)
-    const INSTAGRAM_URL = "https://instagram.com/TU_USUARIO";
-    const TIKTOK_URL = "https://tiktok.com/@TU_USUARIO";
+    const INSTAGRAM_URL   = "https://instagram.com/TU_USUARIO";
+    const TIKTOK_URL      = "https://tiktok.com/@TU_USUARIO";
 
     // Helper
     const waLink = (text) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
 
     // Botones WhatsApp generales
-    const btnIds = ["btn-wa-top","btn-wa-hero","btn-wa-side","btn-wa-float"];
-    btnIds.forEach(id => {
+    ["btn-wa-top","btn-wa-hero","btn-wa-side","btn-wa-float"].forEach(id => {
       const el = document.getElementById(id);
       if (el) el.href = waLink("Hola, quiero cotizar un puff/sofá a medida. ¿Me indicas precio, tiempo de entrega y costo de envío?");
     });
 
-    // Botones WhatsApp por producto (mejora comercial)
+    // Botón especial: modelo por referencia (Pinterest)
+    const waPinterest = document.getElementById("btn-wa-pinterest");
+    if (waPinterest) waPinterest.href = waLink("Hola, quiero cotizar un modelo por referencia (foto/Pinterest). Te envío la imagen y medidas. ¿Me indicas precio, tiempo y envío?");
+
+    // Packs
+    const waPacks = document.getElementById("btn-wa-packs");
+    if (waPacks) waPacks.href = waLink("Hola, quiero cotizar un PACK para negocio (cafetería/lobby/Airbnb). ¿Me propones opciones básico/estándar/premium con tiempos y envío?");
+
+    document.querySelectorAll(".wa-pack").forEach(a => {
+      const pack = a.getAttribute("data-pack") || "Pack";
+      a.href = waLink(`Hola, quiero cotizar: ${pack}. ¿Me propones opciones (básico/estándar/premium) con tiempos y envío?`);
+      a.target = "_blank";
+      a.rel = "noopener";
+    });
+
+    // WhatsApp por producto
     document.querySelectorAll(".wa-product").forEach(a => {
       const p = a.getAttribute("data-product") || "un mueble a medida";
       a.href = waLink(`Hola, quiero cotizar: ${p}. ¿Me indicas precio, tiempos y costo de envío?`);
       a.target = "_blank";
       a.rel = "noopener";
     });
+
+    // Retapizado
+    const waRet = document.getElementById("btn-wa-retapizado");
+    if (waRet) waRet.href = waLink("Hola, quiero cotizar retapizado/mantenimiento. Te envío fotos del mueble, medidas y ciudad. ¿Me indicas costo y tiempos?");
 
     // Redes
     const ig = document.getElementById("btn-ig");
@@ -917,7 +988,7 @@
       const text =
 `Hola, soy ${nombre || "___"}.
 Ciudad: ${ciudad || "___"}
-Producto: ${producto || "___"}
+Producto/Servicio: ${producto || "___"}
 Medidas: ${medidas || "___"}
 Referencia: ${referencia || "___"}
 
