@@ -726,29 +726,30 @@
       <div class="catalog" id="catalogGrid">
 
         <!-- ===== PRODUCTO CON PRECIO (catálogo) ===== -->
-        <article class="product" data-category="puffs" data-name="Puff Clásico" data-price="299" data-img="prod-01.png">
-          <div class="product-media">
-            <img class="product-img" src="prod-01.png" alt="Puff Clásico"
-              onerror="this.style.display='none'; this.parentElement.style.padding='16px'; this.parentElement.innerHTML='<b>Imagen no encontrada</b><div class=&quot;mini&quot; style=&quot;margin-top:6px&quot;>Verifica <code>prod-01.png</code> en el repo.</div>';">
-          </div>
-          <div class="body">
-            <div class="row-between">
-              <h3>Puff Clásico</h3>
-              <span class="badge">Más vendido</span>
-            </div>
-            <p>Compacto, cómodo y personalizable en tela/tono.</p>
+        <article class="product" data-category="puffs" data-name="Rosseta" data-price="430" data-img="prod-01.png">
+  <div class="product-media">
+    <img class="product-img" src="rosseta.png" alt="Rosseta"
+      onerror="this.style.display='none'; this.parentElement.style.padding='16px'; this.parentElement.innerHTML='<b>Imagen no encontrada</b><div class=&quot;mini&quot; style=&quot;margin-top:6px&quot;>Verifica <code>rosseta.png</code> en el repo.</div>';">
+  </div>
+  <div class="body">
+    <div class="row-between">
+      <h3>Rosseta</h3>
+      <span class="badge">Catálogo</span>
+    </div>
+    <p>Puff moderno, cómodo y elegante. Tela y tono personalizables.</p>
 
-            <div class="pricebox">
-              <div class="price"><small>Precio</small>S/ 299</div>
-              <button class="btn small primary buy-btn" type="button">Comprar</button>
-            </div>
+    <div class="pricebox">
+      <div class="price"><small>Precio</small>S/ 430</div>
+      <button class="btn small primary buy-btn" type="button">Comprar</button>
+    </div>
 
-            <div class="cta">
-              <button class="btn small" type="button" class="details-btn" data-open="modal">Personalizar</button>
-              <a class="btn small" href="#envios">Ver envíos</a>
-            </div>
-          </div>
-        </article>
+    <div class="cta">
+      <button class="btn small" type="button" data-open-quote data-prefill="Rosseta (personalizar)">Personalizar</button>
+      <a class="btn small" href="#envios">Ver envíos</a>
+    </div>
+  </div>
+</article>
+
 
         <!-- ===== PRODUCTO CON PRECIO (catálogo) ===== -->
         <article class="product" data-category="sofas" data-name="Sofá 2–3 cuerpos" data-price="1490" data-img="prod-02.png">
@@ -1000,13 +1001,13 @@
     // =========================
     // CONFIGURA TUS DATOS AQUÍ
     // =========================
-    const WHATSAPP_NUMBER = "51999999999";  // Ej: 51987654321 (51 + número, sin +)
-    const INSTAGRAM_URL   = "https://instagram.com/TU_USUARIO";
+    const WHATSAPP_NUMBER = "51955510450";  // Ej: 51987654321 (51 + número, sin +)
+    const INSTAGRAM_URL   = "https://instagram.com/gl.0dis";
     const TIKTOK_URL      = "https://tiktok.com/@TU_USUARIO";
 
     // (Opcional) Google Sheets via Google Apps Script Web App (te explico abajo)
     // Si NO lo tienes, déjalo vacío y seguirá guardando localmente.
-    const SHEETS_WEBAPP_URL = ""; // Ej: https://script.google.com/macros/s/XXXX/exec
+    const SHEETS_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbxykQZyRzldx10RUdT6v2TqgFNq8YhpHSVz24KMv_N40-uAKrBmCsMwSAqZ1PBMxPMp/exec"; // Ej: https://script.google.com/macros/s/XXXX/exec
 
     // Helper
     const waLink = (text) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
@@ -1049,20 +1050,40 @@
 
     // ====== Comprar (catálogo con precio) => WhatsApp con producto + precio ======
     document.querySelectorAll(".buy-btn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const card = btn.closest(".product");
-        const name = card?.dataset.name || "Producto";
-        const price = card?.dataset.price || "";
-        const msg =
+  btn.addEventListener("click", async () => {
+    const card = btn.closest(".product");
+    const name = card?.dataset.name || "Producto";
+    const price = card?.dataset.price || "";
+
+    // 1) Registrar en tu sistema (local + Sheets)
+    const purchaseEvent = {
+      ts: new Date().toISOString(),
+      event: "compra_catalogo_click",
+      producto: name,
+      precio: price,
+      origen: "web",
+      pagina: location.href
+    };
+
+    // Guarda local para no perder datos (aunque Sheets falle)
+    saveLeadLocal(purchaseEvent);
+
+    // Intenta enviar a Sheets si está configurado
+    await postToSheets(purchaseEvent);
+
+    // 2) Abrir WhatsApp para cerrar la venta
+    const msg =
 `Hola, quiero comprar:
 Producto: ${name}
 Precio: S/ ${price}
 
 Ciudad de entrega:
 ¿Me confirmas disponibilidad, tiempo de entrega y costo de envío?`;
-        window.open(waLink(msg), "_blank", "noopener,noreferrer");
-      });
-    });
+
+    window.open(waLink(msg), "_blank", "noopener,noreferrer");
+  });
+});
+
 
     // ====== Modal de consulta ======
     const quoteModal = document.getElementById("quoteModal");
