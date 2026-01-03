@@ -3,650 +3,708 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Acrati | Puffs, Sofás & Tapizado Premium</title>
-  <meta name="description" content="Catálogo con precios + pedidos personalizados por referencia. Personaliza telas y guarda pedidos directamente en Google Sheets." />
-  <meta name="theme-color" content="#f5f1ea" />
+  <title>Acrati | Puffs a medida • Tapizado premium • Lima y provincias</title>
+  <meta name="description" content="Compra puffs del catálogo con personalización y pedido en 2 minutos. También hacemos tapizado/retapizado y pedidos por referencia (Pinterest/IG). Registro automático a Google Sheets." />
+  <meta name="theme-color" content="#0f2a22" />
 
-  <!-- Tipografías -->
+  <!-- Fonts (premium editorial) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg:#f5f1ea;
-      --surface:#ffffff;
-      --surface2:#fbfaf7;
+      /* Brand palette: deep green + warm ivory + subtle gold */
+      --bg: #fbf7f0;
+      --surface: rgba(255,255,255,.88);
+      --surface2: rgba(255,255,255,.72);
 
-      --text:#141414;
-      --muted:#6b655d;
-      --border:#e8e1d7;
+      --ink: #101614;
+      --muted: #5a625f;
+      --muted2:#7c867f;
 
-      --accent:#1f5b47;      /* verde sobrio premium */
-      --accent-ink:#ffffff;
-      --gold:#9a7a3a;        /* dorado sobrio */
-      --gold-ink:#1a1206;
+      --brand: #0f2a22;         /* deep green */
+      --brand2:#1e4a3d;
+      --gold: #b0893a;
 
-      --shadow-sm: 0 8px 18px rgba(17,24,39,.06);
-      --shadow-md: 0 16px 40px rgba(17,24,39,.08);
-      --shadow-lg: 0 26px 70px rgba(17,24,39,.10);
+      --border: rgba(16,22,20,.10);
+      --shadow-sm: 0 10px 24px rgba(16,22,20,.08);
+      --shadow-md: 0 18px 52px rgba(16,22,20,.10);
 
-      --radius:22px;
-      --radius-sm:16px;
-      --max:1140px;
+      --radius-lg: 26px;
+      --radius-md: 18px;
+      --radius-sm: 14px;
 
-      --font-body: "Inter", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      --font-display: "Playfair Display", ui-serif, Georgia, "Times New Roman", serif;
+      --max: 1180px;
 
-      --focus: 0 0 0 4px rgba(31,91,71,.18);
+      --font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      --font-display: "Fraunces", ui-serif, Georgia, "Times New Roman", serif;
+
+      --focus: 0 0 0 4px rgba(15,42,34,.18);
+
+      --ease: cubic-bezier(.2,.8,.2,1);
     }
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    html{scroll-behavior:smooth}
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    html{ scroll-behavior:smooth; }
     body{
       margin:0;
       font-family:var(--font-body);
-      color:var(--text);
-      line-height:1.55;
+      color:var(--ink);
       background:
-        radial-gradient(900px 520px at 18% 2%, rgba(31,91,71,.10), transparent 55%),
-        radial-gradient(780px 520px at 82% 6%, rgba(154,122,58,.10), transparent 58%),
+        radial-gradient(900px 560px at 18% 2%, rgba(15,42,34,.10), transparent 58%),
+        radial-gradient(860px 540px at 82% 6%, rgba(176,137,58,.10), transparent 60%),
         var(--bg);
+      line-height:1.55;
     }
-    a{color:inherit; text-decoration:none}
-    .container{max-width:var(--max); margin:0 auto; padding:0 18px}
+    a{ color:inherit; text-decoration:none; }
+    img{ max-width:100%; display:block; }
+    .container{ max-width:var(--max); margin:0 auto; padding:0 18px; }
 
-    /* Topbar */
-    .topbar{
+    /* Top notice */
+    .topline{
       background: rgba(255,255,255,.55);
-      border-bottom:1px solid rgba(232,225,215,.85);
+      border-bottom:1px solid rgba(16,22,20,.08);
       backdrop-filter: blur(10px);
     }
-    .topbar .row{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:10px 0;
-      gap:12px;
-      color:var(--muted);
-      font-size:13px;
+    .topline .row{
+      display:flex; gap:12px; align-items:center; justify-content:space-between;
+      padding:10px 0; font-size:13px; color:var(--muted);
+      flex-wrap:wrap;
     }
-    .topbar b{color:var(--text); font-weight:700}
-    .top-links{display:flex; gap:14px; flex-wrap:wrap}
-    .top-links a{font-weight:600; color:var(--muted)}
-    .top-links a:hover{color:var(--text)}
+    .topline b{ color:var(--ink); font-weight:800; }
+    .toplinks{ display:flex; gap:14px; flex-wrap:wrap; }
+    .toplinks a{ font-weight:700; color:var(--muted); }
+    .toplinks a:hover{ color:var(--ink); }
 
     /* Header */
     header{
       position:sticky; top:0; z-index:50;
+      background: rgba(251,247,240,.82);
+      border-bottom:1px solid rgba(16,22,20,.08);
       backdrop-filter: blur(10px);
-      background: rgba(245,241,234,.78);
-      border-bottom:1px solid rgba(232,225,215,.92);
     }
     .nav{
       display:flex; align-items:center; justify-content:space-between;
-      padding:12px 0;
-      gap:12px;
+      gap:12px; padding:12px 0;
     }
-    .brand{display:flex; align-items:center; gap:12px}
-    .logo{
-      width:42px; height:42px; border-radius:14px;
-      background:
-        radial-gradient(circle at 30% 30%, rgba(31,91,71,.95), rgba(31,91,71,.75));
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      min-width: 200px;
+    }
+    .mark{
+      width:42px; height:42px; border-radius:16px;
+      background: radial-gradient(circle at 30% 30%, rgba(176,137,58,.85), rgba(15,42,34,.92));
+      border:1px solid rgba(16,22,20,.12);
       box-shadow: var(--shadow-sm);
-      border:1px solid rgba(31,91,71,.22);
       flex:0 0 auto;
     }
-    .wordmark{
-      font-family: var(--font-display);
-      font-size: 26px;
-      letter-spacing: .2px;
+    .word{
+      display:flex; flex-direction:column; gap:2px;
+    }
+    .word .name{
+      font-family:var(--font-display);
+      font-weight:700;
+      letter-spacing:-.2px;
+      font-size:22px;
       line-height:1;
     }
-    nav ul{list-style:none; display:flex; gap:18px; margin:0; padding:0; align-items:center}
-    nav a{color:var(--muted); font-weight:700; font-size:14px}
-    nav a:hover{color:var(--text)}
-    .menu-btn{display:none}
-    @media (max-width: 920px){
-      nav ul{display:none}
-      .menu-btn{display:inline-flex}
-      .wordmark{font-size:24px}
+    .word .tag{
+      font-size:12px;
+      color:var(--muted);
+      font-weight:700;
+      line-height:1;
     }
 
-    /* UI */
-    .pill{
-      display:inline-flex; gap:10px; align-items:center;
-      padding:8px 12px;
-      border:1px solid var(--border);
-      border-radius:999px;
-      background: rgba(255,255,255,.72);
-      color:var(--muted);
-      font-size:13px;
-      font-weight:600;
+    nav ul{
+      list-style:none; display:flex; gap:18px; padding:0; margin:0;
+      align-items:center;
     }
+    nav a{
+      font-weight:800;
+      font-size:13px;
+      color:var(--muted);
+      letter-spacing:.2px;
+    }
+    nav a:hover{ color:var(--ink); }
+
+    .nav-actions{ display:flex; gap:10px; align-items:center; }
+    .menu-btn{ display:none; }
+
+    @media (max-width: 980px){
+      nav ul{ display:none; }
+      .menu-btn{ display:inline-flex; }
+      .brand{ min-width:auto; }
+    }
+
+    /* Buttons */
     .btn{
       display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      padding:12px 16px;
-      border-radius:14px;
-      border:1px solid var(--border);
-      background: rgba(255,255,255,.88);
+      padding:12px 14px;
+      border-radius: 14px;
+      border:1px solid rgba(16,22,20,.10);
+      background: rgba(255,255,255,.80);
+      color:var(--ink);
+      font-weight:800;
+      font-size:13px;
       cursor:pointer;
-      transition: transform .16s ease, box-shadow .16s ease, background .16s ease, border-color .16s ease;
-      font-weight:700;
       user-select:none;
-      color:var(--text);
-      box-shadow: var(--shadow-sm);
+      transition: transform .18s var(--ease), box-shadow .18s var(--ease), background .18s var(--ease), border-color .18s var(--ease);
+      box-shadow: 0 10px 22px rgba(16,22,20,.08);
       white-space:nowrap;
     }
-    .btn:hover{transform:translateY(-1px); box-shadow: var(--shadow-md)}
-    .btn:focus{outline:none; box-shadow: var(--shadow-md), var(--focus)}
+    .btn:hover{ transform: translateY(-1px); box-shadow: var(--shadow-md); }
+    .btn:focus{ outline:none; box-shadow: var(--shadow-md), var(--focus); }
+    .btn.small{ padding:10px 12px; border-radius: 12px; font-size:12.5px; }
+    .btn.ghost{ background: transparent; box-shadow:none; }
     .btn.primary{
-      background: var(--accent);
-      border-color: rgba(31,91,71,.35);
-      color: var(--accent-ink);
+      background: linear-gradient(180deg, rgba(15,42,34,.98), rgba(15,42,34,.92));
+      border-color: rgba(15,42,34,.22);
+      color:#fff;
     }
-    .btn.primary:hover{background: #1a4d3d}
+    .btn.primary:hover{
+      background: linear-gradient(180deg, rgba(30,74,61,.98), rgba(15,42,34,.92));
+    }
     .btn.secondary{
-      background: rgba(31,91,71,.08);
-      border-color: rgba(31,91,71,.28);
-      color: var(--accent);
+      background: rgba(15,42,34,.08);
+      border-color: rgba(15,42,34,.18);
+      color: var(--brand);
+      box-shadow: 0 10px 22px rgba(15,42,34,.08);
     }
-    .btn.secondary:hover{background: rgba(31,91,71,.12)}
     .btn.gold{
-      background: rgba(154,122,58,.10);
-      border-color: rgba(154,122,58,.28);
-      color: #6b4f20;
-    }
-    .btn.ghost{background:transparent; box-shadow:none}
-    .btn.small{padding:10px 12px; border-radius:12px; font-size:13px}
-    .ico{display:inline-flex; align-items:center; justify-content:center}
-
-    /* Hero */
-    .hero{padding:34px 0 18px}
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap:22px;
-      align-items:stretch;
-    }
-    @media (max-width: 980px){ .hero-grid{grid-template-columns:1fr} }
-
-    .h1{
-      font-family: var(--font-display);
-      font-size: clamp(32px, 3.2vw, 46px);
-      line-height:1.05;
-      margin:12px 0 10px;
-      letter-spacing:-0.6px;
-      font-weight: 700;
-    }
-    .lead{color:var(--muted); font-size:16px; max-width:62ch}
-    .cta-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:16px}
-    .note{color:var(--muted); font-size:13px; margin-top:10px}
-
-    .hero-card{
-      border:1px solid var(--border);
-      background: rgba(255,255,255,.78);
-      border-radius: var(--radius);
-      padding:16px;
-      box-shadow: var(--shadow-md);
-      overflow:hidden;
-    }
-    .hero-media{
-      border-radius: var(--radius);
-      overflow:hidden;
-      border:1px solid rgba(232,225,215,.95);
-      box-shadow: var(--shadow-lg);
-      background: rgba(255,255,255,.78);
-    }
-    .hero-img{
-      width:100%;
-      height: 340px;
-      display:block;
-      object-fit:cover;
-      object-position:center;
-      filter: contrast(1.02) saturate(1.02);
-      transform: scale(1.01);
+      background: rgba(176,137,58,.12);
+      border-color: rgba(176,137,58,.25);
+      color: #6c5320;
+      box-shadow: 0 10px 22px rgba(176,137,58,.10);
     }
 
-    /* Trust chips */
-    .benefits{
-      margin-top:14px;
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-    }
-    .benefit{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      padding:10px 12px;
-      border:1px solid var(--border);
-      background: rgba(255,255,255,.86);
+    /* Chips */
+    .chip{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:8px 12px;
       border-radius: 999px;
-      font-weight:700;
-      color: var(--text);
-      box-shadow: var(--shadow-sm);
-      font-size:13px;
-    }
-    .benefit span{font-weight:600; color:var(--muted)}
-    .benefit .dot{
-      width:10px; height:10px; border-radius:999px;
-      background: rgba(31,91,71,.85);
-      box-shadow: 0 6px 12px rgba(31,91,71,.18);
-      flex:0 0 auto;
-    }
-
-    .mini{font-size:12.5px; color:var(--muted)}
-    .tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
-    .tag{
-      font-size:12px; color:var(--muted);
-      border:1px solid var(--border);
       background: rgba(255,255,255,.70);
-      padding:6px 10px;
-      border-radius:999px;
-      font-weight:600;
+      border:1px solid rgba(16,22,20,.10);
+      font-weight:800;
+      font-size:12.5px;
+      color:var(--muted);
+    }
+    .dot{
+      width:9px; height:9px; border-radius:999px; background: rgba(15,42,34,.85);
+      box-shadow: 0 10px 18px rgba(15,42,34,.18);
     }
 
     /* Sections */
-    section{padding:34px 0}
-    .section-title{
-      display:flex; align-items:flex-end; justify-content:space-between;
-      gap:14px; margin-bottom:14px;
+    section{ padding: 34px 0; }
+    .section-head{
+      display:flex; justify-content:space-between; align-items:flex-end; gap:14px;
+      margin-bottom: 14px;
+      flex-wrap:wrap;
     }
-    .section-title h2{
+    .section-head h2{
       margin:0;
-      font-family:var(--font-body);
-      font-size:22px;
-      letter-spacing:-.2px;
-      font-weight: 800;
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: -.2px;
     }
-    .section-title p{margin:0; color:var(--muted); font-size:14px}
-
-    .grid-2{display:grid; grid-template-columns:repeat(2,1fr); gap:14px}
-    .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
-    @media (max-width: 900px){
-      .grid-2,.grid-3{grid-template-columns:1fr}
+    .section-head p{
+      margin:6px 0 0;
+      color:var(--muted);
+      font-size:13.5px;
+      max-width: 72ch;
     }
 
-    .card{
-      border:1px solid var(--border);
-      background: rgba(255,255,255,.84);
-      border-radius: var(--radius);
-      padding:16px;
+    /* Hero */
+    .hero{ padding: 26px 0 12px; }
+    .hero-grid{
+      display:grid; grid-template-columns: 1.08fr .92fr; gap:16px;
+      align-items:stretch;
+    }
+    @media (max-width: 980px){ .hero-grid{ grid-template-columns:1fr; } }
+
+    .hero-left{
+      padding: 20px;
+      border-radius: var(--radius-lg);
+      background: rgba(255,255,255,.62);
+      border:1px solid rgba(16,22,20,.10);
+      box-shadow: var(--shadow-sm);
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-left:before{
+      content:"";
+      position:absolute; inset:-120px -120px auto auto;
+      width: 260px; height: 260px; border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, rgba(176,137,58,.35), transparent 60%);
+      pointer-events:none;
+    }
+
+    .h1{
+      font-family: var(--font-display);
+      font-weight: 700;
+      letter-spacing: -0.7px;
+      font-size: clamp(32px, 3.4vw, 46px);
+      line-height: 1.05;
+      margin: 12px 0 10px;
+    }
+    .lead{
+      color: var(--muted);
+      margin:0;
+      font-size: 15.5px;
+      max-width: 72ch;
+    }
+    .hero-cta{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin-top: 16px;
+    }
+    .hero-proof{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin-top: 14px;
+    }
+
+    .hero-right{
+      padding: 14px;
+      border-radius: var(--radius-lg);
+      background: rgba(255,255,255,.62);
+      border:1px solid rgba(16,22,20,.10);
+      box-shadow: var(--shadow-sm);
+      overflow:hidden;
+    }
+    .hero-media{
+      border-radius: var(--radius-lg);
+      overflow:hidden;
+      border:1px solid rgba(16,22,20,.10);
+      background: rgba(255,255,255,.82);
+      box-shadow: var(--shadow-md);
+    }
+    .hero-img{
+      width:100%;
+      height: 330px;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1.01);
+      filter: saturate(1.03) contrast(1.02);
+    }
+    .mini{
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 12.5px;
+    }
+    .tags{ display:flex; gap:8px; flex-wrap:wrap; margin-top:10px; }
+    .tag{
+      font-size: 12px; font-weight: 800;
+      color: var(--muted);
+      border: 1px solid rgba(16,22,20,.10);
+      background: rgba(255,255,255,.70);
+      padding: 6px 10px;
+      border-radius: 999px;
+    }
+
+    /* How it works */
+    .steps{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    @media (max-width: 900px){ .steps{ grid-template-columns:1fr; } }
+    .step{
+      padding: 16px;
+      border-radius: var(--radius-lg);
+      border:1px solid rgba(16,22,20,.10);
+      background: rgba(255,255,255,.70);
       box-shadow: var(--shadow-sm);
     }
-    .card h3{margin:0 0 6px; font-size:16px; font-weight:800}
-    .card p{margin:0; color:var(--muted); font-size:14px}
+    .step .num{
+      display:inline-flex; align-items:center; justify-content:center;
+      width: 32px; height: 32px; border-radius: 999px;
+      background: rgba(15,42,34,.10);
+      border:1px solid rgba(15,42,34,.18);
+      font-weight: 900;
+      color: var(--brand);
+    }
+    .step h3{ margin:10px 0 6px; font-size: 15px; font-weight: 900; }
+    .step p{ margin:0; color:var(--muted); font-size: 13.5px; }
 
-    /* Catalog */
+    /* Catalog controls */
+    .controls{
+      display:flex; gap:10px; flex-wrap:wrap; align-items:center;
+      margin: 12px 0 14px;
+    }
     .filters{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin: 10px 0 14px;
+      display:flex; gap:8px; flex-wrap:wrap;
     }
     .filter{
-      padding:10px 12px;
+      padding: 10px 12px;
       border-radius: 999px;
-      border:1px solid var(--border);
-      background: rgba(255,255,255,.74);
-      font-weight:700;
+      border:1px solid rgba(16,22,20,.10);
+      background: rgba(255,255,255,.70);
+      font-weight: 900;
+      font-size: 12.5px;
       cursor:pointer;
-      transition:.16s ease;
-      font-size:13px;
+      transition: .18s var(--ease);
       user-select:none;
     }
-    .filter:hover{box-shadow: var(--shadow-sm)}
+    .filter:hover{ box-shadow: var(--shadow-sm); transform: translateY(-1px); }
     .filter.active{
-      border-color: rgba(31,91,71,.28);
-      background: rgba(31,91,71,.10);
-      color: var(--accent);
+      background: rgba(15,42,34,.10);
+      border-color: rgba(15,42,34,.18);
+      color: var(--brand);
     }
 
+    .search{
+      flex:1;
+      min-width: 220px;
+      display:flex; align-items:center; gap:10px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border:1px solid rgba(16,22,20,.10);
+      background: rgba(255,255,255,.70);
+    }
+    .search input{
+      border:0; outline:none; background:transparent; width:100%;
+      font-weight:700; color:var(--ink);
+      font-family: var(--font-body);
+      font-size: 13px;
+    }
+    .search small{ color:var(--muted2); font-weight:900; }
+
+    /* Catalog grid */
     .catalog{
       display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:14px
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
     }
-    @media (max-width: 980px){ .catalog{grid-template-columns:1fr} }
+    @media (max-width: 980px){ .catalog{ grid-template-columns:1fr; } }
 
-    .product{
-      border:1px solid var(--border);
-      background: rgba(255,255,255,.88);
-      border-radius: var(--radius);
+    .card{
+      border: 1px solid rgba(16,22,20,.10);
+      background: rgba(255,255,255,.74);
+      border-radius: var(--radius-lg);
       box-shadow: var(--shadow-sm);
       overflow:hidden;
-      transition: transform .16s ease, box-shadow .16s ease;
+      transition: transform .18s var(--ease), box-shadow .18s var(--ease);
+      cursor:pointer;
       display:flex;
       flex-direction:column;
-      cursor:pointer;
+      min-height: 100%;
       position:relative;
     }
-    .product:hover{transform: translateY(-2px); box-shadow: var(--shadow-md)}
-    .product-media{
+    .card:hover{ transform: translateY(-2px); box-shadow: var(--shadow-md); }
+
+    .media{
+      position:relative;
       width:100%;
       aspect-ratio: 4 / 3;
-      background: rgba(255,255,255,.85);
-      border-bottom:1px solid var(--border);
+      background: rgba(255,255,255,.88);
+      border-bottom: 1px solid rgba(16,22,20,.08);
       overflow:hidden;
-      position:relative;
     }
-    .product-img{
-      width:100%;
-      height:100%;
-      display:block;
-      object-fit:cover;
-      object-position:center;
-      transition: transform .24s ease, filter .24s ease;
+    .media img{
+      width:100%; height:100%;
+      object-fit: cover;
+      object-position: center;
       filter: saturate(1.02) contrast(1.02);
+      transition: transform .22s var(--ease);
     }
-    .product:hover .product-img{transform: scale(1.03)}
-    .product .body{padding:14px 16px; display:flex; flex-direction:column; gap:8px; flex:1}
-    .product .body h3{font-size:16px; margin:0; font-weight:800}
-    .product .body p{margin:0; color:var(--muted); font-size:14px}
+    .card:hover .media img{ transform: scale(1.03); }
 
     .badge{
-      display:inline-flex;
-      padding:6px 10px;
-      border-radius:999px;
-      font-weight:700;
-      font-size:12px;
-      border:1px solid rgba(31,91,71,.22);
-      background: rgba(31,91,71,.10);
-      color: var(--accent);
-      align-self:flex-start;
-    }
-    .badge.alt{
-      border-color: rgba(154,122,58,.26);
-      background: rgba(154,122,58,.10);
-      color: #6b4f20;
-    }
-    .badge.floating{
       position:absolute;
-      top:12px; left:12px;
+      top: 12px; left: 12px;
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.72);
+      border:1px solid rgba(16,22,20,.10);
+      font-weight: 900;
+      font-size: 12px;
+      color: var(--muted);
       backdrop-filter: blur(8px);
-      background: rgba(255,255,255,.78);
+    }
+    .badge strong{ color:var(--brand); }
+
+    .body{
+      padding: 14px 14px 12px;
+      display:flex;
+      flex-direction:column;
+      gap: 8px;
+      flex:1;
+    }
+    .title-row{
+      display:flex; justify-content:space-between; gap:10px; align-items:flex-start;
+    }
+    .body h3{
+      margin:0;
+      font-size: 15px;
+      font-weight: 900;
+      letter-spacing: -.2px;
+    }
+    .body p{
+      margin:0;
+      color: var(--muted);
+      font-size: 13.5px;
+    }
+    .meta{
+      display:flex; gap:8px; flex-wrap:wrap; margin-top:2px;
+    }
+    .pill{
+      font-size: 12px;
+      font-weight: 900;
+      color: var(--muted);
+      border:1px solid rgba(16,22,20,.10);
+      background: rgba(255,255,255,.70);
+      padding: 6px 10px;
+      border-radius: 999px;
     }
 
-    .row-between{display:flex; justify-content:space-between; align-items:center; gap:10px}
-    .pricebox{
+    .pricebar{
       margin-top:auto;
-      padding-top:12px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:12px;
-      border-top:1px solid rgba(232,225,215,.9);
+      padding-top: 12px;
+      border-top: 1px solid rgba(16,22,20,.08);
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
     }
     .price{
-      font-weight:800;
-      font-size:16px;
-      letter-spacing:-.2px;
-      display:flex;
-      align-items:baseline;
-      gap:6px;
+      display:flex; flex-direction:column;
+      line-height:1.1;
     }
-    .price small{
-      font-weight:600;
-      font-size:12px;
-      color:var(--muted);
-      margin:0;
-    }
+    .price small{ color:var(--muted2); font-weight: 900; font-size: 11.5px; }
+    .price b{ font-size: 15px; font-weight: 900; letter-spacing: -.2px; }
 
-    /* Modales */
-    .modal{
-      position:fixed; inset:0;
-      background:rgba(20,20,20,.45);
-      display:none;
-      z-index:120;
-      padding:18px;
-    }
-    .modal.open{display:flex; align-items:flex-start; justify-content:center}
-    .modal .panel{
-      width: min(920px, 100%);
-      margin: 34px auto 0;
-      border:1px solid var(--border);
-      background: rgba(255,255,255,.96);
-      border-radius: 22px;
+    /* Service blocks */
+    .grid2{ display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
+    .grid3{ display:grid; grid-template-columns: repeat(3,1fr); gap:12px; }
+    @media (max-width: 900px){ .grid2,.grid3{ grid-template-columns:1fr; } }
+
+    .panel{
+      border:1px solid rgba(16,22,20,.10);
+      background: rgba(255,255,255,.70);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
       padding: 16px;
-      box-shadow: var(--shadow-lg);
-      transform: translateY(4px);
-      animation: pop .14s ease both;
     }
-    @keyframes pop{
-      from{opacity:.0; transform: translateY(10px)}
-      to{opacity:1; transform: translateY(0)}
-    }
-    .modal-header{
-      display:flex;
-      justify-content:space-between;
-      align-items:flex-start;
-      gap:10px;
-      margin-bottom: 10px;
-    }
-    .modal-title{
-      font-size:16px;
-      font-weight: 800;
-      margin:0;
-    }
-    .modal-sub{margin:6px 0 0; color:var(--muted); font-size:13px}
+    .panel h3{ margin:0 0 6px; font-size: 15px; font-weight: 900; }
+    .panel p{ margin:0; color:var(--muted); font-size: 13.5px; }
+    .panel .actions{ display:flex; gap:10px; flex-wrap:wrap; margin-top: 12px; }
 
-    label{display:block; font-size:13px; color:var(--muted); margin:10px 0 6px; font-weight:600}
-    input, textarea, select{
+    /* Footer */
+    footer{
+      border-top:1px solid rgba(16,22,20,.08);
+      padding: 18px 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .footrow{ display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+    .footlinks{ display:flex; gap:12px; flex-wrap:wrap; }
+    .footlinks a{ color:var(--muted); font-weight: 900; }
+    .footlinks a:hover{ color:var(--ink); }
+
+    /* Modal */
+    .modal{
+      position: fixed; inset:0;
+      background: rgba(16,22,20,.52);
+      display:none;
+      z-index: 100;
+      padding: 18px;
+    }
+    .modal.open{ display:flex; align-items:flex-start; justify-content:center; }
+    .modal .sheet{
+      width: min(980px, 100%);
+      margin: 24px auto 0;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.92);
+      box-shadow: 0 30px 90px rgba(16,22,20,.22);
+      overflow:hidden;
+      transform: translateY(6px);
+      animation: pop .16s var(--ease) both;
+    }
+    @keyframes pop{ from{ opacity:0; transform: translateY(14px);} to{opacity:1; transform: translateY(0);} }
+
+    .sheet-head{
+      display:flex; justify-content:space-between; align-items:flex-start; gap:10px;
+      padding: 14px;
+      border-bottom: 1px solid rgba(16,22,20,.08);
+      background: rgba(251,247,240,.72);
+    }
+    .sheet-head .t{
+      display:flex; flex-direction:column; gap:4px;
+    }
+    .sheet-head .t b{ font-size: 14px; font-weight: 900; }
+    .sheet-head .t span{ color:var(--muted); font-size: 12.5px; }
+    .sheet-body{ padding: 14px; }
+
+    label{
+      display:block;
+      color: var(--muted);
+      font-size: 12.5px;
+      font-weight: 900;
+      margin: 10px 0 6px;
+    }
+    input, select, textarea{
       width:100%;
-      padding:12px 12px;
-      border-radius:14px;
-      border:1px solid var(--border);
-      background: rgba(255,255,255,.96);
-      color:var(--text);
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(16,22,20,.12);
+      background: rgba(255,255,255,.92);
       outline:none;
+      color: var(--ink);
       font-family: var(--font-body);
-      transition: box-shadow .16s ease, border-color .16s ease;
+      transition: box-shadow .16s var(--ease), border-color .16s var(--ease);
+      font-weight: 650;
+      font-size: 13px;
     }
-    input:focus, textarea:focus, select:focus{
-      border-color: rgba(31,91,71,.30);
-      box-shadow: var(--focus);
-    }
-    textarea{min-height:110px; resize:vertical}
-    .form-row{display:grid; grid-template-columns:1fr 1fr; gap:10px}
-    @media (max-width: 680px){ .form-row{grid-template-columns:1fr} }
+    input:focus, select:focus, textarea:focus{ box-shadow: var(--focus); border-color: rgba(15,42,34,.22); }
+    textarea{ min-height: 110px; resize: vertical; }
+
+    .row2{ display:grid; grid-template-columns: 1fr 1fr; gap:10px; }
+    .row3{ display:grid; grid-template-columns: 1fr 1fr 1fr; gap:10px; }
+    @media (max-width: 740px){ .row2,.row3{ grid-template-columns:1fr; } }
 
     .notice{
-      padding:12px 14px;
-      border-radius:16px;
-      border:1px solid rgba(31,91,71,.18);
-      background: rgba(31,91,71,.08);
-      color: #154a33;
-      font-weight:600;
-      font-size:13px;
       margin-top: 10px;
+      padding: 12px 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(15,42,34,.16);
+      background: rgba(15,42,34,.08);
+      color: #103329;
+      font-weight: 800;
+      font-size: 12.8px;
+    }
+    .warn{
+      border-color: rgba(176,137,58,.22);
+      background: rgba(176,137,58,.10);
+      color: #5b441a;
     }
 
-    /* Menú móvil */
-    .menu-modal{
-      position:fixed; inset:0;
-      background:rgba(20,20,20,.40);
-      display:none;
-      z-index:110;
-      padding:18px;
-    }
-    .menu-modal.open{display:flex; align-items:flex-start; justify-content:center}
-    .menu-modal .panel{
-      width:min(560px, 100%);
-      margin: 24px auto 0;
-      border:1px solid var(--border);
-      background: rgba(255,255,255,.96);
-      border-radius:18px;
-      padding:14px;
-      box-shadow: var(--shadow-md);
-      animation: pop .14s ease both;
-    }
-    .mlink{
-      display:block;
-      padding:12px;
-      border-radius:14px;
-      border:1px solid var(--border);
-      margin-top:10px;
-      color:var(--muted);
-      font-weight:700;
-      background: rgba(255,255,255,.92);
-    }
-    .mlink:hover{color:var(--text); box-shadow: var(--shadow-sm)}
-
-    /* WhatsApp flotante */
-    .wa-float{
-      position:fixed;
-      right:16px;
-      bottom:16px;
-      z-index:90;
-      border-radius:999px;
-      padding:12px 14px;
-      border:1px solid rgba(31,91,71,.30);
-      background: var(--accent);
-      color: var(--accent-ink);
-      font-weight:800;
-      box-shadow: 0 16px 35px rgba(17,24,39,.16);
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      transition: transform .16s ease, box-shadow .16s ease, background .16s ease;
-    }
-    .wa-float:hover{transform:translateY(-1px); box-shadow: 0 18px 40px rgba(17,24,39,.18); background:#1a4d3d}
-    .wa-float:focus{outline:none; box-shadow: 0 18px 40px rgba(17,24,39,.18), var(--focus)}
-
-    /* Configurador */
-    .config-grid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:14px;
-    }
-    @media (max-width: 860px){ .config-grid{grid-template-columns:1fr} }
-
-    .kv{
-      border:1px solid var(--border);
-      background: rgba(255,255,255,.92);
-      border-radius:16px;
-      padding:12px;
-    }
-    .kv b{display:block; font-size:13px; font-weight:800}
-    .kv span{display:block; color:var(--muted); font-size:12.5px; margin-top:2px}
-
+    /* Swatches */
     .swatches{
       display:grid;
       grid-template-columns: repeat(4, 1fr);
-      gap:10px;
-      margin-top:10px;
+      gap: 10px;
+      margin-top: 10px;
     }
-    @media (max-width: 520px){ .swatches{grid-template-columns: repeat(3, 1fr)} }
+    @media (max-width: 540px){ .swatches{ grid-template-columns: repeat(3, 1fr); } }
 
     .swatch{
-      border:1px solid var(--border);
-      background: rgba(255,255,255,.94);
-      border-radius:16px;
-      padding:10px;
-      cursor:pointer;
-      transition:.14s ease;
-      box-shadow: var(--shadow-sm);
       text-align:left;
+      border:1px solid rgba(16,22,20,.10);
+      background: rgba(255,255,255,.86);
+      border-radius: 16px;
+      padding: 10px;
+      cursor:pointer;
+      transition: transform .16s var(--ease), box-shadow .16s var(--ease), border-color .16s var(--ease);
+      box-shadow: 0 10px 22px rgba(16,22,20,.08);
       user-select:none;
     }
-    .swatch:hover{ transform: translateY(-1px); box-shadow: var(--shadow-md) }
-    .swatch:focus{outline:none; box-shadow: var(--shadow-md), var(--focus)}
-    .swatch.active{
-      border-color: rgba(31,91,71,.35);
-      outline: 2px solid rgba(31,91,71,.14);
-    }
-    .swatch-top{display:flex; align-items:center; gap:10px}
-    .swatch-dot{
-      width:22px; height:22px; border-radius:999px;
-      border:1px solid rgba(0,0,0,.08);
+    .swatch:hover{ transform: translateY(-1px); box-shadow: var(--shadow-md); }
+    .swatch.active{ border-color: rgba(15,42,34,.28); outline: 2px solid rgba(15,42,34,.10); }
+    .swrow{ display:flex; align-items:center; gap:10px; }
+    .swdot{
+      width:22px; height:22px; border-radius: 999px;
       background: var(--c, #ddd);
+      border:1px solid rgba(0,0,0,.08);
       flex:0 0 auto;
     }
-    .swatch-img{
-      width:100%;
-      height:68px;
-      border-radius:12px;
-      border:1px solid rgba(232,225,215,.85);
-      background: #faf7f2;
-      overflow:hidden;
-      margin-top:8px;
-    }
-    .swatch-img img{width:100%; height:100%; object-fit:cover; display:block}
-    .swatch-name{font-weight:800; font-size:13px}
-    .swatch-meta{color:var(--muted); font-size:12px; margin-top:2px}
+    .swname{ font-weight: 900; font-size: 12.8px; }
+    .swmeta{ color:var(--muted2); font-weight: 800; font-size: 11.5px; margin-top:2px; }
 
-    .config-actions{
-      display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;
+    /* Floating WhatsApp */
+    .wa-float{
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 80;
+      border-radius: 999px;
+      padding: 12px 14px;
+      border: 1px solid rgba(15,42,34,.24);
+      background: linear-gradient(180deg, rgba(15,42,34,.98), rgba(15,42,34,.92));
+      color: #fff;
+      font-weight: 900;
+      box-shadow: 0 18px 50px rgba(16,22,20,.18);
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      transition: transform .16s var(--ease), box-shadow .16s var(--ease);
     }
-    .small-note{font-size:12.5px; color:var(--muted); margin-top:8px}
+    .wa-float:hover{ transform: translateY(-1px); box-shadow: 0 22px 60px rgba(16,22,20,.20); }
+    .wa-float:focus{ outline:none; box-shadow: 0 22px 60px rgba(16,22,20,.20), var(--focus); }
 
-    /* FAQ */
-    .faq details{
-      border:1px solid var(--border);
-      background: rgba(255,255,255,.84);
-      border-radius:16px;
-      padding:12px 14px;
-      box-shadow: var(--shadow-sm);
-    }
-    .faq details + details{margin-top:10px}
-    .faq summary{
-      cursor:pointer;
-      font-weight:800;
-      list-style:none;
-    }
-    .faq summary::-webkit-details-marker{display:none}
-    .faq p{margin:8px 0 0; color:var(--muted); font-size:14px}
-
-    footer{
-      border-top:1px solid rgba(232,225,215,.95);
-      padding:18px 0;
-      color:var(--muted);
-      font-size:13px;
-    }
-    .footer-row{display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap}
-    .links{display:flex; gap:12px; flex-wrap:wrap}
-    .links a{color:var(--muted); font-weight:700}
-    .links a:hover{color:var(--text)}
-
-    /* Toast */
-    .toast-wrap{
+    /* Bottom cart bar */
+    .cartbar{
       position: fixed;
       left: 50%;
-      bottom: 18px;
       transform: translateX(-50%);
-      z-index: 200;
+      bottom: 14px;
+      z-index: 85;
+      width: min(980px, calc(100% - 28px));
+      display:none;
+    }
+    .cartbar .inner{
+      border:1px solid rgba(16,22,20,.12);
+      background: rgba(255,255,255,.92);
+      border-radius: 999px;
+      box-shadow: 0 20px 55px rgba(16,22,20,.16);
+      padding: 10px 10px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      backdrop-filter: blur(10px);
+    }
+    .cartbar .left{
+      display:flex; flex-direction:column; gap:2px;
+      padding-left: 8px;
+    }
+    .cartbar .left b{ font-size: 12.8px; font-weight: 900; }
+    .cartbar .left span{ font-size: 12px; color:var(--muted); font-weight: 800; }
+    .cartbar .actions{ display:flex; gap:8px; align-items:center; }
+
+    /* Toasts */
+    .toasts{
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 84px;
+      z-index: 120;
+      width: min(560px, calc(100% - 28px));
       display:flex;
       flex-direction:column;
       gap:10px;
-      width:min(520px, calc(100% - 28px));
       pointer-events:none;
     }
     .toast{
       pointer-events:auto;
-      border:1px solid var(--border);
+      border:1px solid rgba(16,22,20,.12);
       background: rgba(255,255,255,.92);
       border-radius: 16px;
-      padding:12px 14px;
       box-shadow: var(--shadow-md);
+      padding: 12px 14px;
       display:flex;
       justify-content:space-between;
       gap:10px;
       align-items:flex-start;
-      animation: pop .14s ease both;
+      animation: pop .16s var(--ease) both;
     }
-    .toast b{font-weight:800}
-    .toast .tmsg{color:var(--muted); font-size:13px; margin-top:4px}
-    .toast.success{border-color: rgba(31,91,71,.25); background: rgba(31,91,71,.08)}
-    .toast.warn{border-color: rgba(154,122,58,.28); background: rgba(154,122,58,.10)}
+    .toast b{ font-weight: 900; }
+    .toast p{ margin:4px 0 0; color:var(--muted); font-size: 12.8px; font-weight: 750; }
+    .toast.success{ border-color: rgba(15,42,34,.18); background: rgba(15,42,34,.08); }
+    .toast.warn{ border-color: rgba(176,137,58,.22); background: rgba(176,137,58,.10); }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      *{ transition:none !important; animation:none !important; scroll-behavior:auto !important; }
+    }
   </style>
 </head>
 
 <body>
-  <div class="topbar">
+  <div class="topline">
     <div class="container row">
-      <div>Hecho a medida • <b>Tapizado & Retapizado</b> • Lima y Provincias</div>
-      <div class="top-links">
-        <a href="#amedida">Proceso</a>
+      <div>Catálogo con precio • A medida por referencia • <b>Tapizado/Retapizado</b> • Lima y provincias</div>
+      <div class="toplinks">
+        <a href="#como">Cómo comprar</a>
+        <a href="#catalogo">Catálogo</a>
         <a href="#tapizado">Tapizado</a>
         <a href="#faq">FAQ</a>
       </div>
@@ -656,8 +714,11 @@
   <header>
     <div class="container nav">
       <a class="brand" href="#top" aria-label="Acrati">
-        <span class="logo" aria-hidden="true"></span>
-        <span class="wordmark">Acrati</span>
+        <span class="mark" aria-hidden="true"></span>
+        <span class="word">
+          <span class="name">Acrati</span>
+          <span class="tag">Puffs a medida + Tapizado premium</span>
+        </span>
       </a>
 
       <nav aria-label="Navegación principal">
@@ -665,209 +726,47 @@
           <li><a href="#catalogo">Catálogo</a></li>
           <li><a href="#amedida">A medida</a></li>
           <li><a href="#tapizado">Tapizado</a></li>
-          <li><a href="#envios">Envíos</a></li>
+          <li><a href="#envios">Envíos y pagos</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </nav>
 
-      <div style="display:flex; gap:10px; align-items:center">
-        <button class="btn secondary menu-btn" id="btn-menu" aria-label="Abrir menú">Menú</button>
-        <button class="btn primary" type="button" id="btn-open-quote-cta">Cotizar a medida</button>
+      <div class="nav-actions">
+        <button class="btn secondary menu-btn" id="btnMenu" type="button">Menú</button>
+        <button class="btn gold" id="btnOpenQuote" type="button">Cotizar a medida</button>
+        <button class="btn primary" id="btnGoCatalog" type="button">Comprar del catálogo</button>
       </div>
     </div>
   </header>
 
-  <!-- Menú móvil -->
-  <div class="menu-modal" id="menuModal">
-    <div class="panel">
-      <div style="display:flex; justify-content:space-between; align-items:center; gap:10px">
-        <b style="font-weight:800">Menú</b>
-        <button class="btn ghost" id="btn-menu-close">Cerrar</button>
+  <!-- Mobile Menu -->
+  <div class="modal" id="menuModal" aria-hidden="true">
+    <div class="sheet" style="max-width:560px">
+      <div class="sheet-head">
+        <div class="t">
+          <b>Menú</b>
+          <span>Navega rápido por secciones</span>
+        </div>
+        <button class="btn ghost" id="btnCloseMenu" type="button">Cerrar</button>
       </div>
-      <a class="mlink" href="#catalogo">Catálogo</a>
-      <a class="mlink" href="#amedida">A medida</a>
-      <a class="mlink" href="#tapizado">Tapizado</a>
-      <a class="mlink" href="#envios">Envíos</a>
-      <a class="mlink" href="#contacto">Contacto</a>
-    </div>
-  </div>
-
-  <!-- Modal de consulta general (A pedido) -->
-  <div class="modal" id="quoteModal" aria-hidden="true">
-    <div class="panel">
-      <div class="modal-header">
-        <div>
-          <p class="modal-title">Consulta / Pedido a medida</p>
-          <p class="modal-sub">Para pedidos por referencia (Pinterest/IG), medidas especiales o retapizado. Se guarda en Google Sheets.</p>
-        </div>
-        <button class="btn ghost" id="btn-quote-close">Cerrar</button>
-      </div>
-
-      <form id="quoteForm">
-        <div class="form-row">
-          <div>
-            <label>Nombre</label>
-            <input id="q_nombre" placeholder="Nombre del cliente" required />
-          </div>
-          <div>
-            <label>WhatsApp / Teléfono</label>
-            <input id="q_tel" placeholder="Ej: 987654321" />
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div>
-            <label>Ciudad</label>
-            <input id="q_ciudad" placeholder="Lima / Arequipa / etc." />
-          </div>
-          <div>
-            <label>Producto / Servicio</label>
-            <input id="q_producto" placeholder="Ej: Sofá, puff, retapizado..." required />
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div>
-            <label>Medidas (aprox.)</label>
-            <input id="q_medidas" placeholder="Ej: 180x80x90 cm" />
-          </div>
-          <div>
-            <label>Referencia (link)</label>
-            <input id="q_referencia" placeholder="Pinterest/IG" />
-          </div>
-        </div>
-
-        <label>Detalles</label>
-        <textarea id="q_detalles" placeholder="Color/tela, firmeza, fecha, estado del mueble (si es retapizado), etc."></textarea>
-
-        <div class="config-actions">
-          <button class="btn primary" type="submit">Guardar solicitud</button>
-          <button class="btn secondary" type="button" id="btn-quote-wa">Enviar por WhatsApp</button>
-        </div>
-
-        <div class="notice">
-          Para coordinar telas y acabados por chat, usa el botón flotante de WhatsApp (esquina).
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <!-- Modal configurador (Catálogo) -->
-  <div class="modal" id="configModal" aria-hidden="true">
-    <div class="panel">
-      <div class="modal-header">
-        <div>
-          <p class="modal-title" id="cfgTitle">Personalizar</p>
-          <p class="modal-sub" id="cfgSub">Selecciona tela, color y patas. “Pedir” guarda el pedido en Google Sheets.</p>
-        </div>
-        <button class="btn ghost" id="btn-cfg-close">Cerrar</button>
-      </div>
-
-      <div class="notice">
-        Flujo recomendado: cliente elige modelo → elige tela/color/patas → “Pedir” → pago por Yape/Plin.
-      </div>
-
-      <div class="config-grid">
-        <div>
-          <div class="kv">
-            <b>Producto</b>
-            <span id="cfgProduct">—</span>
-          </div>
-
-          <div class="form-row" style="margin-top:10px">
-            <div>
-              <label>Nombre del cliente</label>
-              <input id="cfgCustomer" placeholder="Ej: María" />
-            </div>
-            <div>
-              <label>Teléfono / WhatsApp</label>
-              <input id="cfgPhone" placeholder="Ej: 987654321" />
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div>
-              <label>Ciudad</label>
-              <input id="cfgCity" placeholder="Ej: Lima" />
-            </div>
-            <div>
-              <label>Cantidad</label>
-              <input id="cfgQty" type="number" min="1" value="1" />
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div>
-              <label>Tipo de tela</label>
-              <select id="cfgFabricType"></select>
-            </div>
-            <div>
-              <label>Firmeza</label>
-              <select id="cfgFirmness">
-                <option value="Suave">Suave</option>
-                <option value="Intermedia" selected>Intermedia</option>
-                <option value="Firme">Firme</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div>
-              <label>Medidas</label>
-              <input id="cfgMeasures" placeholder="Ej: 80x80x45 cm" />
-            </div>
-            <div>
-              <label>Patas</label>
-              <select id="cfgLegs">
-                <option value="Negro" selected>Negro</option>
-                <option value="Dorado">Dorado</option>
-                <option value="Plateado">Plateado</option>
-              </select>
-            </div>
-          </div>
-
-          <label>Notas / detalles (opcional)</label>
-          <textarea id="cfgNotes" placeholder="Ej: fácil limpieza, costura reforzada, entrega urgente, etc."></textarea>
-
-          <div class="config-actions">
-            <button class="btn primary" type="button" id="btn-cfg-order">Pedir</button>
-            <button class="btn secondary" type="button" id="btn-cfg-wa">Enviar detalle por WhatsApp</button>
-          </div>
-
-          <div class="notice" id="paymentBox" style="display:none">
-            <b>Siguiente paso: pago</b>
-            <div class="mini" style="margin-top:6px">
-              Paga por Yape/Plin y luego envíanos la captura usando el botón flotante de WhatsApp.
-            </div>
-            <div class="mini" style="margin-top:8px"><b>Yape:</b> 999 999 999 (cámbialo)</div>
-            <div class="mini"><b>Nombre:</b> Acrati (cámbialo)</div>
-            <div style="margin-top:10px">
-              <img src="yape-qr.png" alt="QR Yape" style="max-width:220px;border-radius:16px;border:1px solid var(--border)">
-            </div>
-          </div>
-
-          <div class="small-note">
-            Se registrará como <b>event = pedido_configurado</b>. El “combo” queda en la columna <b>detalles</b>.
-          </div>
-        </div>
-
-        <div>
-          <div class="kv">
-            <b>Colores / muestras</b>
-            <span>Haz clic en una muestra para seleccionarla.</span>
-          </div>
-          <div class="swatches" id="cfgSwatches"></div>
-          <div class="small-note">
-            Si quieres mini-fotos reales: sube imágenes a <b>telas/</b> y asigna <b>img</b> en el catálogo de telas del script.
+      <div class="sheet-body">
+        <div class="panel" style="box-shadow:none">
+          <div style="display:flex; gap:10px; flex-wrap:wrap">
+            <a class="btn secondary" href="#como">Cómo comprar</a>
+            <a class="btn secondary" href="#catalogo">Catálogo</a>
+            <a class="btn secondary" href="#tapizado">Tapizado</a>
+            <a class="btn secondary" href="#envios">Envíos y pagos</a>
+            <a class="btn secondary" href="#faq">FAQ</a>
+            <a class="btn secondary" href="#contacto">Contacto</a>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- WhatsApp flotante (único) -->
-  <a class="wa-float" id="btn-wa-float" href="#" rel="noopener">
-    <span class="ico" aria-hidden="true">
+  <!-- Floating WhatsApp -->
+  <a class="wa-float" id="waFloat" href="#" rel="noopener">
+    <span aria-hidden="true" style="display:inline-flex">
       <svg viewBox="0 0 32 32" width="18" height="18" fill="currentColor">
         <path d="M19.11 17.46c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.16-.43-2.2-1.36-.81-.72-1.35-1.6-1.51-1.87-.16-.27-.02-.42.12-.56.13-.13.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.52-.44-.45-.61-.46l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.64 1.12 2.82c.14.18 1.93 2.95 4.68 4.13.66.29 1.18.46 1.58.59.66.21 1.26.18 1.73.11.53-.08 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32z"/>
         <path d="M16.02 3C9.39 3 4 8.37 4 14.98c0 2.34.69 4.61 2 6.56L5 29l7.64-1.99c1.9 1.04 4.05 1.58 6.25 1.58C25.61 28.59 31 23.22 31 16.61 31 10 25.61 3 16.02 3zm0 23.2c-2.02 0-3.99-.56-5.7-1.62l-.41-.25-4.53 1.18 1.2-4.41-.27-.45a9.61 9.61 0 0 1-1.48-5.17c0-5.31 4.35-9.64 9.69-9.64 5.34 0 9.69 4.33 9.69 9.64 0 5.31-4.35 9.72-9.69 9.72z"/>
@@ -876,657 +775,1647 @@
     WhatsApp
   </a>
 
-  <!-- Toast -->
-  <div class="toast-wrap" id="toastWrap" aria-live="polite" aria-atomic="true"></div>
+  <!-- Toasts -->
+  <div class="toasts" id="toasts" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Bottom Cart Bar -->
+  <div class="cartbar" id="cartBar">
+    <div class="inner">
+      <div class="left">
+        <b id="cartBarTitle">Tu pedido</b>
+        <span id="cartBarSub">0 ítems • S/ 0</span>
+      </div>
+      <div class="actions">
+        <button class="btn ghost small" id="btnClearCart" type="button">Vaciar</button>
+        <button class="btn secondary small" id="btnOpenCart" type="button">Ver carrito</button>
+        <button class="btn primary small" id="btnCheckout" type="button">Finalizar</button>
+      </div>
+    </div>
+  </div>
 
   <main id="top" class="container">
+    <!-- HERO -->
     <section class="hero">
       <div class="hero-grid">
-        <div>
-          <span class="pill">Puffs • Sofás • Retapizado • Lima & Provincias</span>
-          <h1 class="h1">Diseños cómodos y elegantes, hechos a medida con tapizado premium.</h1>
+        <div class="hero-left">
+          <span class="chip"><span class="dot"></span>Compra rápida del catálogo + pedidos a medida</span>
+
+          <h1 class="h1">Puffs premium y tapizado a medida, con compra cómoda y ordenada.</h1>
           <p class="lead">
-            Elige un modelo del catálogo o envíanos una referencia (Pinterest/IG). Personaliza telas y acabados; registramos tu pedido en Google Sheets para cotizar y producir con orden.
+            El cliente elige modelo, personaliza (tela, color, patas), agrega al carrito y finaliza pedido.
+            Ustedes reciben todo estructurado: datos del cliente, configuración y trazabilidad (UTM + link de la página).
           </p>
 
-          <div class="cta-row">
-            <a class="btn secondary" href="#catalogo">Ver catálogo</a>
-            <button class="btn primary" type="button" id="btn-open-tryon">Personalizar un modelo</button>
-            <button class="btn gold" type="button" id="btn-open-quote">Cotizar a medida</button>
+          <div class="hero-cta">
+            <button class="btn primary" type="button" id="btnHeroBuy">Comprar del catálogo</button>
+            <button class="btn gold" type="button" id="btnHeroQuote">Cotizar a medida / retapizado</button>
+            <a class="btn secondary" href="#como">Ver cómo funciona</a>
           </div>
 
-          <div class="note">Soporte por chat exclusivamente desde el botón flotante de WhatsApp.</div>
+          <div class="hero-proof">
+            <span class="chip"><span class="dot"></span>Personalización guiada</span>
+            <span class="chip"><span class="dot"></span>Envíos Lima y provincias</span>
+            <span class="chip"><span class="dot"></span>Registro automático a Sheets</span>
+          </div>
 
-          <div class="benefits">
-            <div class="benefit"><span class="dot"></span>Personalización <span>tela, color, patas</span></div>
-            <div class="benefit"><span class="dot"></span>Proceso claro <span>registro a Sheets</span></div>
-            <div class="benefit"><span class="dot"></span>Envíos <span>Lima y provincias</span></div>
-            <div class="benefit"><span class="dot"></span>Post-venta <span>retapizado</span></div>
+          <div class="mini">
+            Soporte por chat exclusivamente por el botón flotante de WhatsApp.
           </div>
         </div>
 
-        <div class="hero-card">
+        <div class="hero-right">
           <div class="hero-media">
-            <img class="hero-img" src="hero.png" alt="Acrati - Foto principal"
-              onerror="this.style.display='none'; this.parentElement.style.padding='18px'; this.parentElement.innerHTML='<b>Imagen no encontrada</b><div class=&quot;mini&quot; style=&quot;margin-top:6px&quot;>Verifica que <code>hero.png</code> esté junto a <code>index.html</code>.</div>';">
+            <img class="hero-img" src="hero.png" alt="Foto principal"
+              onerror="this.style.display='none'; this.parentElement.style.padding='18px'; this.parentElement.innerHTML='<b>Imagen no encontrada</b><div style=&quot;margin-top:6px;color:#5a625f;font-weight:800;font-size:12.5px&quot;>Coloca <code>hero.png</code> junto a <code>index.html</code> (misma carpeta).</div>';">
           </div>
-          <div style="margin-top:12px">
-            <b style="display:block; font-size:16px; font-weight:800">Entrega y empaque</b>
-            <div class="mini">Protección: film + burbuja + cartón. Incluye recibo/boleta impresa.</div>
-            <div class="tags">
-              <span class="tag">Shalom interprovincial</span>
-              <span class="tag">Entrega Lima</span>
-              <span class="tag">Seguimiento</span>
-            </div>
+          <div class="mini" style="margin-top:12px">
+            <b style="color:var(--ink)">Entrega y empaque</b><br/>
+            Protección: film + burbuja + cartón. En provincias: guía y seguimiento (Shalom).
+          </div>
+          <div class="tags">
+            <span class="tag">Yape/Plin</span>
+            <span class="tag">Shalom</span>
+            <span class="tag">A medida</span>
+            <span class="tag">Retapizado</span>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- HOW IT WORKS -->
+    <section id="como">
+      <div class="section-head">
+        <div>
+          <h2>Cómo compra un cliente (sin fricción)</h2>
+          <p>La página guía el pedido y reduce preguntas repetidas. Ustedes reciben data lista para cotizar/producción.</p>
+        </div>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <span class="num">1</span>
+          <h3>Elige modelo</h3>
+          <p>Catálogo con precio base y fotos. Filtra y encuentra rápido.</p>
+        </div>
+        <div class="step">
+          <span class="num">2</span>
+          <h3>Personaliza</h3>
+          <p>Tela, color, patas, firmeza y cantidad. Se agrega al carrito con el detalle.</p>
+        </div>
+        <div class="step">
+          <span class="num">3</span>
+          <h3>Finaliza pedido</h3>
+          <p>Datos del cliente + envío. Se registra en Sheets y se muestra pago por Yape/Plin.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATALOG -->
     <section id="catalogo">
-      <div class="section-title">
+      <div class="section-head">
         <div>
           <h2>Catálogo</h2>
-          <p>Clic en el modelo o en “Pedir” para abrir el configurador.</p>
+          <p>Clic en un producto para personalizar y agregar al carrito. “A medida” lleva a cotización por referencia.</p>
         </div>
-        <button class="btn secondary" type="button" id="btn-open-quote-top">Cotizar a medida</button>
+        <div style="display:flex; gap:10px; flex-wrap:wrap">
+          <button class="btn secondary" type="button" id="btnOpenCartTop">Ver carrito</button>
+          <button class="btn gold" type="button" id="btnOpenQuoteTop">Cotizar a medida</button>
+        </div>
       </div>
 
-      <div class="filters" aria-label="Filtros">
-        <button class="filter active" data-filter="all" type="button">Todos</button>
-        <button class="filter" data-filter="puffs" type="button">Puffs</button>
-        <button class="filter" data-filter="pedido" type="button">A pedido</button>
+      <div class="controls">
+        <div class="filters" role="tablist" aria-label="Filtros">
+          <button class="filter active" type="button" data-filter="all">Todos</button>
+          <button class="filter" type="button" data-filter="puffs">Puffs</button>
+          <button class="filter" type="button" data-filter="sofas">Sofás</button>
+          <button class="filter" type="button" data-filter="pedido">A medida</button>
+        </div>
+
+        <div class="search" role="search">
+          <small>Buscar</small>
+          <input id="searchInput" placeholder="Ej: Rosseta, puff, sofá..." />
+        </div>
       </div>
 
-      <div class="catalog" id="catalogGrid">
+      <div class="catalog" id="catalogGrid"></div>
 
-        <!-- ROSSETA (catálogo con precio) -->
-        <article class="product" data-category="puffs" data-name="Rosseta" data-price="430" data-img="rosseta.png" data-measures="80x80x45 cm">
-          <div class="product-media">
-            <span class="badge floating">Catálogo</span>
-            <img class="product-img" src="rosseta.png" alt="Rosseta"
-              onerror="this.style.display='none'; this.parentElement.style.padding='16px'; this.parentElement.innerHTML='<b>Imagen no encontrada</b><div class=&quot;mini&quot; style=&quot;margin-top:6px&quot;>Verifica <code>rosseta.png</code> junto a <code>index.html</code>.</div>';">
-          </div>
-          <div class="body">
-            <div class="row-between">
-              <h3>Rosseta</h3>
-              <span class="badge">Personalizable</span>
-            </div>
-            <p>Puff moderno, cómodo y elegante. Tela y tono personalizables.</p>
-
-            <div class="pricebox">
-              <div class="price"><small>Precio</small>S/ 430</div>
-              <button class="btn small primary" type="button" data-open-config>Pedir</button>
-            </div>
-          </div>
-        </article>
-
-        <!-- A PEDIDO -->
-        <article class="product" data-category="pedido" data-name="Modelo por referencia (Pinterest)" data-price="" data-img="">
-          <div class="product-media" style="display:flex; align-items:center; justify-content:center; padding:16px">
-            <div>
-              <span class="badge">A pedido</span>
-              <div style="margin-top:8px; font-weight:800">Modelo por referencia</div>
-              <div class="mini" style="margin-top:6px">Envíanos foto o link (Pinterest/IG). Coordinamos por WhatsApp (botón flotante).</div>
-            </div>
-          </div>
-          <div class="body">
-            <div class="row-between">
-              <h3>Diseño personalizado</h3>
-              <span class="badge alt">Cotización</span>
-            </div>
-            <p>Completa el formulario y lo registramos en Sheets para cotizar.</p>
-
-            <div class="pricebox">
-              <div class="price"><small>Precio</small>Consultar</div>
-              <button class="btn small primary" type="button" id="btn-open-quote-card">Solicitar cotización</button>
-            </div>
-          </div>
-        </article>
-
+      <div class="mini">
+        Importante: las imágenes deben estar junto a <b>index.html</b> con el mismo nombre (minúsculas).
       </div>
-
-      <p class="mini" style="margin-top:10px">
-        Importante: para que las imágenes se vean, los archivos deben llamarse exactamente igual (minúsculas) y estar en la misma carpeta que <b>index.html</b>.
-      </p>
     </section>
 
+    <!-- A MEDIDA -->
     <section id="amedida">
-      <div class="section-title">
+      <div class="section-head">
         <div>
-          <h2>Proceso a medida</h2>
-          <p>Para pedidos por referencia (Pinterest/IG) o medidas especiales.</p>
+          <h2>Pedidos a medida por referencia (Pinterest/IG)</h2>
+          <p>Ideal cuando el cliente llega con una foto. Registramos su solicitud con campos que ustedes necesitan para cotizar rápido.</p>
         </div>
       </div>
 
-      <div class="grid-3">
-        <div class="card"><h3>1) Referencia</h3><p>Foto/link + uso del mueble + ciudad + medidas aproximadas.</p></div>
-        <div class="card"><h3>2) Tela y acabados</h3><p>Seleccionamos tela, color, patas y firmeza. Coordinación por WhatsApp.</p></div>
-        <div class="card"><h3>3) Producción y envío</h3><p>Casco + espuma + tapizado. Entrega en Lima o envío a provincias.</p></div>
+      <div class="grid2">
+        <div class="panel">
+          <h3>Qué pedirle al cliente</h3>
+          <p>Foto/link, ciudad, medidas aproximadas, uso (hogar/negocio), tela preferida, fecha deseada.</p>
+          <div class="actions">
+            <button class="btn gold" type="button" id="btnOpenQuoteAmedida">Abrir formulario</button>
+            <button class="btn secondary" type="button" id="btnCopyChecklist">Copiar checklist</button>
+          </div>
+          <div class="notice">
+            “Checklist” ayuda a reducir ida y vuelta en WhatsApp.
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>Cómo lo gestionan ustedes</h3>
+          <p>La solicitud se guarda en Sheets con: datos, referencia, medidas y notas. También queda en el navegador como respaldo.</p>
+          <div class="actions">
+            <a class="btn secondary" href="#envios">Ver pagos y envíos</a>
+            <a class="btn secondary" href="#contacto">Contacto</a>
+          </div>
+          <div class="notice warn">
+            Consejo operativo: estandaricen “tela/código” (ej. CH-OLIVA) para producción y stock.
+          </div>
+        </div>
       </div>
     </section>
 
+    <!-- TAPIZADO -->
     <section id="tapizado">
-      <div class="section-title">
+      <div class="section-head">
         <div>
           <h2>Tapizado y retapizado</h2>
-          <p>Renueva tu mueble: estética, confort y durabilidad.</p>
+          <p>Renueva muebles sin comprar nuevo: estética, confort, durabilidad. Perfecto para hogares y negocios.</p>
         </div>
-        <button class="btn secondary" type="button" id="btn-open-quote-tapizado">Cotizar retapizado</button>
+        <button class="btn gold" type="button" id="btnOpenQuoteTapizado">Cotizar retapizado</button>
       </div>
 
-      <div class="grid-2">
-        <div class="card">
-          <h3>¿Qué incluye?</h3>
-          <p>Evaluación, propuesta de telas, cambio de espuma (opcional) y acabado final con costuras reforzadas.</p>
-          <div class="tags"><span class="tag">Chenille</span><span class="tag">Antimanchas</span><span class="tag">Velvet</span></div>
+      <div class="grid3">
+        <div class="panel">
+          <h3>Evaluación</h3>
+          <p>Fotos, medidas, estado de espuma y estructura. Definimos si conviene retapizar y qué se reemplaza.</p>
         </div>
-        <div class="card">
-          <h3>Ideal para</h3>
-          <p>Hogares, departamentos, Airbnb, negocios: renueva sin comprar un mueble nuevo.</p>
-          <div class="tags"><span class="tag">Durabilidad</span><span class="tag">Fácil limpieza</span><span class="tag">Premium look</span></div>
+        <div class="panel">
+          <h3>Telas premium</h3>
+          <p>Opciones: chenille, antimanchas, lino, velvet. Se prioriza resistencia y facilidad de limpieza.</p>
+        </div>
+        <div class="panel">
+          <h3>Acabado</h3>
+          <p>Costuras reforzadas, tensado correcto y terminaciones limpias. Resultado “nuevo” y elegante.</p>
         </div>
       </div>
     </section>
 
+    <!-- PAYMENTS & SHIPPING -->
     <section id="envios">
-      <div class="section-title">
+      <div class="section-head">
         <div>
-          <h2>Envíos</h2>
-          <p>Lima + provincias con embalaje seguro.</p>
+          <h2>Envíos y pagos</h2>
+          <p>Todo explicado para que el cliente compre con confianza. Menos preguntas repetidas en WhatsApp.</p>
         </div>
       </div>
 
-      <div class="grid-2">
-        <div class="card">
-          <h3>Lima</h3>
-          <p>Coordinación en ventana de horario. Entrega segura según zona.</p>
-          <div class="tags"><span class="tag">Entrega coordinada</span><span class="tag">Embalaje</span></div>
+      <div class="grid2">
+        <div class="panel">
+          <h3>Envíos</h3>
+          <p><b>Lima:</b> entrega coordinada por zona. <b>Provincias:</b> Shalom con guía y seguimiento.</p>
+          <div class="notice">
+            Empaque: film + burbuja + cartón para evitar daños.
+          </div>
         </div>
-        <div class="card">
-          <h3>Provincias</h3>
-          <p>Envíos por Shalom con guía y seguimiento.</p>
-          <div class="tags"><span class="tag">Shalom</span><span class="tag">Seguimiento</span></div>
+        <div class="panel">
+          <h3>Pagos</h3>
+          <p>Por ahora trabajamos con <b>Yape/Plin</b>. Al finalizar pedido, la página muestra instrucciones y QR.</p>
+          <div class="notice warn">
+            Recomendación: pidan comprobante por WhatsApp y asignen “estado de pago” en Sheets (Pendiente / Abonado / Pagado).
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- FAQ -->
     <section id="faq">
-      <div class="section-title">
+      <div class="section-head">
         <div>
           <h2>Preguntas frecuentes</h2>
-          <p>Respuestas rápidas para cerrar ventas con confianza.</p>
+          <p>Respuestas listas para convertir y reducir fricción.</p>
         </div>
       </div>
 
-      <div class="faq">
-        <details>
-          <summary>¿Cuánto demora la producción?</summary>
-          <p>Depende del modelo, tela y cola de producción. Te confirmamos fecha estimada al registrar tu pedido/cotización.</p>
-        </details>
-        <details>
-          <summary>¿Puedo elegir tela antimanchas?</summary>
-          <p>Sí. En el configurador tienes opciones “Antimanchas (fácil limpieza)” y otras gamas premium.</p>
-        </details>
-        <details>
-          <summary>¿Cómo se paga?</summary>
-          <p>Por ahora trabajamos con Yape/Plin. Tras “Pedir”, se muestra el QR y coordinas la captura por WhatsApp.</p>
-        </details>
-        <details>
-          <summary>¿Retapizan muebles existentes?</summary>
-          <p>Sí. Envía fotos/medidas y describe el estado (espuma, estructura, uso). Registramos tu solicitud y cotizamos.</p>
-        </details>
+      <div class="grid2">
+        <div class="panel">
+          <h3>¿Cuánto demora?</h3>
+          <p>Depende del modelo, tela y cola de producción. La fecha estimada se confirma al registrar pedido/cotización.</p>
+        </div>
+        <div class="panel">
+          <h3>¿Se puede antimanchas?</h3>
+          <p>Sí. En el configurador puedes elegir “Antimanchas (fácil limpieza)” y colores premium.</p>
+        </div>
+        <div class="panel">
+          <h3>¿Cómo pago?</h3>
+          <p>Yape/Plin. La página te guía y luego envías la captura por WhatsApp (botón flotante).</p>
+        </div>
+        <div class="panel">
+          <h3>¿Hacen retapizado?</h3>
+          <p>Sí. Envíanos fotos, medidas y estado. Registramos tu solicitud y te cotizamos.</p>
+        </div>
       </div>
     </section>
 
+    <!-- CONTACT -->
     <section id="contacto">
-      <div class="section-title">
+      <div class="section-head">
         <div>
           <h2>Contacto</h2>
-          <p>WhatsApp por el botón flotante. A pedido/retapizado: formulario.</p>
+          <p>WhatsApp por el botón flotante. Para cotización por referencia/retapizado: formulario.</p>
         </div>
       </div>
 
-      <div class="grid-2">
-        <div class="card">
-          <h3>Pedidos a medida / retapizado</h3>
-          <p>Registra tu requerimiento en Sheets para cotizar rápido.</p>
-          <div style="margin-top:12px">
-            <button class="btn primary" type="button" id="btn-open-quote-bottom">Abrir formulario</button>
+      <div class="grid2">
+        <div class="panel">
+          <h3>¿Pedido a medida o retapizado?</h3>
+          <p>Registra tu solicitud (queda en Sheets) y coordinamos por WhatsApp.</p>
+          <div class="actions">
+            <button class="btn gold" type="button" id="btnOpenQuoteBottom">Abrir formulario</button>
+            <button class="btn secondary" type="button" id="btnOpenCartBottom">Ver carrito</button>
           </div>
-          <div class="notice">Para coordinar por chat, usa el botón flotante de WhatsApp (esquina).</div>
+          <div class="notice">
+            Si el cliente ya eligió catálogo: “Finalizar pedido” en el carrito.
+          </div>
         </div>
-        <div class="card">
-          <h3>Pagos</h3>
-          <p>Sin pasarela por ahora. Trabajamos con Yape/Plin. El QR se muestra después de “Pedir”.</p>
-          <div class="notice">Luego envías el comprobante por WhatsApp (botón flotante).</div>
+
+        <div class="panel">
+          <h3>Modo Dueños (gestión)</h3>
+          <p>Accede con <b>?admin=1</b> para ver registros locales, exportar CSV y probar Sheets.</p>
+          <div class="actions">
+            <button class="btn secondary" type="button" id="btnOpenOwner">Abrir Modo Dueños</button>
+          </div>
+          <div class="notice warn">
+            Esto es solo para gestión desde el navegador (no es un panel público si no se activa).
+          </div>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container footer-row">
-      <div>© <span id="year"></span> Acrati.</div>
-      <div class="links">
+    <div class="container footrow">
+      <div>© <span id="year"></span> Acrati. <span style="opacity:.7">Hecho para vender y gestionar con orden.</span></div>
+      <div class="footlinks">
         <a href="#catalogo">Catálogo</a>
         <a href="#tapizado">Tapizado</a>
+        <a href="#envios">Envíos y pagos</a>
         <a href="#contacto">Contacto</a>
       </div>
     </div>
   </footer>
 
+  <!-- MODAL: Product Config -->
+  <div class="modal" id="productModal" aria-hidden="true">
+    <div class="sheet">
+      <div class="sheet-head">
+        <div class="t">
+          <b id="pmTitle">Personalizar</b>
+          <span id="pmSub">Elige tela, color y acabado. Luego agrega al carrito.</span>
+        </div>
+        <button class="btn ghost" id="btnCloseProduct" type="button">Cerrar</button>
+      </div>
+      <div class="sheet-body">
+        <div class="grid2">
+          <div>
+            <div class="panel" style="box-shadow:none">
+              <div class="row2">
+                <div>
+                  <label>Producto</label>
+                  <input id="pmProduct" disabled />
+                </div>
+                <div>
+                  <label>Precio base</label>
+                  <input id="pmPrice" disabled />
+                </div>
+              </div>
+
+              <div class="row2">
+                <div>
+                  <label>Tipo de tela</label>
+                  <select id="pmFabricType"></select>
+                </div>
+                <div>
+                  <label>Firmeza</label>
+                  <select id="pmFirmness">
+                    <option value="Suave">Suave</option>
+                    <option value="Intermedia" selected>Intermedia</option>
+                    <option value="Firme">Firme</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row3">
+                <div>
+                  <label>Patas</label>
+                  <select id="pmLegs">
+                    <option value="Negro" selected>Negro</option>
+                    <option value="Dorado">Dorado</option>
+                    <option value="Plateado">Plateado</option>
+                  </select>
+                </div>
+                <div>
+                  <label>Cantidad</label>
+                  <input id="pmQty" type="number" min="1" value="1" />
+                </div>
+                <div>
+                  <label>Medidas</label>
+                  <input id="pmMeasures" placeholder="Ej: 80x80x45 cm" />
+                </div>
+              </div>
+
+              <label>Notas (opcional)</label>
+              <textarea id="pmNotes" placeholder="Ej: fácil limpieza, costura reforzada, entrega urgente..."></textarea>
+
+              <div class="notice" id="pmTotalBox">
+                Total estimado: <b id="pmTotal">S/ 0</b>
+              </div>
+
+              <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px">
+                <button class="btn secondary" type="button" id="btnPmWA">Enviar detalle por WhatsApp</button>
+                <button class="btn primary" type="button" id="btnAddToCart">Agregar al carrito</button>
+              </div>
+              <div class="mini">
+                Consejo: para cerrar venta rápido, agrega al carrito y finaliza (registra en Sheets).
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="panel" style="box-shadow:none">
+              <b style="font-weight:900">Color / muestra</b>
+              <div class="mini" style="margin-top:4px">Haz clic en un color para seleccionarlo.</div>
+              <div class="swatches" id="pmSwatches"></div>
+              <div class="notice warn" style="margin-top:12px">
+                Si quieres texturas reales: agrega imágenes de telas y asígnalas en el catálogo (en el script).
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Cart / Checkout -->
+  <div class="modal" id="cartModal" aria-hidden="true">
+    <div class="sheet">
+      <div class="sheet-head">
+        <div class="t">
+          <b>Carrito y checkout</b>
+          <span>Revisa el pedido y finaliza. Se registra en Google Sheets.</span>
+        </div>
+        <button class="btn ghost" id="btnCloseCart" type="button">Cerrar</button>
+      </div>
+      <div class="sheet-body">
+        <div class="grid2">
+          <div>
+            <div class="panel" style="box-shadow:none">
+              <b style="font-weight:900">Resumen</b>
+              <div class="mini" style="margin-top:4px">Puedes quitar ítems antes de finalizar.</div>
+              <div id="cartList" style="margin-top:10px; display:flex; flex-direction:column; gap:10px;"></div>
+              <div class="notice" style="margin-top:12px">
+                Total: <b id="cartTotal">S/ 0</b>
+              </div>
+              <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px">
+                <button class="btn ghost" type="button" id="btnCartWA">Enviar resumen por WhatsApp</button>
+                <button class="btn ghost" type="button" id="btnCartClear2">Vaciar carrito</button>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="panel" style="box-shadow:none">
+              <b style="font-weight:900">Datos del cliente</b>
+
+              <div class="row2">
+                <div>
+                  <label>Nombre</label>
+                  <input id="coName" placeholder="Ej: María" />
+                </div>
+                <div>
+                  <label>Teléfono / WhatsApp</label>
+                  <input id="coPhone" placeholder="Ej: 987654321" />
+                </div>
+              </div>
+
+              <div class="row2">
+                <div>
+                  <label>Ciudad</label>
+                  <input id="coCity" placeholder="Ej: Lima" />
+                </div>
+                <div>
+                  <label>Método de pago</label>
+                  <select id="coPayMethod">
+                    <option value="Yape" selected>Yape</option>
+                    <option value="Plin">Plin</option>
+                  </select>
+                </div>
+              </div>
+
+              <label>Dirección / referencia (opcional)</label>
+              <input id="coAddress" placeholder="Ej: Surco, cerca a..." />
+
+              <label>Notas para entrega (opcional)</label>
+              <textarea id="coNotes" placeholder="Ej: horario, piso, contacto alterno..."></textarea>
+
+              <div class="notice warn">
+                Al finalizar: se registra en Sheets y aparece la guía de pago (QR Yape/Plin).
+              </div>
+
+              <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px">
+                <button class="btn primary" type="button" id="btnPlaceOrder">Finalizar pedido</button>
+                <button class="btn secondary" type="button" id="btnPlaceOrderWA">Finalizar y abrir WhatsApp</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Payment -->
+  <div class="modal" id="payModal" aria-hidden="true">
+    <div class="sheet" style="max-width:760px">
+      <div class="sheet-head">
+        <div class="t">
+          <b>Pago</b>
+          <span>Realiza el pago y envía la captura por WhatsApp.</span>
+        </div>
+        <button class="btn ghost" id="btnClosePay" type="button">Cerrar</button>
+      </div>
+      <div class="sheet-body">
+        <div class="panel" style="box-shadow:none">
+          <div class="row2">
+            <div>
+              <b style="font-weight:900">Datos para pagar</b>
+              <div class="mini" style="margin-top:6px" id="payText"></div>
+              <div class="notice" style="margin-top:12px">
+                Luego envía la captura por WhatsApp (botón flotante).
+              </div>
+              <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px">
+                <button class="btn primary" type="button" id="btnPayWA">Enviar comprobante por WhatsApp</button>
+                <button class="btn secondary" type="button" id="btnCopyOrderId">Copiar ID de pedido</button>
+              </div>
+            </div>
+            <div>
+              <b style="font-weight:900">QR</b>
+              <div class="mini" style="margin-top:6px">Coloca <code>yape-qr.png</code> junto a <code>index.html</code>.</div>
+              <div style="margin-top:10px">
+                <img src="yape-qr.png" alt="QR Yape/Plin" style="border-radius:18px;border:1px solid rgba(16,22,20,.10);background:#fff"
+                  onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;notice warn&quot;>No se encontró <b>yape-qr.png</b>. Súbelo a la misma carpeta del sitio.</div>';">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Quote (A medida / Tapizado) -->
+  <div class="modal" id="quoteModal" aria-hidden="true">
+    <div class="sheet">
+      <div class="sheet-head">
+        <div class="t">
+          <b>Cotización a medida / retapizado</b>
+          <span>Se guarda en Google Sheets para que ustedes coticen con orden.</span>
+        </div>
+        <button class="btn ghost" id="btnCloseQuote" type="button">Cerrar</button>
+      </div>
+      <div class="sheet-body">
+        <div class="grid2">
+          <div>
+            <div class="panel" style="box-shadow:none">
+              <div class="row2">
+                <div>
+                  <label>Nombre</label>
+                  <input id="qName" placeholder="Nombre del cliente" />
+                </div>
+                <div>
+                  <label>Teléfono / WhatsApp</label>
+                  <input id="qPhone" placeholder="Ej: 987654321" />
+                </div>
+              </div>
+
+              <div class="row2">
+                <div>
+                  <label>Ciudad</label>
+                  <input id="qCity" placeholder="Lima / Arequipa / etc." />
+                </div>
+                <div>
+                  <label>Servicio</label>
+                  <select id="qService">
+                    <option value="Pedido a medida (referencia)" selected>Pedido a medida (referencia)</option>
+                    <option value="Tapizado / Retapizado">Tapizado / Retapizado</option>
+                    <option value="Sofá a medida">Sofá a medida</option>
+                    <option value="Puff a medida">Puff a medida</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row2">
+                <div>
+                  <label>Medidas (aprox.)</label>
+                  <input id="qMeasures" placeholder="Ej: 180x80x90 cm" />
+                </div>
+                <div>
+                  <label>Referencia (link Pinterest/IG)</label>
+                  <input id="qRef" placeholder="Pega el link" />
+                </div>
+              </div>
+
+              <label>Detalles</label>
+              <textarea id="qDetails" placeholder="Tela/color deseados, uso (hogar/negocio), estado del mueble (si retapizado), fecha deseada, etc."></textarea>
+
+              <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px">
+                <button class="btn primary" type="button" id="btnSaveQuote">Guardar solicitud</button>
+                <button class="btn secondary" type="button" id="btnQuoteWA">Enviar por WhatsApp</button>
+              </div>
+
+              <div class="notice">
+                Para coordinación por chat, usa el botón flotante de WhatsApp.
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="panel" style="box-shadow:none">
+              <b style="font-weight:900">Para cotizar rápido, incluye:</b>
+              <div class="mini" style="margin-top:8px; font-weight:800; color:var(--muted)">
+                • Foto/link • Medidas • Ciudad • Uso • Tela preferida • Fecha deseada
+              </div>
+              <div class="notice warn" style="margin-top:12px">
+                Si es retapizado: agrega fotos del estado (espuma/estructura) y si requiere recojo.
+              </div>
+              <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px">
+                <button class="btn ghost" type="button" id="btnCopyMsgTemplate">Copiar mensaje modelo</button>
+              </div>
+            </div>
+
+            <div class="panel" style="box-shadow:none; margin-top:12px">
+              <b style="font-weight:900">Modo Dueños</b>
+              <div class="mini" style="margin-top:6px">Si estás gestionando, entra con <b>?admin=1</b> y exporta CSV.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Owner Mode -->
+  <div class="modal" id="ownerModal" aria-hidden="true">
+    <div class="sheet">
+      <div class="sheet-head">
+        <div class="t">
+          <b>Modo Dueños (gestión local)</b>
+          <span>Ver registros guardados, exportar CSV, probar Sheets, copiar plantillas.</span>
+        </div>
+        <button class="btn ghost" id="btnCloseOwner" type="button">Cerrar</button>
+      </div>
+      <div class="sheet-body">
+        <div class="grid2">
+          <div>
+            <div class="panel" style="box-shadow:none">
+              <b style="font-weight:900">Acciones</b>
+              <div class="mini" style="margin-top:6px">
+                Estos datos están en el navegador (respaldo). Sheets es el registro principal.
+              </div>
+              <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px">
+                <button class="btn secondary" id="btnExportCSV" type="button">Exportar CSV</button>
+                <button class="btn secondary" id="btnTestSheets" type="button">Probar Sheets</button>
+                <button class="btn ghost" id="btnClearLogs" type="button">Limpiar registros locales</button>
+              </div>
+              <div class="notice warn" style="margin-top:12px">
+                Si “Probar Sheets” no funciona, revisa tu Apps Script WebApp URL.
+              </div>
+            </div>
+
+            <div class="panel" style="box-shadow:none; margin-top:12px">
+              <b style="font-weight:900">Mensajes rápidos</b>
+              <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px">
+                <button class="btn ghost" id="btnCopyPayMsg" type="button">Copiar mensaje de pago</button>
+                <button class="btn ghost" id="btnCopyProdMsg" type="button">Copiar mensaje de producción</button>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="panel" style="box-shadow:none">
+              <b style="font-weight:900">Últimos registros (local)</b>
+              <div class="mini" style="margin-top:6px" id="ownerCounts">—</div>
+              <div id="ownerTable" style="margin-top:10px; display:flex; flex-direction:column; gap:10px;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script>
     // =========================
     // CONFIGURA TUS DATOS AQUÍ
     // =========================
-    const WHATSAPP_NUMBER = "51999999999"; // Ej: 51987654321 (51 + número, sin +)
+    const BRAND_NAME = "Acrati";
 
-    // Tu Web App URL de Apps Script
+    const WHATSAPP_NUMBER = "51999999999"; // 51 + número (sin +)
     const SHEETS_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbxykQZyRzldx10RUdT6v2TqgFNq8YhpHSVz24KMv_N40-uAKrBmCsMwSAqZ1PBMxPMp/exec";
+
+    // Datos de pago (mostrar al finalizar)
+    const PAY_YAPE_NUMBER = "999 999 999"; // cambia
+    const PAY_YAPE_NAME   = "Acrati";       // cambia
+
+    // =========================
+    // Catálogo de productos (edítalo a tu gusto)
+    // - Si solo tienes 1 producto real, deja 1 y listo.
+    // - "pedido" es una tarjeta que abre cotización.
+    // =========================
+    const PRODUCTS = [
+      {
+        id: "rosseta",
+        name: "Puff Rosseta",
+        category: "puffs",
+        price: 430,
+        desc: "Diseño cómodo y elegante. Personaliza tela, color y patas.",
+        img: "rosseta.png",
+        measures: "80x80x45 cm",
+        tags: ["Personalizable", "Premium look"]
+      },
+      {
+        id: "nido",
+        name: "Puff Nido",
+        category: "puffs",
+        price: 0, // si no quieres mostrar precio, deja 0 y aparecerá “Consultar”
+        desc: "Minimal, versátil, ideal para sala o dormitorio.",
+        img: "hero.png",
+        measures: "",
+        tags: ["A pedido", "Cotización"]
+      },
+      {
+        id: "sofa_modular",
+        name: "Sofá modular",
+        category: "sofas",
+        price: 0,
+        desc: "Configurable por módulos. Ideal para espacios modernos.",
+        img: "hero.png",
+        measures: "",
+        tags: ["A medida", "Referencia"]
+      },
+      {
+        id: "a_medida",
+        name: "Diseño por referencia (Pinterest/IG)",
+        category: "pedido",
+        price: 0,
+        desc: "Envíanos foto o link. Registramos tu solicitud para cotizar con orden.",
+        img: "",
+        measures: "",
+        tags: ["Cotización", "A medida"]
+      }
+    ];
+
+    // Catálogo de telas (para el configurador)
+    const FABRICS = [
+      { type: "Chenille premium", note: "Suave y resistente",
+        swatches: [
+          { name:"Oliva",  color:"#5b6a40" },
+          { name:"Arena",  color:"#d7c6ac" },
+          { name:"Grafito",color:"#444444" },
+          { name:"Hueso",  color:"#f2eee7" },
+        ]
+      },
+      { type: "Lino (look natural)", note: "Textura minimal",
+        swatches: [
+          { name:"Beige",       color:"#d9cdbd" },
+          { name:"Taupe",       color:"#a69785" },
+          { name:"Blanco roto", color:"#f5f0e8" },
+          { name:"Salvia",      color:"#8ea189" },
+        ]
+      },
+      { type: "Antimanchas (fácil limpieza)", note: "Hogar/negocio",
+        swatches: [
+          { name:"Oliva oscuro", color:"#3f4a2a" },
+          { name:"Café",         color:"#6b4e35" },
+          { name:"Gris claro",   color:"#cfcfcf" },
+          { name:"Petróleo",     color:"#1f4c57" },
+        ]
+      },
+      { type: "Terciopelo (velvet)", note: "Brillo sutil",
+        swatches: [
+          { name:"Esmeralda", color:"#1f6d57" },
+          { name:"Vino",      color:"#6c2734" },
+          { name:"Mostaza",   color:"#b08a2e" },
+          { name:"Negro",     color:"#1b1b1b" },
+        ]
+      },
+    ];
+
+    // =========================
+    // Helpers
+    // =========================
+    const $ = (id) => document.getElementById(id);
+    const qs = (sel, root=document) => root.querySelector(sel);
+    const qsa = (sel, root=document) => [...root.querySelectorAll(sel)];
 
     const waLink = (text) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
 
-    // ===== Toast (reemplaza alert) =====
-    const toastWrap = document.getElementById("toastWrap");
+    const fmtPEN = (n) => {
+      if (!n || Number(n) <= 0) return "Consultar";
+      return `S/ ${Number(n).toFixed(0)}`;
+    };
+
+    const uid = () => {
+      // Compact unique-ish id (good enough for orders)
+      return "A" + Math.random().toString(36).slice(2,8).toUpperCase() + "-" + Date.now().toString(36).toUpperCase();
+    };
+
+    const nowISO = () => new Date().toISOString();
+
+    const readParams = () => Object.fromEntries(new URLSearchParams(location.search).entries());
+
+    // UTM capture
+    const getUTM = () => {
+      const p = readParams();
+      return {
+        utm_source: p.utm_source || "",
+        utm_medium: p.utm_medium || "",
+        utm_campaign: p.utm_campaign || "",
+        utm_content: p.utm_content || "",
+        utm_term: p.utm_term || ""
+      };
+    };
+
+    // Local logs for owners
+    const LOG_KEY = "acrati_logs_v2";
+    const getLogs = () => {
+      try{ return JSON.parse(localStorage.getItem(LOG_KEY) || "[]"); } catch { return []; }
+    };
+    const pushLog = (entry) => {
+      const logs = getLogs();
+      logs.unshift(entry);
+      localStorage.setItem(LOG_KEY, JSON.stringify(logs.slice(0, 120))); // keep last 120
+    };
+
+    // Toast
     const toast = (title, msg="", variant="success", ttl=3400) => {
-      if (!toastWrap) return;
+      const wrap = $("toasts");
+      if (!wrap) return;
       const el = document.createElement("div");
       el.className = `toast ${variant}`;
       el.innerHTML = `
         <div>
           <b>${title}</b>
-          ${msg ? `<div class="tmsg">${msg}</div>` : ""}
+          ${msg ? `<p>${msg}</p>` : ""}
         </div>
-        <button class="btn ghost small" type="button" aria-label="Cerrar">Cerrar</button>
+        <button class="btn ghost small" type="button">Cerrar</button>
       `;
-      const btn = el.querySelector("button");
-      btn.addEventListener("click", () => el.remove());
-      toastWrap.appendChild(el);
+      el.querySelector("button").addEventListener("click", () => el.remove());
+      wrap.appendChild(el);
       setTimeout(() => { if (el && el.parentElement) el.remove(); }, ttl);
     };
 
-    // WhatsApp: solo botón flotante
-    const waFloat = document.getElementById("btn-wa-float");
-    if (waFloat) waFloat.href = waLink("Hola, quiero ayuda con mi pedido. ¿Me orientas?");
-
-    // Año
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // ====== Guardado local (respaldo) ======
-    const saveLeadLocal = (row) => {
-      const key = "acrati_rows";
-      const existing = JSON.parse(localStorage.getItem(key) || "[]");
-      existing.unshift(row);
-      localStorage.setItem(key, JSON.stringify(existing));
-    };
-
-    // ====== Enviar a Sheets ======
-    const postToSheets = async (row) => {
+    // Sheets posting (no-cors)
+    const postToSheets = async (payload) => {
       if (!SHEETS_WEBAPP_URL) return { ok:false, skipped:true };
       try{
         await fetch(SHEETS_WEBAPP_URL, {
           method: "POST",
           mode: "no-cors",
           headers: { "Content-Type":"application/json" },
-          body: JSON.stringify(row)
+          body: JSON.stringify(payload)
         });
         return { ok:true };
       }catch(e){
-        return { ok:false, error:String(e) };
+        return { ok:false, error: String(e) };
       }
     };
 
-    // ====== Menú móvil ======
-    const menuModal = document.getElementById("menuModal");
-    const openBtn = document.getElementById("btn-menu");
-    const closeBtn = document.getElementById("btn-menu-close");
-    if (openBtn) openBtn.addEventListener("click", () => menuModal.classList.add("open"));
-    if (closeBtn) closeBtn.addEventListener("click", () => menuModal.classList.remove("open"));
-    menuModal.addEventListener("click", (e) => { if (e.target === menuModal) menuModal.classList.remove("open"); });
-    document.querySelectorAll(".menu-modal a.mlink").forEach(a => a.addEventListener("click", () => menuModal.classList.remove("open")));
+    // =========================
+    // WhatsApp float
+    // =========================
+    $("waFloat").href = waLink(`Hola, quiero información sobre ${BRAND_NAME}.`);
 
-    // Cerrar modales con ESC
-    document.addEventListener("keydown", (e) => {
-      if (e.key !== "Escape") return;
-      if (menuModal.classList.contains("open")) menuModal.classList.remove("open");
-      if (quoteModal.classList.contains("open")) closeQuote();
-      if (configModal.classList.contains("open")) closeConfig();
-    });
+    // Year
+    $("year").textContent = new Date().getFullYear();
 
-    // ====== Filtros ======
-    const setActiveFilter = (value) => {
-      document.querySelectorAll(".filter").forEach(b => b.classList.toggle("active", b.dataset.filter === value));
-      document.querySelectorAll(".product").forEach(p => {
-        const cat = p.dataset.category;
-        p.style.display = (value === "all" || cat === value) ? "flex" : "none";
+    // =========================
+    // Catalog render + filters
+    // =========================
+    let activeFilter = "all";
+
+    const renderCatalog = () => {
+      const grid = $("catalogGrid");
+      const term = ($("searchInput").value || "").trim().toLowerCase();
+
+      const items = PRODUCTS.filter(p => {
+        const byFilter = activeFilter === "all" ? true : p.category === activeFilter;
+        const bySearch = term ? (p.name.toLowerCase().includes(term) || (p.desc||"").toLowerCase().includes(term)) : true;
+        return byFilter && bySearch;
+      });
+
+      grid.innerHTML = "";
+
+      items.forEach(p => {
+        const el = document.createElement("article");
+        el.className = "card";
+        el.dataset.id = p.id;
+
+        const isPedido = p.category === "pedido";
+        const hasImg = !!p.img;
+
+        el.innerHTML = `
+          <div class="media" style="${isPedido ? "display:flex;align-items:center;justify-content:center;padding:16px;aspect-ratio:auto;min-height:180px" : ""}">
+            ${isPedido ? `
+              <div>
+                <div class="badge"><strong>A medida</strong> • Cotización</div>
+                <div style="margin-top:38px;font-weight:900;font-size:15px">${p.name}</div>
+                <div style="margin-top:8px;color:#5a625f;font-weight:800;font-size:12.8px">${p.desc}</div>
+              </div>
+            ` : `
+              <div class="badge"><strong>${p.category === "sofas" ? "Sofá" : "Catálogo"}</strong> • Personalizable</div>
+              <img src="${p.img}" alt="${p.name}"
+                onerror="this.style.display='none'; this.parentElement.innerHTML += '<div style=&quot;padding:14px;font-weight:900&quot;>Imagen no encontrada</div><div style=&quot;padding:0 14px 14px;color:#5a625f;font-weight:800;font-size:12.5px&quot;>Sube <code>${p.img}</code> junto a <code>index.html</code>.</div>';">
+            `}
+          </div>
+
+          <div class="body">
+            <div class="title-row">
+              <h3>${p.name}</h3>
+              <span class="pill">${p.measures ? p.measures : (isPedido ? "Pinterest/IG" : "Personalizable")}</span>
+            </div>
+            <p>${p.desc}</p>
+            <div class="meta">
+              ${(p.tags || []).slice(0,3).map(t => `<span class="pill">${t}</span>`).join("")}
+            </div>
+            <div class="pricebar">
+              <div class="price">
+                <small>${isPedido ? "Precio" : "Desde"}</small>
+                <b>${isPedido ? "Consultar" : fmtPEN(p.price)}</b>
+              </div>
+              <button class="btn small ${isPedido ? "gold" : "primary"}" type="button" data-action="${isPedido ? "quote" : "customize"}">
+                ${isPedido ? "Cotizar" : "Personalizar"}
+              </button>
+            </div>
+          </div>
+        `;
+
+        // Click behavior
+        el.addEventListener("click", (e) => {
+          const btn = e.target.closest("button");
+          if (btn) {
+            const action = btn.dataset.action;
+            if (action === "quote") openQuote("Pedido a medida (referencia)");
+            if (action === "customize") openProduct(p.id);
+            e.stopPropagation();
+            return;
+          }
+          // card click
+          if (isPedido) openQuote("Pedido a medida (referencia)");
+          else openProduct(p.id);
+        });
+
+        grid.appendChild(el);
       });
     };
-    document.querySelectorAll(".filter").forEach(btn => btn.addEventListener("click", () => setActiveFilter(btn.dataset.filter)));
 
-    // =========================
-    // Modal "A pedido" (quoteModal)
-    // =========================
-    const quoteModal = document.getElementById("quoteModal");
-    const openQuote = (prefill="") => {
-      quoteModal.classList.add("open");
-      quoteModal.setAttribute("aria-hidden","false");
-      const qp = document.getElementById("q_producto");
-      if (qp && prefill) qp.value = prefill;
-    };
-    const closeQuote = () => {
-      quoteModal.classList.remove("open");
-      quoteModal.setAttribute("aria-hidden","true");
-    };
-
-    document.getElementById("btn-quote-close").addEventListener("click", closeQuote);
-    quoteModal.addEventListener("click", (e) => { if (e.target === quoteModal) closeQuote(); });
-
-    // Botones para abrir modal de cotización
-    document.getElementById("btn-open-quote").addEventListener("click", () => openQuote(""));
-    document.getElementById("btn-open-quote-top").addEventListener("click", () => openQuote("Pedido a medida (Pinterest/IG)"));
-    document.getElementById("btn-open-quote-bottom").addEventListener("click", () => openQuote("Pedido a medida (Pinterest/IG)"));
-    document.getElementById("btn-open-quote-card").addEventListener("click", (e) => { e.stopPropagation(); openQuote("Diseño personalizado (Pinterest/IG)"); });
-    document.getElementById("btn-open-quote-cta").addEventListener("click", () => openQuote("Pedido a medida / retapizado"));
-    document.getElementById("btn-open-quote-tapizado").addEventListener("click", () => openQuote("Retapizado / Tapizado"));
-
-    // Enviar resumen por WhatsApp desde modal
-    document.getElementById("btn-quote-wa").addEventListener("click", () => {
-      const text = `Hola, quiero cotizar:
-Nombre: ${document.getElementById("q_nombre").value.trim() || "—"}
-Tel: ${document.getElementById("q_tel").value.trim() || "—"}
-Ciudad: ${document.getElementById("q_ciudad").value.trim() || "—"}
-Producto/Servicio: ${document.getElementById("q_producto").value.trim() || "—"}
-Medidas: ${document.getElementById("q_medidas").value.trim() || "—"}
-Referencia: ${document.getElementById("q_referencia").value.trim() || "—"}
-Detalles: ${document.getElementById("q_detalles").value.trim() || "—"}`;
-      window.open(waLink(text), "_blank");
+    qsa(".filter").forEach(btn => {
+      btn.addEventListener("click", () => {
+        activeFilter = btn.dataset.filter;
+        qsa(".filter").forEach(b => b.classList.toggle("active", b === btn));
+        renderCatalog();
+      });
     });
 
-    document.getElementById("quoteForm").addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const row = {
-        ts: new Date().toISOString(),
-        event: "lead_pedido_a_medida",
-        producto: document.getElementById("q_producto").value.trim(),
-        precio: "",
-        nombre: document.getElementById("q_nombre").value.trim(),
-        tel: document.getElementById("q_tel").value.trim(),
-        ciudad: document.getElementById("q_ciudad").value.trim(),
-        tipo: "A pedido / cotización",
-        medidas: document.getElementById("q_medidas").value.trim(),
-        referencia: document.getElementById("q_referencia").value.trim(),
-        detalles: document.getElementById("q_detalles").value.trim(),
-        origen: "web",
-        pagina: location.href
+    $("searchInput").addEventListener("input", () => renderCatalog());
+
+    // =========================
+    // Cart model
+    // =========================
+    const CART_KEY = "acrati_cart_v2";
+    const getCart = () => {
+      try{ return JSON.parse(localStorage.getItem(CART_KEY) || "[]"); } catch { return []; }
+    };
+    const setCart = (items) => localStorage.setItem(CART_KEY, JSON.stringify(items));
+    const clearCart = () => setCart([]);
+
+    const cartTotal = (items) => items.reduce((sum, it) => sum + (Number(it.unit_price || 0) * Number(it.qty || 1)), 0);
+
+    const refreshCartBar = () => {
+      const items = getCart();
+      const total = cartTotal(items);
+
+      if (!items.length){
+        $("cartBar").style.display = "none";
+        return;
+      }
+      $("cartBar").style.display = "block";
+      $("cartBarTitle").textContent = `Tu pedido (${items.length} ítem${items.length>1?"s":""})`;
+      $("cartBarSub").textContent = `${items.reduce((a,b)=>a+(Number(b.qty)||1),0)} unidad(es) • ${fmtPEN(total)}`;
+    };
+
+    // =========================
+    // Product modal (configurator)
+    // =========================
+    const productModal = $("productModal");
+    let PM = {
+      product_id: "",
+      fabric_type: FABRICS[0]?.type || "",
+      swatch_name: "",
+      swatch_color: "",
+      legs: "Negro",
+      firmness: "Intermedia",
+      qty: 1,
+      measures: "",
+      notes: ""
+    };
+
+    const openModal = (modalEl) => {
+      modalEl.classList.add("open");
+      modalEl.setAttribute("aria-hidden","false");
+    };
+    const closeModal = (modalEl) => {
+      modalEl.classList.remove("open");
+      modalEl.setAttribute("aria-hidden","true");
+    };
+
+    const openProduct = (id) => {
+      const p = PRODUCTS.find(x => x.id === id);
+      if (!p) return;
+
+      PM = {
+        product_id: p.id,
+        fabric_type: FABRICS[0]?.type || "",
+        swatch_name: "",
+        swatch_color: "",
+        legs: "Negro",
+        firmness: "Intermedia",
+        qty: 1,
+        measures: p.measures || "",
+        notes: ""
       };
 
-      saveLeadLocal(row);
-      const res = await postToSheets(row);
+      $("pmTitle").textContent = `Personalizar: ${p.name}`;
+      $("pmProduct").value = p.name;
+      $("pmPrice").value = p.price > 0 ? `S/ ${p.price}` : "Consultar";
+      $("pmQty").value = 1;
+      $("pmLegs").value = "Negro";
+      $("pmFirmness").value = "Intermedia";
+      $("pmMeasures").value = PM.measures;
+      $("pmNotes").value = "";
 
-      if (res.skipped){
-        toast("Solicitud guardada", "Se guardó localmente. Falta configurar SHEETS_WEBAPP_URL.", "warn");
-      } else {
-        toast("Listo", "Tu solicitud quedó registrada. Para coordinar usa WhatsApp.", "success");
-      }
-      closeQuote();
-    });
-
-    // =========================
-    // Configurador de telas (Catálogo)
-    // =========================
-    const FABRICS = [
-      { type: "Chenille premium", note: "Suave, elegante, buena resistencia",
-        swatches: [
-          { name:"Oliva", color:"#5f6b3e", img:"" },
-          { name:"Arena", color:"#d8c7ae", img:"" },
-          { name:"Grafito", color:"#4a4a4a", img:"" },
-          { name:"Hueso", color:"#f1ede6", img:"" },
-        ]
-      },
-      { type: "Lino / look natural", note: "Textura natural, estética minimal",
-        swatches: [
-          { name:"Beige", color:"#d9cdbd", img:"" },
-          { name:"Taupe", color:"#a89987", img:"" },
-          { name:"Blanco roto", color:"#f5f0e8", img:"" },
-          { name:"Verde salvia", color:"#8fa38a", img:"" },
-        ]
-      },
-      { type: "Antimanchas (fácil limpieza)", note: "Ideal para negocios y hogares",
-        swatches: [
-          { name:"Oliva oscuro", color:"#3f4a2a", img:"" },
-          { name:"Café", color:"#6b4e35", img:"" },
-          { name:"Gris claro", color:"#cfcfcf", img:"" },
-          { name:"Azul petróleo", color:"#1f4c57", img:"" },
-        ]
-      },
-      { type: "Terciopelo (velvet)", note: "Brillo sutil, look premium",
-        swatches: [
-          { name:"Esmeralda", color:"#1f6d57", img:"" },
-          { name:"Vino", color:"#6c2734", img:"" },
-          { name:"Mostaza", color:"#b08a2e", img:"" },
-          { name:"Negro", color:"#1b1b1b", img:"" },
-        ]
-      },
-    ];
-
-    const configModal = document.getElementById("configModal");
-    const cfgTitle = document.getElementById("cfgTitle");
-    const cfgProduct = document.getElementById("cfgProduct");
-    const cfgFabricType = document.getElementById("cfgFabricType");
-    const cfgSwatches = document.getElementById("cfgSwatches");
-    const cfgCustomer = document.getElementById("cfgCustomer");
-    const cfgPhone = document.getElementById("cfgPhone");
-    const cfgCity = document.getElementById("cfgCity");
-    const cfgQty = document.getElementById("cfgQty");
-    const cfgFirmness = document.getElementById("cfgFirmness");
-    const cfgMeasures = document.getElementById("cfgMeasures");
-    const cfgLegs = document.getElementById("cfgLegs");
-    const cfgNotes = document.getElementById("cfgNotes");
-    const paymentBox = document.getElementById("paymentBox");
-
-    let CFG = {
-      productName: "",
-      price: "",
-      category: "",
-      fabricType: FABRICS[0]?.type || "",
-      swatchName: "",
-      swatchColor: "",
-      swatchImg: ""
-    };
-
-    function openConfigFromProduct(card){
-      paymentBox.style.display = "none";
-
-      CFG.productName = card?.dataset.name || "Producto";
-      CFG.price = card?.dataset.price || "";
-      CFG.category = card?.dataset.category || "";
-
-      cfgTitle.textContent = "Personalizar: " + CFG.productName;
-      cfgProduct.textContent = CFG.price ? `${CFG.productName} (S/ ${CFG.price})` : `${CFG.productName}`;
-
-      // Medidas definidas (si el producto tiene data-measures)
-      const measures = card?.dataset.measures || "";
-      if (measures){
-        cfgMeasures.value = measures;
-        cfgMeasures.readOnly = true;
-      } else {
-        cfgMeasures.value = "";
-        cfgMeasures.readOnly = false;
-      }
-
-      // Render select de telas
-      cfgFabricType.innerHTML = "";
+      // Fabric select
+      $("pmFabricType").innerHTML = "";
       FABRICS.forEach(f => {
         const opt = document.createElement("option");
         opt.value = f.type;
         opt.textContent = `${f.type} — ${f.note}`;
-        cfgFabricType.appendChild(opt);
+        $("pmFabricType").appendChild(opt);
       });
+      $("pmFabricType").value = PM.fabric_type;
 
-      cfgFabricType.value = FABRICS[0]?.type || "";
-      CFG.fabricType = cfgFabricType.value;
-      renderSwatches(CFG.fabricType);
+      renderSwatches(PM.fabric_type);
 
-      // Defaults
-      cfgQty.value = 1;
-      cfgFirmness.value = "Intermedia";
-      cfgLegs.value = "Negro";
-      cfgNotes.value = "";
+      // Total box
+      updatePMTotal();
 
-      configModal.classList.add("open");
-      configModal.setAttribute("aria-hidden","false");
-    }
+      openModal(productModal);
 
-    function closeConfig(){
-      configModal.classList.remove("open");
-      configModal.setAttribute("aria-hidden","true");
-    }
+      pushLog({
+        ts: nowISO(),
+        event: "view_product",
+        product_id: p.id,
+        product_name: p.name,
+        page: location.href,
+        ...getUTM()
+      });
+    };
 
-    document.getElementById("btn-cfg-close").addEventListener("click", closeConfig);
-    configModal.addEventListener("click", (e) => { if (e.target === configModal) closeConfig(); });
-
-    cfgFabricType.addEventListener("change", () => {
-      CFG.fabricType = cfgFabricType.value;
-      renderSwatches(CFG.fabricType);
-    });
-
-    function renderSwatches(fabricType){
+    const renderSwatches = (fabricType) => {
       const group = FABRICS.find(f => f.type === fabricType) || FABRICS[0];
-      cfgSwatches.innerHTML = "";
+      const wrap = $("pmSwatches");
+      wrap.innerHTML = "";
 
-      CFG.swatchName = "";
-      CFG.swatchColor = "";
-      CFG.swatchImg = "";
+      PM.fabric_type = fabricType;
+      PM.swatch_name = "";
+      PM.swatch_color = "";
 
       (group?.swatches || []).forEach((s, idx) => {
-        const btn = document.createElement("button");
-        btn.type = "button";
-        btn.className = "swatch";
-        btn.style.setProperty("--c", s.color || "#ddd");
-
-        btn.innerHTML = `
-          <div class="swatch-top">
-            <div class="swatch-dot"></div>
+        const b = document.createElement("button");
+        b.type = "button";
+        b.className = "swatch";
+        b.style.setProperty("--c", s.color || "#ddd");
+        b.innerHTML = `
+          <div class="swrow">
+            <div class="swdot"></div>
             <div>
-              <div class="swatch-name">${s.name}</div>
-              <div class="swatch-meta">${fabricType}</div>
+              <div class="swname">${s.name}</div>
+              <div class="swmeta">${group.type}</div>
             </div>
           </div>
-          <div class="swatch-img" style="${s.img ? "" : "display:none"}">
-            ${s.img ? `<img src="${s.img}" alt="${s.name}">` : ""}
-          </div>
         `;
-
-        btn.addEventListener("click", () => {
-          document.querySelectorAll(".swatch").forEach(x => x.classList.remove("active"));
-          btn.classList.add("active");
-          CFG.swatchName = s.name;
-          CFG.swatchColor = s.color || "";
-          CFG.swatchImg = s.img || "";
+        b.addEventListener("click", () => {
+          qsa(".swatch", wrap).forEach(x => x.classList.remove("active"));
+          b.classList.add("active");
+          PM.swatch_name = s.name;
+          PM.swatch_color = s.color || "";
         });
 
-        if (idx === 0) btn.click();
-        cfgSwatches.appendChild(btn);
+        wrap.appendChild(b);
+        if (idx === 0) b.click();
       });
-    }
+    };
 
-    function buildConfiguredComboText(){
-      const customer = cfgCustomer.value.trim();
-      const phone = cfgPhone.value.trim();
-      const city = cfgCity.value.trim();
-      const qty = (cfgQty.value || "1").toString().trim();
-      const measures = cfgMeasures.value.trim();
-      const firmness = cfgFirmness.value;
-      const legs = cfgLegs.value;
-      const notes = cfgNotes.value.trim();
+    const updatePMTotal = () => {
+      const p = PRODUCTS.find(x => x.id === PM.product_id);
+      const unit = Number(p?.price || 0);
+      const qty = Number($("pmQty").value || 1);
+      PM.qty = Math.max(1, qty);
 
-      return `Pedido (web) - Acrati
-Cliente: ${customer || "—"} | Tel: ${phone || "—"} | Ciudad: ${city || "—"}
-Producto: ${CFG.productName}${CFG.price ? ` | Precio: S/ ${CFG.price}` : ""}
-Cantidad: ${qty}
-Tela: ${CFG.fabricType}
-Color: ${CFG.swatchName}${CFG.swatchColor ? ` (${CFG.swatchColor})` : ""}
-Patas: ${legs}
-Medidas: ${measures || "—"}
-Firmeza: ${firmness}
-Notas: ${notes || "—"}
-Página: ${location.href}`;
-    }
+      const total = unit > 0 ? unit * PM.qty : 0;
+      $("pmTotal").textContent = unit > 0 ? `S/ ${total.toFixed(0)}` : "Consultar";
+    };
 
-    document.getElementById("btn-cfg-wa").addEventListener("click", () => {
-      const combo = buildConfiguredComboText();
-      window.open(waLink(combo), "_blank");
+    $("pmFabricType").addEventListener("change", (e) => renderSwatches(e.target.value));
+    $("pmQty").addEventListener("input", updatePMTotal);
+
+    $("btnPmWA").addEventListener("click", () => {
+      const p = PRODUCTS.find(x => x.id === PM.product_id);
+      const msg = buildProductMessage(p, PM);
+      window.open(waLink(msg), "_blank");
     });
 
-    document.getElementById("btn-cfg-order").addEventListener("click", async () => {
-      const combo = buildConfiguredComboText();
+    const buildProductMessage = (p, cfg) => {
+      return `Hola, quiero este pedido (${BRAND_NAME}):
+Producto: ${p?.name || "—"} ${p?.price>0 ? `| Precio base: S/ ${p.price}` : "| Precio: Consultar"}
+Tela: ${cfg.fabric_type}
+Color: ${cfg.swatch_name}${cfg.swatch_color ? ` (${cfg.swatch_color})` : ""}
+Patas: ${$("pmLegs").value}
+Firmeza: ${$("pmFirmness").value}
+Cantidad: ${$("pmQty").value}
+Medidas: ${$("pmMeasures").value || "—"}
+Notas: ${$("pmNotes").value || "—"}
+Página: ${location.href}`;
+    };
 
-      const payload = {
-        ts: new Date().toISOString(),
-        event: "pedido_configurado",
-        producto: CFG.productName,
-        precio: CFG.price || "",
-        nombre: cfgCustomer.value.trim(),
-        tel: cfgPhone.value.trim(),
-        ciudad: cfgCity.value.trim(),
-        tipo: "Pedido catálogo configurado",
-        medidas: cfgMeasures.value.trim(),
-        referencia: `Tela: ${CFG.fabricType} | Color: ${CFG.swatchName} | Patas: ${cfgLegs.value}`,
-        detalles: combo,
-        origen: "web",
-        pagina: location.href,
-        pago_estado: "Pendiente"
+    $("btnAddToCart").addEventListener("click", () => {
+      const p = PRODUCTS.find(x => x.id === PM.product_id);
+      if (!p) return;
+
+      const item = {
+        line_id: uid(),
+        product_id: p.id,
+        product_name: p.name,
+        unit_price: Number(p.price || 0),
+        qty: Math.max(1, Number($("pmQty").value || 1)),
+        fabric_type: $("pmFabricType").value,
+        swatch_name: PM.swatch_name,
+        swatch_color: PM.swatch_color,
+        legs: $("pmLegs").value,
+        firmness: $("pmFirmness").value,
+        measures: $("pmMeasures").value.trim(),
+        notes: $("pmNotes").value.trim()
       };
 
-      saveLeadLocal(payload);
-      const res = await postToSheets(payload);
+      const cart = getCart();
+      cart.unshift(item);
+      setCart(cart);
 
-      if (res.skipped){
-        toast("Pedido guardado", "Se guardó localmente. Falta configurar SHEETS_WEBAPP_URL.", "warn");
+      refreshCartBar();
+      toast("Agregado al carrito", `${item.product_name} • ${item.fabric_type} • ${item.swatch_name}`, "success");
+
+      pushLog({
+        ts: nowISO(),
+        event: "add_to_cart",
+        ...item,
+        total_cart: cartTotal(cart),
+        page: location.href,
+        ...getUTM()
+      });
+
+      closeModal(productModal);
+    });
+
+    // Close product modal
+    $("btnCloseProduct").addEventListener("click", () => closeModal(productModal));
+    productModal.addEventListener("click", (e) => { if (e.target === productModal) closeModal(productModal); });
+
+    // =========================
+    // Cart modal
+    // =========================
+    const cartModal = $("cartModal");
+
+    const renderCartModal = () => {
+      const cart = getCart();
+      const list = $("cartList");
+      list.innerHTML = "";
+
+      if (!cart.length){
+        list.innerHTML = `<div class="notice warn">Tu carrito está vacío. Vuelve al catálogo y agrega un producto.</div>`;
+        $("cartTotal").textContent = "S/ 0";
         return;
       }
 
-      toast("Pedido registrado", "Ya quedó en Google Sheets. Sigue con el pago por Yape/Plin.", "success");
-      paymentBox.style.display = "block";
-    });
-
-    // =========================
-    // Aperturas (Catálogo / Probador)
-    // =========================
-    // Botón “Personalizar un modelo” (abre configurador del primer producto de catálogo)
-    document.getElementById("btn-open-tryon").addEventListener("click", () => {
-      const firstCatalog = document.querySelector('.product[data-category="puffs"]');
-      if (firstCatalog) openConfigFromProduct(firstCatalog);
-    });
-
-    // Click en tarjetas:
-    document.querySelectorAll(".product").forEach(card => {
-      // Si es "pedido", abre el formulario
-      const isPedido = (card.dataset.category === "pedido");
-
-      // Botón explícito de abrir configurador (Pedir)
-      const openCfgBtn = card.querySelector("[data-open-config]");
-      if (openCfgBtn){
-        openCfgBtn.addEventListener("click", (e) => {
-          e.stopPropagation();
-          openConfigFromProduct(card);
+      cart.forEach(it => {
+        const row = document.createElement("div");
+        row.className = "panel";
+        row.style.boxShadow = "none";
+        row.innerHTML = `
+          <div style="display:flex; justify-content:space-between; gap:10px; align-items:flex-start;">
+            <div>
+              <div style="font-weight:900">${it.product_name}</div>
+              <div class="mini" style="margin-top:4px">
+                ${it.fabric_type} • ${it.swatch_name} • Patas: ${it.legs} • Firmeza: ${it.firmness}
+              </div>
+              <div class="mini" style="margin-top:4px">
+                Cantidad: <b>${it.qty}</b> • ${it.unit_price>0 ? `Unit: S/ ${it.unit_price}` : "Precio: Consultar"} • ${it.measures ? `Medidas: ${it.measures}` : ""}
+              </div>
+              ${it.notes ? `<div class="mini" style="margin-top:4px">Notas: ${it.notes}</div>` : ""}
+            </div>
+            <div style="display:flex; flex-direction:column; gap:8px; align-items:flex-end;">
+              <div style="font-weight:900">${it.unit_price>0 ? `S/ ${(it.unit_price*it.qty).toFixed(0)}` : "Consultar"}</div>
+              <button class="btn ghost small" type="button" data-remove="${it.line_id}">Quitar</button>
+            </div>
+          </div>
+        `;
+        row.querySelector("[data-remove]").addEventListener("click", () => {
+          const next = getCart().filter(x => x.line_id !== it.line_id);
+          setCart(next);
+          refreshCartBar();
+          renderCartModal();
         });
+        list.appendChild(row);
+      });
+
+      $("cartTotal").textContent = fmtPEN(cartTotal(cart));
+    };
+
+    const openCart = () => {
+      renderCartModal();
+      openModal(cartModal);
+      pushLog({ ts: nowISO(), event:"open_cart", page: location.href, ...getUTM() });
+    };
+
+    $("btnCloseCart").addEventListener("click", () => closeModal(cartModal));
+    cartModal.addEventListener("click", (e) => { if (e.target === cartModal) closeModal(cartModal); });
+
+    // Cart actions
+    const clearCartAll = () => {
+      clearCart();
+      refreshCartBar();
+      renderCartModal();
+      toast("Carrito vacío", "Puedes agregar productos desde el catálogo.", "warn");
+      pushLog({ ts: nowISO(), event:"clear_cart", page: location.href, ...getUTM() });
+    };
+
+    $("btnCartClear2").addEventListener("click", clearCartAll);
+    $("btnClearCart").addEventListener("click", clearCartAll);
+
+    $("btnOpenCart").addEventListener("click", openCart);
+    $("btnOpenCartTop").addEventListener("click", openCart);
+    $("btnOpenCartBottom").addEventListener("click", openCart);
+    $("btnCheckout").addEventListener("click", () => { openCart(); });
+
+    $("btnCartWA").addEventListener("click", () => {
+      const cart = getCart();
+      const msg = buildCartMessage(cart);
+      window.open(waLink(msg), "_blank");
+    });
+
+    const buildCartMessage = (cart) => {
+      const lines = cart.map((it, i) => {
+        const priceLine = it.unit_price>0 ? `S/ ${(it.unit_price*it.qty).toFixed(0)}` : "Consultar";
+        return `${i+1}) ${it.product_name} x${it.qty}
+- Tela: ${it.fabric_type}
+- Color: ${it.swatch_name}
+- Patas: ${it.legs} | Firmeza: ${it.firmness}
+- Medidas: ${it.measures || "—"}
+- Notas: ${it.notes || "—"}
+- Subtotal: ${priceLine}`;
+      }).join("\n\n");
+
+      const total = fmtPEN(cartTotal(cart));
+      return `Hola, este es mi carrito (${BRAND_NAME}):\n\n${lines}\n\nTotal: ${total}\nPágina: ${location.href}`;
+    };
+
+    // =========================
+    // Checkout
+    // =========================
+    const payModal = $("payModal");
+    let lastOrderId = "";
+
+    const buildOrderPayload = () => {
+      const cart = getCart();
+      const total = cartTotal(cart);
+
+      const order = {
+        ts: nowISO(),
+        event: "order_checkout",
+        order_id: uid(),
+        customer_name: $("coName").value.trim(),
+        customer_phone: $("coPhone").value.trim(),
+        customer_city: $("coCity").value.trim(),
+        customer_address: $("coAddress").value.trim(),
+        customer_notes: $("coNotes").value.trim(),
+        pay_method: $("coPayMethod").value,
+        pay_status: "Pendiente",
+        items: cart,
+        total: total,
+        page: location.href,
+        ...getUTM()
+      };
+
+      return order;
+    };
+
+    const placeOrder = async (alsoOpenWA=false) => {
+      const cart = getCart();
+      if (!cart.length){
+        toast("Carrito vacío", "Agrega un producto antes de finalizar.", "warn");
+        return;
       }
 
-      // Click general
-      card.addEventListener("click", (e) => {
-        if (e.target.closest("button") || e.target.closest("a")) return;
-        if (isPedido) {
-          openQuote("Diseño personalizado (Pinterest/IG)");
-          return;
-        }
-        openConfigFromProduct(card);
+      const payload = buildOrderPayload();
+      lastOrderId = payload.order_id;
+
+      // Save local logs (owners)
+      pushLog(payload);
+
+      // Post to Sheets
+      const res = await postToSheets(payload);
+
+      if (res.skipped){
+        toast("Pedido registrado localmente", "Configura SHEETS_WEBAPP_URL para guardar en Sheets.", "warn");
+      }else{
+        toast("Pedido registrado", "Listo. Ahora sigue el pago por Yape/Plin.", "success");
+      }
+
+      // Show payment guide
+      $("payText").innerHTML = `
+        <div><b>ID de pedido:</b> <span style="font-weight:900">${payload.order_id}</span></div>
+        <div style="margin-top:6px"><b>${payload.pay_method}:</b> ${PAY_YAPE_NUMBER}</div>
+        <div><b>Nombre:</b> ${PAY_YAPE_NAME}</div>
+        <div style="margin-top:8px;color:#5a625f;font-weight:800">
+          Monto sugerido: <b>${fmtPEN(payload.total)}</b> ${payload.total>0 ? "(según carrito)" : "(se confirmará por chat)"}
+        </div>
+      `;
+
+      closeModal(cartModal);
+      openModal(payModal);
+
+      // Optional: open WhatsApp with order summary
+      if (alsoOpenWA){
+        const msg = buildOrderWA(payload);
+        window.open(waLink(msg), "_blank");
+      }
+
+      // Keep cart, but you might prefer to clear after order:
+      // clearCart(); refreshCartBar();
+    };
+
+    const buildOrderWA = (order) => {
+      const total = fmtPEN(order.total);
+      const items = order.items.map((it, i) => {
+        const priceLine = it.unit_price>0 ? `S/ ${(it.unit_price*it.qty).toFixed(0)}` : "Consultar";
+        return `${i+1}) ${it.product_name} x${it.qty} (${priceLine})
+- Tela: ${it.fabric_type} | Color: ${it.swatch_name} | Patas: ${it.legs} | Firmeza: ${it.firmness}
+- Medidas: ${it.measures || "—"} | Notas: ${it.notes || "—"}`;
+      }).join("\n\n");
+
+      return `Hola, acabo de finalizar mi pedido (${BRAND_NAME}):
+ID: ${order.order_id}
+Cliente: ${order.customer_name || "—"} | Tel: ${order.customer_phone || "—"} | Ciudad: ${order.customer_city || "—"}
+Pago: ${order.pay_method}
+Dirección: ${order.customer_address || "—"}
+
+Items:
+${items}
+
+Total: ${total}
+Página: ${order.page}`;
+    };
+
+    $("btnPlaceOrder").addEventListener("click", () => placeOrder(false));
+    $("btnPlaceOrderWA").addEventListener("click", () => placeOrder(true));
+
+    // Pay modal actions
+    $("btnClosePay").addEventListener("click", () => closeModal(payModal));
+    payModal.addEventListener("click", (e) => { if (e.target === payModal) closeModal(payModal); });
+
+    $("btnPayWA").addEventListener("click", () => {
+      const msg = `Hola, adjunto mi comprobante (${BRAND_NAME}).
+ID de pedido: ${lastOrderId || "—"}
+Pago a: ${PAY_YAPE_NUMBER} (${PAY_YAPE_NAME})
+Gracias.`;
+      window.open(waLink(msg), "_blank");
+    });
+
+    $("btnCopyOrderId").addEventListener("click", async () => {
+      try{
+        await navigator.clipboard.writeText(lastOrderId || "");
+        toast("Copiado", "ID de pedido copiado al portapapeles.", "success");
+      }catch{
+        toast("No se pudo copiar", "Copia manualmente el ID mostrado.", "warn");
+      }
+    });
+
+    // =========================
+    // Quote modal (A medida / Tapizado)
+    // =========================
+    const quoteModal = $("quoteModal");
+    const openQuote = (servicePrefill="Pedido a medida (referencia)") => {
+      $("qService").value = servicePrefill;
+      openModal(quoteModal);
+
+      pushLog({
+        ts: nowISO(),
+        event: "open_quote",
+        service: servicePrefill,
+        page: location.href,
+        ...getUTM()
+      });
+    };
+
+    $("btnOpenQuote").addEventListener("click", () => openQuote("Pedido a medida (referencia)"));
+    $("btnOpenQuoteTop").addEventListener("click", () => openQuote("Pedido a medida (referencia)"));
+    $("btnOpenQuoteAmedida").addEventListener("click", () => openQuote("Pedido a medida (referencia)"));
+    $("btnOpenQuoteTapizado").addEventListener("click", () => openQuote("Tapizado / Retapizado"));
+    $("btnOpenQuoteBottom").addEventListener("click", () => openQuote("Pedido a medida (referencia)"));
+
+    $("btnCloseQuote").addEventListener("click", () => closeModal(quoteModal));
+    quoteModal.addEventListener("click", (e) => { if (e.target === quoteModal) closeModal(quoteModal); });
+
+    $("btnQuoteWA").addEventListener("click", () => {
+      const msg = buildQuoteMsg();
+      window.open(waLink(msg), "_blank");
+    });
+
+    const buildQuoteMsg = () => {
+      return `Hola, quiero cotizar (${BRAND_NAME}):
+Nombre: ${$("qName").value.trim() || "—"}
+Tel: ${$("qPhone").value.trim() || "—"}
+Ciudad: ${$("qCity").value.trim() || "—"}
+Servicio: ${$("qService").value}
+Medidas: ${$("qMeasures").value.trim() || "—"}
+Referencia: ${$("qRef").value.trim() || "—"}
+Detalles: ${$("qDetails").value.trim() || "—"}
+Página: ${location.href}`;
+    };
+
+    $("btnSaveQuote").addEventListener("click", async () => {
+      const payload = {
+        ts: nowISO(),
+        event: "lead_quote",
+        service: $("qService").value,
+        customer_name: $("qName").value.trim(),
+        customer_phone: $("qPhone").value.trim(),
+        customer_city: $("qCity").value.trim(),
+        measures: $("qMeasures").value.trim(),
+        reference_link: $("qRef").value.trim(),
+        details: $("qDetails").value.trim(),
+        page: location.href,
+        ...getUTM()
+      };
+
+      pushLog(payload);
+
+      const res = await postToSheets(payload);
+      if (res.skipped){
+        toast("Solicitud guardada (local)", "Configura SHEETS_WEBAPP_URL para guardarla en Sheets.", "warn");
+      }else{
+        toast("Solicitud registrada", "Listo. Te contactaremos para cotizar.", "success");
+      }
+
+      closeModal(quoteModal);
+    });
+
+    // =========================
+    // Owner mode
+    // =========================
+    const ownerModal = $("ownerModal");
+
+    const isAdmin = () => {
+      const p = readParams();
+      return p.admin === "1" || localStorage.getItem("acrati_admin") === "1";
+    };
+
+    const openOwner = () => {
+      localStorage.setItem("acrati_admin", "1");
+      renderOwner();
+      openModal(ownerModal);
+    };
+
+    const renderOwner = () => {
+      const logs = getLogs();
+      $("ownerCounts").textContent = `${logs.length} registro(s) guardados localmente.`;
+
+      const wrap = $("ownerTable");
+      wrap.innerHTML = "";
+
+      const slice = logs.slice(0, 8);
+      if (!slice.length){
+        wrap.innerHTML = `<div class="notice warn">No hay registros locales aún.</div>`;
+        return;
+      }
+
+      slice.forEach(l => {
+        const box = document.createElement("div");
+        box.className = "panel";
+        box.style.boxShadow = "none";
+
+        const title =
+          l.event === "order_checkout" ? `Pedido: ${l.order_id}` :
+          l.event === "lead_quote" ? `Cotización: ${l.service}` :
+          l.event || "Evento";
+
+        const who =
+          (l.customer_name || l.nombre || "—") + (l.customer_city ? ` • ${l.customer_city}` : "");
+
+        const money = (l.total && Number(l.total)>0) ? ` • Total: S/ ${Number(l.total).toFixed(0)}` : "";
+
+        box.innerHTML = `
+          <div style="display:flex; justify-content:space-between; gap:10px; align-items:flex-start;">
+            <div>
+              <div style="font-weight:900">${title}</div>
+              <div class="mini" style="margin-top:4px">${who}${money}</div>
+              <div class="mini" style="margin-top:4px">Fecha: ${l.ts || "—"}</div>
+            </div>
+            <button class="btn ghost small" type="button">Copiar</button>
+          </div>
+        `;
+        box.querySelector("button").addEventListener("click", async () => {
+          try{
+            await navigator.clipboard.writeText(JSON.stringify(l, null, 2));
+            toast("Copiado", "Registro copiado como JSON.", "success");
+          }catch{
+            toast("No se pudo copiar", "Copia manualmente.", "warn");
+          }
+        });
+
+        wrap.appendChild(box);
+      });
+    };
+
+    $("btnOpenOwner").addEventListener("click", openOwner);
+    $("btnCloseOwner").addEventListener("click", () => closeModal(ownerModal));
+    ownerModal.addEventListener("click", (e) => { if (e.target === ownerModal) closeModal(ownerModal); });
+
+    $("btnExportCSV").addEventListener("click", () => {
+      const logs = getLogs();
+      if (!logs.length){
+        toast("Sin datos", "No hay registros para exportar.", "warn");
+        return;
+      }
+      // Flatten minimal CSV
+      const headers = [
+        "ts","event","order_id","service","customer_name","customer_phone","customer_city",
+        "total","pay_method","pay_status","page","utm_source","utm_medium","utm_campaign"
+      ];
+      const rows = logs.map(l => headers.map(h => {
+        const v = (l[h] ?? "");
+        return `"${String(v).replaceAll('"','""')}"`;
+      }).join(","));
+
+      const csv = [headers.join(","), ...rows].join("\n");
+      const blob = new Blob([csv], { type:"text/csv;charset=utf-8;" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `acrati_registros_${new Date().toISOString().slice(0,10)}.csv`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+
+      toast("CSV exportado", "Revisa tus descargas.", "success");
+    });
+
+    $("btnClearLogs").addEventListener("click", () => {
+      localStorage.removeItem(LOG_KEY);
+      renderOwner();
+      toast("Listo", "Registros locales eliminados.", "success");
+    });
+
+    $("btnTestSheets").addEventListener("click", async () => {
+      const payload = {
+        ts: nowISO(),
+        event: "test_sheets",
+        note: "Prueba desde Modo Dueños",
+        page: location.href,
+        ...getUTM()
+      };
+      const res = await postToSheets(payload);
+      if (res.skipped) toast("Falta configuración", "SHEETS_WEBAPP_URL está vacío.", "warn");
+      else toast("Enviado", "Se intentó enviar el test a Sheets (no-cors). Verifica en tu hoja.", "success");
+    });
+
+    $("btnCopyPayMsg").addEventListener("click", async () => {
+      const msg = `Hola, para confirmar tu pedido:
+1) Realiza el pago por Yape/Plin a ${PAY_YAPE_NUMBER} (${PAY_YAPE_NAME})
+2) Envíanos la captura por este chat
+3) Te confirmamos producción y fecha de entrega.`;
+      try{ await navigator.clipboard.writeText(msg); toast("Copiado", "Mensaje de pago copiado.", "success"); }
+      catch{ toast("No se pudo copiar", "Copia manualmente.", "warn"); }
+    });
+
+    $("btnCopyProdMsg").addEventListener("click", async () => {
+      const msg = `Hola, pedido confirmado.
+Pasamos a producción. Te compartimos avance y fecha estimada de entrega/envío.`;
+      try{ await navigator.clipboard.writeText(msg); toast("Copiado", "Mensaje de producción copiado.", "success"); }
+      catch{ toast("No se pudo copiar", "Copia manualmente.", "warn"); }
+    });
+
+    // =========================
+    // Misc: templates / checklists
+    // =========================
+    $("btnCopyChecklist").addEventListener("click", async () => {
+      const txt = `Para cotizar rápido, envíame:
+- Foto o link (Pinterest/IG)
+- Medidas aproximadas
+- Ciudad
+- Uso (hogar/negocio)
+- Tela/color deseados
+- Fecha deseada`;
+      try{ await navigator.clipboard.writeText(txt); toast("Copiado", "Checklist copiado.", "success"); }
+      catch{ toast("No se pudo copiar", "Copia manualmente.", "warn"); }
+    });
+
+    $("btnCopyMsgTemplate").addEventListener("click", async () => {
+      const txt = `Hola, quiero cotizar:
+- Foto/link:
+- Medidas:
+- Ciudad:
+- Uso:
+- Tela/color:
+- Fecha deseada:
+Gracias.`;
+      try{ await navigator.clipboard.writeText(txt); toast("Copiado", "Plantilla copiada.", "success"); }
+      catch{ toast("No se pudo copiar", "Copia manualmente.", "warn"); }
+    });
+
+    // =========================
+    // Header CTAs
+    // =========================
+    $("btnGoCatalog").addEventListener("click", () => location.hash = "#catalogo");
+    $("btnHeroBuy").addEventListener("click", () => location.hash = "#catalogo");
+    $("btnHeroQuote").addEventListener("click", () => openQuote("Pedido a medida (referencia)"));
+
+    // =========================
+    // Menu modal
+    // =========================
+    const menuModal = $("menuModal");
+    $("btnMenu").addEventListener("click", () => openModal(menuModal));
+    $("btnCloseMenu").addEventListener("click", () => closeModal(menuModal));
+    menuModal.addEventListener("click", (e) => { if (e.target === menuModal) closeModal(menuModal); });
+
+    // Close on ESC
+    document.addEventListener("keydown", (e) => {
+      if (e.key !== "Escape") return;
+      [menuModal, productModal, cartModal, payModal, quoteModal, ownerModal].forEach(m => {
+        if (m.classList.contains("open")) closeModal(m);
       });
     });
 
-    // CTA header
-    document.getElementById("btn-open-quote-cta").addEventListener("click", () => openQuote("Pedido a medida / retapizado"));
+    // =========================
+    // Cart bar buttons
+    // =========================
+    $("btnOpenCart").addEventListener("click", openCart);
+    $("btnCheckout").addEventListener("click", openCart);
+
+    // =========================
+    // First render
+    // =========================
+    renderCatalog();
+    refreshCartBar();
+
+    // If admin
+    if (isAdmin()){
+      // soft hint: allow opening owner mode quickly
+      setTimeout(() => {
+        toast("Modo Dueños disponible", "Abrir con el botón en Contacto o agrega ?admin=1.", "success", 4200);
+      }, 1200);
+    }
+
+    // Also let owners open owner mode by clicking footer text 5 times
+    let footClicks = 0;
+    document.querySelector("footer").addEventListener("click", () => {
+      footClicks++;
+      if (footClicks >= 5){
+        footClicks = 0;
+        openOwner();
+      }
+    });
+
+    // =========================
+    // Cart bar additional actions
+    // =========================
+    $("btnClearCart").addEventListener("click", () => clearCartAll());
+
+    // Convenience links
+    $("btnOpenCartTop").addEventListener("click", openCart);
+    $("btnOpenCartBottom").addEventListener("click", openCart);
+
   </script>
 </body>
 </html>
