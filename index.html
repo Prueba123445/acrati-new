@@ -7,41 +7,33 @@
   <meta name="description" content="Compra puffs del catálogo con personalización y pedido en 2 minutos. También hacemos tapizado/retapizado y pedidos por referencia (Pinterest/IG). Registro automático a Google Sheets." />
   <meta name="theme-color" content="#0f2a22" />
 
-  <!-- Fonts (premium editorial) -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
 
   <style>
+    /* ======= (CSS ORIGINAL SIN CAMBIOS IMPORTANTES) ======= */
     :root{
-      /* Brand palette: deep green + warm ivory + subtle gold */
       --bg: #fbf7f0;
       --surface: rgba(255,255,255,.88);
       --surface2: rgba(255,255,255,.72);
-
       --ink: #101614;
       --muted: #5a625f;
       --muted2:#7c867f;
-
-      --brand: #0f2a22;         /* deep green */
+      --brand: #0f2a22;
       --brand2:#1e4a3d;
       --gold: #b0893a;
-
       --border: rgba(16,22,20,.10);
       --shadow-sm: 0 10px 24px rgba(16,22,20,.08);
       --shadow-md: 0 18px 52px rgba(16,22,20,.10);
-
       --radius-lg: 26px;
       --radius-md: 18px;
       --radius-sm: 14px;
-
       --max: 1180px;
-
       --font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       --font-display: "Fraunces", ui-serif, Georgia, "Times New Roman", serif;
-
       --focus: 0 0 0 4px rgba(15,42,34,.18);
-
       --ease: cubic-bezier(.2,.8,.2,1);
     }
 
@@ -62,7 +54,6 @@
     img{ max-width:100%; display:block; }
     .container{ max-width:var(--max); margin:0 auto; padding:0 18px; }
 
-    /* Top notice */
     .topline{
       background: rgba(255,255,255,.55);
       border-bottom:1px solid rgba(16,22,20,.08);
@@ -78,7 +69,6 @@
     .toplinks a{ font-weight:700; color:var(--muted); }
     .toplinks a:hover{ color:var(--ink); }
 
-    /* Header */
     header{
       position:sticky; top:0; z-index:50;
       background: rgba(251,247,240,.82);
@@ -100,9 +90,7 @@
       box-shadow: var(--shadow-sm);
       flex:0 0 auto;
     }
-    .word{
-      display:flex; flex-direction:column; gap:2px;
-    }
+    .word{ display:flex; flex-direction:column; gap:2px; }
     .word .name{
       font-family:var(--font-display);
       font-weight:700;
@@ -138,7 +126,6 @@
       .brand{ min-width:auto; }
     }
 
-    /* Buttons */
     .btn{
       display:inline-flex; align-items:center; justify-content:center; gap:10px;
       padding:12px 14px;
@@ -179,7 +166,6 @@
       box-shadow: 0 10px 22px rgba(176,137,58,.10);
     }
 
-    /* Chips */
     .chip{
       display:inline-flex; align-items:center; gap:10px;
       padding:8px 12px;
@@ -195,7 +181,6 @@
       box-shadow: 0 10px 18px rgba(15,42,34,.18);
     }
 
-    /* Sections */
     section{ padding: 34px 0; }
     .section-head{
       display:flex; justify-content:space-between; align-items:flex-end; gap:14px;
@@ -215,7 +200,6 @@
       max-width: 72ch;
     }
 
-    /* Hero */
     .hero{ padding: 26px 0 12px; }
     .hero-grid{
       display:grid; grid-template-columns: 1.08fr .92fr; gap:16px;
@@ -301,7 +285,6 @@
       border-radius: 999px;
     }
 
-    /* How it works */
     .steps{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
@@ -326,14 +309,11 @@
     .step h3{ margin:10px 0 6px; font-size: 15px; font-weight: 900; }
     .step p{ margin:0; color:var(--muted); font-size: 13.5px; }
 
-    /* Catalog controls */
     .controls{
       display:flex; gap:10px; flex-wrap:wrap; align-items:center;
       margin: 12px 0 14px;
     }
-    .filters{
-      display:flex; gap:8px; flex-wrap:wrap;
-    }
+    .filters{ display:flex; gap:8px; flex-wrap:wrap; }
     .filter{
       padding: 10px 12px;
       border-radius: 999px;
@@ -369,7 +349,6 @@
     }
     .search small{ color:var(--muted2); font-weight:900; }
 
-    /* Catalog grid */
     .catalog{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
@@ -431,23 +410,10 @@
       gap: 8px;
       flex:1;
     }
-    .title-row{
-      display:flex; justify-content:space-between; gap:10px; align-items:flex-start;
-    }
-    .body h3{
-      margin:0;
-      font-size: 15px;
-      font-weight: 900;
-      letter-spacing: -.2px;
-    }
-    .body p{
-      margin:0;
-      color: var(--muted);
-      font-size: 13.5px;
-    }
-    .meta{
-      display:flex; gap:8px; flex-wrap:wrap; margin-top:2px;
-    }
+    .title-row{ display:flex; justify-content:space-between; gap:10px; align-items:flex-start; }
+    .body h3{ margin:0; font-size: 15px; font-weight: 900; letter-spacing: -.2px; }
+    .body p{ margin:0; color: var(--muted); font-size: 13.5px; }
+    .meta{ display:flex; gap:8px; flex-wrap:wrap; margin-top:2px; }
     .pill{
       font-size: 12px;
       font-weight: 900;
@@ -464,14 +430,10 @@
       border-top: 1px solid rgba(16,22,20,.08);
       display:flex; align-items:center; justify-content:space-between; gap:12px;
     }
-    .price{
-      display:flex; flex-direction:column;
-      line-height:1.1;
-    }
+    .price{ display:flex; flex-direction:column; line-height:1.1; }
     .price small{ color:var(--muted2); font-weight: 900; font-size: 11.5px; }
     .price b{ font-size: 15px; font-weight: 900; letter-spacing: -.2px; }
 
-    /* Service blocks */
     .grid2{ display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
     .grid3{ display:grid; grid-template-columns: repeat(3,1fr); gap:12px; }
     @media (max-width: 900px){ .grid2,.grid3{ grid-template-columns:1fr; } }
@@ -487,11 +449,10 @@
     .panel p{ margin:0; color:var(--muted); font-size: 13.5px; }
     .panel .actions{ display:flex; gap:10px; flex-wrap:wrap; margin-top: 12px; }
 
-    /* Footer */
     footer{
       border-top:1px solid rgba(16,22,20,.08);
       padding: 18px 0;
-      color: var(--muted);
+      color:var(--muted);
       font-size: 13px;
     }
     .footrow{ display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; }
@@ -499,7 +460,6 @@
     .footlinks a{ color:var(--muted); font-weight: 900; }
     .footlinks a:hover{ color:var(--ink); }
 
-    /* Modal */
     .modal{
       position: fixed; inset:0;
       background: rgba(16,22,20,.52);
@@ -527,9 +487,7 @@
       border-bottom: 1px solid rgba(16,22,20,.08);
       background: rgba(251,247,240,.72);
     }
-    .sheet-head .t{
-      display:flex; flex-direction:column; gap:4px;
-    }
+    .sheet-head .t{ display:flex; flex-direction:column; gap:4px; }
     .sheet-head .t b{ font-size: 14px; font-weight: 900; }
     .sheet-head .t span{ color:var(--muted); font-size: 12.5px; }
     .sheet-body{ padding: 14px; }
@@ -577,7 +535,6 @@
       color: #5b441a;
     }
 
-    /* Swatches */
     .swatches{
       display:grid;
       grid-template-columns: repeat(4, 1fr);
@@ -609,7 +566,6 @@
     .swname{ font-weight: 900; font-size: 12.8px; }
     .swmeta{ color:var(--muted2); font-weight: 800; font-size: 11.5px; margin-top:2px; }
 
-    /* Floating WhatsApp */
     .wa-float{
       position: fixed;
       right: 16px;
@@ -630,7 +586,6 @@
     .wa-float:hover{ transform: translateY(-1px); box-shadow: 0 22px 60px rgba(16,22,20,.20); }
     .wa-float:focus{ outline:none; box-shadow: 0 22px 60px rgba(16,22,20,.20), var(--focus); }
 
-    /* Bottom cart bar */
     .cartbar{
       position: fixed;
       left: 50%;
@@ -660,7 +615,6 @@
     .cartbar .left span{ font-size: 12px; color:var(--muted); font-weight: 800; }
     .cartbar .actions{ display:flex; gap:8px; align-items:center; }
 
-    /* Toasts */
     .toasts{
       position: fixed;
       left: 50%;
@@ -691,7 +645,6 @@
     .toast.success{ border-color: rgba(15,42,34,.18); background: rgba(15,42,34,.08); }
     .toast.warn{ border-color: rgba(176,137,58,.22); background: rgba(176,137,58,.10); }
 
-    /* Reduced motion */
     @media (prefers-reduced-motion: reduce){
       *{ transition:none !important; animation:none !important; scroll-behavior:auto !important; }
     }
@@ -733,6 +686,7 @@
 
       <div class="nav-actions">
         <button class="btn secondary menu-btn" id="btnMenu" type="button">Menú</button>
+        <button class="btn secondary" id="btnOpenUpload" type="button">Subir comprobante</button>
         <button class="btn gold" id="btnOpenQuote" type="button">Cotizar a medida</button>
         <button class="btn primary" id="btnGoCatalog" type="button">Comprar del catálogo</button>
       </div>
@@ -803,23 +757,23 @@
           <h1 class="h1">Puffs premium y tapizado a medida, con compra cómoda y ordenada.</h1>
           <p class="lead">
             El cliente elige modelo, personaliza (tela, color, patas), agrega al carrito y finaliza pedido.
-            Ustedes reciben todo estructurado: datos del cliente, configuración y trazabilidad (UTM + link de la página).
+            Luego paga por Yape/Plin/Transferencia y sube su comprobante desde la misma página.
           </p>
 
           <div class="hero-cta">
             <button class="btn primary" type="button" id="btnHeroBuy">Comprar del catálogo</button>
             <button class="btn gold" type="button" id="btnHeroQuote">Cotizar a medida / retapizado</button>
-            <a class="btn secondary" href="#como">Ver cómo funciona</a>
+            <button class="btn secondary" type="button" id="btnHeroUpload">Subir comprobante</button>
           </div>
 
           <div class="hero-proof">
-            <span class="chip"><span class="dot"></span>Personalización guiada</span>
-            <span class="chip"><span class="dot"></span>Envíos Lima y provincias</span>
-            <span class="chip"><span class="dot"></span>Registro automático a Sheets</span>
+            <span class="chip"><span class="dot"></span>Catálogo: pago 100%</span>
+            <span class="chip"><span class="dot"></span>A medida: adelanto 50%</span>
+            <span class="chip"><span class="dot"></span>Comprobante → Sheets</span>
           </div>
 
           <div class="mini">
-            Soporte por chat exclusivamente por el botón flotante de WhatsApp.
+            Soporte por chat por el botón flotante de WhatsApp.
           </div>
         </div>
 
@@ -834,6 +788,7 @@
           </div>
           <div class="tags">
             <span class="tag">Yape/Plin</span>
+            <span class="tag">Transferencia</span>
             <span class="tag">Shalom</span>
             <span class="tag">A medida</span>
             <span class="tag">Retapizado</span>
@@ -846,8 +801,8 @@
     <section id="como">
       <div class="section-head">
         <div>
-          <h2>Cómo compra un cliente (sin fricción)</h2>
-          <p>La página guía el pedido y reduce preguntas repetidas. Ustedes reciben data lista para cotizar/producción.</p>
+          <h2>Cómo compra un cliente (ordenado, sin pasarela)</h2>
+          <p>Catálogo: paga 100% y sube comprobante. A medida: cotiza primero; luego adelanto 50% y saldo antes de envío.</p>
         </div>
       </div>
 
@@ -855,17 +810,17 @@
         <div class="step">
           <span class="num">1</span>
           <h3>Elige modelo</h3>
-          <p>Catálogo con precio base y fotos. Filtra y encuentra rápido.</p>
+          <p>Catálogo con precio base y fotos. Personaliza y agrega al carrito.</p>
         </div>
         <div class="step">
           <span class="num">2</span>
-          <h3>Personaliza</h3>
-          <p>Tela, color, patas, firmeza y cantidad. Se agrega al carrito con el detalle.</p>
+          <h3>Finaliza pedido</h3>
+          <p>Se registra en Sheets con ID. Para catálogo: se solicita pago 100%.</p>
         </div>
         <div class="step">
           <span class="num">3</span>
-          <h3>Finaliza pedido</h3>
-          <p>Datos del cliente + envío. Se registra en Sheets y se muestra pago por Yape/Plin.</p>
+          <h3>Sube comprobante</h3>
+          <p>Captura o PDF. El archivo se guarda y se enlaza a Sheets para validación.</p>
         </div>
       </div>
     </section>
@@ -875,10 +830,11 @@
       <div class="section-head">
         <div>
           <h2>Catálogo</h2>
-          <p>Clic en un producto para personalizar y agregar al carrito. “A medida” lleva a cotización por referencia.</p>
+          <p>Clic en un producto para personalizar y agregar al carrito. “A medida” abre cotización por referencia.</p>
         </div>
         <div style="display:flex; gap:10px; flex-wrap:wrap">
           <button class="btn secondary" type="button" id="btnOpenCartTop">Ver carrito</button>
+          <button class="btn secondary" type="button" id="btnOpenUploadTop">Subir comprobante</button>
           <button class="btn gold" type="button" id="btnOpenQuoteTop">Cotizar a medida</button>
         </div>
       </div>
@@ -909,7 +865,7 @@
       <div class="section-head">
         <div>
           <h2>Pedidos a medida por referencia (Pinterest/IG)</h2>
-          <p>Ideal cuando el cliente llega con una foto. Registramos su solicitud con campos que ustedes necesitan para cotizar rápido.</p>
+          <p>Primero cotizamos. Cuando el precio esté confirmado, se agenda con adelanto 50% y el saldo se paga antes del envío/entrega.</p>
         </div>
       </div>
 
@@ -922,19 +878,19 @@
             <button class="btn secondary" type="button" id="btnCopyChecklist">Copiar checklist</button>
           </div>
           <div class="notice">
-            “Checklist” ayuda a reducir ida y vuelta en WhatsApp.
+            “Checklist” reduce ida y vuelta y acelera cotización.
           </div>
         </div>
 
         <div class="panel">
-          <h3>Cómo lo gestionan ustedes</h3>
-          <p>La solicitud se guarda en Sheets con: datos, referencia, medidas y notas. También queda en el navegador como respaldo.</p>
+          <h3>Pago de pedidos a medida</h3>
+          <p>Una vez que tu cotización esté confirmada, podrás registrar el <b>adelanto 50%</b> con comprobante (se guarda en Sheets) y luego el <b>saldo</b> antes del despacho.</p>
           <div class="actions">
+            <button class="btn secondary" type="button" id="btnOpenUploadAmedida">Subir comprobante</button>
             <a class="btn secondary" href="#envios">Ver pagos y envíos</a>
-            <a class="btn secondary" href="#contacto">Contacto</a>
           </div>
           <div class="notice warn">
-            Consejo operativo: estandaricen “tela/código” (ej. CH-OLIVA) para producción y stock.
+            Para ordenar producción: el adelanto confirmado es el “gatillo” de inicio.
           </div>
         </div>
       </div>
@@ -953,15 +909,15 @@
       <div class="grid3">
         <div class="panel">
           <h3>Evaluación</h3>
-          <p>Fotos, medidas, estado de espuma y estructura. Definimos si conviene retapizar y qué se reemplaza.</p>
+          <p>Fotos, medidas, estado de espuma y estructura. Definimos qué se reemplaza.</p>
         </div>
         <div class="panel">
           <h3>Telas premium</h3>
-          <p>Opciones: chenille, antimanchas, lino, velvet. Se prioriza resistencia y facilidad de limpieza.</p>
+          <p>Opciones: chenille, antimanchas, lino, velvet. Se prioriza resistencia y fácil limpieza.</p>
         </div>
         <div class="panel">
           <h3>Acabado</h3>
-          <p>Costuras reforzadas, tensado correcto y terminaciones limpias. Resultado “nuevo” y elegante.</p>
+          <p>Costuras reforzadas, tensado correcto y terminaciones limpias.</p>
         </div>
       </div>
     </section>
@@ -971,7 +927,7 @@
       <div class="section-head">
         <div>
           <h2>Envíos y pagos</h2>
-          <p>Todo explicado para que el cliente compre con confianza. Menos preguntas repetidas en WhatsApp.</p>
+          <p>Política clara para evitar confusiones y mantener orden en producción.</p>
         </div>
       </div>
 
@@ -984,10 +940,13 @@
           </div>
         </div>
         <div class="panel">
-          <h3>Pagos</h3>
-          <p>Por ahora trabajamos con <b>Yape/Plin</b>. Al finalizar pedido, la página muestra instrucciones y QR.</p>
+          <h3>Pagos (sin pasarela)</h3>
+          <p>
+            <b>Catálogo:</b> pago <b>100%</b> y se sube comprobante desde la página.<br/>
+            <b>A medida:</b> adelanto <b>50%</b> para iniciar producción y saldo antes de despacho.
+          </p>
           <div class="notice warn">
-            Recomendación: pidan comprobante por WhatsApp y asignen “estado de pago” en Sheets (Pendiente / Abonado / Pagado).
+            Al subir el comprobante, se guarda el archivo y el link queda en Google Sheets (para validación).
           </div>
         </div>
       </div>
@@ -1005,7 +964,7 @@
       <div class="grid2">
         <div class="panel">
           <h3>¿Cuánto demora?</h3>
-          <p>Depende del modelo, tela y cola de producción. La fecha estimada se confirma al registrar pedido/cotización.</p>
+          <p>Depende del modelo, tela y cola de producción. Se confirma al validar el pago / adelanto.</p>
         </div>
         <div class="panel">
           <h3>¿Se puede antimanchas?</h3>
@@ -1013,7 +972,7 @@
         </div>
         <div class="panel">
           <h3>¿Cómo pago?</h3>
-          <p>Yape/Plin. La página te guía y luego envías la captura por WhatsApp (botón flotante).</p>
+          <p>Yape/Plin/Transferencia. Luego subes tu comprobante en “Subir comprobante”.</p>
         </div>
         <div class="panel">
           <h3>¿Hacen retapizado?</h3>
@@ -1037,6 +996,7 @@
           <p>Registra tu solicitud (queda en Sheets) y coordinamos por WhatsApp.</p>
           <div class="actions">
             <button class="btn gold" type="button" id="btnOpenQuoteBottom">Abrir formulario</button>
+            <button class="btn secondary" type="button" id="btnOpenUploadBottom">Subir comprobante</button>
             <button class="btn secondary" type="button" id="btnOpenCartBottom">Ver carrito</button>
           </div>
           <div class="notice">
@@ -1051,7 +1011,7 @@
             <button class="btn secondary" type="button" id="btnOpenOwner">Abrir Modo Dueños</button>
           </div>
           <div class="notice warn">
-            Esto es solo para gestión desde el navegador (no es un panel público si no se activa).
+            Esto es solo para gestión desde el navegador.
           </div>
         </div>
       </div>
@@ -1141,7 +1101,7 @@
                 <button class="btn primary" type="button" id="btnAddToCart">Agregar al carrito</button>
               </div>
               <div class="mini">
-                Consejo: para cerrar venta rápido, agrega al carrito y finaliza (registra en Sheets).
+                Consejo: para catálogo, se agenda con pago 100%.
               </div>
             </div>
           </div>
@@ -1167,7 +1127,7 @@
       <div class="sheet-head">
         <div class="t">
           <b>Carrito y checkout</b>
-          <span>Revisa el pedido y finaliza. Se registra en Google Sheets.</span>
+          <span>Catálogo: pago 100%. Se registra en Google Sheets con ID.</span>
         </div>
         <button class="btn ghost" id="btnCloseCart" type="button">Cerrar</button>
       </div>
@@ -1180,6 +1140,9 @@
               <div id="cartList" style="margin-top:10px; display:flex; flex-direction:column; gap:10px;"></div>
               <div class="notice" style="margin-top:12px">
                 Total: <b id="cartTotal">S/ 0</b>
+                <div style="margin-top:6px;color:#5a625f;font-weight:800;font-size:12.5px">
+                  Para catálogo, se solicita <b>pago 100%</b> para agendar producción.
+                </div>
               </div>
               <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px">
                 <button class="btn ghost" type="button" id="btnCartWA">Enviar resumen por WhatsApp</button>
@@ -1213,6 +1176,7 @@
                   <select id="coPayMethod">
                     <option value="Yape" selected>Yape</option>
                     <option value="Plin">Plin</option>
+                    <option value="Transferencia">Transferencia</option>
                   </select>
                 </div>
               </div>
@@ -1224,7 +1188,7 @@
               <textarea id="coNotes" placeholder="Ej: horario, piso, contacto alterno..."></textarea>
 
               <div class="notice warn">
-                Al finalizar: se registra en Sheets y aparece la guía de pago (QR Yape/Plin).
+                Al finalizar: se registra en Sheets y se habilita la subida de comprobante.
               </div>
 
               <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px">
@@ -1238,39 +1202,146 @@
     </div>
   </div>
 
-  <!-- MODAL: Payment -->
+  <!-- MODAL: Payment (guía + subir comprobante) -->
   <div class="modal" id="payModal" aria-hidden="true">
-    <div class="sheet" style="max-width:760px">
+    <div class="sheet" style="max-width:860px">
       <div class="sheet-head">
         <div class="t">
-          <b>Pago</b>
-          <span>Realiza el pago y envía la captura por WhatsApp.</span>
+          <b>Pago y comprobante</b>
+          <span>Catálogo: pago 100%. Sube tu captura aquí (se guarda en Sheets).</span>
         </div>
         <button class="btn ghost" id="btnClosePay" type="button">Cerrar</button>
       </div>
       <div class="sheet-body">
-        <div class="panel" style="box-shadow:none">
-          <div class="row2">
-            <div>
+        <div class="grid2">
+          <div>
+            <div class="panel" style="box-shadow:none">
               <b style="font-weight:900">Datos para pagar</b>
               <div class="mini" style="margin-top:6px" id="payText"></div>
+
               <div class="notice" style="margin-top:12px">
-                Luego envía la captura por WhatsApp (botón flotante).
+                Luego sube tu comprobante (captura o PDF). Quedará enlazado en Google Sheets.
               </div>
+
               <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px">
-                <button class="btn primary" type="button" id="btnPayWA">Enviar comprobante por WhatsApp</button>
-                <button class="btn secondary" type="button" id="btnCopyOrderId">Copiar ID de pedido</button>
+                <button class="btn primary" type="button" id="btnPayWA">Abrir WhatsApp</button>
+                <button class="btn secondary" type="button" id="btnCopyOrderId">Copiar ID</button>
               </div>
             </div>
-            <div>
+
+            <div class="panel" style="box-shadow:none; margin-top:12px">
+              <b style="font-weight:900">Subir comprobante (recomendado)</b>
+
+              <div class="row2">
+                <div>
+                  <label>ID de pedido</label>
+                  <input id="pmOrderId" placeholder="Ej: ACR-2026-000123" />
+                </div>
+                <div>
+                  <label>Tipo de pago</label>
+                  <select id="pmStage">
+                    <option value="TOTAL" selected>Pago total (catálogo)</option>
+                    <option value="ADELANTO">Adelanto 50% (a medida)</option>
+                    <option value="SALDO">Saldo (a medida)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row2">
+                <div>
+                  <label>Monto</label>
+                  <input id="pmAmount" type="number" min="0" step="1" placeholder="Ej: 430" />
+                </div>
+                <div>
+                  <label>N° operación (opcional)</label>
+                  <input id="pmOp" placeholder="Ej: 123456" />
+                </div>
+              </div>
+
+              <label>Comprobante (foto o PDF)</label>
+              <input id="pmFile" type="file" accept="image/*,application/pdf" />
+
+              <div class="notice warn" style="margin-top:10px">
+                Límite recomendado: <b>2 MB</b>. Si tu captura es muy pesada, envíala en calidad “media”.
+              </div>
+
+              <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px">
+                <button class="btn primary" type="button" id="btnUploadProof">Subir comprobante</button>
+                <button class="btn ghost" type="button" id="btnClearProofForm">Limpiar</button>
+              </div>
+              <div class="mini" id="pmUploadHint" style="margin-top:10px"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="panel" style="box-shadow:none">
               <b style="font-weight:900">QR</b>
               <div class="mini" style="margin-top:6px">Coloca <code>yape-qr.png</code> junto a <code>index.html</code>.</div>
               <div style="margin-top:10px">
                 <img src="yape-qr.png" alt="QR Yape/Plin" style="border-radius:18px;border:1px solid rgba(16,22,20,.10);background:#fff"
                   onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;notice warn&quot;>No se encontró <b>yape-qr.png</b>. Súbelo a la misma carpeta del sitio.</div>';">
               </div>
+
+              <div class="notice" style="margin-top:12px">
+                Si pagas por transferencia, sube el voucher igual. El sistema lo registra del mismo modo.
+              </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Upload proof standalone (para quien ya pagó) -->
+  <div class="modal" id="uploadModal" aria-hidden="true">
+    <div class="sheet" style="max-width:760px">
+      <div class="sheet-head">
+        <div class="t">
+          <b>Subir comprobante</b>
+          <span>Ingresa tu ID y sube tu captura/PDF (se guarda en Sheets).</span>
+        </div>
+        <button class="btn ghost" id="btnCloseUpload" type="button">Cerrar</button>
+      </div>
+      <div class="sheet-body">
+        <div class="panel" style="box-shadow:none">
+          <div class="row2">
+            <div>
+              <label>ID de pedido</label>
+              <input id="upOrderId" placeholder="Ej: ACR-2026-000123" />
+            </div>
+            <div>
+              <label>Tipo de pago</label>
+              <select id="upStage">
+                <option value="TOTAL" selected>Pago total (catálogo)</option>
+                <option value="ADELANTO">Adelanto 50% (a medida)</option>
+                <option value="SALDO">Saldo (a medida)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row2">
+            <div>
+              <label>Monto</label>
+              <input id="upAmount" type="number" min="0" step="1" placeholder="Ej: 430" />
+            </div>
+            <div>
+              <label>N° operación (opcional)</label>
+              <input id="upOp" placeholder="Ej: 123456" />
+            </div>
+          </div>
+
+          <label>Comprobante (foto o PDF)</label>
+          <input id="upFile" type="file" accept="image/*,application/pdf" />
+
+          <div class="notice warn" style="margin-top:10px">
+            Límite recomendado: <b>2 MB</b>.
+          </div>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px">
+            <button class="btn primary" type="button" id="btnUploadProof2">Subir comprobante</button>
+            <button class="btn ghost" type="button" id="btnClearUploadForm">Limpiar</button>
+          </div>
+          <div class="mini" id="upUploadHint" style="margin-top:10px"></div>
         </div>
       </div>
     </div>
@@ -1337,7 +1408,7 @@
               </div>
 
               <div class="notice">
-                Para coordinación por chat, usa el botón flotante de WhatsApp.
+                Luego coordinamos por WhatsApp. Para “a medida”, el pago se gestiona como: adelanto 50% + saldo.
               </div>
             </div>
           </div>
@@ -1357,8 +1428,11 @@
             </div>
 
             <div class="panel" style="box-shadow:none; margin-top:12px">
-              <b style="font-weight:900">Modo Dueños</b>
-              <div class="mini" style="margin-top:6px">Si estás gestionando, entra con <b>?admin=1</b> y exporta CSV.</div>
+              <b style="font-weight:900">¿Ya pagaste?</b>
+              <div class="mini" style="margin-top:6px">Sube tu comprobante con tu ID (botón “Subir comprobante”).</div>
+              <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px">
+                <button class="btn secondary" type="button" id="btnOpenUploadFromQuote">Subir comprobante</button>
+              </div>
             </div>
           </div>
         </div>
@@ -1428,10 +1502,15 @@
     const PAY_YAPE_NUMBER = "999 999 999"; // cambia
     const PAY_YAPE_NAME   = "Acrati";       // cambia
 
+    // Política operativa (según tu decisión)
+    const POLICY = {
+      CATALOGO_PAY_PERCENT: 100, // catálogo = 100%
+      AMEDIDA_ADELANTO_PERCENT: 50 // a medida = 50% adelanto (cuando ya existe ID y monto confirmado)
+    };
+
     // =========================
-    // Catálogo de productos (edítalo a tu gusto)
-    // - Si solo tienes 1 producto real, deja 1 y listo.
-    // - "pedido" es una tarjeta que abre cotización.
+    // Catálogo de productos
+    // - price=0 => “Consultar” y NO se permite checkout (se gestiona por cotización)
     // =========================
     const PRODUCTS = [
       {
@@ -1448,7 +1527,7 @@
         id: "nido",
         name: "Puff Nido",
         category: "puffs",
-        price: 0, // si no quieres mostrar precio, deja 0 y aparecerá “Consultar”
+        price: 0,
         desc: "Minimal, versátil, ideal para sala o dormitorio.",
         img: "hero.png",
         measures: "",
@@ -1476,7 +1555,6 @@
       }
     ];
 
-    // Catálogo de telas (para el configurador)
     const FABRICS = [
       { type: "Chenille premium", note: "Suave y resistente",
         swatches: [
@@ -1518,7 +1596,6 @@
     const $ = (id) => document.getElementById(id);
     const qs = (sel, root=document) => root.querySelector(sel);
     const qsa = (sel, root=document) => [...root.querySelectorAll(sel)];
-
     const waLink = (text) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
 
     const fmtPEN = (n) => {
@@ -1526,13 +1603,7 @@
       return `S/ ${Number(n).toFixed(0)}`;
     };
 
-    const uid = () => {
-      // Compact unique-ish id (good enough for orders)
-      return "A" + Math.random().toString(36).slice(2,8).toUpperCase() + "-" + Date.now().toString(36).toUpperCase();
-    };
-
     const nowISO = () => new Date().toISOString();
-
     const readParams = () => Object.fromEntries(new URLSearchParams(location.search).entries());
 
     // UTM capture
@@ -1547,15 +1618,23 @@
       };
     };
 
-    // Local logs for owners
-    const LOG_KEY = "acrati_logs_v2";
-    const getLogs = () => {
-      try{ return JSON.parse(localStorage.getItem(LOG_KEY) || "[]"); } catch { return []; }
+    // ID de pedido más “operable”
+    const genOrderId = () => {
+      const d = new Date();
+      const yyyy = d.getFullYear();
+      const mm = String(d.getMonth()+1).padStart(2,"0");
+      const dd = String(d.getDate()).padStart(2,"0");
+      const rand = Math.floor(Math.random()*9000)+1000; // 1000-9999
+      return `ACR-${yyyy}${mm}${dd}-${rand}`;
     };
+
+    // Local logs for owners
+    const LOG_KEY = "acrati_logs_v3";
+    const getLogs = () => { try{ return JSON.parse(localStorage.getItem(LOG_KEY) || "[]"); } catch { return []; } };
     const pushLog = (entry) => {
       const logs = getLogs();
       logs.unshift(entry);
-      localStorage.setItem(LOG_KEY, JSON.stringify(logs.slice(0, 120))); // keep last 120
+      localStorage.setItem(LOG_KEY, JSON.stringify(logs.slice(0, 160)));
     };
 
     // Toast
@@ -1592,12 +1671,26 @@
       }
     };
 
+    const fileToBase64 = (file) => new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => {
+        const dataUrl = String(reader.result || "");
+        const idx = dataUrl.indexOf("base64,");
+        if (idx === -1) return reject(new Error("No se pudo leer el archivo."));
+        resolve({
+          mime: file.type || "application/octet-stream",
+          name: file.name || "comprobante",
+          b64: dataUrl.slice(idx + 7)
+        });
+      };
+      reader.onerror = () => reject(new Error("Error leyendo archivo"));
+      reader.readAsDataURL(file);
+    });
+
     // =========================
-    // WhatsApp float
+    // WhatsApp float + Year
     // =========================
     $("waFloat").href = waLink(`Hola, quiero información sobre ${BRAND_NAME}.`);
-
-    // Year
     $("year").textContent = new Date().getFullYear();
 
     // =========================
@@ -1623,8 +1716,6 @@
         el.dataset.id = p.id;
 
         const isPedido = p.category === "pedido";
-        const hasImg = !!p.img;
-
         el.innerHTML = `
           <div class="media" style="${isPedido ? "display:flex;align-items:center;justify-content:center;padding:16px;aspect-ratio:auto;min-height:180px" : ""}">
             ${isPedido ? `
@@ -1661,7 +1752,6 @@
           </div>
         `;
 
-        // Click behavior
         el.addEventListener("click", (e) => {
           const btn = e.target.closest("button");
           if (btn) {
@@ -1671,7 +1761,6 @@
             e.stopPropagation();
             return;
           }
-          // card click
           if (isPedido) openQuote("Pedido a medida (referencia)");
           else openProduct(p.id);
         });
@@ -1687,36 +1776,34 @@
         renderCatalog();
       });
     });
-
     $("searchInput").addEventListener("input", () => renderCatalog());
 
     // =========================
     // Cart model
     // =========================
-    const CART_KEY = "acrati_cart_v2";
-    const getCart = () => {
-      try{ return JSON.parse(localStorage.getItem(CART_KEY) || "[]"); } catch { return []; }
-    };
+    const CART_KEY = "acrati_cart_v3";
+    const getCart = () => { try{ return JSON.parse(localStorage.getItem(CART_KEY) || "[]"); } catch { return []; } };
     const setCart = (items) => localStorage.setItem(CART_KEY, JSON.stringify(items));
     const clearCart = () => setCart([]);
-
     const cartTotal = (items) => items.reduce((sum, it) => sum + (Number(it.unit_price || 0) * Number(it.qty || 1)), 0);
 
     const refreshCartBar = () => {
       const items = getCart();
       const total = cartTotal(items);
-
-      if (!items.length){
-        $("cartBar").style.display = "none";
-        return;
-      }
+      if (!items.length){ $("cartBar").style.display = "none"; return; }
       $("cartBar").style.display = "block";
       $("cartBarTitle").textContent = `Tu pedido (${items.length} ítem${items.length>1?"s":""})`;
       $("cartBarSub").textContent = `${items.reduce((a,b)=>a+(Number(b.qty)||1),0)} unidad(es) • ${fmtPEN(total)}`;
     };
 
     // =========================
-    // Product modal (configurator)
+    // Modal helpers
+    // =========================
+    const openModal = (modalEl) => { modalEl.classList.add("open"); modalEl.setAttribute("aria-hidden","false"); };
+    const closeModal = (modalEl) => { modalEl.classList.remove("open"); modalEl.setAttribute("aria-hidden","true"); };
+
+    // =========================
+    // Product modal
     // =========================
     const productModal = $("productModal");
     let PM = {
@@ -1729,15 +1816,6 @@
       qty: 1,
       measures: "",
       notes: ""
-    };
-
-    const openModal = (modalEl) => {
-      modalEl.classList.add("open");
-      modalEl.setAttribute("aria-hidden","false");
-    };
-    const closeModal = (modalEl) => {
-      modalEl.classList.remove("open");
-      modalEl.setAttribute("aria-hidden","true");
     };
 
     const openProduct = (id) => {
@@ -1765,7 +1843,6 @@
       $("pmMeasures").value = PM.measures;
       $("pmNotes").value = "";
 
-      // Fabric select
       $("pmFabricType").innerHTML = "";
       FABRICS.forEach(f => {
         const opt = document.createElement("option");
@@ -1776,20 +1853,11 @@
       $("pmFabricType").value = PM.fabric_type;
 
       renderSwatches(PM.fabric_type);
-
-      // Total box
       updatePMTotal();
 
       openModal(productModal);
 
-      pushLog({
-        ts: nowISO(),
-        event: "view_product",
-        product_id: p.id,
-        product_name: p.name,
-        page: location.href,
-        ...getUTM()
-      });
+      pushLog({ ts: nowISO(), event: "view_product", product_id: p.id, product_name: p.name, page: location.href, ...getUTM() });
     };
 
     const renderSwatches = (fabricType) => {
@@ -1832,19 +1900,12 @@
       const unit = Number(p?.price || 0);
       const qty = Number($("pmQty").value || 1);
       PM.qty = Math.max(1, qty);
-
       const total = unit > 0 ? unit * PM.qty : 0;
       $("pmTotal").textContent = unit > 0 ? `S/ ${total.toFixed(0)}` : "Consultar";
     };
 
     $("pmFabricType").addEventListener("change", (e) => renderSwatches(e.target.value));
     $("pmQty").addEventListener("input", updatePMTotal);
-
-    $("btnPmWA").addEventListener("click", () => {
-      const p = PRODUCTS.find(x => x.id === PM.product_id);
-      const msg = buildProductMessage(p, PM);
-      window.open(waLink(msg), "_blank");
-    });
 
     const buildProductMessage = (p, cfg) => {
       return `Hola, quiero este pedido (${BRAND_NAME}):
@@ -1859,12 +1920,17 @@ Notas: ${$("pmNotes").value || "—"}
 Página: ${location.href}`;
     };
 
+    $("btnPmWA").addEventListener("click", () => {
+      const p = PRODUCTS.find(x => x.id === PM.product_id);
+      window.open(waLink(buildProductMessage(p, PM)), "_blank");
+    });
+
     $("btnAddToCart").addEventListener("click", () => {
       const p = PRODUCTS.find(x => x.id === PM.product_id);
       if (!p) return;
 
       const item = {
-        line_id: uid(),
+        line_id: "L-" + Math.random().toString(36).slice(2,8).toUpperCase() + "-" + Date.now().toString(36).toUpperCase(),
         product_id: p.id,
         product_name: p.name,
         unit_price: Number(p.price || 0),
@@ -1885,19 +1951,10 @@ Página: ${location.href}`;
       refreshCartBar();
       toast("Agregado al carrito", `${item.product_name} • ${item.fabric_type} • ${item.swatch_name}`, "success");
 
-      pushLog({
-        ts: nowISO(),
-        event: "add_to_cart",
-        ...item,
-        total_cart: cartTotal(cart),
-        page: location.href,
-        ...getUTM()
-      });
-
+      pushLog({ ts: nowISO(), event: "add_to_cart", ...item, total_cart: cartTotal(cart), page: location.href, ...getUTM() });
       closeModal(productModal);
     });
 
-    // Close product modal
     $("btnCloseProduct").addEventListener("click", () => closeModal(productModal));
     productModal.addEventListener("click", (e) => { if (e.target === productModal) closeModal(productModal); });
 
@@ -1932,6 +1989,7 @@ Página: ${location.href}`;
                 Cantidad: <b>${it.qty}</b> • ${it.unit_price>0 ? `Unit: S/ ${it.unit_price}` : "Precio: Consultar"} • ${it.measures ? `Medidas: ${it.measures}` : ""}
               </div>
               ${it.notes ? `<div class="mini" style="margin-top:4px">Notas: ${it.notes}</div>` : ""}
+              ${it.unit_price<=0 ? `<div class="notice warn" style="margin-top:10px">Este ítem está en “Consultar”. Debe ir por cotización (no por checkout).</div>` : ""}
             </div>
             <div style="display:flex; flex-direction:column; gap:8px; align-items:flex-end;">
               <div style="font-weight:900">${it.unit_price>0 ? `S/ ${(it.unit_price*it.qty).toFixed(0)}` : "Consultar"}</div>
@@ -1960,7 +2018,6 @@ Página: ${location.href}`;
     $("btnCloseCart").addEventListener("click", () => closeModal(cartModal));
     cartModal.addEventListener("click", (e) => { if (e.target === cartModal) closeModal(cartModal); });
 
-    // Cart actions
     const clearCartAll = () => {
       clearCart();
       refreshCartBar();
@@ -1975,15 +2032,10 @@ Página: ${location.href}`;
     $("btnOpenCart").addEventListener("click", openCart);
     $("btnOpenCartTop").addEventListener("click", openCart);
     $("btnOpenCartBottom").addEventListener("click", openCart);
-    $("btnCheckout").addEventListener("click", () => { openCart(); });
+    $("btnCheckout").addEventListener("click", openCart);
 
     $("btnCartWA").addEventListener("click", () => {
       const cart = getCart();
-      const msg = buildCartMessage(cart);
-      window.open(waLink(msg), "_blank");
-    });
-
-    const buildCartMessage = (cart) => {
       const lines = cart.map((it, i) => {
         const priceLine = it.unit_price>0 ? `S/ ${(it.unit_price*it.qty).toFixed(0)}` : "Consultar";
         return `${i+1}) ${it.product_name} x${it.qty}
@@ -1996,86 +2048,53 @@ Página: ${location.href}`;
       }).join("\n\n");
 
       const total = fmtPEN(cartTotal(cart));
-      return `Hola, este es mi carrito (${BRAND_NAME}):\n\n${lines}\n\nTotal: ${total}\nPágina: ${location.href}`;
-    };
+      window.open(waLink(`Hola, este es mi carrito (${BRAND_NAME}):\n\n${lines}\n\nTotal: ${total}\nPágina: ${location.href}`), "_blank");
+    });
 
     // =========================
-    // Checkout
+    // Checkout (Catálogo = 100% ahora)
     // =========================
     const payModal = $("payModal");
-    let lastOrderId = "";
+    let lastOrder = null;
+
+    const hasConsultItems = (cart) => cart.some(it => Number(it.unit_price || 0) <= 0);
 
     const buildOrderPayload = () => {
       const cart = getCart();
       const total = cartTotal(cart);
 
-      const order = {
+      const orderType = "CATALOGO";
+      const dueNow = total; // 100%
+      const stageDue = "TOTAL";
+
+      const itemsSummary = cart.map(it => (
+        `${it.product_name} x${it.qty} | Tela:${it.fabric_type} | Color:${it.swatch_name} | Patas:${it.legs} | Firmeza:${it.firmness} | Med:${it.measures || "-"} | Notes:${it.notes || "-"}`
+      )).join(" || ");
+
+      return {
         ts: nowISO(),
         event: "order_checkout",
-        order_id: uid(),
+        order_id: genOrderId(),
+        order_type: orderType,
+        payment_policy: "CATALOGO_100",
+        pay_stage_due_now: stageDue,
+        amount_due_now: dueNow,
+        amount_total: total,
         customer_name: $("coName").value.trim(),
         customer_phone: $("coPhone").value.trim(),
         customer_city: $("coCity").value.trim(),
         customer_address: $("coAddress").value.trim(),
         customer_notes: $("coNotes").value.trim(),
         pay_method: $("coPayMethod").value,
-        pay_status: "Pendiente",
+        pay_status: "Pendiente de pago",
         items: cart,
-        total: total,
+        items_summary: itemsSummary,
         page: location.href,
         ...getUTM()
       };
-
-      return order;
-    };
-
-    const placeOrder = async (alsoOpenWA=false) => {
-      const cart = getCart();
-      if (!cart.length){
-        toast("Carrito vacío", "Agrega un producto antes de finalizar.", "warn");
-        return;
-      }
-
-      const payload = buildOrderPayload();
-      lastOrderId = payload.order_id;
-
-      // Save local logs (owners)
-      pushLog(payload);
-
-      // Post to Sheets
-      const res = await postToSheets(payload);
-
-      if (res.skipped){
-        toast("Pedido registrado localmente", "Configura SHEETS_WEBAPP_URL para guardar en Sheets.", "warn");
-      }else{
-        toast("Pedido registrado", "Listo. Ahora sigue el pago por Yape/Plin.", "success");
-      }
-
-      // Show payment guide
-      $("payText").innerHTML = `
-        <div><b>ID de pedido:</b> <span style="font-weight:900">${payload.order_id}</span></div>
-        <div style="margin-top:6px"><b>${payload.pay_method}:</b> ${PAY_YAPE_NUMBER}</div>
-        <div><b>Nombre:</b> ${PAY_YAPE_NAME}</div>
-        <div style="margin-top:8px;color:#5a625f;font-weight:800">
-          Monto sugerido: <b>${fmtPEN(payload.total)}</b> ${payload.total>0 ? "(según carrito)" : "(se confirmará por chat)"}
-        </div>
-      `;
-
-      closeModal(cartModal);
-      openModal(payModal);
-
-      // Optional: open WhatsApp with order summary
-      if (alsoOpenWA){
-        const msg = buildOrderWA(payload);
-        window.open(waLink(msg), "_blank");
-      }
-
-      // Keep cart, but you might prefer to clear after order:
-      // clearCart(); refreshCartBar();
     };
 
     const buildOrderWA = (order) => {
-      const total = fmtPEN(order.total);
       const items = order.items.map((it, i) => {
         const priceLine = it.unit_price>0 ? `S/ ${(it.unit_price*it.qty).toFixed(0)}` : "Consultar";
         return `${i+1}) ${it.product_name} x${it.qty} (${priceLine})
@@ -2092,49 +2111,190 @@ Dirección: ${order.customer_address || "—"}
 Items:
 ${items}
 
-Total: ${total}
+Total: ${fmtPEN(order.amount_total)}
+Pago requerido ahora (catálogo): ${fmtPEN(order.amount_due_now)}
 Página: ${order.page}`;
+    };
+
+    const placeOrder = async (alsoOpenWA=false) => {
+      const cart = getCart();
+      if (!cart.length){
+        toast("Carrito vacío", "Agrega un producto antes de finalizar.", "warn");
+        return;
+      }
+      if (hasConsultItems(cart)){
+        toast("Hay ítems “Consultar”", "Esos productos deben ir por cotización, no por checkout.", "warn", 5200);
+        closeModal(cartModal);
+        openQuote("Pedido a medida (referencia)");
+        return;
+      }
+
+      const payload = buildOrderPayload();
+      lastOrder = payload;
+
+      pushLog(payload);
+
+      const res = await postToSheets(payload);
+      if (res.skipped) toast("Pedido registrado localmente", "Configura SHEETS_WEBAPP_URL para guardar en Sheets.", "warn");
+      else toast("Pedido registrado", "Ahora realiza el pago y sube el comprobante.", "success");
+
+      // Prefill Pay modal form
+      $("payText").innerHTML = `
+        <div><b>ID de pedido:</b> <span style="font-weight:900">${payload.order_id}</span></div>
+        <div style="margin-top:6px"><b>${payload.pay_method}:</b> ${PAY_YAPE_NUMBER}</div>
+        <div><b>Nombre:</b> ${PAY_YAPE_NAME}</div>
+        <div style="margin-top:8px;color:#5a625f;font-weight:800">
+          Monto requerido (catálogo 100%): <b>${fmtPEN(payload.amount_due_now)}</b>
+        </div>
+      `;
+
+      // Pre-fill proof upload fields
+      $("pmOrderId").value = payload.order_id;
+      $("pmStage").value = payload.pay_stage_due_now;
+      $("pmAmount").value = String(Math.round(payload.amount_due_now || 0));
+      $("pmOp").value = "";
+      $("pmFile").value = "";
+      $("pmUploadHint").textContent = "";
+
+      closeModal(cartModal);
+      openModal(payModal);
+
+      if (alsoOpenWA) window.open(waLink(buildOrderWA(payload)), "_blank");
     };
 
     $("btnPlaceOrder").addEventListener("click", () => placeOrder(false));
     $("btnPlaceOrderWA").addEventListener("click", () => placeOrder(true));
 
-    // Pay modal actions
     $("btnClosePay").addEventListener("click", () => closeModal(payModal));
     payModal.addEventListener("click", (e) => { if (e.target === payModal) closeModal(payModal); });
 
     $("btnPayWA").addEventListener("click", () => {
-      const msg = `Hola, adjunto mi comprobante (${BRAND_NAME}).
-ID de pedido: ${lastOrderId || "—"}
-Pago a: ${PAY_YAPE_NUMBER} (${PAY_YAPE_NAME})
-Gracias.`;
+      const id = (lastOrder && lastOrder.order_id) ? lastOrder.order_id : ($("pmOrderId").value.trim() || "—");
+      const amt = $("pmAmount").value ? `S/ ${$("pmAmount").value}` : "";
+      const msg = `Hola, adjunto mi comprobante (${BRAND_NAME}).\nID de pedido: ${id}\nMonto: ${amt}\nPago a: ${PAY_YAPE_NUMBER} (${PAY_YAPE_NAME})\nGracias.`;
       window.open(waLink(msg), "_blank");
     });
 
     $("btnCopyOrderId").addEventListener("click", async () => {
-      try{
-        await navigator.clipboard.writeText(lastOrderId || "");
-        toast("Copiado", "ID de pedido copiado al portapapeles.", "success");
-      }catch{
-        toast("No se pudo copiar", "Copia manualmente el ID mostrado.", "warn");
-      }
+      const id = (lastOrder && lastOrder.order_id) ? lastOrder.order_id : ($("pmOrderId").value.trim() || "");
+      try{ await navigator.clipboard.writeText(id); toast("Copiado", "ID copiado al portapapeles.", "success"); }
+      catch{ toast("No se pudo copiar", "Copia manualmente el ID mostrado.", "warn"); }
     });
 
     // =========================
-    // Quote modal (A medida / Tapizado)
+    // Upload Payment Proof (to Sheets + Drive via Apps Script)
+    // =========================
+    const uploadProof = async ({order_id, stage, amount, op, file}) => {
+      if (!order_id) throw new Error("Falta ID de pedido.");
+      if (!stage) throw new Error("Falta tipo de pago.");
+      if (!amount || Number(amount) <= 0) throw new Error("Ingresa un monto válido.");
+      if (!file) throw new Error("Adjunta una captura o PDF.");
+
+      // Size guard (~2MB recommended)
+      const maxBytes = 2 * 1024 * 1024; // 2MB
+      if (file.size > maxBytes){
+        throw new Error("Archivo muy pesado. Reduce la calidad (recomendado <= 2MB).");
+      }
+
+      const f = await fileToBase64(file);
+
+      const payload = {
+        ts: nowISO(),
+        action: "payment_upload",
+        order_id,
+        stage, // TOTAL / ADELANTO / SALDO
+        amount: Number(amount),
+        pay_method: (lastOrder && lastOrder.pay_method) ? lastOrder.pay_method : "—",
+        operation_number: op || "",
+        file_name: f.name,
+        file_mime: f.mime,
+        file_b64: f.b64,
+        page: location.href,
+        ...getUTM()
+      };
+
+      pushLog(payload);
+
+      const res = await postToSheets(payload);
+      if (res.skipped){
+        return { ok:false, skipped:true };
+      }
+      return { ok:true };
+    };
+
+    const wireProofForm = (prefix) => {
+      const oid = $(`${prefix}OrderId`);
+      const stage = $(`${prefix}Stage`);
+      const amt = $(`${prefix}Amount`);
+      const op = $(`${prefix}Op`);
+      const file = $(`${prefix}File`);
+      const hint = $(`${prefix}UploadHint`);
+      const btn = prefix === "pm" ? $("btnUploadProof") : $("btnUploadProof2");
+      const clearBtn = prefix === "pm" ? $("btnClearProofForm") : $("btnClearUploadForm");
+
+      clearBtn.addEventListener("click", () => {
+        oid.value = "";
+        stage.value = "TOTAL";
+        amt.value = "";
+        op.value = "";
+        file.value = "";
+        hint.textContent = "";
+      });
+
+      btn.addEventListener("click", async () => {
+        btn.disabled = true;
+        hint.textContent = "Subiendo comprobante...";
+        try{
+          const r = await uploadProof({
+            order_id: oid.value.trim(),
+            stage: stage.value,
+            amount: amt.value,
+            op: op.value.trim(),
+            file: (file.files && file.files[0]) ? file.files[0] : null
+          });
+
+          if (r.skipped){
+            toast("No se subió a Sheets", "Falta configurar SHEETS_WEBAPP_URL.", "warn");
+            hint.textContent = "No se pudo enviar a Sheets (URL no configurada).";
+          }else{
+            toast("Comprobante enviado", "Quedó registrado en Google Sheets. Validaremos el pago.", "success", 5200);
+            hint.textContent = "Listo. Tu comprobante fue registrado.";
+          }
+        }catch(err){
+          toast("Error", String(err.message || err), "warn", 5200);
+          hint.textContent = String(err.message || err);
+        }finally{
+          btn.disabled = false;
+        }
+      });
+    };
+
+    wireProofForm("pm");
+    wireProofForm("up");
+
+    // =========================
+    // Upload modal open/close
+    // =========================
+    const uploadModal = $("uploadModal");
+    $("btnOpenUpload").addEventListener("click", () => openModal(uploadModal));
+    $("btnOpenUploadTop").addEventListener("click", () => openModal(uploadModal));
+    $("btnOpenUploadBottom").addEventListener("click", () => openModal(uploadModal));
+    $("btnOpenUploadAmedida").addEventListener("click", () => openModal(uploadModal));
+    $("btnHeroUpload").addEventListener("click", () => openModal(uploadModal));
+    $("btnOpenUploadFromQuote").addEventListener("click", () => openModal(uploadModal));
+
+    $("btnCloseUpload").addEventListener("click", () => closeModal(uploadModal));
+    uploadModal.addEventListener("click", (e) => { if (e.target === uploadModal) closeModal(uploadModal); });
+
+    // =========================
+    // Quote modal
     // =========================
     const quoteModal = $("quoteModal");
     const openQuote = (servicePrefill="Pedido a medida (referencia)") => {
       $("qService").value = servicePrefill;
       openModal(quoteModal);
 
-      pushLog({
-        ts: nowISO(),
-        event: "open_quote",
-        service: servicePrefill,
-        page: location.href,
-        ...getUTM()
-      });
+      pushLog({ ts: nowISO(), event: "open_quote", service: servicePrefill, page: location.href, ...getUTM() });
     };
 
     $("btnOpenQuote").addEventListener("click", () => openQuote("Pedido a medida (referencia)"));
@@ -2147,12 +2307,7 @@ Gracias.`;
     quoteModal.addEventListener("click", (e) => { if (e.target === quoteModal) closeModal(quoteModal); });
 
     $("btnQuoteWA").addEventListener("click", () => {
-      const msg = buildQuoteMsg();
-      window.open(waLink(msg), "_blank");
-    });
-
-    const buildQuoteMsg = () => {
-      return `Hola, quiero cotizar (${BRAND_NAME}):
+      const msg = `Hola, quiero cotizar (${BRAND_NAME}):
 Nombre: ${$("qName").value.trim() || "—"}
 Tel: ${$("qPhone").value.trim() || "—"}
 Ciudad: ${$("qCity").value.trim() || "—"}
@@ -2161,12 +2316,14 @@ Medidas: ${$("qMeasures").value.trim() || "—"}
 Referencia: ${$("qRef").value.trim() || "—"}
 Detalles: ${$("qDetails").value.trim() || "—"}
 Página: ${location.href}`;
-    };
+      window.open(waLink(msg), "_blank");
+    });
 
     $("btnSaveQuote").addEventListener("click", async () => {
       const payload = {
         ts: nowISO(),
         event: "lead_quote",
+        lead_id: "LEAD-" + Date.now().toString(36).toUpperCase(),
         service: $("qService").value,
         customer_name: $("qName").value.trim(),
         customer_phone: $("qPhone").value.trim(),
@@ -2181,17 +2338,14 @@ Página: ${location.href}`;
       pushLog(payload);
 
       const res = await postToSheets(payload);
-      if (res.skipped){
-        toast("Solicitud guardada (local)", "Configura SHEETS_WEBAPP_URL para guardarla en Sheets.", "warn");
-      }else{
-        toast("Solicitud registrada", "Listo. Te contactaremos para cotizar.", "success");
-      }
+      if (res.skipped) toast("Solicitud guardada (local)", "Configura SHEETS_WEBAPP_URL para guardarla en Sheets.", "warn");
+      else toast("Solicitud registrada", "Listo. Te contactaremos para cotizar.", "success");
 
       closeModal(quoteModal);
     });
 
     // =========================
-    // Owner mode
+    // Owner mode (igual que antes)
     // =========================
     const ownerModal = $("ownerModal");
 
@@ -2213,7 +2367,7 @@ Página: ${location.href}`;
       const wrap = $("ownerTable");
       wrap.innerHTML = "";
 
-      const slice = logs.slice(0, 8);
+      const slice = logs.slice(0, 10);
       if (!slice.length){
         wrap.innerHTML = `<div class="notice warn">No hay registros locales aún.</div>`;
         return;
@@ -2226,13 +2380,13 @@ Página: ${location.href}`;
 
         const title =
           l.event === "order_checkout" ? `Pedido: ${l.order_id}` :
+          l.action === "payment_upload" ? `Pago: ${l.order_id} (${l.stage})` :
           l.event === "lead_quote" ? `Cotización: ${l.service}` :
-          l.event || "Evento";
+          l.event || l.action || "Evento";
 
-        const who =
-          (l.customer_name || l.nombre || "—") + (l.customer_city ? ` • ${l.customer_city}` : "");
-
-        const money = (l.total && Number(l.total)>0) ? ` • Total: S/ ${Number(l.total).toFixed(0)}` : "";
+        const who = (l.customer_name || "—") + (l.customer_city ? ` • ${l.customer_city}` : "");
+        const money = (l.amount_total && Number(l.amount_total)>0) ? ` • Total: S/ ${Number(l.amount_total).toFixed(0)}` :
+                      (l.amount && Number(l.amount)>0) ? ` • Monto: S/ ${Number(l.amount).toFixed(0)}` : "";
 
         box.innerHTML = `
           <div style="display:flex; justify-content:space-between; gap:10px; align-items:flex-start;">
@@ -2267,16 +2421,8 @@ Página: ${location.href}`;
         toast("Sin datos", "No hay registros para exportar.", "warn");
         return;
       }
-      // Flatten minimal CSV
-      const headers = [
-        "ts","event","order_id","service","customer_name","customer_phone","customer_city",
-        "total","pay_method","pay_status","page","utm_source","utm_medium","utm_campaign"
-      ];
-      const rows = logs.map(l => headers.map(h => {
-        const v = (l[h] ?? "");
-        return `"${String(v).replaceAll('"','""')}"`;
-      }).join(","));
-
+      const headers = ["ts","event","action","order_id","lead_id","service","customer_name","customer_phone","customer_city","amount_total","amount_due_now","amount","stage","pay_method","pay_status","page","utm_source","utm_medium","utm_campaign"];
+      const rows = logs.map(l => headers.map(h => `"${String(l[h] ?? "").replaceAll('"','""')}"`).join(","));
       const csv = [headers.join(","), ...rows].join("\n");
       const blob = new Blob([csv], { type:"text/csv;charset=utf-8;" });
       const url = URL.createObjectURL(blob);
@@ -2287,7 +2433,6 @@ Página: ${location.href}`;
       a.click();
       a.remove();
       URL.revokeObjectURL(url);
-
       toast("CSV exportado", "Revisa tus descargas.", "success");
     });
 
@@ -2298,29 +2443,23 @@ Página: ${location.href}`;
     });
 
     $("btnTestSheets").addEventListener("click", async () => {
-      const payload = {
-        ts: nowISO(),
-        event: "test_sheets",
-        note: "Prueba desde Modo Dueños",
-        page: location.href,
-        ...getUTM()
-      };
+      const payload = { ts: nowISO(), event: "test_sheets", note: "Prueba desde Modo Dueños", page: location.href, ...getUTM() };
       const res = await postToSheets(payload);
       if (res.skipped) toast("Falta configuración", "SHEETS_WEBAPP_URL está vacío.", "warn");
-      else toast("Enviado", "Se intentó enviar el test a Sheets (no-cors). Verifica en tu hoja.", "success");
+      else toast("Enviado", "Se intentó enviar el test a Sheets. Verifica en tu hoja.", "success");
     });
 
     $("btnCopyPayMsg").addEventListener("click", async () => {
       const msg = `Hola, para confirmar tu pedido:
-1) Realiza el pago por Yape/Plin a ${PAY_YAPE_NUMBER} (${PAY_YAPE_NAME})
-2) Envíanos la captura por este chat
-3) Te confirmamos producción y fecha de entrega.`;
+1) Catálogo: pago 100% a ${PAY_YAPE_NUMBER} (${PAY_YAPE_NAME})
+2) Sube el comprobante en la web (o envíalo por este chat)
+3) Validamos y agendamos producción.`;
       try{ await navigator.clipboard.writeText(msg); toast("Copiado", "Mensaje de pago copiado.", "success"); }
       catch{ toast("No se pudo copiar", "Copia manualmente.", "warn"); }
     });
 
     $("btnCopyProdMsg").addEventListener("click", async () => {
-      const msg = `Hola, pedido confirmado.
+      const msg = `Hola, pago confirmado.
 Pasamos a producción. Te compartimos avance y fecha estimada de entrega/envío.`;
       try{ await navigator.clipboard.writeText(msg); toast("Copiado", "Mensaje de producción copiado.", "success"); }
       catch{ toast("No se pudo copiar", "Copia manualmente.", "warn"); }
@@ -2372,16 +2511,17 @@ Gracias.`;
     // Close on ESC
     document.addEventListener("keydown", (e) => {
       if (e.key !== "Escape") return;
-      [menuModal, productModal, cartModal, payModal, quoteModal, ownerModal].forEach(m => {
+      [menuModal, productModal, cartModal, payModal, quoteModal, ownerModal, uploadModal].forEach(m => {
         if (m.classList.contains("open")) closeModal(m);
       });
     });
 
-    // =========================
-    // Cart bar buttons
-    // =========================
-    $("btnOpenCart").addEventListener("click", openCart);
-    $("btnCheckout").addEventListener("click", openCart);
+    // Also let owners open owner mode by clicking footer text 5 times
+    let footClicks = 0;
+    document.querySelector("footer").addEventListener("click", () => {
+      footClicks++;
+      if (footClicks >= 5){ footClicks = 0; openOwner(); }
+    });
 
     // =========================
     // First render
@@ -2389,33 +2529,11 @@ Gracias.`;
     renderCatalog();
     refreshCartBar();
 
-    // If admin
     if (isAdmin()){
-      // soft hint: allow opening owner mode quickly
       setTimeout(() => {
         toast("Modo Dueños disponible", "Abrir con el botón en Contacto o agrega ?admin=1.", "success", 4200);
       }, 1200);
     }
-
-    // Also let owners open owner mode by clicking footer text 5 times
-    let footClicks = 0;
-    document.querySelector("footer").addEventListener("click", () => {
-      footClicks++;
-      if (footClicks >= 5){
-        footClicks = 0;
-        openOwner();
-      }
-    });
-
-    // =========================
-    // Cart bar additional actions
-    // =========================
-    $("btnClearCart").addEventListener("click", () => clearCartAll());
-
-    // Convenience links
-    $("btnOpenCartTop").addEventListener("click", openCart);
-    $("btnOpenCartBottom").addEventListener("click", openCart);
-
   </script>
 </body>
 </html>
