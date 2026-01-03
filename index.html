@@ -3,351 +3,236 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Acrati | Puffs a medida • Tapizado premium • Lima y provincias</title>
-  <meta name="description" content="Compra puffs del catálogo con personalización y pedido en 2 minutos. También hacemos tapizado/retapizado y pedidos por referencia (Pinterest/IG). Registro automático a Google Sheets." />
+  <title>Acrati | Puffs y Sofás a medida</title>
+  <meta name="description" content="Puffs premium y tapizado a medida. Compra catálogo (pago 100%) o cotiza a medida (adelanto 50%). Comprobante desde la web." />
   <meta name="theme-color" content="#0f2a22" />
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
 
   <style>
-    /* ======= (CSS ORIGINAL SIN CAMBIOS IMPORTANTES) ======= */
     :root{
-      --bg: #fbf7f0;
-      --surface: rgba(255,255,255,.88);
-      --surface2: rgba(255,255,255,.72);
-      --ink: #101614;
-      --muted: #5a625f;
+      --bg:#fbf7f0;
+      --ink:#101614;
+      --muted:#5a625f;
       --muted2:#7c867f;
-      --brand: #0f2a22;
-      --brand2:#1e4a3d;
-      --gold: #b0893a;
-      --border: rgba(16,22,20,.10);
-      --shadow-sm: 0 10px 24px rgba(16,22,20,.08);
-      --shadow-md: 0 18px 52px rgba(16,22,20,.10);
-      --radius-lg: 26px;
-      --radius-md: 18px;
-      --radius-sm: 14px;
-      --max: 1180px;
-      --font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      --font-display: "Fraunces", ui-serif, Georgia, "Times New Roman", serif;
-      --focus: 0 0 0 4px rgba(15,42,34,.18);
-      --ease: cubic-bezier(.2,.8,.2,1);
+      --brand:#0f2a22;
+      --gold:#b0893a;
+      --border:rgba(16,22,20,.10);
+      --shadow: 0 18px 52px rgba(16,22,20,.10);
+      --shadow2: 0 10px 24px rgba(16,22,20,.08);
+      --r-lg:26px;
+      --r-md:18px;
+      --r-sm:14px;
+      --max:1180px;
+      --focus:0 0 0 4px rgba(15,42,34,.18);
+      --ease:cubic-bezier(.2,.8,.2,1);
+      --font-body:"Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      --font-display:"Fraunces", ui-serif, Georgia, "Times New Roman", serif;
     }
 
     *{ box-sizing:border-box; }
-    html,body{ height:100%; }
-    html{ scroll-behavior:smooth; }
     body{
-      margin:0;
-      font-family:var(--font-body);
-      color:var(--ink);
+      margin:0; font-family:var(--font-body); color:var(--ink); line-height:1.55;
       background:
         radial-gradient(900px 560px at 18% 2%, rgba(15,42,34,.10), transparent 58%),
         radial-gradient(860px 540px at 82% 6%, rgba(176,137,58,.10), transparent 60%),
         var(--bg);
-      line-height:1.55;
     }
     a{ color:inherit; text-decoration:none; }
     img{ max-width:100%; display:block; }
     .container{ max-width:var(--max); margin:0 auto; padding:0 18px; }
 
-    .topline{
-      background: rgba(255,255,255,.55);
-      border-bottom:1px solid rgba(16,22,20,.08);
-      backdrop-filter: blur(10px);
-    }
-    .topline .row{
-      display:flex; gap:12px; align-items:center; justify-content:space-between;
-      padding:10px 0; font-size:13px; color:var(--muted);
-      flex-wrap:wrap;
-    }
-    .topline b{ color:var(--ink); font-weight:800; }
-    .toplinks{ display:flex; gap:14px; flex-wrap:wrap; }
-    .toplinks a{ font-weight:700; color:var(--muted); }
-    .toplinks a:hover{ color:var(--ink); }
-
+    /* Header */
     header{
       position:sticky; top:0; z-index:50;
-      background: rgba(251,247,240,.82);
+      background: rgba(251,247,240,.86);
       border-bottom:1px solid rgba(16,22,20,.08);
       backdrop-filter: blur(10px);
     }
     .nav{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:12px; padding:12px 0;
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      padding:12px 0;
     }
-    .brand{
-      display:flex; align-items:center; gap:12px;
-      min-width: 200px;
-    }
+    .brand{ display:flex; align-items:center; gap:12px; }
     .mark{
       width:42px; height:42px; border-radius:16px;
       background: radial-gradient(circle at 30% 30%, rgba(176,137,58,.85), rgba(15,42,34,.92));
       border:1px solid rgba(16,22,20,.12);
-      box-shadow: var(--shadow-sm);
-      flex:0 0 auto;
+      box-shadow: var(--shadow2);
     }
     .word{ display:flex; flex-direction:column; gap:2px; }
-    .word .name{
-      font-family:var(--font-display);
-      font-weight:700;
-      letter-spacing:-.2px;
-      font-size:22px;
-      line-height:1;
-    }
-    .word .tag{
-      font-size:12px;
-      color:var(--muted);
-      font-weight:700;
-      line-height:1;
-    }
+    .word .name{ font-family:var(--font-display); font-weight:700; letter-spacing:-.2px; font-size:22px; line-height:1; }
+    .word .tag{ font-size:12px; color:var(--muted); font-weight:700; line-height:1; }
 
-    nav ul{
-      list-style:none; display:flex; gap:18px; padding:0; margin:0;
-      align-items:center;
-    }
-    nav a{
-      font-weight:800;
-      font-size:13px;
-      color:var(--muted);
-      letter-spacing:.2px;
-    }
+    nav ul{ list-style:none; display:flex; gap:16px; padding:0; margin:0; align-items:center; }
+    nav a{ font-weight:800; font-size:13px; color:var(--muted); }
     nav a:hover{ color:var(--ink); }
-
     .nav-actions{ display:flex; gap:10px; align-items:center; }
-    .menu-btn{ display:none; }
 
-    @media (max-width: 980px){
+    @media (max-width: 920px){
       nav ul{ display:none; }
-      .menu-btn{ display:inline-flex; }
-      .brand{ min-width:auto; }
     }
 
     .btn{
       display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      padding:12px 14px;
-      border-radius: 14px;
+      padding:12px 14px; border-radius:14px;
       border:1px solid rgba(16,22,20,.10);
       background: rgba(255,255,255,.80);
       color:var(--ink);
-      font-weight:800;
-      font-size:13px;
-      cursor:pointer;
-      user-select:none;
-      transition: transform .18s var(--ease), box-shadow .18s var(--ease), background .18s var(--ease), border-color .18s var(--ease);
+      font-weight:800; font-size:13px;
+      cursor:pointer; user-select:none;
+      transition: transform .18s var(--ease), box-shadow .18s var(--ease), background .18s var(--ease);
       box-shadow: 0 10px 22px rgba(16,22,20,.08);
       white-space:nowrap;
     }
-    .btn:hover{ transform: translateY(-1px); box-shadow: var(--shadow-md); }
-    .btn:focus{ outline:none; box-shadow: var(--shadow-md), var(--focus); }
+    .btn:hover{ transform: translateY(-1px); box-shadow: var(--shadow); }
+    .btn:focus{ outline:none; box-shadow: var(--shadow), var(--focus); }
     .btn.small{ padding:10px 12px; border-radius: 12px; font-size:12.5px; }
+    .btn.primary{ background: linear-gradient(180deg, rgba(15,42,34,.98), rgba(15,42,34,.92)); color:#fff; border-color: rgba(15,42,34,.22); }
+    .btn.secondary{ background: rgba(15,42,34,.08); color: var(--brand); border-color: rgba(15,42,34,.18); box-shadow: 0 10px 22px rgba(15,42,34,.08); }
+    .btn.gold{ background: rgba(176,137,58,.12); border-color: rgba(176,137,58,.25); color: #6c5320; box-shadow: 0 10px 22px rgba(176,137,58,.10); }
     .btn.ghost{ background: transparent; box-shadow:none; }
-    .btn.primary{
-      background: linear-gradient(180deg, rgba(15,42,34,.98), rgba(15,42,34,.92));
-      border-color: rgba(15,42,34,.22);
-      color:#fff;
-    }
-    .btn.primary:hover{
-      background: linear-gradient(180deg, rgba(30,74,61,.98), rgba(15,42,34,.92));
-    }
-    .btn.secondary{
-      background: rgba(15,42,34,.08);
-      border-color: rgba(15,42,34,.18);
-      color: var(--brand);
-      box-shadow: 0 10px 22px rgba(15,42,34,.08);
-    }
-    .btn.gold{
-      background: rgba(176,137,58,.12);
-      border-color: rgba(176,137,58,.25);
-      color: #6c5320;
-      box-shadow: 0 10px 22px rgba(176,137,58,.10);
-    }
 
-    .chip{
-      display:inline-flex; align-items:center; gap:10px;
-      padding:8px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.70);
-      border:1px solid rgba(16,22,20,.10);
-      font-weight:800;
-      font-size:12.5px;
-      color:var(--muted);
+    section{ padding: 26px 0; }
+    .h1{
+      font-family: var(--font-display);
+      font-weight:700;
+      letter-spacing:-.7px;
+      font-size: clamp(30px, 3.2vw, 44px);
+      line-height:1.05;
+      margin: 0 0 10px;
     }
-    .dot{
-      width:9px; height:9px; border-radius:999px; background: rgba(15,42,34,.85);
-      box-shadow: 0 10px 18px rgba(15,42,34,.18);
-    }
+    .lead{ color:var(--muted); margin:0; font-size:15.5px; max-width: 74ch; }
 
-    section{ padding: 34px 0; }
-    .section-head{
-      display:flex; justify-content:space-between; align-items:flex-end; gap:14px;
-      margin-bottom: 14px;
-      flex-wrap:wrap;
+    /* Probador */
+    .hero{
+      padding: 22px 0 10px;
     }
-    .section-head h2{
-      margin:0;
-      font-size: 20px;
-      font-weight: 900;
-      letter-spacing: -.2px;
-    }
-    .section-head p{
-      margin:6px 0 0;
-      color:var(--muted);
-      font-size:13.5px;
-      max-width: 72ch;
-    }
-
-    .hero{ padding: 26px 0 12px; }
     .hero-grid{
-      display:grid; grid-template-columns: 1.08fr .92fr; gap:16px;
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap:14px;
       align-items:stretch;
     }
     @media (max-width: 980px){ .hero-grid{ grid-template-columns:1fr; } }
 
-    .hero-left{
-      padding: 20px;
-      border-radius: var(--radius-lg);
-      background: rgba(255,255,255,.62);
+    .card{
       border:1px solid rgba(16,22,20,.10);
-      box-shadow: var(--shadow-sm);
-      position:relative;
+      background: rgba(255,255,255,.72);
+      border-radius: var(--r-lg);
+      box-shadow: var(--shadow2);
       overflow:hidden;
     }
-    .hero-left:before{
-      content:"";
-      position:absolute; inset:-120px -120px auto auto;
-      width: 260px; height: 260px; border-radius: 999px;
-      background: radial-gradient(circle at 30% 30%, rgba(176,137,58,.35), transparent 60%);
+    .pad{ padding: 16px; }
+
+    .preview{
+      position:relative;
+      border-radius: var(--r-lg);
+      overflow:hidden;
+      border:1px solid rgba(16,22,20,.10);
+      background: rgba(255,255,255,.88);
+      box-shadow: var(--shadow);
+      min-height: 360px;
+    }
+    .preview img{
+      width:100%; height: 360px;
+      object-fit: cover; object-position:center;
+      filter: saturate(1.02) contrast(1.02);
+      transform: scale(1.01);
+    }
+    /* “Tinte” para simular color final */
+    .tint{
+      position:absolute; inset:0;
+      background: var(--tint, transparent);
+      opacity: .22;
+      mix-blend-mode: multiply;
       pointer-events:none;
     }
-
-    .h1{
-      font-family: var(--font-display);
-      font-weight: 700;
-      letter-spacing: -0.7px;
-      font-size: clamp(32px, 3.4vw, 46px);
-      line-height: 1.05;
-      margin: 12px 0 10px;
-    }
-    .lead{
-      color: var(--muted);
-      margin:0;
-      font-size: 15.5px;
-      max-width: 72ch;
-    }
-    .hero-cta{
-      display:flex; flex-wrap:wrap; gap:10px;
-      margin-top: 16px;
-    }
-    .hero-proof{
-      display:flex; flex-wrap:wrap; gap:10px;
-      margin-top: 14px;
-    }
-
-    .hero-right{
-      padding: 14px;
-      border-radius: var(--radius-lg);
-      background: rgba(255,255,255,.62);
+    .badge{
+      position:absolute; top:14px; left:14px;
+      background: rgba(255,255,255,.72);
       border:1px solid rgba(16,22,20,.10);
-      box-shadow: var(--shadow-sm);
-      overflow:hidden;
-    }
-    .hero-media{
-      border-radius: var(--radius-lg);
-      overflow:hidden;
-      border:1px solid rgba(16,22,20,.10);
-      background: rgba(255,255,255,.82);
-      box-shadow: var(--shadow-md);
-    }
-    .hero-img{
-      width:100%;
-      height: 330px;
-      object-fit: cover;
-      object-position: center;
-      transform: scale(1.01);
-      filter: saturate(1.03) contrast(1.02);
-    }
-    .mini{
-      margin-top: 10px;
-      color: var(--muted);
-      font-size: 12.5px;
-    }
-    .tags{ display:flex; gap:8px; flex-wrap:wrap; margin-top:10px; }
-    .tag{
-      font-size: 12px; font-weight: 800;
-      color: var(--muted);
-      border: 1px solid rgba(16,22,20,.10);
-      background: rgba(255,255,255,.70);
-      padding: 6px 10px;
       border-radius: 999px;
+      padding: 7px 10px;
+      font-weight:900; font-size:12px; color:var(--muted);
+      backdrop-filter: blur(8px);
+      display:inline-flex; gap:8px; align-items:center;
     }
-
-    .steps{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
+    .badge strong{ color:var(--brand); }
+    .badge2{
+      position:absolute; top:14px; right:14px;
+      background: rgba(15,42,34,.92);
+      border:1px solid rgba(15,42,34,.22);
+      color:#fff;
+      border-radius: 999px;
+      padding: 7px 10px;
+      font-weight:900; font-size:12px;
     }
-    @media (max-width: 900px){ .steps{ grid-template-columns:1fr; } }
-    .step{
-      padding: 16px;
-      border-radius: var(--radius-lg);
-      border:1px solid rgba(16,22,20,.10);
-      background: rgba(255,255,255,.70);
-      box-shadow: var(--shadow-sm);
+    .info-row{
+      display:flex; justify-content:space-between; align-items:flex-end; gap:10px; flex-wrap:wrap;
+      margin-top: 12px;
     }
-    .step .num{
-      display:inline-flex; align-items:center; justify-content:center;
-      width: 32px; height: 32px; border-radius: 999px;
-      background: rgba(15,42,34,.10);
-      border:1px solid rgba(15,42,34,.18);
-      font-weight: 900;
-      color: var(--brand);
-    }
-    .step h3{ margin:10px 0 6px; font-size: 15px; font-weight: 900; }
-    .step p{ margin:0; color:var(--muted); font-size: 13.5px; }
+    .pricebox small{ color:var(--muted2); font-weight:900; font-size:11.5px; }
+    .pricebox b{ display:block; font-size:18px; font-weight:900; letter-spacing:-.2px; }
 
     .controls{
-      display:flex; gap:10px; flex-wrap:wrap; align-items:center;
-      margin: 12px 0 14px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+      margin-top: 10px;
     }
-    .filters{ display:flex; gap:8px; flex-wrap:wrap; }
-    .filter{
-      padding: 10px 12px;
-      border-radius: 999px;
+    @media (max-width: 680px){ .controls{ grid-template-columns:1fr; } }
+
+    label{ display:block; color:var(--muted); font-size:12.5px; font-weight:900; margin: 10px 0 6px; }
+    input, select, textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius: 14px;
+      border:1px solid rgba(16,22,20,.12);
+      background: rgba(255,255,255,.92);
+      outline:none;
+      font-family: var(--font-body);
+      font-weight:650;
+      font-size:13px;
+      transition: box-shadow .16s var(--ease), border-color .16s var(--ease);
+    }
+    input:focus, select:focus, textarea:focus{ box-shadow: var(--focus); border-color: rgba(15,42,34,.22); }
+
+    .swatches{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-top: 10px;
+    }
+    @media (max-width: 520px){ .swatches{ grid-template-columns: repeat(3, 1fr); } }
+
+    .swatch{
+      text-align:left;
       border:1px solid rgba(16,22,20,.10);
-      background: rgba(255,255,255,.70);
-      font-weight: 900;
-      font-size: 12.5px;
+      background: rgba(255,255,255,.86);
+      border-radius: 16px;
+      padding: 10px;
       cursor:pointer;
-      transition: .18s var(--ease);
+      transition: transform .16s var(--ease), box-shadow .16s var(--ease), border-color .16s var(--ease);
+      box-shadow: 0 10px 22px rgba(16,22,20,.08);
       user-select:none;
     }
-    .filter:hover{ box-shadow: var(--shadow-sm); transform: translateY(-1px); }
-    .filter.active{
-      background: rgba(15,42,34,.10);
-      border-color: rgba(15,42,34,.18);
-      color: var(--brand);
-    }
+    .swatch:hover{ transform: translateY(-1px); box-shadow: var(--shadow); }
+    .swatch.active{ border-color: rgba(15,42,34,.28); outline: 2px solid rgba(15,42,34,.10); }
+    .swrow{ display:flex; align-items:center; gap:10px; }
+    .swdot{ width:22px; height:22px; border-radius:999px; background: var(--c, #ddd); border:1px solid rgba(0,0,0,.08); }
+    .swname{ font-weight:900; font-size:12.8px; }
+    .swmeta{ color:var(--muted2); font-weight:800; font-size:11.5px; margin-top:2px; }
 
-    .search{
-      flex:1;
-      min-width: 220px;
-      display:flex; align-items:center; gap:10px;
-      padding: 10px 12px;
-      border-radius: 999px;
-      border:1px solid rgba(16,22,20,.10);
-      background: rgba(255,255,255,.70);
+    /* Catálogo limpio */
+    .section-head{
+      display:flex; justify-content:space-between; align-items:flex-end; gap:12px; flex-wrap:wrap;
+      margin-bottom: 12px;
     }
-    .search input{
-      border:0; outline:none; background:transparent; width:100%;
-      font-weight:700; color:var(--ink);
-      font-family: var(--font-body);
-      font-size: 13px;
-    }
-    .search small{ color:var(--muted2); font-weight:900; }
+    .section-head h2{ margin:0; font-size: 18px; font-weight:900; letter-spacing:-.2px; }
+    .section-head p{ margin:6px 0 0; color:var(--muted); font-size:13.5px; max-width: 72ch; }
 
     .catalog{
       display:grid;
@@ -356,131 +241,83 @@
     }
     @media (max-width: 980px){ .catalog{ grid-template-columns:1fr; } }
 
-    .card{
-      border: 1px solid rgba(16,22,20,.10);
+    .p-card{
+      border:1px solid rgba(16,22,20,.10);
       background: rgba(255,255,255,.74);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-sm);
+      border-radius: var(--r-lg);
+      box-shadow: var(--shadow2);
       overflow:hidden;
       transition: transform .18s var(--ease), box-shadow .18s var(--ease);
       cursor:pointer;
-      display:flex;
-      flex-direction:column;
-      min-height: 100%;
-      position:relative;
     }
-    .card:hover{ transform: translateY(-2px); box-shadow: var(--shadow-md); }
-
-    .media{
-      position:relative;
-      width:100%;
-      aspect-ratio: 4 / 3;
-      background: rgba(255,255,255,.88);
-      border-bottom: 1px solid rgba(16,22,20,.08);
-      overflow:hidden;
-    }
-    .media img{
-      width:100%; height:100%;
-      object-fit: cover;
-      object-position: center;
-      filter: saturate(1.02) contrast(1.02);
-      transition: transform .22s var(--ease);
-    }
-    .card:hover .media img{ transform: scale(1.03); }
-
-    .badge{
-      position:absolute;
-      top: 12px; left: 12px;
-      display:inline-flex; align-items:center; gap:8px;
-      padding: 7px 10px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.72);
-      border:1px solid rgba(16,22,20,.10);
-      font-weight: 900;
-      font-size: 12px;
-      color: var(--muted);
-      backdrop-filter: blur(8px);
-    }
-    .badge strong{ color:var(--brand); }
-
-    .body{
-      padding: 14px 14px 12px;
-      display:flex;
-      flex-direction:column;
-      gap: 8px;
-      flex:1;
-    }
-    .title-row{ display:flex; justify-content:space-between; gap:10px; align-items:flex-start; }
-    .body h3{ margin:0; font-size: 15px; font-weight: 900; letter-spacing: -.2px; }
-    .body p{ margin:0; color: var(--muted); font-size: 13.5px; }
-    .meta{ display:flex; gap:8px; flex-wrap:wrap; margin-top:2px; }
+    .p-card:hover{ transform: translateY(-2px); box-shadow: var(--shadow); }
+    .p-media{ aspect-ratio: 4/3; background:#fff; border-bottom: 1px solid rgba(16,22,20,.08); overflow:hidden; }
+    .p-media img{ width:100%; height:100%; object-fit:cover; }
+    .p-body{ padding: 14px; }
+    .p-title{ display:flex; justify-content:space-between; gap:10px; align-items:flex-start; }
+    .p-body h3{ margin:0; font-size: 15px; font-weight:900; }
+    .p-body p{ margin:6px 0 0; color:var(--muted); font-size: 13.5px; }
     .pill{
-      font-size: 12px;
-      font-weight: 900;
-      color: var(--muted);
+      font-size: 12px; font-weight:900; color: var(--muted);
       border:1px solid rgba(16,22,20,.10);
       background: rgba(255,255,255,.70);
       padding: 6px 10px;
       border-radius: 999px;
+      white-space:nowrap;
     }
-
-    .pricebar{
-      margin-top:auto;
+    .p-foot{
+      margin-top: 12px;
       padding-top: 12px;
       border-top: 1px solid rgba(16,22,20,.08);
-      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      display:flex; justify-content:space-between; align-items:center; gap:10px;
     }
-    .price{ display:flex; flex-direction:column; line-height:1.1; }
-    .price small{ color:var(--muted2); font-weight: 900; font-size: 11.5px; }
-    .price b{ font-size: 15px; font-weight: 900; letter-spacing: -.2px; }
+    .mini{ color:var(--muted); font-size:12.5px; margin-top:8px; }
 
-    .grid2{ display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
-    .grid3{ display:grid; grid-template-columns: repeat(3,1fr); gap:12px; }
-    @media (max-width: 900px){ .grid2,.grid3{ grid-template-columns:1fr; } }
-
-    .panel{
-      border:1px solid rgba(16,22,20,.10);
-      background: rgba(255,255,255,.70);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-sm);
-      padding: 16px;
+    /* Carrito flotante minimal */
+    .cartbar{
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 14px;
+      z-index: 70;
+      width: min(920px, calc(100% - 28px));
+      display:none;
     }
-    .panel h3{ margin:0 0 6px; font-size: 15px; font-weight: 900; }
-    .panel p{ margin:0; color:var(--muted); font-size: 13.5px; }
-    .panel .actions{ display:flex; gap:10px; flex-wrap:wrap; margin-top: 12px; }
-
-    footer{
-      border-top:1px solid rgba(16,22,20,.08);
-      padding: 18px 0;
-      color:var(--muted);
-      font-size: 13px;
+    .cartbar .inner{
+      border:1px solid rgba(16,22,20,.12);
+      background: rgba(255,255,255,.92);
+      border-radius: 999px;
+      box-shadow: 0 20px 55px rgba(16,22,20,.16);
+      padding: 10px 10px;
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      backdrop-filter: blur(10px);
     }
-    .footrow{ display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; }
-    .footlinks{ display:flex; gap:12px; flex-wrap:wrap; }
-    .footlinks a{ color:var(--muted); font-weight: 900; }
-    .footlinks a:hover{ color:var(--ink); }
+    .cartbar .left{ display:flex; flex-direction:column; gap:2px; padding-left: 8px; }
+    .cartbar .left b{ font-size: 12.8px; font-weight: 900; }
+    .cartbar .left span{ font-size: 12px; color:var(--muted); font-weight: 800; }
+    .cartbar .actions{ display:flex; gap:8px; align-items:center; }
 
+    /* Modales */
     .modal{
       position: fixed; inset:0;
       background: rgba(16,22,20,.52);
       display:none;
-      z-index: 100;
+      z-index: 120;
       padding: 18px;
     }
     .modal.open{ display:flex; align-items:flex-start; justify-content:center; }
-    .modal .sheet{
+    .sheet{
       width: min(980px, 100%);
       margin: 24px auto 0;
       border-radius: 22px;
       border: 1px solid rgba(255,255,255,.18);
-      background: rgba(255,255,255,.92);
+      background: rgba(255,255,255,.94);
       box-shadow: 0 30px 90px rgba(16,22,20,.22);
       overflow:hidden;
       transform: translateY(6px);
       animation: pop .16s var(--ease) both;
     }
     @keyframes pop{ from{ opacity:0; transform: translateY(14px);} to{opacity:1; transform: translateY(0);} }
-
     .sheet-head{
       display:flex; justify-content:space-between; align-items:flex-start; gap:10px;
       padding: 14px;
@@ -488,37 +325,17 @@
       background: rgba(251,247,240,.72);
     }
     .sheet-head .t{ display:flex; flex-direction:column; gap:4px; }
-    .sheet-head .t b{ font-size: 14px; font-weight: 900; }
-    .sheet-head .t span{ color:var(--muted); font-size: 12.5px; }
+    .sheet-head .t b{ font-size: 14px; font-weight:900; }
+    .sheet-head .t span{ color:var(--muted); font-size:12.5px; }
     .sheet-body{ padding: 14px; }
 
-    label{
-      display:block;
-      color: var(--muted);
-      font-size: 12.5px;
-      font-weight: 900;
-      margin: 10px 0 6px;
+    .panel{
+      border:1px solid rgba(16,22,20,.10);
+      background: rgba(255,255,255,.74);
+      border-radius: var(--r-lg);
+      box-shadow: var(--shadow2);
+      padding: 14px;
     }
-    input, select, textarea{
-      width:100%;
-      padding: 12px 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(16,22,20,.12);
-      background: rgba(255,255,255,.92);
-      outline:none;
-      color: var(--ink);
-      font-family: var(--font-body);
-      transition: box-shadow .16s var(--ease), border-color .16s var(--ease);
-      font-weight: 650;
-      font-size: 13px;
-    }
-    input:focus, select:focus, textarea:focus{ box-shadow: var(--focus); border-color: rgba(15,42,34,.22); }
-    textarea{ min-height: 110px; resize: vertical; }
-
-    .row2{ display:grid; grid-template-columns: 1fr 1fr; gap:10px; }
-    .row3{ display:grid; grid-template-columns: 1fr 1fr 1fr; gap:10px; }
-    @media (max-width: 740px){ .row2,.row3{ grid-template-columns:1fr; } }
-
     .notice{
       margin-top: 10px;
       padding: 12px 14px;
@@ -535,92 +352,21 @@
       color: #5b441a;
     }
 
-    .swatches{
-      display:grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
-      margin-top: 10px;
+    footer{
+      border-top:1px solid rgba(16,22,20,.08);
+      padding: 18px 0 90px; /* espacio para cartbar */
+      color:var(--muted);
+      font-size: 13px;
     }
-    @media (max-width: 540px){ .swatches{ grid-template-columns: repeat(3, 1fr); } }
+    .footrow{ display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; }
 
-    .swatch{
-      text-align:left;
-      border:1px solid rgba(16,22,20,.10);
-      background: rgba(255,255,255,.86);
-      border-radius: 16px;
-      padding: 10px;
-      cursor:pointer;
-      transition: transform .16s var(--ease), box-shadow .16s var(--ease), border-color .16s var(--ease);
-      box-shadow: 0 10px 22px rgba(16,22,20,.08);
-      user-select:none;
-    }
-    .swatch:hover{ transform: translateY(-1px); box-shadow: var(--shadow-md); }
-    .swatch.active{ border-color: rgba(15,42,34,.28); outline: 2px solid rgba(15,42,34,.10); }
-    .swrow{ display:flex; align-items:center; gap:10px; }
-    .swdot{
-      width:22px; height:22px; border-radius: 999px;
-      background: var(--c, #ddd);
-      border:1px solid rgba(0,0,0,.08);
-      flex:0 0 auto;
-    }
-    .swname{ font-weight: 900; font-size: 12.8px; }
-    .swmeta{ color:var(--muted2); font-weight: 800; font-size: 11.5px; margin-top:2px; }
-
-    .wa-float{
-      position: fixed;
-      right: 16px;
-      bottom: 16px;
-      z-index: 80;
-      border-radius: 999px;
-      padding: 12px 14px;
-      border: 1px solid rgba(15,42,34,.24);
-      background: linear-gradient(180deg, rgba(15,42,34,.98), rgba(15,42,34,.92));
-      color: #fff;
-      font-weight: 900;
-      box-shadow: 0 18px 50px rgba(16,22,20,.18);
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      transition: transform .16s var(--ease), box-shadow .16s var(--ease);
-    }
-    .wa-float:hover{ transform: translateY(-1px); box-shadow: 0 22px 60px rgba(16,22,20,.20); }
-    .wa-float:focus{ outline:none; box-shadow: 0 22px 60px rgba(16,22,20,.20), var(--focus); }
-
-    .cartbar{
-      position: fixed;
-      left: 50%;
-      transform: translateX(-50%);
-      bottom: 14px;
-      z-index: 85;
-      width: min(980px, calc(100% - 28px));
-      display:none;
-    }
-    .cartbar .inner{
-      border:1px solid rgba(16,22,20,.12);
-      background: rgba(255,255,255,.92);
-      border-radius: 999px;
-      box-shadow: 0 20px 55px rgba(16,22,20,.16);
-      padding: 10px 10px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      backdrop-filter: blur(10px);
-    }
-    .cartbar .left{
-      display:flex; flex-direction:column; gap:2px;
-      padding-left: 8px;
-    }
-    .cartbar .left b{ font-size: 12.8px; font-weight: 900; }
-    .cartbar .left span{ font-size: 12px; color:var(--muted); font-weight: 800; }
-    .cartbar .actions{ display:flex; gap:8px; align-items:center; }
-
+    /* Toasts */
     .toasts{
       position: fixed;
       left: 50%;
       transform: translateX(-50%);
       bottom: 84px;
-      z-index: 120;
+      z-index: 160;
       width: min(560px, calc(100% - 28px));
       display:flex;
       flex-direction:column;
@@ -632,7 +378,7 @@
       border:1px solid rgba(16,22,20,.12);
       background: rgba(255,255,255,.92);
       border-radius: 16px;
-      box-shadow: var(--shadow-md);
+      box-shadow: var(--shadow);
       padding: 12px 14px;
       display:flex;
       justify-content:space-between;
@@ -642,1898 +388,885 @@
     }
     .toast b{ font-weight: 900; }
     .toast p{ margin:4px 0 0; color:var(--muted); font-size: 12.8px; font-weight: 750; }
-    .toast.success{ border-color: rgba(15,42,34,.18); background: rgba(15,42,34,.08); }
-    .toast.warn{ border-color: rgba(176,137,58,.22); background: rgba(176,137,58,.10); }
-
-    @media (prefers-reduced-motion: reduce){
-      *{ transition:none !important; animation:none !important; scroll-behavior:auto !important; }
-    }
   </style>
 </head>
 
 <body>
-  <div class="topline">
-    <div class="container row">
-      <div>Catálogo con precio • A medida por referencia • <b>Tapizado/Retapizado</b> • Lima y provincias</div>
-      <div class="toplinks">
-        <a href="#como">Cómo comprar</a>
-        <a href="#catalogo">Catálogo</a>
-        <a href="#tapizado">Tapizado</a>
-        <a href="#faq">FAQ</a>
-      </div>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#top" aria-label="Acrati">
+      <span class="mark" aria-hidden="true"></span>
+      <span class="word">
+        <span class="name">Acrati</span>
+        <span class="tag">Puffs premium + Tapizado a medida</span>
+      </span>
+    </a>
+
+    <nav aria-label="Navegación principal">
+      <ul>
+        <li><a href="#catalogo">Catálogo</a></li>
+        <li><a href="#amedida">A medida</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="btn secondary" id="btnCart" type="button">Carrito</button>
+      <a class="btn primary" id="btnWA" href="#" rel="noopener">WhatsApp</a>
     </div>
   </div>
+</header>
 
-  <header>
-    <div class="container nav">
-      <a class="brand" href="#top" aria-label="Acrati">
-        <span class="mark" aria-hidden="true"></span>
-        <span class="word">
-          <span class="name">Acrati</span>
-          <span class="tag">Puffs a medida + Tapizado premium</span>
-        </span>
-      </a>
+<div class="toasts" id="toasts" aria-live="polite" aria-atomic="true"></div>
 
-      <nav aria-label="Navegación principal">
-        <ul>
-          <li><a href="#catalogo">Catálogo</a></li>
-          <li><a href="#amedida">A medida</a></li>
-          <li><a href="#tapizado">Tapizado</a></li>
-          <li><a href="#envios">Envíos y pagos</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
-      </nav>
-
-      <div class="nav-actions">
-        <button class="btn secondary menu-btn" id="btnMenu" type="button">Menú</button>
-        <button class="btn secondary" id="btnOpenUpload" type="button">Subir comprobante</button>
-        <button class="btn gold" id="btnOpenQuote" type="button">Cotizar a medida</button>
-        <button class="btn primary" id="btnGoCatalog" type="button">Comprar del catálogo</button>
-      </div>
-    </div>
-  </header>
-
-  <!-- Mobile Menu -->
-  <div class="modal" id="menuModal" aria-hidden="true">
-    <div class="sheet" style="max-width:560px">
-      <div class="sheet-head">
-        <div class="t">
-          <b>Menú</b>
-          <span>Navega rápido por secciones</span>
-        </div>
-        <button class="btn ghost" id="btnCloseMenu" type="button">Cerrar</button>
-      </div>
-      <div class="sheet-body">
-        <div class="panel" style="box-shadow:none">
-          <div style="display:flex; gap:10px; flex-wrap:wrap">
-            <a class="btn secondary" href="#como">Cómo comprar</a>
-            <a class="btn secondary" href="#catalogo">Catálogo</a>
-            <a class="btn secondary" href="#tapizado">Tapizado</a>
-            <a class="btn secondary" href="#envios">Envíos y pagos</a>
-            <a class="btn secondary" href="#faq">FAQ</a>
-            <a class="btn secondary" href="#contacto">Contacto</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Floating WhatsApp -->
-  <a class="wa-float" id="waFloat" href="#" rel="noopener">
-    <span aria-hidden="true" style="display:inline-flex">
-      <svg viewBox="0 0 32 32" width="18" height="18" fill="currentColor">
-        <path d="M19.11 17.46c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.16-.43-2.2-1.36-.81-.72-1.35-1.6-1.51-1.87-.16-.27-.02-.42.12-.56.13-.13.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.52-.44-.45-.61-.46l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.64 1.12 2.82c.14.18 1.93 2.95 4.68 4.13.66.29 1.18.46 1.58.59.66.21 1.26.18 1.73.11.53-.08 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32z"/>
-        <path d="M16.02 3C9.39 3 4 8.37 4 14.98c0 2.34.69 4.61 2 6.56L5 29l7.64-1.99c1.9 1.04 4.05 1.58 6.25 1.58C25.61 28.59 31 23.22 31 16.61 31 10 25.61 3 16.02 3zm0 23.2c-2.02 0-3.99-.56-5.7-1.62l-.41-.25-4.53 1.18 1.2-4.41-.27-.45a9.61 9.61 0 0 1-1.48-5.17c0-5.31 4.35-9.64 9.69-9.64 5.34 0 9.69 4.33 9.69 9.64 0 5.31-4.35 9.72-9.69 9.72z"/>
-      </svg>
-    </span>
-    WhatsApp
-  </a>
-
-  <!-- Toasts -->
-  <div class="toasts" id="toasts" aria-live="polite" aria-atomic="true"></div>
-
-  <!-- Bottom Cart Bar -->
-  <div class="cartbar" id="cartBar">
-    <div class="inner">
-      <div class="left">
-        <b id="cartBarTitle">Tu pedido</b>
-        <span id="cartBarSub">0 ítems • S/ 0</span>
-      </div>
-      <div class="actions">
-        <button class="btn ghost small" id="btnClearCart" type="button">Vaciar</button>
-        <button class="btn secondary small" id="btnOpenCart" type="button">Ver carrito</button>
-        <button class="btn primary small" id="btnCheckout" type="button">Finalizar</button>
-      </div>
-    </div>
-  </div>
-
-  <main id="top" class="container">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-grid">
-        <div class="hero-left">
-          <span class="chip"><span class="dot"></span>Compra rápida del catálogo + pedidos a medida</span>
-
-          <h1 class="h1">Puffs premium y tapizado a medida, con compra cómoda y ordenada.</h1>
+<main id="top" class="container">
+  <!-- FRANJA 1: PROBADOR -->
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="card">
+        <div class="pad">
+          <h1 class="h1">Prueba el diseño, elige el color y agrégalo al carrito.</h1>
           <p class="lead">
-            El cliente elige modelo, personaliza (tela, color, patas), agrega al carrito y finaliza pedido.
-            Luego paga por Yape/Plin/Transferencia y sube su comprobante desde la misma página.
+            Catálogo: pago <b>100%</b>. A medida: cotización y adelanto <b>50%</b>.
+            Todo queda ordenado con ID de pedido + comprobante.
           </p>
 
-          <div class="hero-cta">
-            <button class="btn primary" type="button" id="btnHeroBuy">Comprar del catálogo</button>
-            <button class="btn gold" type="button" id="btnHeroQuote">Cotizar a medida / retapizado</button>
-            <button class="btn secondary" type="button" id="btnHeroUpload">Subir comprobante</button>
-          </div>
-
-          <div class="hero-proof">
-            <span class="chip"><span class="dot"></span>Catálogo: pago 100%</span>
-            <span class="chip"><span class="dot"></span>A medida: adelanto 50%</span>
-            <span class="chip"><span class="dot"></span>Comprobante → Sheets</span>
-          </div>
-
-          <div class="mini">
-            Soporte por chat por el botón flotante de WhatsApp.
-          </div>
-        </div>
-
-        <div class="hero-right">
-          <div class="hero-media">
-            <img class="hero-img" src="hero.png" alt="Foto principal"
-              onerror="this.style.display='none'; this.parentElement.style.padding='18px'; this.parentElement.innerHTML='<b>Imagen no encontrada</b><div style=&quot;margin-top:6px;color:#5a625f;font-weight:800;font-size:12.5px&quot;>Coloca <code>hero.png</code> junto a <code>index.html</code> (misma carpeta).</div>';">
-          </div>
-          <div class="mini" style="margin-top:12px">
-            <b style="color:var(--ink)">Entrega y empaque</b><br/>
-            Protección: film + burbuja + cartón. En provincias: guía y seguimiento (Shalom).
-          </div>
-          <div class="tags">
-            <span class="tag">Yape/Plin</span>
-            <span class="tag">Transferencia</span>
-            <span class="tag">Shalom</span>
-            <span class="tag">A medida</span>
-            <span class="tag">Retapizado</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- HOW IT WORKS -->
-    <section id="como">
-      <div class="section-head">
-        <div>
-          <h2>Cómo compra un cliente (ordenado, sin pasarela)</h2>
-          <p>Catálogo: paga 100% y sube comprobante. A medida: cotiza primero; luego adelanto 50% y saldo antes de envío.</p>
-        </div>
-      </div>
-
-      <div class="steps">
-        <div class="step">
-          <span class="num">1</span>
-          <h3>Elige modelo</h3>
-          <p>Catálogo con precio base y fotos. Personaliza y agrega al carrito.</p>
-        </div>
-        <div class="step">
-          <span class="num">2</span>
-          <h3>Finaliza pedido</h3>
-          <p>Se registra en Sheets con ID. Para catálogo: se solicita pago 100%.</p>
-        </div>
-        <div class="step">
-          <span class="num">3</span>
-          <h3>Sube comprobante</h3>
-          <p>Captura o PDF. El archivo se guarda y se enlaza a Sheets para validación.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- CATALOG -->
-    <section id="catalogo">
-      <div class="section-head">
-        <div>
-          <h2>Catálogo</h2>
-          <p>Clic en un producto para personalizar y agregar al carrito. “A medida” abre cotización por referencia.</p>
-        </div>
-        <div style="display:flex; gap:10px; flex-wrap:wrap">
-          <button class="btn secondary" type="button" id="btnOpenCartTop">Ver carrito</button>
-          <button class="btn secondary" type="button" id="btnOpenUploadTop">Subir comprobante</button>
-          <button class="btn gold" type="button" id="btnOpenQuoteTop">Cotizar a medida</button>
-        </div>
-      </div>
-
-      <div class="controls">
-        <div class="filters" role="tablist" aria-label="Filtros">
-          <button class="filter active" type="button" data-filter="all">Todos</button>
-          <button class="filter" type="button" data-filter="puffs">Puffs</button>
-          <button class="filter" type="button" data-filter="sofas">Sofás</button>
-          <button class="filter" type="button" data-filter="pedido">A medida</button>
-        </div>
-
-        <div class="search" role="search">
-          <small>Buscar</small>
-          <input id="searchInput" placeholder="Ej: Rosseta, puff, sofá..." />
-        </div>
-      </div>
-
-      <div class="catalog" id="catalogGrid"></div>
-
-      <div class="mini">
-        Importante: las imágenes deben estar junto a <b>index.html</b> con el mismo nombre (minúsculas).
-      </div>
-    </section>
-
-    <!-- A MEDIDA -->
-    <section id="amedida">
-      <div class="section-head">
-        <div>
-          <h2>Pedidos a medida por referencia (Pinterest/IG)</h2>
-          <p>Primero cotizamos. Cuando el precio esté confirmado, se agenda con adelanto 50% y el saldo se paga antes del envío/entrega.</p>
-        </div>
-      </div>
-
-      <div class="grid2">
-        <div class="panel">
-          <h3>Qué pedirle al cliente</h3>
-          <p>Foto/link, ciudad, medidas aproximadas, uso (hogar/negocio), tela preferida, fecha deseada.</p>
-          <div class="actions">
-            <button class="btn gold" type="button" id="btnOpenQuoteAmedida">Abrir formulario</button>
-            <button class="btn secondary" type="button" id="btnCopyChecklist">Copiar checklist</button>
-          </div>
-          <div class="notice">
-            “Checklist” reduce ida y vuelta y acelera cotización.
-          </div>
-        </div>
-
-        <div class="panel">
-          <h3>Pago de pedidos a medida</h3>
-          <p>Una vez que tu cotización esté confirmada, podrás registrar el <b>adelanto 50%</b> con comprobante (se guarda en Sheets) y luego el <b>saldo</b> antes del despacho.</p>
-          <div class="actions">
-            <button class="btn secondary" type="button" id="btnOpenUploadAmedida">Subir comprobante</button>
-            <a class="btn secondary" href="#envios">Ver pagos y envíos</a>
-          </div>
-          <div class="notice warn">
-            Para ordenar producción: el adelanto confirmado es el “gatillo” de inicio.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TAPIZADO -->
-    <section id="tapizado">
-      <div class="section-head">
-        <div>
-          <h2>Tapizado y retapizado</h2>
-          <p>Renueva muebles sin comprar nuevo: estética, confort, durabilidad. Perfecto para hogares y negocios.</p>
-        </div>
-        <button class="btn gold" type="button" id="btnOpenQuoteTapizado">Cotizar retapizado</button>
-      </div>
-
-      <div class="grid3">
-        <div class="panel">
-          <h3>Evaluación</h3>
-          <p>Fotos, medidas, estado de espuma y estructura. Definimos qué se reemplaza.</p>
-        </div>
-        <div class="panel">
-          <h3>Telas premium</h3>
-          <p>Opciones: chenille, antimanchas, lino, velvet. Se prioriza resistencia y fácil limpieza.</p>
-        </div>
-        <div class="panel">
-          <h3>Acabado</h3>
-          <p>Costuras reforzadas, tensado correcto y terminaciones limpias.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- PAYMENTS & SHIPPING -->
-    <section id="envios">
-      <div class="section-head">
-        <div>
-          <h2>Envíos y pagos</h2>
-          <p>Política clara para evitar confusiones y mantener orden en producción.</p>
-        </div>
-      </div>
-
-      <div class="grid2">
-        <div class="panel">
-          <h3>Envíos</h3>
-          <p><b>Lima:</b> entrega coordinada por zona. <b>Provincias:</b> Shalom con guía y seguimiento.</p>
-          <div class="notice">
-            Empaque: film + burbuja + cartón para evitar daños.
-          </div>
-        </div>
-        <div class="panel">
-          <h3>Pagos (sin pasarela)</h3>
-          <p>
-            <b>Catálogo:</b> pago <b>100%</b> y se sube comprobante desde la página.<br/>
-            <b>A medida:</b> adelanto <b>50%</b> para iniciar producción y saldo antes de despacho.
-          </p>
-          <div class="notice warn">
-            Al subir el comprobante, se guarda el archivo y el link queda en Google Sheets (para validación).
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq">
-      <div class="section-head">
-        <div>
-          <h2>Preguntas frecuentes</h2>
-          <p>Respuestas listas para convertir y reducir fricción.</p>
-        </div>
-      </div>
-
-      <div class="grid2">
-        <div class="panel">
-          <h3>¿Cuánto demora?</h3>
-          <p>Depende del modelo, tela y cola de producción. Se confirma al validar el pago / adelanto.</p>
-        </div>
-        <div class="panel">
-          <h3>¿Se puede antimanchas?</h3>
-          <p>Sí. En el configurador puedes elegir “Antimanchas (fácil limpieza)” y colores premium.</p>
-        </div>
-        <div class="panel">
-          <h3>¿Cómo pago?</h3>
-          <p>Yape/Plin/Transferencia. Luego subes tu comprobante en “Subir comprobante”.</p>
-        </div>
-        <div class="panel">
-          <h3>¿Hacen retapizado?</h3>
-          <p>Sí. Envíanos fotos, medidas y estado. Registramos tu solicitud y te cotizamos.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contacto">
-      <div class="section-head">
-        <div>
-          <h2>Contacto</h2>
-          <p>WhatsApp por el botón flotante. Para cotización por referencia/retapizado: formulario.</p>
-        </div>
-      </div>
-
-      <div class="grid2">
-        <div class="panel">
-          <h3>¿Pedido a medida o retapizado?</h3>
-          <p>Registra tu solicitud (queda en Sheets) y coordinamos por WhatsApp.</p>
-          <div class="actions">
-            <button class="btn gold" type="button" id="btnOpenQuoteBottom">Abrir formulario</button>
-            <button class="btn secondary" type="button" id="btnOpenUploadBottom">Subir comprobante</button>
-            <button class="btn secondary" type="button" id="btnOpenCartBottom">Ver carrito</button>
-          </div>
-          <div class="notice">
-            Si el cliente ya eligió catálogo: “Finalizar pedido” en el carrito.
-          </div>
-        </div>
-
-        <div class="panel">
-          <h3>Modo Dueños (gestión)</h3>
-          <p>Accede con <b>?admin=1</b> para ver registros locales, exportar CSV y probar Sheets.</p>
-          <div class="actions">
-            <button class="btn secondary" type="button" id="btnOpenOwner">Abrir Modo Dueños</button>
-          </div>
-          <div class="notice warn">
-            Esto es solo para gestión desde el navegador.
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container footrow">
-      <div>© <span id="year"></span> Acrati. <span style="opacity:.7">Hecho para vender y gestionar con orden.</span></div>
-      <div class="footlinks">
-        <a href="#catalogo">Catálogo</a>
-        <a href="#tapizado">Tapizado</a>
-        <a href="#envios">Envíos y pagos</a>
-        <a href="#contacto">Contacto</a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- MODAL: Product Config -->
-  <div class="modal" id="productModal" aria-hidden="true">
-    <div class="sheet">
-      <div class="sheet-head">
-        <div class="t">
-          <b id="pmTitle">Personalizar</b>
-          <span id="pmSub">Elige tela, color y acabado. Luego agrega al carrito.</span>
-        </div>
-        <button class="btn ghost" id="btnCloseProduct" type="button">Cerrar</button>
-      </div>
-      <div class="sheet-body">
-        <div class="grid2">
-          <div>
-            <div class="panel" style="box-shadow:none">
-              <div class="row2">
-                <div>
-                  <label>Producto</label>
-                  <input id="pmProduct" disabled />
-                </div>
-                <div>
-                  <label>Precio base</label>
-                  <input id="pmPrice" disabled />
-                </div>
-              </div>
-
-              <div class="row2">
-                <div>
-                  <label>Tipo de tela</label>
-                  <select id="pmFabricType"></select>
-                </div>
-                <div>
-                  <label>Firmeza</label>
-                  <select id="pmFirmness">
-                    <option value="Suave">Suave</option>
-                    <option value="Intermedia" selected>Intermedia</option>
-                    <option value="Firme">Firme</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="row3">
-                <div>
-                  <label>Patas</label>
-                  <select id="pmLegs">
-                    <option value="Negro" selected>Negro</option>
-                    <option value="Dorado">Dorado</option>
-                    <option value="Plateado">Plateado</option>
-                  </select>
-                </div>
-                <div>
-                  <label>Cantidad</label>
-                  <input id="pmQty" type="number" min="1" value="1" />
-                </div>
-                <div>
-                  <label>Medidas</label>
-                  <input id="pmMeasures" placeholder="Ej: 80x80x45 cm" />
-                </div>
-              </div>
-
-              <label>Notas (opcional)</label>
-              <textarea id="pmNotes" placeholder="Ej: fácil limpieza, costura reforzada, entrega urgente..."></textarea>
-
-              <div class="notice" id="pmTotalBox">
-                Total estimado: <b id="pmTotal">S/ 0</b>
-              </div>
-
-              <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px">
-                <button class="btn secondary" type="button" id="btnPmWA">Enviar detalle por WhatsApp</button>
-                <button class="btn primary" type="button" id="btnAddToCart">Agregar al carrito</button>
-              </div>
-              <div class="mini">
-                Consejo: para catálogo, se agenda con pago 100%.
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <div class="panel" style="box-shadow:none">
-              <b style="font-weight:900">Color / muestra</b>
-              <div class="mini" style="margin-top:4px">Haz clic en un color para seleccionarlo.</div>
-              <div class="swatches" id="pmSwatches"></div>
-              <div class="notice warn" style="margin-top:12px">
-                Si quieres texturas reales: agrega imágenes de telas y asígnalas en el catálogo (en el script).
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- MODAL: Cart / Checkout -->
-  <div class="modal" id="cartModal" aria-hidden="true">
-    <div class="sheet">
-      <div class="sheet-head">
-        <div class="t">
-          <b>Carrito y checkout</b>
-          <span>Catálogo: pago 100%. Se registra en Google Sheets con ID.</span>
-        </div>
-        <button class="btn ghost" id="btnCloseCart" type="button">Cerrar</button>
-      </div>
-      <div class="sheet-body">
-        <div class="grid2">
-          <div>
-            <div class="panel" style="box-shadow:none">
-              <b style="font-weight:900">Resumen</b>
-              <div class="mini" style="margin-top:4px">Puedes quitar ítems antes de finalizar.</div>
-              <div id="cartList" style="margin-top:10px; display:flex; flex-direction:column; gap:10px;"></div>
-              <div class="notice" style="margin-top:12px">
-                Total: <b id="cartTotal">S/ 0</b>
-                <div style="margin-top:6px;color:#5a625f;font-weight:800;font-size:12.5px">
-                  Para catálogo, se solicita <b>pago 100%</b> para agendar producción.
-                </div>
-              </div>
-              <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px">
-                <button class="btn ghost" type="button" id="btnCartWA">Enviar resumen por WhatsApp</button>
-                <button class="btn ghost" type="button" id="btnCartClear2">Vaciar carrito</button>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <div class="panel" style="box-shadow:none">
-              <b style="font-weight:900">Datos del cliente</b>
-
-              <div class="row2">
-                <div>
-                  <label>Nombre</label>
-                  <input id="coName" placeholder="Ej: María" />
-                </div>
-                <div>
-                  <label>Teléfono / WhatsApp</label>
-                  <input id="coPhone" placeholder="Ej: 987654321" />
-                </div>
-              </div>
-
-              <div class="row2">
-                <div>
-                  <label>Ciudad</label>
-                  <input id="coCity" placeholder="Ej: Lima" />
-                </div>
-                <div>
-                  <label>Método de pago</label>
-                  <select id="coPayMethod">
-                    <option value="Yape" selected>Yape</option>
-                    <option value="Plin">Plin</option>
-                    <option value="Transferencia">Transferencia</option>
-                  </select>
-                </div>
-              </div>
-
-              <label>Dirección / referencia (opcional)</label>
-              <input id="coAddress" placeholder="Ej: Surco, cerca a..." />
-
-              <label>Notas para entrega (opcional)</label>
-              <textarea id="coNotes" placeholder="Ej: horario, piso, contacto alterno..."></textarea>
-
-              <div class="notice warn">
-                Al finalizar: se registra en Sheets y se habilita la subida de comprobante.
-              </div>
-
-              <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px">
-                <button class="btn primary" type="button" id="btnPlaceOrder">Finalizar pedido</button>
-                <button class="btn secondary" type="button" id="btnPlaceOrderWA">Finalizar y abrir WhatsApp</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- MODAL: Payment (guía + subir comprobante) -->
-  <div class="modal" id="payModal" aria-hidden="true">
-    <div class="sheet" style="max-width:860px">
-      <div class="sheet-head">
-        <div class="t">
-          <b>Pago y comprobante</b>
-          <span>Catálogo: pago 100%. Sube tu captura aquí (se guarda en Sheets).</span>
-        </div>
-        <button class="btn ghost" id="btnClosePay" type="button">Cerrar</button>
-      </div>
-      <div class="sheet-body">
-        <div class="grid2">
-          <div>
-            <div class="panel" style="box-shadow:none">
-              <b style="font-weight:900">Datos para pagar</b>
-              <div class="mini" style="margin-top:6px" id="payText"></div>
-
-              <div class="notice" style="margin-top:12px">
-                Luego sube tu comprobante (captura o PDF). Quedará enlazado en Google Sheets.
-              </div>
-
-              <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px">
-                <button class="btn primary" type="button" id="btnPayWA">Abrir WhatsApp</button>
-                <button class="btn secondary" type="button" id="btnCopyOrderId">Copiar ID</button>
-              </div>
-            </div>
-
-            <div class="panel" style="box-shadow:none; margin-top:12px">
-              <b style="font-weight:900">Subir comprobante (recomendado)</b>
-
-              <div class="row2">
-                <div>
-                  <label>ID de pedido</label>
-                  <input id="pmOrderId" placeholder="Ej: ACR-2026-000123" />
-                </div>
-                <div>
-                  <label>Tipo de pago</label>
-                  <select id="pmStage">
-                    <option value="TOTAL" selected>Pago total (catálogo)</option>
-                    <option value="ADELANTO">Adelanto 50% (a medida)</option>
-                    <option value="SALDO">Saldo (a medida)</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="row2">
-                <div>
-                  <label>Monto</label>
-                  <input id="pmAmount" type="number" min="0" step="1" placeholder="Ej: 430" />
-                </div>
-                <div>
-                  <label>N° operación (opcional)</label>
-                  <input id="pmOp" placeholder="Ej: 123456" />
-                </div>
-              </div>
-
-              <label>Comprobante (foto o PDF)</label>
-              <input id="pmFile" type="file" accept="image/*,application/pdf" />
-
-              <div class="notice warn" style="margin-top:10px">
-                Límite recomendado: <b>2 MB</b>. Si tu captura es muy pesada, envíala en calidad “media”.
-              </div>
-
-              <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px">
-                <button class="btn primary" type="button" id="btnUploadProof">Subir comprobante</button>
-                <button class="btn ghost" type="button" id="btnClearProofForm">Limpiar</button>
-              </div>
-              <div class="mini" id="pmUploadHint" style="margin-top:10px"></div>
-            </div>
-          </div>
-
-          <div>
-            <div class="panel" style="box-shadow:none">
-              <b style="font-weight:900">QR</b>
-              <div class="mini" style="margin-top:6px">Coloca <code>yape-qr.png</code> junto a <code>index.html</code>.</div>
-              <div style="margin-top:10px">
-                <img src="yape-qr.png" alt="QR Yape/Plin" style="border-radius:18px;border:1px solid rgba(16,22,20,.10);background:#fff"
-                  onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;notice warn&quot;>No se encontró <b>yape-qr.png</b>. Súbelo a la misma carpeta del sitio.</div>';">
-              </div>
-
-              <div class="notice" style="margin-top:12px">
-                Si pagas por transferencia, sube el voucher igual. El sistema lo registra del mismo modo.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- MODAL: Upload proof standalone (para quien ya pagó) -->
-  <div class="modal" id="uploadModal" aria-hidden="true">
-    <div class="sheet" style="max-width:760px">
-      <div class="sheet-head">
-        <div class="t">
-          <b>Subir comprobante</b>
-          <span>Ingresa tu ID y sube tu captura/PDF (se guarda en Sheets).</span>
-        </div>
-        <button class="btn ghost" id="btnCloseUpload" type="button">Cerrar</button>
-      </div>
-      <div class="sheet-body">
-        <div class="panel" style="box-shadow:none">
-          <div class="row2">
+          <div class="info-row" style="margin-top:14px">
             <div>
-              <label>ID de pedido</label>
-              <input id="upOrderId" placeholder="Ej: ACR-2026-000123" />
+              <div class="mini" id="probeSummary">—</div>
+            </div>
+            <div class="pricebox" style="text-align:right">
+              <small>Total estimado</small>
+              <b id="probeTotal">—</b>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px">
+            <button class="btn primary" id="btnAddFromProbe" type="button">Agregar al carrito</button>
+            <button class="btn gold" id="btnQuote" type="button">Cotizar a medida</button>
+          </div>
+
+          <div class="notice" style="margin-top:12px">
+            Si te gusta el resultado del “probador”, tu compra queda lista en 2 pasos: Carrito → Pagar → Subir comprobante.
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="pad">
+          <div class="preview" id="preview" style="--tint: transparent;">
+            <div class="badge"><strong id="badgeModel">—</strong> • <span id="badgeFabric">—</span></div>
+            <div class="badge2" id="badgeLegs">Patas: —</div>
+
+            <img id="previewImg" src="rosseta.png" alt="Vista previa del producto"
+                 onerror="this.style.display='none'; this.parentElement.style.minHeight='220px'; this.parentElement.insertAdjacentHTML('beforeend','<div style=&quot;padding:16px;font-weight:900&quot;>Sube la imagen del producto (ej: <code>rosseta.png</code>) junto al <code>index.html</code>.</div>');">
+            <div class="tint" id="previewTint"></div>
+          </div>
+
+          <div class="controls">
+            <div>
+              <label>Modelo (catálogo)</label>
+              <select id="probeProduct"></select>
             </div>
             <div>
-              <label>Tipo de pago</label>
-              <select id="upStage">
-                <option value="TOTAL" selected>Pago total (catálogo)</option>
-                <option value="ADELANTO">Adelanto 50% (a medida)</option>
-                <option value="SALDO">Saldo (a medida)</option>
+              <label>Cantidad</label>
+              <input id="probeQty" type="number" min="1" value="1"/>
+            </div>
+
+            <div>
+              <label>Tipo de tela</label>
+              <select id="probeFabric"></select>
+            </div>
+            <div>
+              <label>Patas</label>
+              <select id="probeLegs">
+                <option value="Negro" selected>Negro</option>
+                <option value="Dorado">Dorado</option>
+                <option value="Plateado">Plateado</option>
               </select>
             </div>
           </div>
 
-          <div class="row2">
-            <div>
-              <label>Monto</label>
-              <input id="upAmount" type="number" min="0" step="1" placeholder="Ej: 430" />
-            </div>
-            <div>
-              <label>N° operación (opcional)</label>
-              <input id="upOp" placeholder="Ej: 123456" />
-            </div>
+          <label style="margin-top:12px">Color</label>
+          <div class="swatches" id="probeSwatches"></div>
+
+          <div class="mini">
+            Vista previa: imagen + tinte del color elegido (simulación). En producción se confirma la tela real.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATALOGO (LIMPIO) -->
+  <section id="catalogo">
+    <div class="section-head">
+      <div>
+        <h2>Catálogo</h2>
+        <p>Haz clic en un producto para cargarlo en el “probador” de arriba y agregarlo al carrito.</p>
+      </div>
+      <button class="btn secondary" type="button" id="btnScrollTop">Ir al probador</button>
+    </div>
+
+    <div class="catalog" id="catalogGrid"></div>
+  </section>
+
+  <!-- A MEDIDA (MINIMO) -->
+  <section id="amedida">
+    <div class="section-head">
+      <div>
+        <h2>A medida / por referencia</h2>
+        <p>Envíanos foto o link (Pinterest/IG). Cotizamos y agendamos con adelanto 50%.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="pad">
+        <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:space-between">
+          <div>
+            <div style="font-weight:900">¿Tienes una referencia?</div>
+            <div class="mini">Foto/link + medidas + ciudad. Listo.</div>
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap">
+            <button class="btn gold" id="btnQuote2" type="button">Cotizar a medida</button>
+            <a class="btn secondary" id="btnWA2" href="#" rel="noopener">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ (BREVE) -->
+  <section id="faq">
+    <div class="section-head">
+      <div>
+        <h2>FAQ</h2>
+        <p>Respuestas cortas para cerrar ventas sin fricción.</p>
+      </div>
+    </div>
+
+    <div class="catalog" style="grid-template-columns: repeat(2, 1fr);">
+      <div class="panel">
+        <div style="font-weight:900">¿Cómo pago?</div>
+        <div class="mini">Yape/Plin/Transferencia. Catálogo paga 100%. Luego subes el comprobante desde la web.</div>
+      </div>
+      <div class="panel">
+        <div style="font-weight:900">¿A medida?</div>
+        <div class="mini">Primero cotizamos. Luego adelanto 50% para iniciar producción y saldo antes del envío.</div>
+      </div>
+      <div class="panel">
+        <div style="font-weight:900">¿Envíos?</div>
+        <div class="mini">Lima coordinado. Provincias por Shalom con guía y embalaje protegido.</div>
+      </div>
+      <div class="panel">
+        <div style="font-weight:900">¿Tiempo?</div>
+        <div class="mini">Depende del modelo/tela y cola. Se confirma al validar el pago/adelanto.</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footrow">
+    <div>© <span id="year"></span> Acrati.</div>
+    <div style="display:flex; gap:12px; flex-wrap:wrap">
+      <a href="#catalogo">Catálogo</a>
+      <a href="#amedida">A medida</a>
+      <a href="#faq">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Cartbar -->
+<div class="cartbar" id="cartBar">
+  <div class="inner">
+    <div class="left">
+      <b id="cartBarTitle">Tu pedido</b>
+      <span id="cartBarSub">0 ítems</span>
+    </div>
+    <div class="actions">
+      <button class="btn ghost small" id="btnClearCart" type="button">Vaciar</button>
+      <button class="btn secondary small" id="btnOpenCart" type="button">Ver</button>
+      <button class="btn primary small" id="btnCheckout" type="button">Pagar</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: Cart -->
+<div class="modal" id="cartModal" aria-hidden="true">
+  <div class="sheet">
+    <div class="sheet-head">
+      <div class="t">
+        <b>Carrito</b>
+        <span>Catálogo: pago 100%. El comprobante se sube en el paso de pago.</span>
+      </div>
+      <button class="btn ghost" id="btnCloseCart" type="button">Cerrar</button>
+    </div>
+    <div class="sheet-body">
+      <div class="panel">
+        <div id="cartList" style="display:flex; flex-direction:column; gap:10px;"></div>
+        <div class="notice" style="margin-top:12px">
+          Total: <b id="cartTotal">S/ 0</b>
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px">
+          <button class="btn secondary" id="btnBackToProbe" type="button">Seguir probando</button>
+          <button class="btn primary" id="btnGoPay" type="button">Continuar a pago</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: Pay + Upload proof -->
+<div class="modal" id="payModal" aria-hidden="true">
+  <div class="sheet" style="max-width:920px">
+    <div class="sheet-head">
+      <div class="t">
+        <b>Pago y comprobante</b>
+        <span>Se genera un ID y el comprobante se guarda en Drive + se enlaza en Sheets.</span>
+      </div>
+      <button class="btn ghost" id="btnClosePay" type="button">Cerrar</button>
+    </div>
+    <div class="sheet-body">
+      <div class="catalog" style="grid-template-columns: 1fr 1fr;">
+        <div class="panel">
+          <div style="font-weight:900">1) Datos del cliente</div>
+
+          <label>Nombre</label>
+          <input id="coName" placeholder="Ej: María"/>
+
+          <label>WhatsApp</label>
+          <input id="coPhone" placeholder="Ej: 955510450"/>
+
+          <label>Ciudad</label>
+          <input id="coCity" placeholder="Ej: Lima"/>
+
+          <label>Dirección / referencia (opcional)</label>
+          <input id="coAddress" placeholder="Distrito, referencia..."/>
+
+          <div class="notice warn">
+            Catálogo requiere pago <b>100%</b> antes de producción.
+          </div>
+        </div>
+
+        <div class="panel">
+          <div style="font-weight:900">2) Pagar + subir comprobante</div>
+          <div class="mini" id="payInfo" style="margin-top:6px">—</div>
+
+          <div class="notice" style="margin-top:10px">
+            Yape / WhatsApp: <b id="payNumber">955510450</b>
           </div>
 
           <label>Comprobante (foto o PDF)</label>
-          <input id="upFile" type="file" accept="image/*,application/pdf" />
+          <input id="pmFile" type="file" accept="image/*,application/pdf"/>
 
-          <div class="notice warn" style="margin-top:10px">
-            Límite recomendado: <b>2 MB</b>.
-          </div>
+          <label>N° operación (opcional)</label>
+          <input id="pmOp" placeholder="Ej: 123456"/>
 
           <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px">
-            <button class="btn primary" type="button" id="btnUploadProof2">Subir comprobante</button>
-            <button class="btn ghost" type="button" id="btnClearUploadForm">Limpiar</button>
+            <button class="btn primary" id="btnPlaceOrderAndUpload" type="button">Registrar pedido + subir comprobante</button>
+            <a class="btn secondary" id="btnPayWA" href="#" rel="noopener">WhatsApp</a>
           </div>
-          <div class="mini" id="upUploadHint" style="margin-top:10px"></div>
+
+          <div class="mini" id="payHint" style="margin-top:10px"></div>
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <!-- MODAL: Quote (A medida / Tapizado) -->
-  <div class="modal" id="quoteModal" aria-hidden="true">
-    <div class="sheet">
-      <div class="sheet-head">
-        <div class="t">
-          <b>Cotización a medida / retapizado</b>
-          <span>Se guarda en Google Sheets para que ustedes coticen con orden.</span>
-        </div>
-        <button class="btn ghost" id="btnCloseQuote" type="button">Cerrar</button>
+<!-- MODAL: Quote (minimal) -->
+<div class="modal" id="quoteModal" aria-hidden="true">
+  <div class="sheet" style="max-width:860px">
+    <div class="sheet-head">
+      <div class="t">
+        <b>Cotizar a medida / retapizado</b>
+        <span>Se registra en Sheets para seguimiento.</span>
       </div>
-      <div class="sheet-body">
-        <div class="grid2">
+      <button class="btn ghost" id="btnCloseQuote" type="button">Cerrar</button>
+    </div>
+    <div class="sheet-body">
+      <div class="panel">
+        <div class="controls" style="grid-template-columns: 1fr 1fr;">
           <div>
-            <div class="panel" style="box-shadow:none">
-              <div class="row2">
-                <div>
-                  <label>Nombre</label>
-                  <input id="qName" placeholder="Nombre del cliente" />
-                </div>
-                <div>
-                  <label>Teléfono / WhatsApp</label>
-                  <input id="qPhone" placeholder="Ej: 987654321" />
-                </div>
-              </div>
-
-              <div class="row2">
-                <div>
-                  <label>Ciudad</label>
-                  <input id="qCity" placeholder="Lima / Arequipa / etc." />
-                </div>
-                <div>
-                  <label>Servicio</label>
-                  <select id="qService">
-                    <option value="Pedido a medida (referencia)" selected>Pedido a medida (referencia)</option>
-                    <option value="Tapizado / Retapizado">Tapizado / Retapizado</option>
-                    <option value="Sofá a medida">Sofá a medida</option>
-                    <option value="Puff a medida">Puff a medida</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="row2">
-                <div>
-                  <label>Medidas (aprox.)</label>
-                  <input id="qMeasures" placeholder="Ej: 180x80x90 cm" />
-                </div>
-                <div>
-                  <label>Referencia (link Pinterest/IG)</label>
-                  <input id="qRef" placeholder="Pega el link" />
-                </div>
-              </div>
-
-              <label>Detalles</label>
-              <textarea id="qDetails" placeholder="Tela/color deseados, uso (hogar/negocio), estado del mueble (si retapizado), fecha deseada, etc."></textarea>
-
-              <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px">
-                <button class="btn primary" type="button" id="btnSaveQuote">Guardar solicitud</button>
-                <button class="btn secondary" type="button" id="btnQuoteWA">Enviar por WhatsApp</button>
-              </div>
-
-              <div class="notice">
-                Luego coordinamos por WhatsApp. Para “a medida”, el pago se gestiona como: adelanto 50% + saldo.
-              </div>
-            </div>
+            <label>Nombre</label>
+            <input id="qName" placeholder="Nombre"/>
           </div>
-
           <div>
-            <div class="panel" style="box-shadow:none">
-              <b style="font-weight:900">Para cotizar rápido, incluye:</b>
-              <div class="mini" style="margin-top:8px; font-weight:800; color:var(--muted)">
-                • Foto/link • Medidas • Ciudad • Uso • Tela preferida • Fecha deseada
-              </div>
-              <div class="notice warn" style="margin-top:12px">
-                Si es retapizado: agrega fotos del estado (espuma/estructura) y si requiere recojo.
-              </div>
-              <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px">
-                <button class="btn ghost" type="button" id="btnCopyMsgTemplate">Copiar mensaje modelo</button>
-              </div>
-            </div>
-
-            <div class="panel" style="box-shadow:none; margin-top:12px">
-              <b style="font-weight:900">¿Ya pagaste?</b>
-              <div class="mini" style="margin-top:6px">Sube tu comprobante con tu ID (botón “Subir comprobante”).</div>
-              <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px">
-                <button class="btn secondary" type="button" id="btnOpenUploadFromQuote">Subir comprobante</button>
-              </div>
-            </div>
+            <label>WhatsApp</label>
+            <input id="qPhone" placeholder="955510450"/>
           </div>
+          <div>
+            <label>Ciudad</label>
+            <input id="qCity" placeholder="Lima / Provincia"/>
+          </div>
+          <div>
+            <label>Link de referencia (Pinterest/IG)</label>
+            <input id="qRef" placeholder="Pega link"/>
+          </div>
+        </div>
+
+        <label>Detalles (medidas, tela, uso, fecha)</label>
+        <textarea id="qDetails" placeholder="Medidas aprox., tela/color, uso (hogar/negocio), fecha deseada..."></textarea>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px">
+          <button class="btn primary" id="btnSaveQuote" type="button">Guardar solicitud</button>
+          <a class="btn secondary" id="btnQuoteWA" href="#" rel="noopener">WhatsApp</a>
+        </div>
+
+        <div class="notice warn">
+          Para iniciar producción: adelanto 50% (una vez confirmada la cotización).
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <!-- MODAL: Owner Mode -->
-  <div class="modal" id="ownerModal" aria-hidden="true">
-    <div class="sheet">
-      <div class="sheet-head">
-        <div class="t">
-          <b>Modo Dueños (gestión local)</b>
-          <span>Ver registros guardados, exportar CSV, probar Sheets, copiar plantillas.</span>
-        </div>
-        <button class="btn ghost" id="btnCloseOwner" type="button">Cerrar</button>
-      </div>
-      <div class="sheet-body">
-        <div class="grid2">
-          <div>
-            <div class="panel" style="box-shadow:none">
-              <b style="font-weight:900">Acciones</b>
-              <div class="mini" style="margin-top:6px">
-                Estos datos están en el navegador (respaldo). Sheets es el registro principal.
-              </div>
-              <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px">
-                <button class="btn secondary" id="btnExportCSV" type="button">Exportar CSV</button>
-                <button class="btn secondary" id="btnTestSheets" type="button">Probar Sheets</button>
-                <button class="btn ghost" id="btnClearLogs" type="button">Limpiar registros locales</button>
-              </div>
-              <div class="notice warn" style="margin-top:12px">
-                Si “Probar Sheets” no funciona, revisa tu Apps Script WebApp URL.
-              </div>
-            </div>
+<script>
+  // =========================
+  // CONFIG
+  // =========================
+  const BRAND_NAME = "Acrati";
+  const WHATSAPP_NUMBER = "51955510450"; // 51 + 955510450
+  const YAPE_NUMBER = "955510450";
 
-            <div class="panel" style="box-shadow:none; margin-top:12px">
-              <b style="font-weight:900">Mensajes rápidos</b>
-              <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px">
-                <button class="btn ghost" id="btnCopyPayMsg" type="button">Copiar mensaje de pago</button>
-                <button class="btn ghost" id="btnCopyProdMsg" type="button">Copiar mensaje de producción</button>
-              </div>
-            </div>
-          </div>
+  const SHEETS_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbxykQZyRzldx10RUdT6v2TqgFNq8YhpHSVz24KMv_N40-uAKrBmCsMwSAqZ1PBMxPMp/exec";
 
-          <div>
-            <div class="panel" style="box-shadow:none">
-              <b style="font-weight:900">Últimos registros (local)</b>
-              <div class="mini" style="margin-top:6px" id="ownerCounts">—</div>
-              <div id="ownerTable" style="margin-top:10px; display:flex; flex-direction:column; gap:10px;"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  // Catálogo (ajusta tus productos e imágenes)
+  const PRODUCTS = [
+    { id:"rosseta", name:"Puff Rosseta", price:430, img:"rosseta.png", desc:"Cómodo y elegante. Ideal para sala/dormitorio.", category:"puffs" },
+    { id:"nido", name:"Puff Nido", price:399, img:"nido.png", desc:"Minimal y versátil.", category:"puffs" },
+    { id:"sofa_mod", name:"Sofá modular", price:0, img:"sofa.png", desc:"A medida por módulos (cotización).", category:"sofas" }
+  ];
 
-  <script>
-    // =========================
-    // CONFIGURA TUS DATOS AQUÍ
-    // =========================
-    const BRAND_NAME = "Acrati";
+  const FABRICS = [
+    { type:"Chenille premium", note:"Suave y resistente", swatches:[
+      { name:"Oliva", color:"#5b6a40" }, { name:"Arena", color:"#d7c6ac" }, { name:"Grafito", color:"#444444" }, { name:"Hueso", color:"#f2eee7" }
+    ]},
+    { type:"Antimanchas", note:"Fácil limpieza", swatches:[
+      { name:"Petróleo", color:"#1f4c57" }, { name:"Café", color:"#6b4e35" }, { name:"Gris", color:"#cfcfcf" }, { name:"Oliva oscuro", color:"#3f4a2a" }
+    ]}
+  ];
 
-    const WHATSAPP_NUMBER = "51999999999"; // 51 + número (sin +)
-    const SHEETS_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbxykQZyRzldx10RUdT6v2TqgFNq8YhpHSVz24KMv_N40-uAKrBmCsMwSAqZ1PBMxPMp/exec";
+  // =========================
+  // Helpers
+  // =========================
+  const $ = (id)=>document.getElementById(id);
+  const waLink = (text)=>`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+  const fmtPEN = (n)=> (Number(n)>0 ? `S/ ${Number(n).toFixed(0)}` : "Consultar");
 
-    // Datos de pago (mostrar al finalizar)
-    const PAY_YAPE_NUMBER = "999 999 999"; // cambia
-    const PAY_YAPE_NAME   = "Acrati";       // cambia
+  const toast = (title, msg="")=>{
+    const wrap = $("toasts");
+    const el = document.createElement("div");
+    el.className = "toast";
+    el.innerHTML = `<div><b>${title}</b>${msg?`<p>${msg}</p>`:""}</div><button class="btn ghost small" type="button">Cerrar</button>`;
+    el.querySelector("button").addEventListener("click", ()=>el.remove());
+    wrap.appendChild(el);
+    setTimeout(()=>{ if (el.parentElement) el.remove(); }, 3400);
+  };
 
-    // Política operativa (según tu decisión)
-    const POLICY = {
-      CATALOGO_PAY_PERCENT: 100, // catálogo = 100%
-      AMEDIDA_ADELANTO_PERCENT: 50 // a medida = 50% adelanto (cuando ya existe ID y monto confirmado)
-    };
+  const openModal = (m)=>{ m.classList.add("open"); m.setAttribute("aria-hidden","false"); };
+  const closeModal = (m)=>{ m.classList.remove("open"); m.setAttribute("aria-hidden","true"); };
 
-    // =========================
-    // Catálogo de productos
-    // - price=0 => “Consultar” y NO se permite checkout (se gestiona por cotización)
-    // =========================
-    const PRODUCTS = [
-      {
-        id: "rosseta",
-        name: "Puff Rosseta",
-        category: "puffs",
-        price: 430,
-        desc: "Diseño cómodo y elegante. Personaliza tela, color y patas.",
-        img: "rosseta.png",
-        measures: "80x80x45 cm",
-        tags: ["Personalizable", "Premium look"]
-      },
-      {
-        id: "nido",
-        name: "Puff Nido",
-        category: "puffs",
-        price: 0,
-        desc: "Minimal, versátil, ideal para sala o dormitorio.",
-        img: "hero.png",
-        measures: "",
-        tags: ["A pedido", "Cotización"]
-      },
-      {
-        id: "sofa_modular",
-        name: "Sofá modular",
-        category: "sofas",
-        price: 0,
-        desc: "Configurable por módulos. Ideal para espacios modernos.",
-        img: "hero.png",
-        measures: "",
-        tags: ["A medida", "Referencia"]
-      },
-      {
-        id: "a_medida",
-        name: "Diseño por referencia (Pinterest/IG)",
-        category: "pedido",
-        price: 0,
-        desc: "Envíanos foto o link. Registramos tu solicitud para cotizar con orden.",
-        img: "",
-        measures: "",
-        tags: ["Cotización", "A medida"]
-      }
-    ];
+  const nowISO = ()=> new Date().toISOString();
+  const genOrderId = ()=>{
+    const d=new Date();
+    const yyyy=d.getFullYear();
+    const mm=String(d.getMonth()+1).padStart(2,"0");
+    const dd=String(d.getDate()).padStart(2,"0");
+    const rand=Math.floor(Math.random()*9000)+1000;
+    return `ACR-${yyyy}${mm}${dd}-${rand}`;
+  };
 
-    const FABRICS = [
-      { type: "Chenille premium", note: "Suave y resistente",
-        swatches: [
-          { name:"Oliva",  color:"#5b6a40" },
-          { name:"Arena",  color:"#d7c6ac" },
-          { name:"Grafito",color:"#444444" },
-          { name:"Hueso",  color:"#f2eee7" },
-        ]
-      },
-      { type: "Lino (look natural)", note: "Textura minimal",
-        swatches: [
-          { name:"Beige",       color:"#d9cdbd" },
-          { name:"Taupe",       color:"#a69785" },
-          { name:"Blanco roto", color:"#f5f0e8" },
-          { name:"Salvia",      color:"#8ea189" },
-        ]
-      },
-      { type: "Antimanchas (fácil limpieza)", note: "Hogar/negocio",
-        swatches: [
-          { name:"Oliva oscuro", color:"#3f4a2a" },
-          { name:"Café",         color:"#6b4e35" },
-          { name:"Gris claro",   color:"#cfcfcf" },
-          { name:"Petróleo",     color:"#1f4c57" },
-        ]
-      },
-      { type: "Terciopelo (velvet)", note: "Brillo sutil",
-        swatches: [
-          { name:"Esmeralda", color:"#1f6d57" },
-          { name:"Vino",      color:"#6c2734" },
-          { name:"Mostaza",   color:"#b08a2e" },
-          { name:"Negro",     color:"#1b1b1b" },
-        ]
-      },
-    ];
-
-    // =========================
-    // Helpers
-    // =========================
-    const $ = (id) => document.getElementById(id);
-    const qs = (sel, root=document) => root.querySelector(sel);
-    const qsa = (sel, root=document) => [...root.querySelectorAll(sel)];
-    const waLink = (text) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
-
-    const fmtPEN = (n) => {
-      if (!n || Number(n) <= 0) return "Consultar";
-      return `S/ ${Number(n).toFixed(0)}`;
-    };
-
-    const nowISO = () => new Date().toISOString();
-    const readParams = () => Object.fromEntries(new URLSearchParams(location.search).entries());
-
-    // UTM capture
-    const getUTM = () => {
-      const p = readParams();
-      return {
-        utm_source: p.utm_source || "",
-        utm_medium: p.utm_medium || "",
-        utm_campaign: p.utm_campaign || "",
-        utm_content: p.utm_content || "",
-        utm_term: p.utm_term || ""
-      };
-    };
-
-    // ID de pedido más “operable”
-    const genOrderId = () => {
-      const d = new Date();
-      const yyyy = d.getFullYear();
-      const mm = String(d.getMonth()+1).padStart(2,"0");
-      const dd = String(d.getDate()).padStart(2,"0");
-      const rand = Math.floor(Math.random()*9000)+1000; // 1000-9999
-      return `ACR-${yyyy}${mm}${dd}-${rand}`;
-    };
-
-    // Local logs for owners
-    const LOG_KEY = "acrati_logs_v3";
-    const getLogs = () => { try{ return JSON.parse(localStorage.getItem(LOG_KEY) || "[]"); } catch { return []; } };
-    const pushLog = (entry) => {
-      const logs = getLogs();
-      logs.unshift(entry);
-      localStorage.setItem(LOG_KEY, JSON.stringify(logs.slice(0, 160)));
-    };
-
-    // Toast
-    const toast = (title, msg="", variant="success", ttl=3400) => {
-      const wrap = $("toasts");
-      if (!wrap) return;
-      const el = document.createElement("div");
-      el.className = `toast ${variant}`;
-      el.innerHTML = `
-        <div>
-          <b>${title}</b>
-          ${msg ? `<p>${msg}</p>` : ""}
-        </div>
-        <button class="btn ghost small" type="button">Cerrar</button>
-      `;
-      el.querySelector("button").addEventListener("click", () => el.remove());
-      wrap.appendChild(el);
-      setTimeout(() => { if (el && el.parentElement) el.remove(); }, ttl);
-    };
-
-    // Sheets posting (no-cors)
-    const postToSheets = async (payload) => {
-      if (!SHEETS_WEBAPP_URL) return { ok:false, skipped:true };
-      try{
-        await fetch(SHEETS_WEBAPP_URL, {
-          method: "POST",
-          mode: "no-cors",
-          headers: { "Content-Type":"application/json" },
-          body: JSON.stringify(payload)
-        });
-        return { ok:true };
-      }catch(e){
-        return { ok:false, error: String(e) };
-      }
-    };
-
-    const fileToBase64 = (file) => new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.onload = () => {
-        const dataUrl = String(reader.result || "");
-        const idx = dataUrl.indexOf("base64,");
-        if (idx === -1) return reject(new Error("No se pudo leer el archivo."));
-        resolve({
-          mime: file.type || "application/octet-stream",
-          name: file.name || "comprobante",
-          b64: dataUrl.slice(idx + 7)
-        });
-      };
-      reader.onerror = () => reject(new Error("Error leyendo archivo"));
-      reader.readAsDataURL(file);
-    });
-
-    // =========================
-    // WhatsApp float + Year
-    // =========================
-    $("waFloat").href = waLink(`Hola, quiero información sobre ${BRAND_NAME}.`);
-    $("year").textContent = new Date().getFullYear();
-
-    // =========================
-    // Catalog render + filters
-    // =========================
-    let activeFilter = "all";
-
-    const renderCatalog = () => {
-      const grid = $("catalogGrid");
-      const term = ($("searchInput").value || "").trim().toLowerCase();
-
-      const items = PRODUCTS.filter(p => {
-        const byFilter = activeFilter === "all" ? true : p.category === activeFilter;
-        const bySearch = term ? (p.name.toLowerCase().includes(term) || (p.desc||"").toLowerCase().includes(term)) : true;
-        return byFilter && bySearch;
+  const postToSheets = async(payload)=>{
+    try{
+      await fetch(SHEETS_WEBAPP_URL,{
+        method:"POST", mode:"no-cors",
+        headers:{ "Content-Type":"application/json" },
+        body: JSON.stringify(payload)
       });
-
-      grid.innerHTML = "";
-
-      items.forEach(p => {
-        const el = document.createElement("article");
-        el.className = "card";
-        el.dataset.id = p.id;
-
-        const isPedido = p.category === "pedido";
-        el.innerHTML = `
-          <div class="media" style="${isPedido ? "display:flex;align-items:center;justify-content:center;padding:16px;aspect-ratio:auto;min-height:180px" : ""}">
-            ${isPedido ? `
-              <div>
-                <div class="badge"><strong>A medida</strong> • Cotización</div>
-                <div style="margin-top:38px;font-weight:900;font-size:15px">${p.name}</div>
-                <div style="margin-top:8px;color:#5a625f;font-weight:800;font-size:12.8px">${p.desc}</div>
-              </div>
-            ` : `
-              <div class="badge"><strong>${p.category === "sofas" ? "Sofá" : "Catálogo"}</strong> • Personalizable</div>
-              <img src="${p.img}" alt="${p.name}"
-                onerror="this.style.display='none'; this.parentElement.innerHTML += '<div style=&quot;padding:14px;font-weight:900&quot;>Imagen no encontrada</div><div style=&quot;padding:0 14px 14px;color:#5a625f;font-weight:800;font-size:12.5px&quot;>Sube <code>${p.img}</code> junto a <code>index.html</code>.</div>';">
-            `}
-          </div>
-
-          <div class="body">
-            <div class="title-row">
-              <h3>${p.name}</h3>
-              <span class="pill">${p.measures ? p.measures : (isPedido ? "Pinterest/IG" : "Personalizable")}</span>
-            </div>
-            <p>${p.desc}</p>
-            <div class="meta">
-              ${(p.tags || []).slice(0,3).map(t => `<span class="pill">${t}</span>`).join("")}
-            </div>
-            <div class="pricebar">
-              <div class="price">
-                <small>${isPedido ? "Precio" : "Desde"}</small>
-                <b>${isPedido ? "Consultar" : fmtPEN(p.price)}</b>
-              </div>
-              <button class="btn small ${isPedido ? "gold" : "primary"}" type="button" data-action="${isPedido ? "quote" : "customize"}">
-                ${isPedido ? "Cotizar" : "Personalizar"}
-              </button>
-            </div>
-          </div>
-        `;
-
-        el.addEventListener("click", (e) => {
-          const btn = e.target.closest("button");
-          if (btn) {
-            const action = btn.dataset.action;
-            if (action === "quote") openQuote("Pedido a medida (referencia)");
-            if (action === "customize") openProduct(p.id);
-            e.stopPropagation();
-            return;
-          }
-          if (isPedido) openQuote("Pedido a medida (referencia)");
-          else openProduct(p.id);
-        });
-
-        grid.appendChild(el);
-      });
-    };
-
-    qsa(".filter").forEach(btn => {
-      btn.addEventListener("click", () => {
-        activeFilter = btn.dataset.filter;
-        qsa(".filter").forEach(b => b.classList.toggle("active", b === btn));
-        renderCatalog();
-      });
-    });
-    $("searchInput").addEventListener("input", () => renderCatalog());
-
-    // =========================
-    // Cart model
-    // =========================
-    const CART_KEY = "acrati_cart_v3";
-    const getCart = () => { try{ return JSON.parse(localStorage.getItem(CART_KEY) || "[]"); } catch { return []; } };
-    const setCart = (items) => localStorage.setItem(CART_KEY, JSON.stringify(items));
-    const clearCart = () => setCart([]);
-    const cartTotal = (items) => items.reduce((sum, it) => sum + (Number(it.unit_price || 0) * Number(it.qty || 1)), 0);
-
-    const refreshCartBar = () => {
-      const items = getCart();
-      const total = cartTotal(items);
-      if (!items.length){ $("cartBar").style.display = "none"; return; }
-      $("cartBar").style.display = "block";
-      $("cartBarTitle").textContent = `Tu pedido (${items.length} ítem${items.length>1?"s":""})`;
-      $("cartBarSub").textContent = `${items.reduce((a,b)=>a+(Number(b.qty)||1),0)} unidad(es) • ${fmtPEN(total)}`;
-    };
-
-    // =========================
-    // Modal helpers
-    // =========================
-    const openModal = (modalEl) => { modalEl.classList.add("open"); modalEl.setAttribute("aria-hidden","false"); };
-    const closeModal = (modalEl) => { modalEl.classList.remove("open"); modalEl.setAttribute("aria-hidden","true"); };
-
-    // =========================
-    // Product modal
-    // =========================
-    const productModal = $("productModal");
-    let PM = {
-      product_id: "",
-      fabric_type: FABRICS[0]?.type || "",
-      swatch_name: "",
-      swatch_color: "",
-      legs: "Negro",
-      firmness: "Intermedia",
-      qty: 1,
-      measures: "",
-      notes: ""
-    };
-
-    const openProduct = (id) => {
-      const p = PRODUCTS.find(x => x.id === id);
-      if (!p) return;
-
-      PM = {
-        product_id: p.id,
-        fabric_type: FABRICS[0]?.type || "",
-        swatch_name: "",
-        swatch_color: "",
-        legs: "Negro",
-        firmness: "Intermedia",
-        qty: 1,
-        measures: p.measures || "",
-        notes: ""
-      };
-
-      $("pmTitle").textContent = `Personalizar: ${p.name}`;
-      $("pmProduct").value = p.name;
-      $("pmPrice").value = p.price > 0 ? `S/ ${p.price}` : "Consultar";
-      $("pmQty").value = 1;
-      $("pmLegs").value = "Negro";
-      $("pmFirmness").value = "Intermedia";
-      $("pmMeasures").value = PM.measures;
-      $("pmNotes").value = "";
-
-      $("pmFabricType").innerHTML = "";
-      FABRICS.forEach(f => {
-        const opt = document.createElement("option");
-        opt.value = f.type;
-        opt.textContent = `${f.type} — ${f.note}`;
-        $("pmFabricType").appendChild(opt);
-      });
-      $("pmFabricType").value = PM.fabric_type;
-
-      renderSwatches(PM.fabric_type);
-      updatePMTotal();
-
-      openModal(productModal);
-
-      pushLog({ ts: nowISO(), event: "view_product", product_id: p.id, product_name: p.name, page: location.href, ...getUTM() });
-    };
-
-    const renderSwatches = (fabricType) => {
-      const group = FABRICS.find(f => f.type === fabricType) || FABRICS[0];
-      const wrap = $("pmSwatches");
-      wrap.innerHTML = "";
-
-      PM.fabric_type = fabricType;
-      PM.swatch_name = "";
-      PM.swatch_color = "";
-
-      (group?.swatches || []).forEach((s, idx) => {
-        const b = document.createElement("button");
-        b.type = "button";
-        b.className = "swatch";
-        b.style.setProperty("--c", s.color || "#ddd");
-        b.innerHTML = `
-          <div class="swrow">
-            <div class="swdot"></div>
-            <div>
-              <div class="swname">${s.name}</div>
-              <div class="swmeta">${group.type}</div>
-            </div>
-          </div>
-        `;
-        b.addEventListener("click", () => {
-          qsa(".swatch", wrap).forEach(x => x.classList.remove("active"));
-          b.classList.add("active");
-          PM.swatch_name = s.name;
-          PM.swatch_color = s.color || "";
-        });
-
-        wrap.appendChild(b);
-        if (idx === 0) b.click();
-      });
-    };
-
-    const updatePMTotal = () => {
-      const p = PRODUCTS.find(x => x.id === PM.product_id);
-      const unit = Number(p?.price || 0);
-      const qty = Number($("pmQty").value || 1);
-      PM.qty = Math.max(1, qty);
-      const total = unit > 0 ? unit * PM.qty : 0;
-      $("pmTotal").textContent = unit > 0 ? `S/ ${total.toFixed(0)}` : "Consultar";
-    };
-
-    $("pmFabricType").addEventListener("change", (e) => renderSwatches(e.target.value));
-    $("pmQty").addEventListener("input", updatePMTotal);
-
-    const buildProductMessage = (p, cfg) => {
-      return `Hola, quiero este pedido (${BRAND_NAME}):
-Producto: ${p?.name || "—"} ${p?.price>0 ? `| Precio base: S/ ${p.price}` : "| Precio: Consultar"}
-Tela: ${cfg.fabric_type}
-Color: ${cfg.swatch_name}${cfg.swatch_color ? ` (${cfg.swatch_color})` : ""}
-Patas: ${$("pmLegs").value}
-Firmeza: ${$("pmFirmness").value}
-Cantidad: ${$("pmQty").value}
-Medidas: ${$("pmMeasures").value || "—"}
-Notas: ${$("pmNotes").value || "—"}
-Página: ${location.href}`;
-    };
-
-    $("btnPmWA").addEventListener("click", () => {
-      const p = PRODUCTS.find(x => x.id === PM.product_id);
-      window.open(waLink(buildProductMessage(p, PM)), "_blank");
-    });
-
-    $("btnAddToCart").addEventListener("click", () => {
-      const p = PRODUCTS.find(x => x.id === PM.product_id);
-      if (!p) return;
-
-      const item = {
-        line_id: "L-" + Math.random().toString(36).slice(2,8).toUpperCase() + "-" + Date.now().toString(36).toUpperCase(),
-        product_id: p.id,
-        product_name: p.name,
-        unit_price: Number(p.price || 0),
-        qty: Math.max(1, Number($("pmQty").value || 1)),
-        fabric_type: $("pmFabricType").value,
-        swatch_name: PM.swatch_name,
-        swatch_color: PM.swatch_color,
-        legs: $("pmLegs").value,
-        firmness: $("pmFirmness").value,
-        measures: $("pmMeasures").value.trim(),
-        notes: $("pmNotes").value.trim()
-      };
-
-      const cart = getCart();
-      cart.unshift(item);
-      setCart(cart);
-
-      refreshCartBar();
-      toast("Agregado al carrito", `${item.product_name} • ${item.fabric_type} • ${item.swatch_name}`, "success");
-
-      pushLog({ ts: nowISO(), event: "add_to_cart", ...item, total_cart: cartTotal(cart), page: location.href, ...getUTM() });
-      closeModal(productModal);
-    });
-
-    $("btnCloseProduct").addEventListener("click", () => closeModal(productModal));
-    productModal.addEventListener("click", (e) => { if (e.target === productModal) closeModal(productModal); });
-
-    // =========================
-    // Cart modal
-    // =========================
-    const cartModal = $("cartModal");
-
-    const renderCartModal = () => {
-      const cart = getCart();
-      const list = $("cartList");
-      list.innerHTML = "";
-
-      if (!cart.length){
-        list.innerHTML = `<div class="notice warn">Tu carrito está vacío. Vuelve al catálogo y agrega un producto.</div>`;
-        $("cartTotal").textContent = "S/ 0";
-        return;
-      }
-
-      cart.forEach(it => {
-        const row = document.createElement("div");
-        row.className = "panel";
-        row.style.boxShadow = "none";
-        row.innerHTML = `
-          <div style="display:flex; justify-content:space-between; gap:10px; align-items:flex-start;">
-            <div>
-              <div style="font-weight:900">${it.product_name}</div>
-              <div class="mini" style="margin-top:4px">
-                ${it.fabric_type} • ${it.swatch_name} • Patas: ${it.legs} • Firmeza: ${it.firmness}
-              </div>
-              <div class="mini" style="margin-top:4px">
-                Cantidad: <b>${it.qty}</b> • ${it.unit_price>0 ? `Unit: S/ ${it.unit_price}` : "Precio: Consultar"} • ${it.measures ? `Medidas: ${it.measures}` : ""}
-              </div>
-              ${it.notes ? `<div class="mini" style="margin-top:4px">Notas: ${it.notes}</div>` : ""}
-              ${it.unit_price<=0 ? `<div class="notice warn" style="margin-top:10px">Este ítem está en “Consultar”. Debe ir por cotización (no por checkout).</div>` : ""}
-            </div>
-            <div style="display:flex; flex-direction:column; gap:8px; align-items:flex-end;">
-              <div style="font-weight:900">${it.unit_price>0 ? `S/ ${(it.unit_price*it.qty).toFixed(0)}` : "Consultar"}</div>
-              <button class="btn ghost small" type="button" data-remove="${it.line_id}">Quitar</button>
-            </div>
-          </div>
-        `;
-        row.querySelector("[data-remove]").addEventListener("click", () => {
-          const next = getCart().filter(x => x.line_id !== it.line_id);
-          setCart(next);
-          refreshCartBar();
-          renderCartModal();
-        });
-        list.appendChild(row);
-      });
-
-      $("cartTotal").textContent = fmtPEN(cartTotal(cart));
-    };
-
-    const openCart = () => {
-      renderCartModal();
-      openModal(cartModal);
-      pushLog({ ts: nowISO(), event:"open_cart", page: location.href, ...getUTM() });
-    };
-
-    $("btnCloseCart").addEventListener("click", () => closeModal(cartModal));
-    cartModal.addEventListener("click", (e) => { if (e.target === cartModal) closeModal(cartModal); });
-
-    const clearCartAll = () => {
-      clearCart();
-      refreshCartBar();
-      renderCartModal();
-      toast("Carrito vacío", "Puedes agregar productos desde el catálogo.", "warn");
-      pushLog({ ts: nowISO(), event:"clear_cart", page: location.href, ...getUTM() });
-    };
-
-    $("btnCartClear2").addEventListener("click", clearCartAll);
-    $("btnClearCart").addEventListener("click", clearCartAll);
-
-    $("btnOpenCart").addEventListener("click", openCart);
-    $("btnOpenCartTop").addEventListener("click", openCart);
-    $("btnOpenCartBottom").addEventListener("click", openCart);
-    $("btnCheckout").addEventListener("click", openCart);
-
-    $("btnCartWA").addEventListener("click", () => {
-      const cart = getCart();
-      const lines = cart.map((it, i) => {
-        const priceLine = it.unit_price>0 ? `S/ ${(it.unit_price*it.qty).toFixed(0)}` : "Consultar";
-        return `${i+1}) ${it.product_name} x${it.qty}
-- Tela: ${it.fabric_type}
-- Color: ${it.swatch_name}
-- Patas: ${it.legs} | Firmeza: ${it.firmness}
-- Medidas: ${it.measures || "—"}
-- Notas: ${it.notes || "—"}
-- Subtotal: ${priceLine}`;
-      }).join("\n\n");
-
-      const total = fmtPEN(cartTotal(cart));
-      window.open(waLink(`Hola, este es mi carrito (${BRAND_NAME}):\n\n${lines}\n\nTotal: ${total}\nPágina: ${location.href}`), "_blank");
-    });
-
-    // =========================
-    // Checkout (Catálogo = 100% ahora)
-    // =========================
-    const payModal = $("payModal");
-    let lastOrder = null;
-
-    const hasConsultItems = (cart) => cart.some(it => Number(it.unit_price || 0) <= 0);
-
-    const buildOrderPayload = () => {
-      const cart = getCart();
-      const total = cartTotal(cart);
-
-      const orderType = "CATALOGO";
-      const dueNow = total; // 100%
-      const stageDue = "TOTAL";
-
-      const itemsSummary = cart.map(it => (
-        `${it.product_name} x${it.qty} | Tela:${it.fabric_type} | Color:${it.swatch_name} | Patas:${it.legs} | Firmeza:${it.firmness} | Med:${it.measures || "-"} | Notes:${it.notes || "-"}`
-      )).join(" || ");
-
-      return {
-        ts: nowISO(),
-        event: "order_checkout",
-        order_id: genOrderId(),
-        order_type: orderType,
-        payment_policy: "CATALOGO_100",
-        pay_stage_due_now: stageDue,
-        amount_due_now: dueNow,
-        amount_total: total,
-        customer_name: $("coName").value.trim(),
-        customer_phone: $("coPhone").value.trim(),
-        customer_city: $("coCity").value.trim(),
-        customer_address: $("coAddress").value.trim(),
-        customer_notes: $("coNotes").value.trim(),
-        pay_method: $("coPayMethod").value,
-        pay_status: "Pendiente de pago",
-        items: cart,
-        items_summary: itemsSummary,
-        page: location.href,
-        ...getUTM()
-      };
-    };
-
-    const buildOrderWA = (order) => {
-      const items = order.items.map((it, i) => {
-        const priceLine = it.unit_price>0 ? `S/ ${(it.unit_price*it.qty).toFixed(0)}` : "Consultar";
-        return `${i+1}) ${it.product_name} x${it.qty} (${priceLine})
-- Tela: ${it.fabric_type} | Color: ${it.swatch_name} | Patas: ${it.legs} | Firmeza: ${it.firmness}
-- Medidas: ${it.measures || "—"} | Notas: ${it.notes || "—"}`;
-      }).join("\n\n");
-
-      return `Hola, acabo de finalizar mi pedido (${BRAND_NAME}):
-ID: ${order.order_id}
-Cliente: ${order.customer_name || "—"} | Tel: ${order.customer_phone || "—"} | Ciudad: ${order.customer_city || "—"}
-Pago: ${order.pay_method}
-Dirección: ${order.customer_address || "—"}
-
-Items:
-${items}
-
-Total: ${fmtPEN(order.amount_total)}
-Pago requerido ahora (catálogo): ${fmtPEN(order.amount_due_now)}
-Página: ${order.page}`;
-    };
-
-    const placeOrder = async (alsoOpenWA=false) => {
-      const cart = getCart();
-      if (!cart.length){
-        toast("Carrito vacío", "Agrega un producto antes de finalizar.", "warn");
-        return;
-      }
-      if (hasConsultItems(cart)){
-        toast("Hay ítems “Consultar”", "Esos productos deben ir por cotización, no por checkout.", "warn", 5200);
-        closeModal(cartModal);
-        openQuote("Pedido a medida (referencia)");
-        return;
-      }
-
-      const payload = buildOrderPayload();
-      lastOrder = payload;
-
-      pushLog(payload);
-
-      const res = await postToSheets(payload);
-      if (res.skipped) toast("Pedido registrado localmente", "Configura SHEETS_WEBAPP_URL para guardar en Sheets.", "warn");
-      else toast("Pedido registrado", "Ahora realiza el pago y sube el comprobante.", "success");
-
-      // Prefill Pay modal form
-      $("payText").innerHTML = `
-        <div><b>ID de pedido:</b> <span style="font-weight:900">${payload.order_id}</span></div>
-        <div style="margin-top:6px"><b>${payload.pay_method}:</b> ${PAY_YAPE_NUMBER}</div>
-        <div><b>Nombre:</b> ${PAY_YAPE_NAME}</div>
-        <div style="margin-top:8px;color:#5a625f;font-weight:800">
-          Monto requerido (catálogo 100%): <b>${fmtPEN(payload.amount_due_now)}</b>
-        </div>
-      `;
-
-      // Pre-fill proof upload fields
-      $("pmOrderId").value = payload.order_id;
-      $("pmStage").value = payload.pay_stage_due_now;
-      $("pmAmount").value = String(Math.round(payload.amount_due_now || 0));
-      $("pmOp").value = "";
-      $("pmFile").value = "";
-      $("pmUploadHint").textContent = "";
-
-      closeModal(cartModal);
-      openModal(payModal);
-
-      if (alsoOpenWA) window.open(waLink(buildOrderWA(payload)), "_blank");
-    };
-
-    $("btnPlaceOrder").addEventListener("click", () => placeOrder(false));
-    $("btnPlaceOrderWA").addEventListener("click", () => placeOrder(true));
-
-    $("btnClosePay").addEventListener("click", () => closeModal(payModal));
-    payModal.addEventListener("click", (e) => { if (e.target === payModal) closeModal(payModal); });
-
-    $("btnPayWA").addEventListener("click", () => {
-      const id = (lastOrder && lastOrder.order_id) ? lastOrder.order_id : ($("pmOrderId").value.trim() || "—");
-      const amt = $("pmAmount").value ? `S/ ${$("pmAmount").value}` : "";
-      const msg = `Hola, adjunto mi comprobante (${BRAND_NAME}).\nID de pedido: ${id}\nMonto: ${amt}\nPago a: ${PAY_YAPE_NUMBER} (${PAY_YAPE_NAME})\nGracias.`;
-      window.open(waLink(msg), "_blank");
-    });
-
-    $("btnCopyOrderId").addEventListener("click", async () => {
-      const id = (lastOrder && lastOrder.order_id) ? lastOrder.order_id : ($("pmOrderId").value.trim() || "");
-      try{ await navigator.clipboard.writeText(id); toast("Copiado", "ID copiado al portapapeles.", "success"); }
-      catch{ toast("No se pudo copiar", "Copia manualmente el ID mostrado.", "warn"); }
-    });
-
-    // =========================
-    // Upload Payment Proof (to Sheets + Drive via Apps Script)
-    // =========================
-    const uploadProof = async ({order_id, stage, amount, op, file}) => {
-      if (!order_id) throw new Error("Falta ID de pedido.");
-      if (!stage) throw new Error("Falta tipo de pago.");
-      if (!amount || Number(amount) <= 0) throw new Error("Ingresa un monto válido.");
-      if (!file) throw new Error("Adjunta una captura o PDF.");
-
-      // Size guard (~2MB recommended)
-      const maxBytes = 2 * 1024 * 1024; // 2MB
-      if (file.size > maxBytes){
-        throw new Error("Archivo muy pesado. Reduce la calidad (recomendado <= 2MB).");
-      }
-
-      const f = await fileToBase64(file);
-
-      const payload = {
-        ts: nowISO(),
-        action: "payment_upload",
-        order_id,
-        stage, // TOTAL / ADELANTO / SALDO
-        amount: Number(amount),
-        pay_method: (lastOrder && lastOrder.pay_method) ? lastOrder.pay_method : "—",
-        operation_number: op || "",
-        file_name: f.name,
-        file_mime: f.mime,
-        file_b64: f.b64,
-        page: location.href,
-        ...getUTM()
-      };
-
-      pushLog(payload);
-
-      const res = await postToSheets(payload);
-      if (res.skipped){
-        return { ok:false, skipped:true };
-      }
-      return { ok:true };
-    };
-
-    const wireProofForm = (prefix) => {
-      const oid = $(`${prefix}OrderId`);
-      const stage = $(`${prefix}Stage`);
-      const amt = $(`${prefix}Amount`);
-      const op = $(`${prefix}Op`);
-      const file = $(`${prefix}File`);
-      const hint = $(`${prefix}UploadHint`);
-      const btn = prefix === "pm" ? $("btnUploadProof") : $("btnUploadProof2");
-      const clearBtn = prefix === "pm" ? $("btnClearProofForm") : $("btnClearUploadForm");
-
-      clearBtn.addEventListener("click", () => {
-        oid.value = "";
-        stage.value = "TOTAL";
-        amt.value = "";
-        op.value = "";
-        file.value = "";
-        hint.textContent = "";
-      });
-
-      btn.addEventListener("click", async () => {
-        btn.disabled = true;
-        hint.textContent = "Subiendo comprobante...";
-        try{
-          const r = await uploadProof({
-            order_id: oid.value.trim(),
-            stage: stage.value,
-            amount: amt.value,
-            op: op.value.trim(),
-            file: (file.files && file.files[0]) ? file.files[0] : null
-          });
-
-          if (r.skipped){
-            toast("No se subió a Sheets", "Falta configurar SHEETS_WEBAPP_URL.", "warn");
-            hint.textContent = "No se pudo enviar a Sheets (URL no configurada).";
-          }else{
-            toast("Comprobante enviado", "Quedó registrado en Google Sheets. Validaremos el pago.", "success", 5200);
-            hint.textContent = "Listo. Tu comprobante fue registrado.";
-          }
-        }catch(err){
-          toast("Error", String(err.message || err), "warn", 5200);
-          hint.textContent = String(err.message || err);
-        }finally{
-          btn.disabled = false;
-        }
-      });
-    };
-
-    wireProofForm("pm");
-    wireProofForm("up");
-
-    // =========================
-    // Upload modal open/close
-    // =========================
-    const uploadModal = $("uploadModal");
-    $("btnOpenUpload").addEventListener("click", () => openModal(uploadModal));
-    $("btnOpenUploadTop").addEventListener("click", () => openModal(uploadModal));
-    $("btnOpenUploadBottom").addEventListener("click", () => openModal(uploadModal));
-    $("btnOpenUploadAmedida").addEventListener("click", () => openModal(uploadModal));
-    $("btnHeroUpload").addEventListener("click", () => openModal(uploadModal));
-    $("btnOpenUploadFromQuote").addEventListener("click", () => openModal(uploadModal));
-
-    $("btnCloseUpload").addEventListener("click", () => closeModal(uploadModal));
-    uploadModal.addEventListener("click", (e) => { if (e.target === uploadModal) closeModal(uploadModal); });
-
-    // =========================
-    // Quote modal
-    // =========================
-    const quoteModal = $("quoteModal");
-    const openQuote = (servicePrefill="Pedido a medida (referencia)") => {
-      $("qService").value = servicePrefill;
-      openModal(quoteModal);
-
-      pushLog({ ts: nowISO(), event: "open_quote", service: servicePrefill, page: location.href, ...getUTM() });
-    };
-
-    $("btnOpenQuote").addEventListener("click", () => openQuote("Pedido a medida (referencia)"));
-    $("btnOpenQuoteTop").addEventListener("click", () => openQuote("Pedido a medida (referencia)"));
-    $("btnOpenQuoteAmedida").addEventListener("click", () => openQuote("Pedido a medida (referencia)"));
-    $("btnOpenQuoteTapizado").addEventListener("click", () => openQuote("Tapizado / Retapizado"));
-    $("btnOpenQuoteBottom").addEventListener("click", () => openQuote("Pedido a medida (referencia)"));
-
-    $("btnCloseQuote").addEventListener("click", () => closeModal(quoteModal));
-    quoteModal.addEventListener("click", (e) => { if (e.target === quoteModal) closeModal(quoteModal); });
-
-    $("btnQuoteWA").addEventListener("click", () => {
-      const msg = `Hola, quiero cotizar (${BRAND_NAME}):
-Nombre: ${$("qName").value.trim() || "—"}
-Tel: ${$("qPhone").value.trim() || "—"}
-Ciudad: ${$("qCity").value.trim() || "—"}
-Servicio: ${$("qService").value}
-Medidas: ${$("qMeasures").value.trim() || "—"}
-Referencia: ${$("qRef").value.trim() || "—"}
-Detalles: ${$("qDetails").value.trim() || "—"}
-Página: ${location.href}`;
-      window.open(waLink(msg), "_blank");
-    });
-
-    $("btnSaveQuote").addEventListener("click", async () => {
-      const payload = {
-        ts: nowISO(),
-        event: "lead_quote",
-        lead_id: "LEAD-" + Date.now().toString(36).toUpperCase(),
-        service: $("qService").value,
-        customer_name: $("qName").value.trim(),
-        customer_phone: $("qPhone").value.trim(),
-        customer_city: $("qCity").value.trim(),
-        measures: $("qMeasures").value.trim(),
-        reference_link: $("qRef").value.trim(),
-        details: $("qDetails").value.trim(),
-        page: location.href,
-        ...getUTM()
-      };
-
-      pushLog(payload);
-
-      const res = await postToSheets(payload);
-      if (res.skipped) toast("Solicitud guardada (local)", "Configura SHEETS_WEBAPP_URL para guardarla en Sheets.", "warn");
-      else toast("Solicitud registrada", "Listo. Te contactaremos para cotizar.", "success");
-
-      closeModal(quoteModal);
-    });
-
-    // =========================
-    // Owner mode (igual que antes)
-    // =========================
-    const ownerModal = $("ownerModal");
-
-    const isAdmin = () => {
-      const p = readParams();
-      return p.admin === "1" || localStorage.getItem("acrati_admin") === "1";
-    };
-
-    const openOwner = () => {
-      localStorage.setItem("acrati_admin", "1");
-      renderOwner();
-      openModal(ownerModal);
-    };
-
-    const renderOwner = () => {
-      const logs = getLogs();
-      $("ownerCounts").textContent = `${logs.length} registro(s) guardados localmente.`;
-
-      const wrap = $("ownerTable");
-      wrap.innerHTML = "";
-
-      const slice = logs.slice(0, 10);
-      if (!slice.length){
-        wrap.innerHTML = `<div class="notice warn">No hay registros locales aún.</div>`;
-        return;
-      }
-
-      slice.forEach(l => {
-        const box = document.createElement("div");
-        box.className = "panel";
-        box.style.boxShadow = "none";
-
-        const title =
-          l.event === "order_checkout" ? `Pedido: ${l.order_id}` :
-          l.action === "payment_upload" ? `Pago: ${l.order_id} (${l.stage})` :
-          l.event === "lead_quote" ? `Cotización: ${l.service}` :
-          l.event || l.action || "Evento";
-
-        const who = (l.customer_name || "—") + (l.customer_city ? ` • ${l.customer_city}` : "");
-        const money = (l.amount_total && Number(l.amount_total)>0) ? ` • Total: S/ ${Number(l.amount_total).toFixed(0)}` :
-                      (l.amount && Number(l.amount)>0) ? ` • Monto: S/ ${Number(l.amount).toFixed(0)}` : "";
-
-        box.innerHTML = `
-          <div style="display:flex; justify-content:space-between; gap:10px; align-items:flex-start;">
-            <div>
-              <div style="font-weight:900">${title}</div>
-              <div class="mini" style="margin-top:4px">${who}${money}</div>
-              <div class="mini" style="margin-top:4px">Fecha: ${l.ts || "—"}</div>
-            </div>
-            <button class="btn ghost small" type="button">Copiar</button>
-          </div>
-        `;
-        box.querySelector("button").addEventListener("click", async () => {
-          try{
-            await navigator.clipboard.writeText(JSON.stringify(l, null, 2));
-            toast("Copiado", "Registro copiado como JSON.", "success");
-          }catch{
-            toast("No se pudo copiar", "Copia manualmente.", "warn");
-          }
-        });
-
-        wrap.appendChild(box);
-      });
-    };
-
-    $("btnOpenOwner").addEventListener("click", openOwner);
-    $("btnCloseOwner").addEventListener("click", () => closeModal(ownerModal));
-    ownerModal.addEventListener("click", (e) => { if (e.target === ownerModal) closeModal(ownerModal); });
-
-    $("btnExportCSV").addEventListener("click", () => {
-      const logs = getLogs();
-      if (!logs.length){
-        toast("Sin datos", "No hay registros para exportar.", "warn");
-        return;
-      }
-      const headers = ["ts","event","action","order_id","lead_id","service","customer_name","customer_phone","customer_city","amount_total","amount_due_now","amount","stage","pay_method","pay_status","page","utm_source","utm_medium","utm_campaign"];
-      const rows = logs.map(l => headers.map(h => `"${String(l[h] ?? "").replaceAll('"','""')}"`).join(","));
-      const csv = [headers.join(","), ...rows].join("\n");
-      const blob = new Blob([csv], { type:"text/csv;charset=utf-8;" });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = `acrati_registros_${new Date().toISOString().slice(0,10)}.csv`;
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      URL.revokeObjectURL(url);
-      toast("CSV exportado", "Revisa tus descargas.", "success");
-    });
-
-    $("btnClearLogs").addEventListener("click", () => {
-      localStorage.removeItem(LOG_KEY);
-      renderOwner();
-      toast("Listo", "Registros locales eliminados.", "success");
-    });
-
-    $("btnTestSheets").addEventListener("click", async () => {
-      const payload = { ts: nowISO(), event: "test_sheets", note: "Prueba desde Modo Dueños", page: location.href, ...getUTM() };
-      const res = await postToSheets(payload);
-      if (res.skipped) toast("Falta configuración", "SHEETS_WEBAPP_URL está vacío.", "warn");
-      else toast("Enviado", "Se intentó enviar el test a Sheets. Verifica en tu hoja.", "success");
-    });
-
-    $("btnCopyPayMsg").addEventListener("click", async () => {
-      const msg = `Hola, para confirmar tu pedido:
-1) Catálogo: pago 100% a ${PAY_YAPE_NUMBER} (${PAY_YAPE_NAME})
-2) Sube el comprobante en la web (o envíalo por este chat)
-3) Validamos y agendamos producción.`;
-      try{ await navigator.clipboard.writeText(msg); toast("Copiado", "Mensaje de pago copiado.", "success"); }
-      catch{ toast("No se pudo copiar", "Copia manualmente.", "warn"); }
-    });
-
-    $("btnCopyProdMsg").addEventListener("click", async () => {
-      const msg = `Hola, pago confirmado.
-Pasamos a producción. Te compartimos avance y fecha estimada de entrega/envío.`;
-      try{ await navigator.clipboard.writeText(msg); toast("Copiado", "Mensaje de producción copiado.", "success"); }
-      catch{ toast("No se pudo copiar", "Copia manualmente.", "warn"); }
-    });
-
-    // =========================
-    // Misc: templates / checklists
-    // =========================
-    $("btnCopyChecklist").addEventListener("click", async () => {
-      const txt = `Para cotizar rápido, envíame:
-- Foto o link (Pinterest/IG)
-- Medidas aproximadas
-- Ciudad
-- Uso (hogar/negocio)
-- Tela/color deseados
-- Fecha deseada`;
-      try{ await navigator.clipboard.writeText(txt); toast("Copiado", "Checklist copiado.", "success"); }
-      catch{ toast("No se pudo copiar", "Copia manualmente.", "warn"); }
-    });
-
-    $("btnCopyMsgTemplate").addEventListener("click", async () => {
-      const txt = `Hola, quiero cotizar:
-- Foto/link:
-- Medidas:
-- Ciudad:
-- Uso:
-- Tela/color:
-- Fecha deseada:
-Gracias.`;
-      try{ await navigator.clipboard.writeText(txt); toast("Copiado", "Plantilla copiada.", "success"); }
-      catch{ toast("No se pudo copiar", "Copia manualmente.", "warn"); }
-    });
-
-    // =========================
-    // Header CTAs
-    // =========================
-    $("btnGoCatalog").addEventListener("click", () => location.hash = "#catalogo");
-    $("btnHeroBuy").addEventListener("click", () => location.hash = "#catalogo");
-    $("btnHeroQuote").addEventListener("click", () => openQuote("Pedido a medida (referencia)"));
-
-    // =========================
-    // Menu modal
-    // =========================
-    const menuModal = $("menuModal");
-    $("btnMenu").addEventListener("click", () => openModal(menuModal));
-    $("btnCloseMenu").addEventListener("click", () => closeModal(menuModal));
-    menuModal.addEventListener("click", (e) => { if (e.target === menuModal) closeModal(menuModal); });
-
-    // Close on ESC
-    document.addEventListener("keydown", (e) => {
-      if (e.key !== "Escape") return;
-      [menuModal, productModal, cartModal, payModal, quoteModal, ownerModal, uploadModal].forEach(m => {
-        if (m.classList.contains("open")) closeModal(m);
-      });
-    });
-
-    // Also let owners open owner mode by clicking footer text 5 times
-    let footClicks = 0;
-    document.querySelector("footer").addEventListener("click", () => {
-      footClicks++;
-      if (footClicks >= 5){ footClicks = 0; openOwner(); }
-    });
-
-    // =========================
-    // First render
-    // =========================
-    renderCatalog();
-    refreshCartBar();
-
-    if (isAdmin()){
-      setTimeout(() => {
-        toast("Modo Dueños disponible", "Abrir con el botón en Contacto o agrega ?admin=1.", "success", 4200);
-      }, 1200);
+      return {ok:true};
+    }catch(e){
+      return {ok:false, error:String(e)};
     }
-  </script>
+  };
+
+  const fileToBase64 = (file)=> new Promise((resolve,reject)=>{
+    const r=new FileReader();
+    r.onload=()=>{
+      const dataUrl=String(r.result||"");
+      const idx=dataUrl.indexOf("base64,");
+      if(idx===-1) return reject(new Error("No se pudo leer el archivo."));
+      resolve({ mime:file.type||"application/octet-stream", name:file.name||"comprobante", b64:dataUrl.slice(idx+7) });
+    };
+    r.onerror=()=>reject(new Error("Error leyendo archivo"));
+    r.readAsDataURL(file);
+  });
+
+  // =========================
+  // WhatsApp buttons + year
+  // =========================
+  $("btnWA").href = waLink(`Hola, quiero información sobre ${BRAND_NAME}.`);
+  $("btnWA2").href = $("btnWA").href;
+  $("btnPayWA").href = $("btnWA").href;
+  $("year").textContent = new Date().getFullYear();
+  $("payNumber").textContent = YAPE_NUMBER;
+
+  // =========================
+  // PROBADOR STATE
+  // =========================
+  const state = {
+    productId: PRODUCTS[0]?.id || "",
+    qty: 1,
+    fabricType: FABRICS[0]?.type || "",
+    swatchName: FABRICS[0]?.swatches?.[0]?.name || "",
+    swatchColor: FABRICS[0]?.swatches?.[0]?.color || "#000000",
+    legs: "Negro",
+  };
+
+  const setPreviewTint = (hex)=>{
+    $("preview").style.setProperty("--tint", hex || "transparent");
+    // actual tint layer uses CSS variable by inheriting background
+    $("previewTint").style.background = hex || "transparent";
+  };
+
+  const renderProbeProducts = ()=>{
+    const sel = $("probeProduct");
+    sel.innerHTML = "";
+    PRODUCTS.filter(p => Number(p.price)>0).forEach(p=>{
+      const opt=document.createElement("option");
+      opt.value=p.id;
+      opt.textContent=`${p.name} (${fmtPEN(p.price)})`;
+      sel.appendChild(opt);
+    });
+    // Si el primero no tiene precio, cae al primero con precio
+    if (!PRODUCTS.find(p=>p.id===state.productId && p.price>0)){
+      state.productId = PRODUCTS.find(p=>p.price>0)?.id || "";
+    }
+    sel.value = state.productId;
+  };
+
+  const renderProbeFabrics = ()=>{
+    const sel = $("probeFabric");
+    sel.innerHTML = "";
+    FABRICS.forEach(f=>{
+      const opt=document.createElement("option");
+      opt.value=f.type;
+      opt.textContent=`${f.type} — ${f.note}`;
+      sel.appendChild(opt);
+    });
+    sel.value = state.fabricType;
+  };
+
+  const renderSwatches = ()=>{
+    const group = FABRICS.find(f=>f.type===state.fabricType) || FABRICS[0];
+    const wrap = $("probeSwatches");
+    wrap.innerHTML = "";
+    const sw = group.swatches || [];
+    if (!sw.length) return;
+
+    // Si el swatch actual no existe en el grupo, setea el primero
+    if (!sw.some(x=>x.name===state.swatchName)){
+      state.swatchName = sw[0].name;
+      state.swatchColor = sw[0].color;
+    }
+
+    sw.forEach(s=>{
+      const b=document.createElement("button");
+      b.type="button";
+      b.className="swatch";
+      b.style.setProperty("--c", s.color);
+      b.innerHTML = `
+        <div class="swrow">
+          <div class="swdot"></div>
+          <div>
+            <div class="swname">${s.name}</div>
+            <div class="swmeta">${group.type}</div>
+          </div>
+        </div>`;
+      b.addEventListener("click", ()=>{
+        [...wrap.querySelectorAll(".swatch")].forEach(x=>x.classList.remove("active"));
+        b.classList.add("active");
+        state.swatchName=s.name;
+        state.swatchColor=s.color;
+        setPreviewTint(state.swatchColor);
+        syncProbeUI();
+      });
+      if (s.name===state.swatchName) b.classList.add("active");
+      wrap.appendChild(b);
+    });
+
+    setPreviewTint(state.swatchColor);
+  };
+
+  const syncProbeUI = ()=>{
+    const p = PRODUCTS.find(x=>x.id===state.productId);
+    if (!p) return;
+
+    $("badgeModel").textContent = p.name;
+    $("badgeFabric").textContent = state.swatchName;
+    $("badgeLegs").textContent = `Patas: ${state.legs}`;
+
+    const img = $("previewImg");
+    img.src = p.img || "rosseta.png";
+
+    const total = Number(p.price || 0) * Number(state.qty || 1);
+    $("probeTotal").textContent = fmtPEN(total);
+
+    $("probeSummary").textContent =
+      `${p.name} • ${state.fabricType} • ${state.swatchName} • Patas ${state.legs} • x${state.qty}`;
+
+    // WhatsApp context
+    $("btnWA").href = waLink(
+      `Hola, quiero información sobre ${BRAND_NAME}.\n` +
+      `Me interesa: ${p.name}\n` +
+      `Tela: ${state.fabricType}\nColor: ${state.swatchName}\nPatas: ${state.legs}\nCantidad: ${state.qty}`
+    );
+    $("btnWA2").href = $("btnWA").href;
+    $("btnPayWA").href = $("btnWA").href;
+  };
+
+  // Wire probe inputs
+  $("probeProduct").addEventListener("change",(e)=>{
+    state.productId = e.target.value;
+    syncProbeUI();
+  });
+  $("probeQty").addEventListener("input",(e)=>{
+    state.qty = Math.max(1, Number(e.target.value || 1));
+    syncProbeUI();
+  });
+  $("probeFabric").addEventListener("change",(e)=>{
+    state.fabricType = e.target.value;
+    renderSwatches();
+    syncProbeUI();
+  });
+  $("probeLegs").addEventListener("change",(e)=>{
+    state.legs = e.target.value;
+    syncProbeUI();
+  });
+
+  // =========================
+  // Catalog (click loads into probe)
+  // =========================
+  const renderCatalog = ()=>{
+    const grid = $("catalogGrid");
+    grid.innerHTML = "";
+    const items = PRODUCTS.filter(p => Number(p.price)>0);
+
+    items.forEach(p=>{
+      const el=document.createElement("div");
+      el.className="p-card";
+      el.innerHTML = `
+        <div class="p-media">
+          <img src="${p.img}" alt="${p.name}" onerror="this.style.display='none'">
+        </div>
+        <div class="p-body">
+          <div class="p-title">
+            <h3>${p.name}</h3>
+            <span class="pill">${fmtPEN(p.price)}</span>
+          </div>
+          <p>${p.desc || ""}</p>
+          <div class="p-foot">
+            <span class="mini">Clic para probar arriba</span>
+            <button class="btn small secondary" type="button">Probar</button>
+          </div>
+        </div>
+      `;
+      el.addEventListener("click", ()=>{
+        state.productId = p.id;
+        $("probeProduct").value = p.id;
+        syncProbeUI();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+      grid.appendChild(el);
+    });
+  };
+
+  $("btnScrollTop").addEventListener("click", ()=> window.scrollTo({ top:0, behavior:"smooth" }));
+
+  // =========================
+  // Cart
+  // =========================
+  const CART_KEY="acrati_cart_clean_v1";
+  const getCart=()=>{ try{return JSON.parse(localStorage.getItem(CART_KEY)||"[]");}catch{return [];} };
+  const setCart=(x)=>localStorage.setItem(CART_KEY, JSON.stringify(x));
+  const cartTotal=(c)=>c.reduce((s,it)=>s+(Number(it.unit_price||0)*Number(it.qty||1)),0);
+
+  const refreshCartBar=()=>{
+    const c=getCart();
+    if(!c.length){ $("cartBar").style.display="none"; return; }
+    $("cartBar").style.display="block";
+    $("cartBarTitle").textContent = `Tu pedido (${c.length} ítem${c.length>1?"s":""})`;
+    $("cartBarSub").textContent = `${c.reduce((a,b)=>a+(Number(b.qty)||1),0)} unidad(es) • ${fmtPEN(cartTotal(c))}`;
+  };
+
+  const addFromProbe=()=>{
+    const p=PRODUCTS.find(x=>x.id===state.productId);
+    if(!p || Number(p.price)<=0){
+      toast("Este producto es por cotización", "Usa “Cotizar a medida”.");
+      return;
+    }
+    const item = {
+      line_id: "L-"+Math.random().toString(36).slice(2,8).toUpperCase()+"-"+Date.now().toString(36).toUpperCase(),
+      product_id: p.id,
+      product_name: p.name,
+      unit_price: Number(p.price||0),
+      qty: Math.max(1, Number(state.qty||1)),
+      fabric_type: state.fabricType,
+      swatch_name: state.swatchName,
+      swatch_color: state.swatchColor,
+      legs: state.legs
+    };
+    const c=getCart();
+    c.unshift(item);
+    setCart(c);
+    refreshCartBar();
+    toast("Agregado al carrito", `${p.name} • ${state.swatchName} • x${item.qty}`);
+  };
+
+  $("btnAddFromProbe").addEventListener("click", addFromProbe);
+
+  // Cart modal
+  const cartModal=$("cartModal");
+  const payModal=$("payModal");
+  const quoteModal=$("quoteModal");
+
+  const renderCartModal=()=>{
+    const c=getCart();
+    const list=$("cartList");
+    list.innerHTML = "";
+    if(!c.length){
+      list.innerHTML = `<div class="notice warn">Tu carrito está vacío.</div>`;
+      $("cartTotal").textContent = "S/ 0";
+      return;
+    }
+    c.forEach(it=>{
+      const row=document.createElement("div");
+      row.className="panel";
+      row.style.boxShadow="none";
+      row.innerHTML=`
+        <div style="display:flex; justify-content:space-between; gap:10px; align-items:flex-start;">
+          <div>
+            <div style="font-weight:900">${it.product_name}</div>
+            <div class="mini" style="margin-top:4px">${it.fabric_type} • ${it.swatch_name} • Patas ${it.legs} • x${it.qty}</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:8px; align-items:flex-end;">
+            <div style="font-weight:900">${fmtPEN(it.unit_price*it.qty)}</div>
+            <button class="btn ghost small" type="button">Quitar</button>
+          </div>
+        </div>
+      `;
+      row.querySelector("button").addEventListener("click", ()=>{
+        const next=getCart().filter(x=>x.line_id!==it.line_id);
+        setCart(next);
+        refreshCartBar();
+        renderCartModal();
+      });
+      list.appendChild(row);
+    });
+    $("cartTotal").textContent = fmtPEN(cartTotal(c));
+  };
+
+  const openCart=()=>{
+    renderCartModal();
+    openModal(cartModal);
+  };
+
+  $("btnCart").addEventListener("click", openCart);
+  $("btnOpenCart").addEventListener("click", openCart);
+  $("btnCheckout").addEventListener("click", ()=>{
+    openCart();
+  });
+
+  $("btnCloseCart").addEventListener("click", ()=>closeModal(cartModal));
+  cartModal.addEventListener("click",(e)=>{ if(e.target===cartModal) closeModal(cartModal); });
+
+  $("btnClearCart").addEventListener("click", ()=>{
+    setCart([]);
+    refreshCartBar();
+    toast("Carrito vacío");
+  });
+
+  $("btnBackToProbe").addEventListener("click", ()=>{
+    closeModal(cartModal);
+    window.scrollTo({ top:0, behavior:"smooth" });
+  });
+
+  $("btnGoPay").addEventListener("click", ()=>{
+    closeModal(cartModal);
+    openPay();
+  });
+
+  // =========================
+  // PAY FLOW: Registrar pedido + subir comprobante (en un solo paso)
+  // =========================
+  let lastOrderId = "";
+
+  const openPay=()=>{
+    const c=getCart();
+    if(!c.length){
+      toast("Carrito vacío", "Agrega un producto en el probador.");
+      return;
+    }
+    const total = cartTotal(c);
+    $("payInfo").innerHTML =
+      `<div><b>Total a pagar (catálogo 100%):</b> ${fmtPEN(total)}</div>`+
+      `<div style="margin-top:6px;color:#5a625f;font-weight:800">Luego sube tu comprobante aquí mismo.</div>`;
+    openModal(payModal);
+  };
+
+  $("btnClosePay").addEventListener("click", ()=>closeModal(payModal));
+  payModal.addEventListener("click",(e)=>{ if(e.target===payModal) closeModal(payModal); });
+
+  const buildOrderPayload=()=>{
+    const c=getCart();
+    const total=cartTotal(c);
+    const orderId = genOrderId();
+    lastOrderId = orderId;
+
+    return {
+      ts: nowISO(),
+      event: "order_checkout",
+      order_id: orderId,
+      order_type: "CATALOGO",
+      payment_policy: "CATALOGO_100",
+      pay_stage_due_now: "TOTAL",
+      amount_due_now: total,
+      amount_total: total,
+      customer_name: $("coName").value.trim(),
+      customer_phone: $("coPhone").value.trim(),
+      customer_city: $("coCity").value.trim(),
+      customer_address: $("coAddress").value.trim(),
+      pay_method: "Yape",
+      pay_status: "Comprobante pendiente",
+      items: c,
+      items_summary: c.map(it=>`${it.product_name} x${it.qty} (${it.fabric_type}/${it.swatch_name}/Patas:${it.legs})`).join(" || "),
+      page: location.href
+    };
+  };
+
+  $("btnPlaceOrderAndUpload").addEventListener("click", async ()=>{
+    const c=getCart();
+    if(!c.length){ toast("Carrito vacío"); return; }
+
+    const name = $("coName").value.trim();
+    const phone = $("coPhone").value.trim();
+    if(!name || !phone){
+      toast("Completa tus datos", "Nombre y WhatsApp son necesarios.");
+      return;
+    }
+
+    const file = $("pmFile").files && $("pmFile").files[0] ? $("pmFile").files[0] : null;
+    if(!file){
+      toast("Falta comprobante", "Adjunta una foto o PDF del pago.");
+      return;
+    }
+    const maxBytes = 2 * 1024 * 1024;
+    if(file.size > maxBytes){
+      toast("Archivo muy pesado", "Recomendado: <= 2MB.");
+      return;
+    }
+
+    $("payHint").textContent = "Registrando pedido y subiendo comprobante...";
+
+    // 1) Create order in Sheets
+    const order = buildOrderPayload();
+    await postToSheets(order);
+
+    // 2) Upload proof
+    const total = order.amount_total;
+    const f = await fileToBase64(file);
+
+    const proof = {
+      ts: nowISO(),
+      action: "payment_upload",
+      order_id: order.order_id,
+      stage: "TOTAL",
+      amount: Number(total),
+      pay_method: "Yape",
+      operation_number: $("pmOp").value.trim(),
+      file_name: f.name,
+      file_mime: f.mime,
+      file_b64: f.b64,
+      page: location.href
+    };
+    await postToSheets(proof);
+
+    // Cleanup UI
+    setCart([]);
+    refreshCartBar();
+    $("pmFile").value = "";
+    $("pmOp").value = "";
+    $("payHint").textContent = `Listo. Tu pedido quedó registrado con ID: ${order.order_id}. Validaremos el pago.`;
+
+    toast("Pedido registrado", `ID: ${order.order_id}`);
+
+    // WhatsApp contextual
+    const msg =
+      `Hola, ya registré mi pedido (${BRAND_NAME}).\n`+
+      `ID: ${order.order_id}\n`+
+      `Total: ${fmtPEN(order.amount_total)}\n`+
+      `Yape: ${YAPE_NUMBER}\n`+
+      `Nombre: ${order.customer_name}\n`+
+      `WhatsApp: ${order.customer_phone}\n`+
+      `Gracias.`;
+    $("btnPayWA").href = waLink(msg);
+  });
+
+  // =========================
+  // Quote minimal
+  // =========================
+  const openQuote=()=>openModal(quoteModal);
+  $("btnQuote").addEventListener("click", openQuote);
+  $("btnQuote2").addEventListener("click", openQuote);
+  $("btnCloseQuote").addEventListener("click", ()=>closeModal(quoteModal));
+  quoteModal.addEventListener("click",(e)=>{ if(e.target===quoteModal) closeModal(quoteModal); });
+
+  $("btnQuoteWA").addEventListener("click", ()=>{
+    const msg =
+      `Hola, quiero cotizar a medida (${BRAND_NAME}).\n`+
+      `Nombre: ${$("qName").value.trim() || "—"}\n`+
+      `WhatsApp: ${$("qPhone").value.trim() || "—"}\n`+
+      `Ciudad: ${$("qCity").value.trim() || "—"}\n`+
+      `Referencia: ${$("qRef").value.trim() || "—"}\n`+
+      `Detalles: ${$("qDetails").value.trim() || "—"}`;
+    $("btnQuoteWA").href = waLink(msg);
+  });
+
+  $("btnSaveQuote").addEventListener("click", async ()=>{
+    const payload = {
+      ts: nowISO(),
+      event: "lead_quote",
+      lead_id: "LEAD-" + Date.now().toString(36).toUpperCase(),
+      service: "Pedido a medida / retapizado",
+      customer_name: $("qName").value.trim(),
+      customer_phone: $("qPhone").value.trim(),
+      customer_city: $("qCity").value.trim(),
+      reference_link: $("qRef").value.trim(),
+      details: $("qDetails").value.trim(),
+      page: location.href
+    };
+    await postToSheets(payload);
+    toast("Solicitud registrada", "Te contactaremos para cotizar.");
+    closeModal(quoteModal);
+  });
+
+  // ESC to close
+  document.addEventListener("keydown",(e)=>{
+    if(e.key!=="Escape") return;
+    [cartModal,payModal,quoteModal].forEach(m=>{ if(m.classList.contains("open")) closeModal(m); });
+  });
+
+  // Init
+  renderProbeProducts();
+  renderProbeFabrics();
+  $("probeQty").value = state.qty;
+  $("probeProduct").value = state.productId;
+  $("probeFabric").value = state.fabricType;
+  renderSwatches();
+  syncProbeUI();
+  renderCatalog();
+  refreshCartBar();
+</script>
 </body>
 </html>
