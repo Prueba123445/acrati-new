@@ -172,7 +172,7 @@
       filter: contrast(1.02) saturate(1.02);
     }
 
-    /* Benefits + categorías */
+    /* Benefits */
     .benefits{
       margin-top:14px;
       display:flex;
@@ -227,7 +227,7 @@
     .card h3{margin:0 0 6px; font-size:16px}
     .card p{margin:0; color:var(--muted); font-size:14px}
 
-    /* Catalog / tienda */
+    /* Catalog */
     .filters{
       display:flex;
       gap:10px;
@@ -310,27 +310,27 @@
     .row-between{display:flex; justify-content:space-between; align-items:center; gap:10px}
     .pricebox{
       margin-top:auto;
-      padding-top:10px;
+      padding-top:12px;
       display:flex;
       justify-content:space-between;
       align-items:center;
-      gap:10px;
+      gap:12px;
       border-top:1px solid rgba(230,224,215,.9);
     }
     .price{
       font-weight: 900;
       font-size:16px;
       letter-spacing:-.2px;
+      display:flex;
+      align-items:baseline;
+      gap:6px;
     }
     .price small{
       font-weight:800;
       font-size:12px;
       color:var(--muted);
-      margin-right:6px;
+      margin:0;
     }
-    .cta{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
-    .cta .btn{box-shadow:none}
-    .cta .btn:hover{box-shadow:var(--shadow2)}
 
     /* Modales */
     .modal{
@@ -438,9 +438,7 @@
     }
     .wa-float:hover{transform:translateY(-1px); box-shadow: 0 18px 40px rgba(17,24,39,.18)}
 
-    /* =========================
-       Configurador de telas
-       ========================= */
+    /* Configurador */
     .config-grid{
       display:grid;
       grid-template-columns: 1fr 1fr;
@@ -481,10 +479,7 @@
       border-color: rgba(47,107,79,.35);
       outline: 2px solid rgba(47,107,79,.18);
     }
-
-    .swatch-top{
-      display:flex; align-items:center; gap:10px;
-    }
+    .swatch-top{display:flex; align-items:center; gap:10px}
     .swatch-dot{
       width:22px; height:22px; border-radius:999px;
       border:1px solid rgba(0,0,0,.08);
@@ -507,11 +502,7 @@
     .config-actions{
       display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;
     }
-    .small-note{
-      font-size:12.5px;
-      color:var(--muted);
-      margin-top:8px;
-    }
+    .small-note{font-size:12.5px; color:var(--muted); margin-top:8px}
 
     footer{
       border-top:1px solid rgba(230,224,215,.95);
@@ -544,7 +535,6 @@
       </nav>
 
       <div style="display:flex; gap:10px; align-items:center">
-        <a class="btn primary" id="btn-wa-top" href="#" rel="noopener">WhatsApp</a>
         <button class="btn menu-btn" id="btn-menu" aria-label="Abrir menú">Menú</button>
       </div>
     </div>
@@ -564,13 +554,13 @@
     </div>
   </div>
 
-  <!-- Modal de consulta general (opcional) -->
+  <!-- Modal de consulta general (A pedido) -->
   <div class="modal" id="quoteModal" aria-hidden="true">
     <div class="panel">
       <div class="modal-header">
         <div>
           <p class="modal-title">Consulta / Pedido a medida</p>
-          <p class="modal-sub">Úsalo cuando el pedido no sea catálogo. Este lead también se guarda en Google Sheets.</p>
+          <p class="modal-sub">Para pedidos por referencia (Pinterest/IG) o medidas especiales. Se guarda en Google Sheets.</p>
         </div>
         <button class="btn ghost" id="btn-quote-close">Cerrar</button>
       </div>
@@ -614,29 +604,28 @@
 
         <div class="config-actions">
           <button class="btn primary" type="submit">Guardar en Sheets</button>
-          <button class="btn secondary" type="button" id="btn-quote-wa">Enviar por WhatsApp</button>
         </div>
 
         <div class="notice">
-          Recomendación: para catálogo usa “Comprar”. Para personalización usa el configurador (clic en el modelo).
+          Para coordinar modelos/telas por chat, usa el botón flotante de WhatsApp (esquina).
         </div>
       </form>
     </div>
   </div>
 
-  <!-- Modal configurador (telas + combo listo para pedido) -->
+  <!-- Modal configurador (Catálogo) -->
   <div class="modal" id="configModal" aria-hidden="true">
     <div class="panel">
       <div class="modal-header">
         <div>
           <p class="modal-title" id="cfgTitle">Personalizar</p>
-          <p class="modal-sub" id="cfgSub">Selecciona tela y color. Guarda el combo en Google Sheets como pedido listo.</p>
+          <p class="modal-sub" id="cfgSub">Selecciona tela, color y patas. “Pedir” guarda el pedido en Google Sheets.</p>
         </div>
         <button class="btn ghost" id="btn-cfg-close">Cerrar</button>
       </div>
 
       <div class="notice">
-        Flujo recomendado: cliente elige modelo → elige tela/color → se guarda pedido configurado → tú confirmas fabricación, tiempos y envío.
+        Flujo recomendado: cliente elige modelo → elige tela/color/patas → “Pedir” → pago por Yape/Plin.
       </div>
 
       <div class="config-grid">
@@ -685,22 +674,36 @@
 
           <div class="form-row">
             <div>
-              <label>Medidas (opcional)</label>
+              <label>Medidas</label>
               <input id="cfgMeasures" placeholder="Ej: 80x80x45 cm" />
             </div>
             <div>
-              <label>Acabado (opcional)</label>
-              <input id="cfgFinish" placeholder="Ej: patas negras, costura doble..." />
+              <label>Patas</label>
+              <select id="cfgLegs">
+                <option value="Negro" selected>Negro</option>
+                <option value="Dorado">Dorado</option>
+                <option value="Plateado">Plateado</option>
+              </select>
             </div>
           </div>
 
-          <label>Notas / detalles</label>
-          <textarea id="cfgNotes" placeholder="Ej: para cafetería, fácil limpieza, reforzado, etc."></textarea>
+          <label>Notas / detalles (opcional)</label>
+          <textarea id="cfgNotes" placeholder="Ej: fácil limpieza, costura reforzada, entrega urgente, etc."></textarea>
 
           <div class="config-actions">
-            <button class="btn primary" type="button" id="btn-cfg-save">Guardar en Sheets</button>
-            <button class="btn secondary" type="button" id="btn-cfg-wa">Enviar a WhatsApp</button>
-            <button class="btn" type="button" id="btn-cfg-copy">Copiar</button>
+            <button class="btn primary" type="button" id="btn-cfg-order">Pedir</button>
+          </div>
+
+          <div class="notice" id="paymentBox" style="display:none">
+            <b>Siguiente paso: pago</b>
+            <div class="mini" style="margin-top:6px">
+              Paga por Yape/Plin y luego envíanos la captura usando el botón flotante de WhatsApp.
+            </div>
+            <div class="mini" style="margin-top:8px"><b>Yape:</b> 999 999 999 (cámbialo)</div>
+            <div class="mini"><b>Nombre:</b> Acrati (cámbialo)</div>
+            <div style="margin-top:10px">
+              <img src="yape-qr.png" alt="QR Yape" style="max-width:220px;border-radius:16px;border:1px solid var(--border)">
+            </div>
           </div>
 
           <div class="small-note">
@@ -715,13 +718,14 @@
           </div>
           <div class="swatches" id="cfgSwatches"></div>
           <div class="small-note">
-            Si quieres mini-fotos reales: sube imágenes a una carpeta <b>telas/</b> y asigna <b>img</b> en el catálogo de telas del script.
+            Si quieres mini-fotos reales: sube imágenes a <b>telas/</b> y asigna <b>img</b> en el catálogo de telas del script.
           </div>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- WhatsApp flotante (único) -->
   <a class="wa-float" id="btn-wa-float" href="#" rel="noopener">
     <span class="ico" aria-hidden="true">
       <svg viewBox="0 0 32 32" width="18" height="18" fill="currentColor">
@@ -736,30 +740,30 @@
     <section class="hero">
       <div class="hero-grid">
         <div>
-          <span class="pill">Puffs • Sofás • Muebles a pedido • Lima & Provincias</span>
-          <h1 class="h1">Página de ventas: catálogo con precios + personalización de telas.</h1>
+          <span class="pill">Puffs • Sofás • Muebles • Lima & Provincias</span>
+          <h1 class="h1">Catálogo con precios + personalización simple y lista para pedido.</h1>
           <p class="lead">
-            Primer paso: haz clic en un modelo para abrir el configurador de telas y guardar el pedido listo en Google Sheets.
+            Haz clic en un modelo, elige tela/color/patas y presiona “Pedir”. El pedido se guarda automáticamente en Google Sheets.
           </p>
 
           <div class="cta-row">
-            <a class="btn primary" id="btn-wa-hero" href="#" rel="noopener">Cotizar por WhatsApp</a>
             <a class="btn secondary" href="#catalogo">Ver catálogo</a>
-            <button class="btn" type="button" id="btn-open-quote">Consulta a pedido</button>
+            <button class="btn primary" type="button" id="btn-open-tryon">Abrir probador</button>
+            <button class="btn" type="button" id="btn-open-quote">A pedido (Pinterest/IG)</button>
           </div>
-          <div class="note">Catálogo: “Comprar” registra en Sheets. Personalización: clic en modelo → telas → guardar pedido.</div>
+
+          <div class="note">WhatsApp queda como soporte únicamente en el botón flotante (esquina).</div>
 
           <div class="benefits">
-            <div class="benefit">Hecho a medida <span>medidas y tela</span></div>
+            <div class="benefit">Personalización <span>tela, color, patas</span></div>
+            <div class="benefit">Registro <span>pedido a Sheets</span></div>
             <div class="benefit">Envíos <span>Lima y provincias</span></div>
             <div class="benefit">Post-venta <span>retapizado</span></div>
-            <div class="benefit">Packs <span>negocios</span></div>
           </div>
         </div>
 
         <div class="hero-card">
           <div class="hero-media">
-            <!-- Mantén hero.png en la raíz del repo (junto a index.html) -->
             <img class="hero-img" src="hero.png" alt="Acrati - Foto principal"
               onerror="this.style.display='none'; this.parentElement.style.padding='18px'; this.parentElement.innerHTML='<b>Imagen no encontrada</b><div class=&quot;mini&quot; style=&quot;margin-top:6px&quot;>Verifica que <code>hero.png</code> esté junto a <code>index.html</code>.</div>';">
           </div>
@@ -773,7 +777,6 @@
             </div>
           </div>
         </div>
-
       </div>
     </section>
 
@@ -781,9 +784,9 @@
       <div class="section-title">
         <div>
           <h2>Catálogo</h2>
-          <p>Clic en el modelo para personalizar telas. “Comprar” registra el click en Sheets.</p>
+          <p>Clic en el modelo o en “Pedir” para abrir el configurador.</p>
         </div>
-        <button class="btn" type="button" id="btn-open-quote-top">Consulta a pedido</button>
+        <button class="btn" type="button" id="btn-open-quote-top">A pedido (Pinterest/IG)</button>
       </div>
 
       <div class="filters" aria-label="Filtros">
@@ -795,11 +798,10 @@
       <div class="catalog" id="catalogGrid">
 
         <!-- ROSSETA (catálogo con precio) -->
-        <!-- Mantén rosseta.png en la raíz del repo (junto a index.html) -->
-        <article class="product" data-category="puffs" data-name="Rosseta" data-price="430" data-img="rosseta.png">
+        <article class="product" data-category="puffs" data-name="Rosseta" data-price="430" data-img="rosseta.png" data-measures="80x80x45 cm">
           <div class="product-media">
             <img class="product-img" src="rosseta.png" alt="Rosseta"
-              onerror="this.style.display='none'; this.parentElement.style.padding='16px'; this.parentElement.innerHTML='<b>Imagen no encontrada</b><div class=&quot;mini&quot; style=&quot;margin-top:6px&quot;>Verifica <code>rosseta.png</code> en el repo (misma carpeta que index.html).</div>';">
+              onerror="this.style.display='none'; this.parentElement.style.padding='16px'; this.parentElement.innerHTML='<b>Imagen no encontrada</b><div class=&quot;mini&quot; style=&quot;margin-top:6px&quot;>Verifica <code>rosseta.png</code> junto a <code>index.html</code>.</div>';">
           </div>
           <div class="body">
             <div class="row-between">
@@ -810,23 +812,18 @@
 
             <div class="pricebox">
               <div class="price"><small>Precio</small>S/ 430</div>
-              <button class="btn small primary buy-btn" type="button">Comprar</button>
-            </div>
-
-            <div class="cta">
-              <button class="btn small" type="button" data-open-config>Personalizar</button>
-              <a class="btn small" href="#envios">Envíos</a>
+              <button class="btn small primary" type="button" data-open-config>Pedir</button>
             </div>
           </div>
         </article>
 
-        <!-- A PEDIDO (sin precio visible, igual abre configurador) -->
+        <!-- A PEDIDO (directo a formulario; coordinación por WhatsApp solo con botón flotante) -->
         <article class="product" data-category="pedido" data-name="Modelo por referencia (Pinterest)" data-price="" data-img="">
           <div class="product-media" style="display:flex; align-items:center; justify-content:center; padding:16px">
             <div>
               <span class="badge">A pedido</span>
               <div style="margin-top:8px; font-weight:900">Modelo por referencia</div>
-              <div class="mini" style="margin-top:6px">Envíanos foto o link (Pinterest/IG) y lo hacemos a medida.</div>
+              <div class="mini" style="margin-top:6px">Envíanos foto o link (Pinterest/IG). Coordinamos por WhatsApp (botón flotante).</div>
             </div>
           </div>
           <div class="body">
@@ -834,16 +831,11 @@
               <h3>Diseño personalizado</h3>
               <span class="badge alt">Cotización</span>
             </div>
-            <p>Elige tela y color aquí; luego completas medidas y detalles para cotizar.</p>
+            <p>Completa el formulario y lo registramos en Sheets para cotizar.</p>
 
             <div class="pricebox">
               <div class="price"><small>Precio</small>Consultar</div>
-              <button class="btn small primary" type="button" data-open-config>Configurar</button>
-            </div>
-
-            <div class="cta">
-              <button class="btn small" type="button" id="btn-open-quote-card">Formulario</button>
-              <a class="btn small" href="#amedida">Proceso</a>
+              <button class="btn small primary" type="button" id="btn-open-quote-card">Solicitar cotización</button>
             </div>
           </div>
         </article>
@@ -859,13 +851,13 @@
       <div class="section-title">
         <div>
           <h2>Proceso a medida</h2>
-          <p>Simple y claro para vender rápido.</p>
+          <p>Para pedidos por referencia (Pinterest/IG).</p>
         </div>
       </div>
 
       <div class="grid-3">
         <div class="card"><h3>1) Referencia</h3><p>Foto/link + uso del mueble + ciudad.</p></div>
-        <div class="card"><h3>2) Tela y acabado</h3><p>Seleccionas tela y color en el configurador.</p></div>
+        <div class="card"><h3>2) Tela y acabados</h3><p>Se coordina por WhatsApp (botón flotante).</p></div>
         <div class="card"><h3>3) Producción y envío</h3><p>Casco + espuma + tapizado. Lima o Shalom.</p></div>
       </div>
     </section>
@@ -896,23 +888,23 @@
       <div class="section-title">
         <div>
           <h2>Contacto</h2>
-          <p>WhatsApp directo o formulario para pedidos a medida.</p>
+          <p>WhatsApp solo por el botón flotante. A pedido, usa el formulario.</p>
         </div>
       </div>
 
       <div class="grid-2">
         <div class="card">
-          <h3>WhatsApp</h3>
-          <p>Para cerrar venta del catálogo o coordinar envío.</p>
-          <div class="cta" style="margin-top:12px">
-            <a class="btn primary" id="btn-wa-side" href="#" rel="noopener">Abrir WhatsApp</a>
-            <button class="btn secondary" type="button" id="btn-open-quote-bottom">Formulario a pedido</button>
+          <h3>Pedidos a medida</h3>
+          <p>Guarda tu requerimiento en Sheets para cotizar rápido.</p>
+          <div style="margin-top:12px">
+            <button class="btn primary" type="button" id="btn-open-quote-bottom">Abrir formulario</button>
           </div>
+          <div class="notice">Para coordinar por chat, usa el botón flotante de WhatsApp (esquina).</div>
         </div>
         <div class="card">
-          <h3>Control de ventas</h3>
-          <p>Los clicks de “Comprar” y pedidos configurados se registran en Google Sheets.</p>
-          <div class="notice">Si aún no ves registros, revisa que <b>SHEETS_WEBAPP_URL</b> tenga el link correcto.</div>
+          <h3>Pagos</h3>
+          <p>Sin pasarela por ahora. Trabajamos con Yape/Plin. El QR se muestra después de “Pedir”.</p>
+          <div class="notice">Luego envías el comprobante por WhatsApp (botón flotante).</div>
         </div>
       </div>
     </section>
@@ -934,17 +926,14 @@
     // =========================
     const WHATSAPP_NUMBER = "51999999999"; // Ej: 51987654321 (51 + número, sin +)
 
-    // Pega aquí tu Web App URL de Apps Script (Deploy/Implementar → Web app)
-    // Ej: "https://script.google.com/macros/s/XXXX/exec"
+    // Tu Web App URL de Apps Script
     const SHEETS_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbxykQZyRzldx10RUdT6v2TqgFNq8YhpHSVz24KMv_N40-uAKrBmCsMwSAqZ1PBMxPMp/exec";
 
     const waLink = (text) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
 
-    // WhatsApp generales
-    ["btn-wa-top","btn-wa-hero","btn-wa-side","btn-wa-float"].forEach(id => {
-      const el = document.getElementById(id);
-      if (el) el.href = waLink("Hola, quiero comprar/cotizar. ¿Me indicas disponibilidad, tiempo de entrega y costo de envío?");
-    });
+    // WhatsApp: solo botón flotante
+    const waFloat = document.getElementById("btn-wa-float");
+    if (waFloat) waFloat.href = waLink("Hola, quiero ayuda con mi pedido. ¿Me orientas?");
 
     // Año
     document.getElementById("year").textContent = new Date().getFullYear();
@@ -993,48 +982,7 @@
     document.querySelectorAll(".filter").forEach(btn => btn.addEventListener("click", () => setActiveFilter(btn.dataset.filter)));
 
     // =========================
-    // 1) Comprar (catálogo) => guarda en Sheets + abre WhatsApp
-    // =========================
-    document.querySelectorAll(".buy-btn").forEach(btn => {
-      btn.addEventListener("click", async (e) => {
-        e.stopPropagation(); // para no abrir configurador
-        const card = btn.closest(".product");
-        const name = card?.dataset.name || "Producto";
-        const price = card?.dataset.price || "";
-
-        const purchaseEvent = {
-          ts: new Date().toISOString(),
-          event: "compra_catalogo_click",
-          producto: name,
-          precio: price,
-          nombre: "",
-          tel: "",
-          ciudad: "",
-          tipo: "Catálogo",
-          medidas: "",
-          referencia: "",
-          detalles: `Click en Comprar | Producto: ${name} | Precio: ${price} | Página: ${location.href}`,
-          origen: "web",
-          pagina: location.href
-        };
-
-        saveLeadLocal(purchaseEvent);
-        await postToSheets(purchaseEvent);
-
-        const msg =
-`Hola, quiero comprar:
-Producto: ${name}
-Precio: S/ ${price}
-
-Ciudad de entrega:
-¿Me confirmas disponibilidad, tiempo de entrega y costo de envío?`;
-
-        window.open(waLink(msg), "_blank", "noopener,noreferrer");
-      });
-    });
-
-    // =========================
-    // 2) Modal de consulta general (quoteModal)
+    // Modal "A pedido" (quoteModal)
     // =========================
     const quoteModal = document.getElementById("quoteModal");
     const openQuote = (prefill="") => {
@@ -1052,48 +1000,21 @@ Ciudad de entrega:
     quoteModal.addEventListener("click", (e) => { if (e.target === quoteModal) closeQuote(); });
 
     document.getElementById("btn-open-quote").addEventListener("click", () => openQuote(""));
-    document.getElementById("btn-open-quote-top").addEventListener("click", () => openQuote(""));
-    document.getElementById("btn-open-quote-bottom").addEventListener("click", () => openQuote(""));
-    document.getElementById("btn-open-quote-card").addEventListener("click", (e) => { e.stopPropagation(); openQuote("Diseño personalizado (Pinterest)"); });
-
-    const buildQuoteText = () => {
-      const nombre = document.getElementById("q_nombre").value.trim();
-      const tel = document.getElementById("q_tel").value.trim();
-      const ciudad = document.getElementById("q_ciudad").value.trim();
-      const producto = document.getElementById("q_producto").value.trim();
-      const medidas = document.getElementById("q_medidas").value.trim();
-      const ref = document.getElementById("q_referencia").value.trim();
-      const det = document.getElementById("q_detalles").value.trim();
-
-      return `Hola, soy ${nombre || "___"}.
-Teléfono: ${tel || "___"}
-Ciudad: ${ciudad || "___"}
-Producto/Servicio: ${producto || "___"}
-Medidas: ${medidas || "___"}
-Referencia: ${ref || "___"}
-
-Detalles:
-${det || "___"}
-
-¿Me indicas precio, tiempo de entrega y costo de envío?`;
-    };
-
-    document.getElementById("btn-quote-wa").addEventListener("click", () => {
-      const text = buildQuoteText();
-      window.open(waLink(text), "_blank", "noopener,noreferrer");
-    });
+    document.getElementById("btn-open-quote-top").addEventListener("click", () => openQuote("Pedido a medida (Pinterest/IG)"));
+    document.getElementById("btn-open-quote-bottom").addEventListener("click", () => openQuote("Pedido a medida (Pinterest/IG)"));
+    document.getElementById("btn-open-quote-card").addEventListener("click", (e) => { e.stopPropagation(); openQuote("Diseño personalizado (Pinterest/IG)"); });
 
     document.getElementById("quoteForm").addEventListener("submit", async (e) => {
       e.preventDefault();
       const row = {
         ts: new Date().toISOString(),
-        event: "lead_form",
+        event: "lead_pedido_a_medida",
         producto: document.getElementById("q_producto").value.trim(),
         precio: "",
         nombre: document.getElementById("q_nombre").value.trim(),
         tel: document.getElementById("q_tel").value.trim(),
         ciudad: document.getElementById("q_ciudad").value.trim(),
-        tipo: "A pedido / consulta",
+        tipo: "A pedido / cotización",
         medidas: document.getElementById("q_medidas").value.trim(),
         referencia: document.getElementById("q_referencia").value.trim(),
         detalles: document.getElementById("q_detalles").value.trim(),
@@ -1103,18 +1024,15 @@ ${det || "___"}
 
       saveLeadLocal(row);
       await postToSheets(row);
-
-      alert("Guardado en Sheets. Ahora puedes responder con cotización.");
+      alert("Listo. Tu solicitud quedó registrada. Para coordinar por chat usa el botón flotante de WhatsApp.");
       closeQuote();
     });
 
     // =========================
-    // 3) Configurador de telas (clic en modelo)
+    // Configurador de telas (Catálogo)
     // =========================
     const FABRICS = [
-      {
-        type: "Chenille premium",
-        note: "Suave, elegante, buena resistencia",
+      { type: "Chenille premium", note: "Suave, elegante, buena resistencia",
         swatches: [
           { name:"Oliva", color:"#5f6b3e", img:"" },
           { name:"Arena", color:"#d8c7ae", img:"" },
@@ -1122,9 +1040,7 @@ ${det || "___"}
           { name:"Hueso", color:"#f1ede6", img:"" },
         ]
       },
-      {
-        type: "Lino / look natural",
-        note: "Textura natural, estética minimal",
+      { type: "Lino / look natural", note: "Textura natural, estética minimal",
         swatches: [
           { name:"Beige", color:"#d9cdbd", img:"" },
           { name:"Taupe", color:"#a89987", img:"" },
@@ -1132,9 +1048,7 @@ ${det || "___"}
           { name:"Verde salvia", color:"#8fa38a", img:"" },
         ]
       },
-      {
-        type: "Antimanchas (fácil limpieza)",
-        note: "Ideal para negocios y hogares",
+      { type: "Antimanchas (fácil limpieza)", note: "Ideal para negocios y hogares",
         swatches: [
           { name:"Oliva oscuro", color:"#3f4a2a", img:"" },
           { name:"Café", color:"#6b4e35", img:"" },
@@ -1142,9 +1056,7 @@ ${det || "___"}
           { name:"Azul petróleo", color:"#1f4c57", img:"" },
         ]
       },
-      {
-        type: "Terciopelo (velvet)",
-        note: "Brillo sutil, look premium",
+      { type: "Terciopelo (velvet)", note: "Brillo sutil, look premium",
         swatches: [
           { name:"Esmeralda", color:"#1f6d57", img:"" },
           { name:"Vino", color:"#6c2734", img:"" },
@@ -1159,15 +1071,15 @@ ${det || "___"}
     const cfgProduct = document.getElementById("cfgProduct");
     const cfgFabricType = document.getElementById("cfgFabricType");
     const cfgSwatches = document.getElementById("cfgSwatches");
-
     const cfgCustomer = document.getElementById("cfgCustomer");
     const cfgPhone = document.getElementById("cfgPhone");
     const cfgCity = document.getElementById("cfgCity");
     const cfgQty = document.getElementById("cfgQty");
     const cfgFirmness = document.getElementById("cfgFirmness");
     const cfgMeasures = document.getElementById("cfgMeasures");
-    const cfgFinish = document.getElementById("cfgFinish");
+    const cfgLegs = document.getElementById("cfgLegs");
     const cfgNotes = document.getElementById("cfgNotes");
+    const paymentBox = document.getElementById("paymentBox");
 
     let CFG = {
       productName: "",
@@ -1180,13 +1092,26 @@ ${det || "___"}
     };
 
     function openConfigFromProduct(card){
+      paymentBox.style.display = "none";
+
       CFG.productName = card?.dataset.name || "Producto";
       CFG.price = card?.dataset.price || "";
       CFG.category = card?.dataset.category || "";
 
       cfgTitle.textContent = "Personalizar: " + CFG.productName;
-      cfgProduct.textContent = CFG.price ? `${CFG.productName} (S/ ${CFG.price})` : `${CFG.productName} (A pedido)`;
+      cfgProduct.textContent = CFG.price ? `${CFG.productName} (S/ ${CFG.price})` : `${CFG.productName}`;
 
+      // Medidas definidas (si el producto tiene data-measures)
+      const measures = card?.dataset.measures || "";
+      if (measures){
+        cfgMeasures.value = measures;
+        cfgMeasures.readOnly = true;
+      } else {
+        cfgMeasures.value = "";
+        cfgMeasures.readOnly = false;
+      }
+
+      // Render select de telas
       cfgFabricType.innerHTML = "";
       FABRICS.forEach(f => {
         const opt = document.createElement("option");
@@ -1199,17 +1124,11 @@ ${det || "___"}
       CFG.fabricType = cfgFabricType.value;
       renderSwatches(CFG.fabricType);
 
-      // defaults
+      // Defaults
       cfgQty.value = 1;
       cfgFirmness.value = "Intermedia";
-      cfgMeasures.value = "";
-      cfgFinish.value = "";
+      cfgLegs.value = "Negro";
       cfgNotes.value = "";
-
-      // no obligamos a poner cliente (pero ayuda)
-      // cfgCustomer.value = "";
-      // cfgPhone.value = "";
-      // cfgCity.value = "";
 
       configModal.classList.add("open");
       configModal.setAttribute("aria-hidden","false");
@@ -1275,25 +1194,23 @@ ${det || "___"}
       const qty = (cfgQty.value || "1").toString().trim();
       const measures = cfgMeasures.value.trim();
       const firmness = cfgFirmness.value;
-      const finish = cfgFinish.value.trim();
+      const legs = cfgLegs.value;
       const notes = cfgNotes.value.trim();
 
-      return `Pedido configurado (web) - Acrati
+      return `Pedido (web) - Acrati
 Cliente: ${customer || "—"} | Tel: ${phone || "—"} | Ciudad: ${city || "—"}
-Producto: ${CFG.productName}${CFG.price ? ` | Precio catálogo: S/ ${CFG.price}` : " | A pedido"}
-Categoría: ${CFG.category || "—"}
+Producto: ${CFG.productName}${CFG.price ? ` | Precio: S/ ${CFG.price}` : ""}
 Cantidad: ${qty}
 Tela: ${CFG.fabricType}
 Color: ${CFG.swatchName}${CFG.swatchColor ? ` (${CFG.swatchColor})` : ""}
+Patas: ${legs}
 Medidas: ${measures || "—"}
 Firmeza: ${firmness}
-Acabado: ${finish || "—"}
 Notas: ${notes || "—"}
 Página: ${location.href}`;
     }
 
-    // Guardar en Sheets
-    document.getElementById("btn-cfg-save").addEventListener("click", async () => {
+    document.getElementById("btn-cfg-order").addEventListener("click", async () => {
       const combo = buildConfiguredComboText();
 
       const payload = {
@@ -1304,70 +1221,60 @@ Página: ${location.href}`;
         nombre: cfgCustomer.value.trim(),
         tel: cfgPhone.value.trim(),
         ciudad: cfgCity.value.trim(),
-        tipo: "Configuración (tela/color)",
+        tipo: "Pedido catálogo configurado",
         medidas: cfgMeasures.value.trim(),
-        referencia: `Tela: ${CFG.fabricType} | Color: ${CFG.swatchName}`,
+        referencia: `Tela: ${CFG.fabricType} | Color: ${CFG.swatchName} | Patas: ${cfgLegs.value}`,
         detalles: combo,
         origen: "web",
-        pagina: location.href
+        pagina: location.href,
+        pago_estado: "Pendiente"
       };
 
       saveLeadLocal(payload);
       const res = await postToSheets(payload);
 
-      if (res.skipped) {
-        alert("Guardado localmente. Falta configurar SHEETS_WEBAPP_URL para que llegue a Google Sheets.");
-      } else {
-        alert("Listo: pedido configurado guardado en Google Sheets.");
+      if (res.skipped){
+        alert("Pedido guardado localmente. Falta configurar SHEETS_WEBAPP_URL.");
+        return;
       }
 
-      closeConfig();
-    });
-
-    // WhatsApp con combo
-    document.getElementById("btn-cfg-wa").addEventListener("click", () => {
-      const combo = buildConfiguredComboText();
-      window.open(waLink(combo), "_blank", "noopener,noreferrer");
-    });
-
-    // Copiar combo
-    document.getElementById("btn-cfg-copy").addEventListener("click", async () => {
-      const combo = buildConfiguredComboText();
-      try { await navigator.clipboard.writeText(combo); alert("Copiado."); }
-      catch(e){ alert("No se pudo copiar. Copia manualmente si hace falta."); }
+      alert("Pedido registrado en Google Sheets.");
+      paymentBox.style.display = "block";
     });
 
     // =========================
-    // Apertura por clic en el modelo
-    // - Clic en tarjeta: abre configurador
-    // - Clic en botones (Comprar / Personalizar / Formulario): no interfiere
+    // Aperturas (Catálogo / Probador)
     // =========================
+    // Botón “Abrir probador” (abre configurador del primer producto de catálogo)
+    document.getElementById("btn-open-tryon").addEventListener("click", () => {
+      const firstCatalog = document.querySelector('.product[data-category="puffs"]');
+      if (firstCatalog) openConfigFromProduct(firstCatalog);
+    });
+
+    // Click en tarjetas:
     document.querySelectorAll(".product").forEach(card => {
-      // Botón explícito "Personalizar"
-      const openBtn = card.querySelector("[data-open-config]");
-      if (openBtn){
-        openBtn.addEventListener("click", (e) => {
+      // Si es "pedido", abre el formulario
+      const isPedido = (card.dataset.category === "pedido");
+
+      // Botón explícito de abrir configurador (Pedir)
+      const openCfgBtn = card.querySelector("[data-open-config]");
+      if (openCfgBtn){
+        openCfgBtn.addEventListener("click", (e) => {
           e.stopPropagation();
           openConfigFromProduct(card);
         });
       }
 
-      // Clic general en la tarjeta
+      // Click general
       card.addEventListener("click", (e) => {
-        // Si clickea un botón o un link, no abrimos por el clic general
         if (e.target.closest("button") || e.target.closest("a")) return;
+        if (isPedido) {
+          openQuote("Diseño personalizado (Pinterest/IG)");
+          return;
+        }
         openConfigFromProduct(card);
       });
     });
   </script>
-
-  <!--
-    Nota operativa:
-    - “Comprar” crea event=compra_catalogo_click y lo envía a Sheets.
-    - “Guardar en Sheets” del configurador crea event=pedido_configurado con el combo completo.
-
-    En tu Apps Script (Sheets), conviene que tu doPost tenga columnas flexibles:
-    ts,event,producto,precio,nombre,tel,ciudad,tipo,medidas,referencia,detalles,origen,pagina
-  -->
 </body>
 </html>
